@@ -1,0 +1,8 @@
+[submodule "lib/Game-Dev-Common"]
+	path = lib/Game-Dev-Common
+	url = git@github.com:nilllzz/Game-Dev-Common.git
+	branch = master
+[submodule "lib/kolben"]
+	path = lib/kolben
+	url = git@github.com:nilllzz/kolben.git
+	branch = master

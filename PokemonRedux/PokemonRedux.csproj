@@ -191,9 +191,6 @@
     <Content Include="Content\Textures\UI\Pokemon\mail.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="credits.txt" Condition=" '$(Configuration)' == 'Release' ">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="App.config" />
     <Content Include="Content\Data\items.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

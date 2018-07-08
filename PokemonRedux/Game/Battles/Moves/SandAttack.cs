@@ -1,0 +1,21 @@
+﻿using PokemonRedux.Screens.Battles.Animations.Moves;
+
+namespace PokemonRedux.Game.Battles.Moves
+{
+    [BattleMove("SAND-ATTACK")]
+    class SandAttack : BattleMove
+    {
+        public override MoveCategory GetCategory(BattlePokemon user) => MoveCategory.Status;
+
+        public override void ShowAnimation(BattlePokemon user, BattlePokemon target)
+        {
+            var animation = new SandAttackAnimation(target);
+            Battle.ActiveBattle.AnimationController.ShowAnimationAndWait(animation);
+        }
+
+        public override bool ExecuteSecondaryEffect(BattlePokemon user, BattlePokemon target)
+        {
+            return Battle.ActiveBattle.ChangeStat(target, PokemonStat.Accuracy, PokemonStatChange.Decrease);
+        }
+    }
+}

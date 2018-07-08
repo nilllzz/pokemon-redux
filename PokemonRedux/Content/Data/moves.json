@@ -1,0 +1,1766 @@
+﻿[
+  {
+    "name": "POUND",
+    "type": "normal",
+    "maxPP": 35,
+    "description": "----",
+    "attk": 40
+  },
+  {
+    "name": "KARATE CHOP",
+    "type": "fighting",
+    "maxPP": 25,
+    "description": "Has a high criti-\ncal hit ratio.",
+    "attk": 50
+  },
+  {
+    "name": "DOUBLESLAP",
+    "type": "normal",
+    "maxPP": 10,
+    "description": "Repeatedly slaps\n2-5 times.",
+    "attk": 15
+  },
+  {
+    "name": "COMET PUNCH",
+    "type": "normal",
+    "maxPP": 15,
+    "description": "Repeatedly punches\n2-5 times.",
+    "attk": 18
+  },
+  {
+    "name": "MEGA PUNCH",
+    "type": "normal",
+    "maxPP": 20,
+    "description": "----",
+    "attk": 80
+  },
+  {
+    "name": "PAY DAY",
+    "type": "normal",
+    "maxPP": 20,
+    "description": "----",
+    "attk": 40
+  },
+  {
+    "name": "FIRE PUNCH",
+    "type": "fire",
+    "maxPP": 15,
+    "description": "----",
+    "attk": 75
+  },
+  {
+    "name": "ICE PUNCH",
+    "type": "ice",
+    "maxPP": 15,
+    "description": "----",
+    "attk": 75
+  },
+  {
+    "name": "THUNDERPUNCH",
+    "type": "electric",
+    "maxPP": 15,
+    "description": "An electric punch.\nIt may paralyze.",
+    "attk": 75
+  },
+  {
+    "name": "SCRATCH",
+    "type": "normal",
+    "maxPP": 35,
+    "description": "Scratches with\nsharp claws.",
+    "attk": 40
+  },
+  {
+    "name": "VICEGRIP",
+    "type": "normal",
+    "maxPP": 30,
+    "description": "----",
+    "attk": 55
+  },
+  {
+    "name": "GUILLOTINE",
+    "type": "normal",
+    "maxPP": 5,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "RAZOR WIND",
+    "type": "normal",
+    "maxPP": 10,
+    "description": "----",
+    "attk": 80
+  },
+  {
+    "name": "SWORDS DANCE",
+    "type": "normal",
+    "maxPP": 30,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "CUT",
+    "type": "normal",
+    "maxPP": 30,
+    "description": "Cuts using claws\nscythes, etc.",
+    "attk": 50,
+    "isHM": true
+  },
+  {
+    "name": "GUST",
+    "type": "flying",
+    "maxPP": 35,
+    "description": "Whips up a strong\ngust of wind.",
+    "attk": 40
+  },
+  {
+    "name": "WING ATTACK",
+    "type": "flying",
+    "maxPP": 35,
+    "description": "Strikes the target\nwith wings.",
+    "attk": 60
+  },
+  {
+    "name": "WHIRLWIND",
+    "type": "normal",
+    "maxPP": 20,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "FLY",
+    "type": "flying",
+    "maxPP": 15,
+    "description": "1st turn: Fly\n2nd turn: Attack",
+    "attk": 70,
+    "isHM": true
+  },
+  {
+    "name": "BIND",
+    "type": "normal",
+    "maxPP": 20,
+    "description": "Binds the target\nfor 2-5 turns.",
+    "attk": 15
+  },
+  {
+    "name": "SLAM",
+    "type": "normal",
+    "maxPP": 20,
+    "description": "----",
+    "attk": 80
+  },
+  {
+    "name": "VINE WHIP",
+    "type": "grass",
+    "maxPP": 10,
+    "description": "----",
+    "attk": 35
+  },
+  {
+    "name": "STOMP",
+    "type": "normal",
+    "maxPP": 20,
+    "description": "----",
+    "attk": 65
+  },
+  {
+    "name": "DOUBLE KICK",
+    "type": "fighting",
+    "maxPP": 30,
+    "description": "----",
+    "attk": 30
+  },
+  {
+    "name": "MEGA KICK",
+    "type": "normal",
+    "maxPP": 5,
+    "description": "----",
+    "attk": 120
+  },
+  {
+    "name": "JUMP KICK",
+    "type": "fighting",
+    "maxPP": 25,
+    "description": "----",
+    "attk": 70
+  },
+  {
+    "name": "ROLLING KICK",
+    "type": "fighting",
+    "maxPP": 15,
+    "description": "----",
+    "attk": 60
+  },
+  {
+    "name": "SAND-ATTACK",
+    "type": "ground",
+    "maxPP": 15,
+    "description": "Reduces accuracy\nby throwing sand.",
+    "attk": -1
+  },
+  {
+    "name": "HEADBUTT",
+    "type": "normal",
+    "maxPP": 15,
+    "description": "----",
+    "attk": 70
+  },
+  {
+    "name": "HORN ATTACK",
+    "type": "normal",
+    "maxPP": 25,
+    "description": "----",
+    "attk": 65
+  },
+  {
+    "name": "FURY ATTACK",
+    "type": "normal",
+    "maxPP": 20,
+    "description": "----",
+    "attk": 15
+  },
+  {
+    "name": "HORN DRILL",
+    "type": "normal",
+    "maxPP": 5,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "TACKLE",
+    "type": "normal",
+    "maxPP": 35,
+    "description": "A full-body charge\nattack.",
+    "attk": 35
+  },
+  {
+    "name": "BODY SLAM",
+    "type": "normal",
+    "maxPP": 15,
+    "description": "An attack that may\ncause paralysis.",
+    "attk": 85
+  },
+  {
+    "name": "WRAP",
+    "type": "normal",
+    "maxPP": 20,
+    "description": "Squeezes the foe\nfor 2-5 turns.",
+    "attk": 15
+  },
+  {
+    "name": "TAKE DOWN",
+    "type": "normal",
+    "maxPP": 20,
+    "description": "A tackle that also\nhurts the user.",
+    "attk": 90
+  },
+  {
+    "name": "THRASH",
+    "type": "normal",
+    "maxPP": 20,
+    "description": "----",
+    "attk": 90
+  },
+  {
+    "name": "DOUBLE-EDGE",
+    "type": "normal",
+    "maxPP": 15,
+    "description": "----",
+    "attk": 120
+  },
+  {
+    "name": "TAIL WHIP",
+    "type": "normal",
+    "maxPP": 30,
+    "description": "Lowers the foe^'s\nDEFENSE.",
+    "attk": -1
+  },
+  {
+    "name": "POISON STING",
+    "type": "poison",
+    "maxPP": 35,
+    "description": "An attack that may\npoison the target.",
+    "attk": 15
+  },
+  {
+    "name": "TWINEEDLE",
+    "type": "bug",
+    "maxPP": 20,
+    "description": "----",
+    "attk": 25
+  },
+  {
+    "name": "PIN MISSILE",
+    "type": "bug",
+    "maxPP": 20,
+    "description": "----",
+    "attk": 14
+  },
+  {
+    "name": "LEER",
+    "type": "normal",
+    "maxPP": 30,
+    "description": "Reduces the foe^'s\nDEFENSE.",
+    "attk": -1
+  },
+  {
+    "name": "BITE",
+    "type": "dark",
+    "maxPP": 25,
+    "description": "An attack that may\ncause flinching.",
+    "attk": 60
+  },
+  {
+    "name": "GROWL",
+    "type": "normal",
+    "maxPP": 40,
+    "description": "Reduces the foe^'s\nATTACK.",
+    "attk": -1
+  },
+  {
+    "name": "ROAR",
+    "type": "normal",
+    "maxPP": 20,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "SING",
+    "type": "normal",
+    "maxPP": 15,
+    "description": "May cause the foe\nto fall asleep.",
+    "attk": -1
+  },
+  {
+    "name": "SUPERSONIC",
+    "type": "normal",
+    "maxPP": 20,
+    "description": "Sound waves that\ncause confusion.",
+    "attk": -1
+  },
+  {
+    "name": "SONICBOOM",
+    "type": "normal",
+    "maxPP": 20,
+    "description": "Always inflicts\n20HP damage.",
+    "attk": -1
+  },
+  {
+    "name": "DISABLE",
+    "type": "normal",
+    "maxPP": 20,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "ACID",
+    "type": "poison",
+    "maxPP": 30,
+    "description": "An attack that may\nlower DEFENSE.",
+    "attk": 40
+  },
+  {
+    "name": "EMBER",
+    "type": "fire",
+    "maxPP": 25,
+    "description": "An attack that may\ninflict a burn.",
+    "attk": 40
+  },
+  {
+    "name": "FLAMETHROWER",
+    "type": "fire",
+    "maxPP": 15,
+    "description": "----",
+    "attk": 95
+  },
+  {
+    "name": "MIST",
+    "type": "ice",
+    "maxPP": 30,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "WATER GUN",
+    "type": "water",
+    "maxPP": 25,
+    "description": "Squirts water to\nattack.",
+    "attk": 40
+  },
+  {
+    "name": "HYDRO PUMP",
+    "type": "water",
+    "maxPP": 5,
+    "description": "A powerful water-\ntype attack.",
+    "attk": 120
+  },
+  {
+    "name": "SURF",
+    "type": "water",
+    "maxPP": 15,
+    "description": "A strong water\n-type attack.",
+    "attk": 95,
+    "isHM": true
+  },
+  {
+    "name": "ICE BEAM",
+    "type": "ice",
+    "maxPP": 10,
+    "description": "----",
+    "attk": 95
+  },
+  {
+    "name": "BLIZZARD",
+    "type": "ice",
+    "maxPP": 5,
+    "description": "----",
+    "attk": 120
+  },
+  {
+    "name": "PSYBEAM",
+    "type": "psychic",
+    "maxPP": 20,
+    "description": "----",
+    "attk": 65
+  },
+  {
+    "name": "BUBBLEBEAM",
+    "type": "water",
+    "maxPP": 20,
+    "description": "----",
+    "attk": 65
+  },
+  {
+    "name": "AURORA BEAM",
+    "type": "ice",
+    "maxPP": 20,
+    "description": "----",
+    "attk": 65
+  },
+  {
+    "name": "HYPER BEAM",
+    "type": "normal",
+    "maxPP": 5,
+    "description": "----",
+    "attk": 150
+  },
+  {
+    "name": "PECK",
+    "type": "flying",
+    "maxPP": 35,
+    "description": "Jabs the foe with\na beak, etc.",
+    "attk": 35
+  },
+  {
+    "name": "DRILL PECK",
+    "type": "flying",
+    "maxPP": 20,
+    "description": "----",
+    "attk": 80
+  },
+  {
+    "name": "SUBMISSION",
+    "type": "fighting",
+    "maxPP": 25,
+    "description": "----",
+    "attk": 80
+  },
+  {
+    "name": "LOW KICK",
+    "type": "fighting",
+    "maxPP": 20,
+    "description": "An attack that may\ncause flinching.",
+    "attk": 50
+  },
+  {
+    "name": "COUNTER",
+    "type": "fighting",
+    "maxPP": 20,
+    "description": "Returns a physical\nblow double.",
+    "attk": -1
+  },
+  {
+    "name": "SEISMIC TOSS",
+    "type": "fighting",
+    "maxPP": 20,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "STRENGTH",
+    "type": "normal",
+    "maxPP": 15,
+    "description": "A powerful physi\n-cal attack.",
+    "attk": 80,
+    "isHM": true
+  },
+  {
+    "name": "ABSORB",
+    "type": "grass",
+    "maxPP": 20,
+    "description": "----",
+    "attk": 20
+  },
+  {
+    "name": "MEGA DRAIN",
+    "type": "grass",
+    "maxPP": 10,
+    "description": "----",
+    "attk": 40
+  },
+  {
+    "name": "LEECH SEED",
+    "type": "grass",
+    "maxPP": 10,
+    "description": "Steals 1/2 of the\ndamage inflicted.",
+    "attk": -1
+  },
+  {
+    "name": "GROWTH",
+    "type": "normal",
+    "maxPP": 40,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "RAZOR LEAF",
+    "type": "grass",
+    "maxPP": 25,
+    "description": "Has a high criti-\ncal hit ratio.",
+    "attk": 55
+  },
+  {
+    "name": "SOLARBEAM",
+    "type": "grass",
+    "maxPP": 10,
+    "description": "----",
+    "attk": 120
+  },
+  {
+    "name": "POISONPOWDER",
+    "type": "poison",
+    "maxPP": 35,
+    "description": "A move that may\npoison the foe.",
+    "attk": -1
+  },
+  {
+    "name": "STUN SPORE",
+    "type": "grass",
+    "maxPP": 30,
+    "description": "A move that may\nparalyze the foe.",
+    "attk": -1
+  },
+  {
+    "name": "SLEEP POWDER",
+    "type": "grass",
+    "maxPP": 15,
+    "description": "May cause the foe\nto fall asleep.",
+    "attk": -1
+  },
+  {
+    "name": "PETAL DANCE",
+    "type": "grass",
+    "maxPP": 20,
+    "description": "----",
+    "attk": 70
+  },
+  {
+    "name": "STRING SHOT",
+    "type": "bug",
+    "maxPP": 40,
+    "description": "A move that lowers\nthe foe^'s SPEED.",
+    "attk": -1
+  },
+  {
+    "name": "DRAGON RAGE",
+    "type": "dragon",
+    "maxPP": 10,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "FIRE SPIN",
+    "type": "fire",
+    "maxPP": 15,
+    "description": "----",
+    "attk": 15
+  },
+  {
+    "name": "THUNDERSHOCK",
+    "type": "electric",
+    "maxPP": 30,
+    "description": "An attack that may\ncause paralysis.",
+    "attk": 40
+  },
+  {
+    "name": "THUNDERBOLT",
+    "type": "electric",
+    "maxPP": 15,
+    "description": "----",
+    "attk": 95
+  },
+  {
+    "name": "THUNDER WAVE",
+    "type": "electric",
+    "maxPP": 20,
+    "description": "A move that may\ncause paralysis.",
+    "attk": -1
+  },
+  {
+    "name": "THUNDER",
+    "type": "electric",
+    "maxPP": 10,
+    "description": "----",
+    "attk": 120
+  },
+  {
+    "name": "ROCK THROW",
+    "type": "rock",
+    "maxPP": 15,
+    "description": "Drops rocks on the\nenemy.",
+    "attk": 50
+  },
+  {
+    "name": "EARTHQUAKE",
+    "type": "ground",
+    "maxPP": 10,
+    "description": "----",
+    "attk": 100
+  },
+  {
+    "name": "FISSURE",
+    "type": "ground",
+    "maxPP": 5,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "DIG",
+    "type": "ground",
+    "maxPP": 10,
+    "description": "1st turn: Burrow\n2nd turn: Attack",
+    "attk": 60
+  },
+  {
+    "name": "TOXIC",
+    "type": "poison",
+    "maxPP": 10,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "CONFUSION",
+    "type": "psychic",
+    "maxPP": 25,
+    "description": "An attack that may\ncause confusion.",
+    "attk": 50
+  },
+  {
+    "name": "PSYCHIC",
+    "type": "psychic",
+    "maxPP": 10,
+    "description": "----",
+    "attk": 90
+  },
+  {
+    "name": "HYPNOSIS",
+    "type": "psychic",
+    "maxPP": 20,
+    "description": "May put the foe to\nsleep.",
+    "attk": -1
+  },
+  {
+    "name": "MEDITATE",
+    "type": "psychic",
+    "maxPP": 40,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "AGILITY",
+    "type": "psychic",
+    "maxPP": 30,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "QUICK ATTACK",
+    "type": "normal",
+    "maxPP": 30,
+    "description": "Lets the user get\nin the first hit.",
+    "attk": 40
+  },
+  {
+    "name": "RAGE",
+    "type": "normal",
+    "maxPP": 20,
+    "description": "Raises ATTACK if\nthe user is hit.",
+    "attk": 20
+  },
+  {
+    "name": "TELEPORT",
+    "type": "psychic",
+    "maxPP": 20,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "NIGHT SHADE",
+    "type": "ghost",
+    "maxPP": 15,
+    "description": "The user^'s level\nequal damage HP.",
+    "attk": -1
+  },
+  {
+    "name": "MIMIC",
+    "type": "normal",
+    "maxPP": 10,
+    "description": "Copies a move used\nby the foe.",
+    "attk": -1
+  },
+  {
+    "name": "SCREECH",
+    "type": "normal",
+    "maxPP": 40,
+    "description": "Sharply reduces\nthe foe^'s DEFENSE.",
+    "attk": -1
+  },
+  {
+    "name": "DOUBLE TEAM",
+    "type": "normal",
+    "maxPP": 15,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "RECOVER",
+    "type": "normal",
+    "maxPP": 20,
+    "description": "Restores HP by 1/2\nthe max HP.",
+    "attk": -1
+  },
+  {
+    "name": "HARDEN",
+    "type": "normal",
+    "maxPP": 30,
+    "description": "Raises the user^'s\nDEFENSE.",
+    "attk": -1
+  },
+  {
+    "name": "MINIMIZE",
+    "type": "normal",
+    "maxPP": 20,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "SMOKESCREEN",
+    "type": "normal",
+    "maxPP": 20,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "CONFUSE RAY",
+    "type": "ghost",
+    "maxPP": 10,
+    "description": "A move that causes\nconfusion.",
+    "attk": -1
+  },
+  {
+    "name": "WITHDRAW",
+    "type": "water",
+    "maxPP": 40,
+    "description": "Heightens the\nuser^'s DEFENSE.",
+    "attk": -1
+  },
+  {
+    "name": "DEFENSE CURL",
+    "type": "normal",
+    "maxPP": 40,
+    "description": "Heightens the\nuser^'s DEFENSE.",
+    "attk": -1
+  },
+  {
+    "name": "BARRIER",
+    "type": "psychic",
+    "maxPP": 30,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "LIGHT SCREEN",
+    "type": "psychic",
+    "maxPP": 30,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "HAZE",
+    "type": "ice",
+    "maxPP": 30,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "REFLECT",
+    "type": "psychic",
+    "maxPP": 20,
+    "description": "Raises DEFENSE\nwith a barrier.",
+    "attk": -1
+  },
+  {
+    "name": "FOCUS ENERGY",
+    "type": "normal",
+    "maxPP": 30,
+    "description": "Raises the criti-\ncal hit ratio.",
+    "attk": -1
+  },
+  {
+    "name": "BIDE",
+    "type": "normal",
+    "maxPP": 10,
+    "description": "Waits 2-3 turns &\nhits back double.",
+    "attk": -1
+  },
+  {
+    "name": "METRONOME",
+    "type": "normal",
+    "maxPP": 10,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "MIRROR MOVE",
+    "type": "flying",
+    "maxPP": 20,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "SELFDESTRUCT",
+    "type": "normal",
+    "maxPP": 5,
+    "description": "Powerful but makes\nthe user faint.",
+    "attk": 200
+  },
+  {
+    "name": "EGG BOMB",
+    "type": "normal",
+    "maxPP": 10,
+    "description": "----",
+    "attk": 100
+  },
+  {
+    "name": "LICK",
+    "type": "ghost",
+    "maxPP": 30,
+    "description": "An attack that may\ncause paralysis.",
+    "attk": 20
+  },
+  {
+    "name": "SMOG",
+    "type": "poison",
+    "maxPP": 20,
+    "description": "----",
+    "attk": 20
+  },
+  {
+    "name": "SLUDGE",
+    "type": "poison",
+    "maxPP": 20,
+    "description": "----",
+    "attk": 65
+  },
+  {
+    "name": "BONE CLUB",
+    "type": "ground",
+    "maxPP": 20,
+    "description": "----",
+    "attk": 65
+  },
+  {
+    "name": "FIRE BLAST",
+    "type": "fire",
+    "maxPP": 5,
+    "description": "----",
+    "attk": 120
+  },
+  {
+    "name": "WATERFALL",
+    "type": "water",
+    "maxPP": 15,
+    "description": "An aquantic charge\nattack.",
+    "attk": 80,
+    "isHM": true
+  },
+  {
+    "name": "CLAMP",
+    "type": "water",
+    "maxPP": 10,
+    "description": "----",
+    "attk": 35
+  },
+  {
+    "name": "SWIFT",
+    "type": "normal",
+    "maxPP": 20,
+    "description": "An attack that\nnever misses.",
+    "attk": 60
+  },
+  {
+    "name": "SKULL BASH",
+    "type": "normal",
+    "maxPP": 15,
+    "description": "----",
+    "attk": 100
+  },
+  {
+    "name": "SPIKE CANNON",
+    "type": "normal",
+    "maxPP": 15,
+    "description": "----",
+    "attk": 20
+  },
+  {
+    "name": "CONSTRICT",
+    "type": "normal",
+    "maxPP": 35,
+    "description": "An attack that may\nlower SPEED.",
+    "attk": 10
+  },
+  {
+    "name": "AMNESIA",
+    "type": "psychic",
+    "maxPP": 20,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "KINESIS",
+    "type": "psychic",
+    "maxPP": 15,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "SOFTBOILED",
+    "type": "normal",
+    "maxPP": 10,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "HI JUMP KICK",
+    "type": "fighting",
+    "maxPP": 20,
+    "description": "----",
+    "attk": 85
+  },
+  {
+    "name": "GLARE",
+    "type": "normal",
+    "maxPP": 30,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "DREAM EATER",
+    "type": "psychic",
+    "maxPP": 15,
+    "description": "Steals HP from a\nsleeping victim.",
+    "attk": 100
+  },
+  {
+    "name": "POISON GAS",
+    "type": "poison",
+    "maxPP": 40,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "BARRAGE",
+    "type": "normal",
+    "maxPP": 20,
+    "description": "Throws orbs to hit\n2-5 times.",
+    "attk": 15
+  },
+  {
+    "name": "LEECH LIFE",
+    "type": "bug",
+    "maxPP": 15,
+    "description": "----",
+    "attk": 20
+  },
+  {
+    "name": "LOVELY KISS",
+    "type": "normal",
+    "maxPP": 10,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "SKY ATTACK",
+    "type": "flying",
+    "maxPP": 5,
+    "description": "----",
+    "attk": 140
+  },
+  {
+    "name": "TRANSFORM",
+    "type": "normal",
+    "maxPP": 10,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "BUBBLE",
+    "type": "water",
+    "maxPP": 30,
+    "description": "An attack that may\nreduce SPEED.",
+    "attk": 20
+  },
+  {
+    "name": "DIZZY PUNCH",
+    "type": "normal",
+    "maxPP": 10,
+    "description": "----",
+    "attk": 70
+  },
+  {
+    "name": "SPORE",
+    "type": "grass",
+    "maxPP": 15,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "FLASH",
+    "type": "normal",
+    "maxPP": 20,
+    "description": "Blinds the foe to\nreduce accuracy.",
+    "attk": -1,
+    "isHM": true
+  },
+  {
+    "name": "PSYWAVE",
+    "type": "psychic",
+    "maxPP": 15,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "SPLASH",
+    "type": "normal",
+    "maxPP": 40,
+    "description": "Has no effect\nwhatsoever.",
+    "attk": -1
+  },
+  {
+    "name": "ACID ARMOR",
+    "type": "poison",
+    "maxPP": 40,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "CRABHAMMER",
+    "type": "water",
+    "maxPP": 10,
+    "description": "----",
+    "attk": 90
+  },
+  {
+    "name": "EXPLOSION",
+    "type": "normal",
+    "maxPP": 5,
+    "description": "----",
+    "attk": 250
+  },
+  {
+    "name": "FURY SWIPES",
+    "type": "normal",
+    "maxPP": 15,
+    "description": "Quickly scratches\n2-5 times.",
+    "attk": 18
+  },
+  {
+    "name": "BONEMERANG",
+    "type": "ground",
+    "maxPP": 10,
+    "description": "----",
+    "attk": 50
+  },
+  {
+    "name": "REST",
+    "type": "psychic",
+    "maxPP": 10,
+    "description": "Sleep for 2 turns\nto fully recover.",
+    "attk": -1
+  },
+  {
+    "name": "ROCK SLIDE",
+    "type": "rock",
+    "maxPP": 10,
+    "description": "----",
+    "attk": 75
+  },
+  {
+    "name": "HYPER FANG",
+    "type": "normal",
+    "maxPP": 15,
+    "description": "An attack that may\ncause flinching.",
+    "attk": 80
+  },
+  {
+    "name": "SHARPEN",
+    "type": "normal",
+    "maxPP": 30,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "CONVERSION",
+    "type": "normal",
+    "maxPP": 30,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "TRI ATTACK",
+    "type": "normal",
+    "maxPP": 10,
+    "description": "----",
+    "attk": 80
+  },
+  {
+    "name": "SUPER FANG",
+    "type": "normal",
+    "maxPP": 10,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "SLASH",
+    "type": "normal",
+    "maxPP": 20,
+    "description": "Has a high criti-\ncal hit ratio.",
+    "attk": 70
+  },
+  {
+    "name": "SUBSTITUTE",
+    "type": "normal",
+    "maxPP": 10,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "STRUGGLE",
+    "type": "normal",
+    "maxPP": 1,
+    "description": "----",
+    "attk": 50
+  },
+  {
+    "name": "SKETCH",
+    "type": "normal",
+    "maxPP": 1,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "TRIPLE KICK",
+    "type": "fighting",
+    "maxPP": 10,
+    "description": "----",
+    "attk": 10
+  },
+  {
+    "name": "THIEF",
+    "type": "dark",
+    "maxPP": 10,
+    "description": "An attack that may\nsteal a held item.",
+    "attk": 40
+  },
+  {
+    "name": "SPIDER WEB",
+    "type": "bug",
+    "maxPP": 10,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "MIND READER",
+    "type": "normal",
+    "maxPP": 5,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "NIGHTMARE",
+    "type": "ghost",
+    "maxPP": 15,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "FLAME WHEEL",
+    "type": "fire",
+    "maxPP": 25,
+    "description": "An attack that may\ncause a burn.",
+    "attk": 60
+  },
+  {
+    "name": "SNORE",
+    "type": "normal",
+    "maxPP": 15,
+    "description": "An attack useable\nonly while asleep.",
+    "attk": 40
+  },
+  {
+    "name": "CURSE",
+    "type": "ghost",
+    "maxPP": 10,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "FLAIL",
+    "type": "normal",
+    "maxPP": 15,
+    "description": "Stronger if the\nuser^'s HP is low.",
+    "attk": -1
+  },
+  {
+    "name": "CONVERSION2",
+    "type": "normal",
+    "maxPP": 30,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "AEROBLAST",
+    "type": "flying",
+    "maxPP": 5,
+    "description": "----",
+    "attk": 100
+  },
+  {
+    "name": "COTTON SPORE",
+    "type": "grass",
+    "maxPP": 40,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "REVERSAL",
+    "type": "fighting",
+    "maxPP": 15,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "SPITE",
+    "type": "ghost",
+    "maxPP": 10,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "POWDER SNOW",
+    "type": "ice",
+    "maxPP": 25,
+    "description": "An attack that may\ncause freezing.",
+    "attk": 40
+  },
+  {
+    "name": "PROTECT",
+    "type": "normal",
+    "maxPP": 10,
+    "description": "Foils attack that\nturn. It may fail.",
+    "attk": -1
+  },
+  {
+    "name": "MACH PUNCH",
+    "type": "fighting",
+    "maxPP": 30,
+    "description": "----",
+    "attk": 40
+  },
+  {
+    "name": "SCARY FACE",
+    "type": "normal",
+    "maxPP": 10,
+    "description": "Sharply reduces\nthe foe^'s SPEED.",
+    "attk": -1
+  },
+  {
+    "name": "FAINT ATTACK",
+    "type": "dark",
+    "maxPP": 20,
+    "description": "An attack that\nnever misses.",
+    "attk": 60
+  },
+  {
+    "name": "SWEET KISS",
+    "type": "normal",
+    "maxPP": 10,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "BELLY DRUM",
+    "type": "normal",
+    "maxPP": 10,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "SLUDGE BOMB",
+    "type": "poison",
+    "maxPP": 10,
+    "description": "----",
+    "attk": 90
+  },
+  {
+    "name": "MUD-SLAP",
+    "type": "ground",
+    "maxPP": 10,
+    "description": "Reduces the foe^'s\naccuracy.",
+    "attk": 20
+  },
+  {
+    "name": "OCTAZOOKA",
+    "type": "water",
+    "maxPP": 10,
+    "description": "----",
+    "attk": 65
+  },
+  {
+    "name": "SPIKES",
+    "type": "ground",
+    "maxPP": 20,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "ZAP CANNON",
+    "type": "electric",
+    "maxPP": 5,
+    "description": "An attack that\nalways paralyzes.",
+    "attk": 100
+  },
+  {
+    "name": "FORESIGHT",
+    "type": "normal",
+    "maxPP": 40,
+    "description": "Negates accuracy\nreduction moves.",
+    "attk": -1
+  },
+  {
+    "name": "DESTINY BOND",
+    "type": "ghost",
+    "maxPP": 5,
+    "description": "The foe faints if\nthe user does.",
+    "attk": -1
+  },
+  {
+    "name": "PERISH SONG",
+    "type": "normal",
+    "maxPP": 5,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "ICY WIND",
+    "type": "ice",
+    "maxPP": 15,
+    "description": "An icy attack that\nlowers SPEED.",
+    "attk": 55
+  },
+  {
+    "name": "DETECT",
+    "type": "fighting",
+    "maxPP": 5,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "BONE RUSH",
+    "type": "ground",
+    "maxPP": 10,
+    "description": "----",
+    "attk": 25
+  },
+  {
+    "name": "LOCK-ON",
+    "type": "normal",
+    "maxPP": 5,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "OUTRAGE",
+    "type": "dragon",
+    "maxPP": 15,
+    "description": "----",
+    "attk": 90
+  },
+  {
+    "name": "SANDSTORM",
+    "type": "rock",
+    "maxPP": 10,
+    "description": "Inflicts damage\nevery turn.",
+    "attk": -1
+  },
+  {
+    "name": "GIGA DRAIN",
+    "type": "grass",
+    "maxPP": 5,
+    "description": "Steals 1/2 of the\ndamage inflicted.",
+    "attk": 60
+  },
+  {
+    "name": "ENDURE",
+    "type": "normal",
+    "maxPP": 10,
+    "description": "Always leaves at\nleast 1HP.",
+    "attk": -1
+  },
+  {
+    "name": "CHARM",
+    "type": "normal",
+    "maxPP": 20,
+    "description": "Sharply lower the\nfoe^'s ATTACK.",
+    "attk": -1
+  },
+  {
+    "name": "ROLLOUT",
+    "type": "rock",
+    "maxPP": 20,
+    "description": "Attacks 5 turns\nwith rising power.",
+    "attk": 30
+  },
+  {
+    "name": "FALSE SWIPE",
+    "type": "normal",
+    "maxPP": 40,
+    "description": "----",
+    "attk": 40
+  },
+  {
+    "name": "SWAGGER",
+    "type": "normal",
+    "maxPP": 15,
+    "description": "Causes confusion\nand raises ATTACK.",
+    "attk": -1
+  },
+  {
+    "name": "MILK DRINK",
+    "type": "normal",
+    "maxPP": 10,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "SPARK",
+    "type": "electric",
+    "maxPP": 20,
+    "description": "----",
+    "attk": 65
+  },
+  {
+    "name": "FURY CUTTER",
+    "type": "bug",
+    "maxPP": 20,
+    "description": "Successive hits\nraise power.",
+    "attk": 10
+  },
+  {
+    "name": "STEEL WING",
+    "type": "steel",
+    "maxPP": 25,
+    "description": "----",
+    "attk": 70
+  },
+  {
+    "name": "MEAN LOOK",
+    "type": "normal",
+    "maxPP": 5,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "ATTRACT",
+    "type": "normal",
+    "maxPP": 15,
+    "description": "Makes the opposite\ngender infatuated.",
+    "attk": -1
+  },
+  {
+    "name": "SLEEP TALK",
+    "type": "normal",
+    "maxPP": 10,
+    "description": "Randomly attacks\nwhile asleep.",
+    "attk": -1
+  },
+  {
+    "name": "HEAL BELL",
+    "type": "normal",
+    "maxPP": 5,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "RETURN",
+    "type": "normal",
+    "maxPP": 20,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "PRESENT",
+    "type": "normal",
+    "maxPP": 15,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "FRUSTRATION",
+    "type": "normal",
+    "maxPP": 20,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "SAFEGUARD",
+    "type": "normal",
+    "maxPP": 25,
+    "description": "Prevents all\nstatus problems.",
+    "attk": -1
+  },
+  {
+    "name": "PAIN SPLIT",
+    "type": "normal",
+    "maxPP": 20,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "SACRED FIRE",
+    "type": "fire",
+    "maxPP": 5,
+    "description": "An attack that may\ninflict a burn.",
+    "attk": 100
+  },
+  {
+    "name": "MAGNITUDE",
+    "type": "ground",
+    "maxPP": 30,
+    "description": "A ground attack\nwith random power.",
+    "attk": -1
+  },
+  {
+    "name": "DYNAMICPUNCH",
+    "type": "fighting",
+    "maxPP": 5,
+    "description": "An attack that\nalways confuses.",
+    "attk": 100
+  },
+  {
+    "name": "MEGAHORN",
+    "type": "bug",
+    "maxPP": 10,
+    "description": "----",
+    "attk": 120
+  },
+  {
+    "name": "DRAGONBREATH",
+    "type": "dragon",
+    "maxPP": 20,
+    "description": "A strong breath\nattack.",
+    "attk": 60
+  },
+  {
+    "name": "BATON PASS",
+    "type": "normal",
+    "maxPP": 40,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "ENCORE",
+    "type": "normal",
+    "maxPP": 5,
+    "description": "Makes the foe re-\npeat 2-6 times.",
+    "attk": -1
+  },
+  {
+    "name": "PURSUIT",
+    "type": "dark",
+    "maxPP": 20,
+    "description": "----",
+    "attk": 40
+  },
+  {
+    "name": "RAPID SPIN",
+    "type": "normal",
+    "maxPP": 40,
+    "description": "A high-speed\nspinning attack.",
+    "attk": 20
+  },
+  {
+    "name": "SWEET SCENT",
+    "type": "normal",
+    "maxPP": 20,
+    "description": "Reduces the foe^'s\nevasiveness.",
+    "attk": -1
+  },
+  {
+    "name": "IRON TAIL",
+    "type": "steel",
+    "maxPP": 15,
+    "description": "An attack that may\nreduce DEFENSE.",
+    "attk": 100
+  },
+  {
+    "name": "METAL CLAW",
+    "type": "steel",
+    "maxPP": 35,
+    "description": "----",
+    "attk": 50
+  },
+  {
+    "name": "VITAL THROW",
+    "type": "fighting",
+    "maxPP": 10,
+    "description": "----",
+    "attk": 70
+  },
+  {
+    "name": "MORNING SUN",
+    "type": "normal",
+    "maxPP": 5,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "SYNTHESIS",
+    "type": "grass",
+    "maxPP": 5,
+    "description": "Restores HP\n(varies by time).",
+    "attk": -1
+  },
+  {
+    "name": "MOONLIGHT",
+    "type": "normal",
+    "maxPP": 5,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "HIDDEN POWER",
+    "type": "normal",
+    "maxPP": 15,
+    "description": "The power varies\nwith the POKéMON.",
+    "attk": -1
+  },
+  {
+    "name": "CROSS CHOP",
+    "type": "fighting",
+    "maxPP": 5,
+    "description": "----",
+    "attk": 100
+  },
+  {
+    "name": "TWISTER",
+    "type": "dragon",
+    "maxPP": 20,
+    "description": "----",
+    "attk": 40
+  },
+  {
+    "name": "RAIN DANCE",
+    "type": "water",
+    "maxPP": 5,
+    "description": "Boosts water-type\nmoves for 5 turns.",
+    "attk": -1
+  },
+  {
+    "name": "SUNNY DAY",
+    "type": "fire",
+    "maxPP": 5,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "CRUNCH",
+    "type": "dark",
+    "maxPP": 15,
+    "description": "----",
+    "attk": 80
+  },
+  {
+    "name": "MIRROR COAT",
+    "type": "psychic",
+    "maxPP": 20,
+    "description": "Counters a SPCL.\nATK. move double.",
+    "attk": -1
+  },
+  {
+    "name": "PSYCH UP",
+    "type": "normal",
+    "maxPP": 10,
+    "description": "----",
+    "attk": -1
+  },
+  {
+    "name": "EXTREMESPEED",
+    "type": "normal",
+    "maxPP": 5,
+    "description": "----",
+    "attk": 80
+  },
+  {
+    "name": "ANCIENTPOWER",
+    "type": "rock",
+    "maxPP": 5,
+    "description": "----",
+    "attk": 60
+  },
+  {
+    "name": "SHADOW BALL",
+    "type": "ghost",
+    "maxPP": 15,
+    "description": "An attack that may\nlower SPCL.DEF.",
+    "attk": 80
+  },
+  {
+    "name": "FUTURE SIGHT",
+    "type": "psychic",
+    "maxPP": 15,
+    "description": "----",
+    "attk": 80
+  },
+  {
+    "name": "ROCK SMASH",
+    "type": "fighting",
+    "maxPP": 15,
+    "description": "An attack that may\nlower DEFENSE.",
+    "attk": 20
+  },
+  {
+    "name": "WHIRLPOOL",
+    "type": "water",
+    "maxPP": 15,
+    "description": "Traps the foe for\n2-5 turns.",
+    "attk": 15,
+    "isHM": true
+  },
+  {
+    "name": "BEAT UP",
+    "type": "dark",
+    "maxPP": 10,
+    "description": "----",
+    "attk": 10
+  }
+]

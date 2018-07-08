@@ -1,0 +1,1824 @@
+[
+  {
+    "id": 1,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster",
+      "Grass"
+    ]
+  },
+  {
+    "id": 2,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster",
+      "Grass"
+    ]
+  },
+  {
+    "id": 3,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster",
+      "Grass"
+    ]
+  },
+  {
+    "id": 4,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster",
+      "Dragon"
+    ]
+  },
+  {
+    "id": 5,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster",
+      "Dragon"
+    ]
+  },
+  {
+    "id": 6,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster",
+      "Dragon"
+    ]
+  },
+  {
+    "id": 7,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster",
+      "Water 1"
+    ]
+  },
+  {
+    "id": 8,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster",
+      "Water 1"
+    ]
+  },
+  {
+    "id": 9,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster",
+      "Water 1"
+    ]
+  },
+  {
+    "id": 10,
+    "eggCycles": 15,
+    "eggGroups": [
+      "Bug"
+    ]
+  },
+  {
+    "id": 11,
+    "eggCycles": 15,
+    "eggGroups": [
+      "Bug"
+    ]
+  },
+  {
+    "id": 12,
+    "eggCycles": 15,
+    "eggGroups": [
+      "Bug"
+    ]
+  },
+  {
+    "id": 13,
+    "eggCycles": 15,
+    "eggGroups": [
+      "Bug"
+    ]
+  },
+  {
+    "id": 14,
+    "eggCycles": 15,
+    "eggGroups": [
+      "Bug"
+    ]
+  },
+  {
+    "id": 15,
+    "eggCycles": 15,
+    "eggGroups": [
+      "Bug"
+    ]
+  },
+  {
+    "id": 16,
+    "eggCycles": 15,
+    "eggGroups": [
+      "Flying"
+    ]
+  },
+  {
+    "id": 17,
+    "eggCycles": 15,
+    "eggGroups": [
+      "Flying"
+    ]
+  },
+  {
+    "id": 18,
+    "eggCycles": 15,
+    "eggGroups": [
+      "Flying"
+    ]
+  },
+  {
+    "id": 19,
+    "eggCycles": 15,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 20,
+    "eggCycles": 15,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 21,
+    "eggCycles": 15,
+    "eggGroups": [
+      "Flying"
+    ]
+  },
+  {
+    "id": 22,
+    "eggCycles": 15,
+    "eggGroups": [
+      "Flying"
+    ]
+  },
+  {
+    "id": 23,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field",
+      "Dragon"
+    ]
+  },
+  {
+    "id": 24,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field",
+      "Dragon"
+    ]
+  },
+  {
+    "id": 25,
+    "eggCycles": 10,
+    "eggGroups": [
+      "Field",
+      "Fairy"
+    ]
+  },
+  {
+    "id": 26,
+    "eggCycles": 10,
+    "eggGroups": [
+      "Field",
+      "Fairy"
+    ]
+  },
+  {
+    "id": 27,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 28,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 29,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster",
+      "Field"
+    ]
+  },
+  {
+    "id": 30,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Undiscovered"
+    ]
+  },
+  {
+    "id": 31,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Undiscovered"
+    ]
+  },
+  {
+    "id": 32,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster",
+      "Field"
+    ]
+  },
+  {
+    "id": 33,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster",
+      "Field"
+    ]
+  },
+  {
+    "id": 34,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster",
+      "Field"
+    ]
+  },
+  {
+    "id": 35,
+    "eggCycles": 10,
+    "eggGroups": [
+      "Fairy"
+    ]
+  },
+  {
+    "id": 36,
+    "eggCycles": 10,
+    "eggGroups": [
+      "Fairy"
+    ]
+  },
+  {
+    "id": 37,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 38,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 39,
+    "eggCycles": 10,
+    "eggGroups": [
+      "Fairy"
+    ]
+  },
+  {
+    "id": 40,
+    "eggCycles": 10,
+    "eggGroups": [
+      "Fairy"
+    ]
+  },
+  {
+    "id": 41,
+    "eggCycles": 15,
+    "eggGroups": [
+      "Flying"
+    ]
+  },
+  {
+    "id": 42,
+    "eggCycles": 15,
+    "eggGroups": [
+      "Flying"
+    ]
+  },
+  {
+    "id": 43,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Grass"
+    ]
+  },
+  {
+    "id": 44,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Grass"
+    ]
+  },
+  {
+    "id": 45,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Grass"
+    ]
+  },
+  {
+    "id": 46,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Bug",
+      "Grass"
+    ]
+  },
+  {
+    "id": 47,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Bug",
+      "Grass"
+    ]
+  },
+  {
+    "id": 48,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Bug"
+    ]
+  },
+  {
+    "id": 49,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Bug"
+    ]
+  },
+  {
+    "id": 50,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 51,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 52,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 53,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 54,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 1",
+      "Field"
+    ]
+  },
+  {
+    "id": 55,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 1",
+      "Field"
+    ]
+  },
+  {
+    "id": 56,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 57,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 58,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 59,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 60,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 1"
+    ]
+  },
+  {
+    "id": 61,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 1"
+    ]
+  },
+  {
+    "id": 62,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 1"
+    ]
+  },
+  {
+    "id": 63,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Human-Like"
+    ]
+  },
+  {
+    "id": 64,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Human-Like"
+    ]
+  },
+  {
+    "id": 65,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Human-Like"
+    ]
+  },
+  {
+    "id": 66,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Human-Like"
+    ]
+  },
+  {
+    "id": 67,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Human-Like"
+    ]
+  },
+  {
+    "id": 68,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Human-Like"
+    ]
+  },
+  {
+    "id": 69,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Grass"
+    ]
+  },
+  {
+    "id": 70,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Grass"
+    ]
+  },
+  {
+    "id": 71,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Grass"
+    ]
+  },
+  {
+    "id": 72,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 3"
+    ]
+  },
+  {
+    "id": 73,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 3"
+    ]
+  },
+  {
+    "id": 74,
+    "eggCycles": 15,
+    "eggGroups": [
+      "Mineral"
+    ]
+  },
+  {
+    "id": 75,
+    "eggCycles": 15,
+    "eggGroups": [
+      "Mineral"
+    ]
+  },
+  {
+    "id": 76,
+    "eggCycles": 15,
+    "eggGroups": [
+      "Mineral"
+    ]
+  },
+  {
+    "id": 77,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 78,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 79,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster",
+      "Water 1"
+    ]
+  },
+  {
+    "id": 80,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster",
+      "Water 1"
+    ]
+  },
+  {
+    "id": 81,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Mineral"
+    ]
+  },
+  {
+    "id": 82,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Mineral"
+    ]
+  },
+  {
+    "id": 83,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Flying",
+      "Field"
+    ]
+  },
+  {
+    "id": 84,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Flying"
+    ]
+  },
+  {
+    "id": 85,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Flying"
+    ]
+  },
+  {
+    "id": 86,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 1",
+      "Field"
+    ]
+  },
+  {
+    "id": 87,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 1",
+      "Field"
+    ]
+  },
+  {
+    "id": 88,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Amorphous"
+    ]
+  },
+  {
+    "id": 89,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Amorphous"
+    ]
+  },
+  {
+    "id": 90,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 3"
+    ]
+  },
+  {
+    "id": 91,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 3"
+    ]
+  },
+  {
+    "id": 92,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Amorphous"
+    ]
+  },
+  {
+    "id": 93,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Amorphous"
+    ]
+  },
+  {
+    "id": 94,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Amorphous"
+    ]
+  },
+  {
+    "id": 95,
+    "eggCycles": 25,
+    "eggGroups": [
+      "Mineral"
+    ]
+  },
+  {
+    "id": 96,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Human-Like"
+    ]
+  },
+  {
+    "id": 97,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Human-Like"
+    ]
+  },
+  {
+    "id": 98,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 3"
+    ]
+  },
+  {
+    "id": 99,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 3"
+    ]
+  },
+  {
+    "id": 100,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Mineral"
+    ]
+  },
+  {
+    "id": 101,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Mineral"
+    ]
+  },
+  {
+    "id": 102,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Grass"
+    ]
+  },
+  {
+    "id": 103,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Grass"
+    ]
+  },
+  {
+    "id": 104,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster"
+    ]
+  },
+  {
+    "id": 105,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster"
+    ]
+  },
+  {
+    "id": 106,
+    "eggCycles": 25,
+    "eggGroups": [
+      "Human-Like"
+    ]
+  },
+  {
+    "id": 107,
+    "eggCycles": 25,
+    "eggGroups": [
+      "Human-Like"
+    ]
+  },
+  {
+    "id": 108,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster"
+    ]
+  },
+  {
+    "id": 109,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Amorphous"
+    ]
+  },
+  {
+    "id": 110,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Amorphous"
+    ]
+  },
+  {
+    "id": 111,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster",
+      "Field"
+    ]
+  },
+  {
+    "id": 112,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster",
+      "Field"
+    ]
+  },
+  {
+    "id": 113,
+    "eggCycles": 40,
+    "eggGroups": [
+      "Fairy"
+    ]
+  },
+  {
+    "id": 114,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Grass"
+    ]
+  },
+  {
+    "id": 115,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster"
+    ]
+  },
+  {
+    "id": 116,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 1",
+      "Dragon"
+    ]
+  },
+  {
+    "id": 117,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 1",
+      "Dragon"
+    ]
+  },
+  {
+    "id": 118,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 2"
+    ]
+  },
+  {
+    "id": 119,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 2"
+    ]
+  },
+  {
+    "id": 120,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 3"
+    ]
+  },
+  {
+    "id": 121,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 3"
+    ]
+  },
+  {
+    "id": 122,
+    "eggCycles": 25,
+    "eggGroups": [
+      "Human-Like"
+    ]
+  },
+  {
+    "id": 123,
+    "eggCycles": 25,
+    "eggGroups": [
+      "Bug"
+    ]
+  },
+  {
+    "id": 124,
+    "eggCycles": 25,
+    "eggGroups": [
+      "Human-Like"
+    ]
+  },
+  {
+    "id": 125,
+    "eggCycles": 25,
+    "eggGroups": [
+      "Human-Like"
+    ]
+  },
+  {
+    "id": 126,
+    "eggCycles": 25,
+    "eggGroups": [
+      "Human-Like"
+    ]
+  },
+  {
+    "id": 127,
+    "eggCycles": 25,
+    "eggGroups": [
+      "Bug"
+    ]
+  },
+  {
+    "id": 128,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 129,
+    "eggCycles": 5,
+    "eggGroups": [
+      "Water 2",
+      "Dragon"
+    ]
+  },
+  {
+    "id": 130,
+    "eggCycles": 5,
+    "eggGroups": [
+      "Water 2",
+      "Dragon"
+    ]
+  },
+  {
+    "id": 131,
+    "eggCycles": 40,
+    "eggGroups": [
+      "Monster",
+      "Water 1"
+    ]
+  },
+  {
+    "id": 132,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Ditto"
+    ]
+  },
+  {
+    "id": 133,
+    "eggCycles": 35,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 134,
+    "eggCycles": 35,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 135,
+    "eggCycles": 35,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 136,
+    "eggCycles": 35,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 137,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Mineral"
+    ]
+  },
+  {
+    "id": 138,
+    "eggCycles": 30,
+    "eggGroups": [
+      "Water 1",
+      "Water 3"
+    ]
+  },
+  {
+    "id": 139,
+    "eggCycles": 30,
+    "eggGroups": [
+      "Water 1",
+      "Water 3"
+    ]
+  },
+  {
+    "id": 140,
+    "eggCycles": 30,
+    "eggGroups": [
+      "Water 1",
+      "Water 3"
+    ]
+  },
+  {
+    "id": 141,
+    "eggCycles": 30,
+    "eggGroups": [
+      "Water 1",
+      "Water 3"
+    ]
+  },
+  {
+    "id": 142,
+    "eggCycles": 35,
+    "eggGroups": [
+      "Flying"
+    ]
+  },
+  {
+    "id": 143,
+    "eggCycles": 40,
+    "eggGroups": [
+      "Monster"
+    ]
+  },
+  {
+    "id": 144,
+    "eggCycles": 80,
+    "eggGroups": [
+      "Undiscovered"
+    ]
+  },
+  {
+    "id": 145,
+    "eggCycles": 80,
+    "eggGroups": [
+      "Undiscovered"
+    ]
+  },
+  {
+    "id": 146,
+    "eggCycles": 80,
+    "eggGroups": [
+      "Undiscovered"
+    ]
+  },
+  {
+    "id": 147,
+    "eggCycles": 40,
+    "eggGroups": [
+      "Water 1",
+      "Dragon"
+    ]
+  },
+  {
+    "id": 148,
+    "eggCycles": 40,
+    "eggGroups": [
+      "Water 1",
+      "Dragon"
+    ]
+  },
+  {
+    "id": 149,
+    "eggCycles": 40,
+    "eggGroups": [
+      "Water 1",
+      "Dragon"
+    ]
+  },
+  {
+    "id": 150,
+    "eggCycles": 120,
+    "eggGroups": [
+      "Undiscovered"
+    ]
+  },
+  {
+    "id": 151,
+    "eggCycles": 120,
+    "eggGroups": [
+      "Undiscovered"
+    ]
+  },
+  {
+    "id": 152,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster",
+      "Grass"
+    ]
+  },
+  {
+    "id": 153,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster",
+      "Grass"
+    ]
+  },
+  {
+    "id": 154,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster",
+      "Grass"
+    ]
+  },
+  {
+    "id": 155,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 156,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 157,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 158,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster",
+      "Water 1"
+    ]
+  },
+  {
+    "id": 159,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster",
+      "Water 1"
+    ]
+  },
+  {
+    "id": 160,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster",
+      "Water 1"
+    ]
+  },
+  {
+    "id": 161,
+    "eggCycles": 15,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 162,
+    "eggCycles": 15,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 163,
+    "eggCycles": 15,
+    "eggGroups": [
+      "Flying"
+    ]
+  },
+  {
+    "id": 164,
+    "eggCycles": 15,
+    "eggGroups": [
+      "Flying"
+    ]
+  },
+  {
+    "id": 165,
+    "eggCycles": 15,
+    "eggGroups": [
+      "Bug"
+    ]
+  },
+  {
+    "id": 166,
+    "eggCycles": 15,
+    "eggGroups": [
+      "Bug"
+    ]
+  },
+  {
+    "id": 167,
+    "eggCycles": 15,
+    "eggGroups": [
+      "Bug"
+    ]
+  },
+  {
+    "id": 168,
+    "eggCycles": 15,
+    "eggGroups": [
+      "Bug"
+    ]
+  },
+  {
+    "id": 169,
+    "eggCycles": 15,
+    "eggGroups": [
+      "Flying"
+    ]
+  },
+  {
+    "id": 170,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 2"
+    ]
+  },
+  {
+    "id": 171,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 2"
+    ]
+  },
+  {
+    "id": 172,
+    "eggCycles": 10,
+    "eggGroups": [
+      "Undiscovered"
+    ]
+  },
+  {
+    "id": 173,
+    "eggCycles": 10,
+    "eggGroups": [
+      "Undiscovered"
+    ]
+  },
+  {
+    "id": 174,
+    "eggCycles": 10,
+    "eggGroups": [
+      "Undiscovered"
+    ]
+  },
+  {
+    "id": 175,
+    "eggCycles": 10,
+    "eggGroups": [
+      "Undiscovered"
+    ]
+  },
+  {
+    "id": 176,
+    "eggCycles": 10,
+    "eggGroups": [
+      "Flying",
+      "Fairy"
+    ]
+  },
+  {
+    "id": 177,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Flying"
+    ]
+  },
+  {
+    "id": 178,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Flying"
+    ]
+  },
+  {
+    "id": 179,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster",
+      "Field"
+    ]
+  },
+  {
+    "id": 180,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster",
+      "Field"
+    ]
+  },
+  {
+    "id": 181,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster",
+      "Field"
+    ]
+  },
+  {
+    "id": 182,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Grass"
+    ]
+  },
+  {
+    "id": 183,
+    "eggCycles": 10,
+    "eggGroups": [
+      "Water 1",
+      "Fairy"
+    ]
+  },
+  {
+    "id": 184,
+    "eggCycles": 10,
+    "eggGroups": [
+      "Water 1",
+      "Fairy"
+    ]
+  },
+  {
+    "id": 185,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Mineral"
+    ]
+  },
+  {
+    "id": 186,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 1"
+    ]
+  },
+  {
+    "id": 187,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Fairy",
+      "Grass"
+    ]
+  },
+  {
+    "id": 188,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Fairy",
+      "Grass"
+    ]
+  },
+  {
+    "id": 189,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Fairy",
+      "Grass"
+    ]
+  },
+  {
+    "id": 190,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 191,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Grass"
+    ]
+  },
+  {
+    "id": 192,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Grass"
+    ]
+  },
+  {
+    "id": 193,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Bug"
+    ]
+  },
+  {
+    "id": 194,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 1",
+      "Field"
+    ]
+  },
+  {
+    "id": 195,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 1",
+      "Field"
+    ]
+  },
+  {
+    "id": 196,
+    "eggCycles": 35,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 197,
+    "eggCycles": 35,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 198,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Flying"
+    ]
+  },
+  {
+    "id": 199,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Monster",
+      "Water 1"
+    ]
+  },
+  {
+    "id": 200,
+    "eggCycles": 25,
+    "eggGroups": [
+      "Amorphous"
+    ]
+  },
+  {
+    "id": 201,
+    "eggCycles": 40,
+    "eggGroups": [
+      "Undiscovered"
+    ]
+  },
+  {
+    "id": 202,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Amorphous"
+    ]
+  },
+  {
+    "id": 203,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 204,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Bug"
+    ]
+  },
+  {
+    "id": 205,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Bug"
+    ]
+  },
+  {
+    "id": 206,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 207,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Bug"
+    ]
+  },
+  {
+    "id": 208,
+    "eggCycles": 25,
+    "eggGroups": [
+      "Mineral"
+    ]
+  },
+  {
+    "id": 209,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field",
+      "Fairy"
+    ]
+  },
+  {
+    "id": 210,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field",
+      "Fairy"
+    ]
+  },
+  {
+    "id": 211,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 2"
+    ]
+  },
+  {
+    "id": 212,
+    "eggCycles": 25,
+    "eggGroups": [
+      "Bug"
+    ]
+  },
+  {
+    "id": 213,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Bug"
+    ]
+  },
+  {
+    "id": 214,
+    "eggCycles": 25,
+    "eggGroups": [
+      "Bug"
+    ]
+  },
+  {
+    "id": 215,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 216,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 217,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 218,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Amorphous"
+    ]
+  },
+  {
+    "id": 219,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Amorphous"
+    ]
+  },
+  {
+    "id": 220,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 221,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 222,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 1",
+      "Water 3"
+    ]
+  },
+  {
+    "id": 223,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 1",
+      "Water 2"
+    ]
+  },
+  {
+    "id": 224,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 1",
+      "Water 2"
+    ]
+  },
+  {
+    "id": 225,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 1",
+      "Field"
+    ]
+  },
+  {
+    "id": 226,
+    "eggCycles": 25,
+    "eggGroups": [
+      "Water 1"
+    ]
+  },
+  {
+    "id": 227,
+    "eggCycles": 25,
+    "eggGroups": [
+      "Flying"
+    ]
+  },
+  {
+    "id": 228,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 229,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 230,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Water 1",
+      "Dragon"
+    ]
+  },
+  {
+    "id": 231,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 232,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 233,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Mineral"
+    ]
+  },
+  {
+    "id": 234,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 235,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 236,
+    "eggCycles": 25,
+    "eggGroups": [
+      "Undiscovered"
+    ]
+  },
+  {
+    "id": 237,
+    "eggCycles": 25,
+    "eggGroups": [
+      "Human-Like"
+    ]
+  },
+  {
+    "id": 238,
+    "eggCycles": 25,
+    "eggGroups": [
+      "Undiscovered"
+    ]
+  },
+  {
+    "id": 239,
+    "eggCycles": 25,
+    "eggGroups": [
+      "Undiscovered"
+    ]
+  },
+  {
+    "id": 240,
+    "eggCycles": 25,
+    "eggGroups": [
+      "Undiscovered"
+    ]
+  },
+  {
+    "id": 241,
+    "eggCycles": 20,
+    "eggGroups": [
+      "Field"
+    ]
+  },
+  {
+    "id": 242,
+    "eggCycles": 40,
+    "eggGroups": [
+      "Fairy"
+    ]
+  },
+  {
+    "id": 243,
+    "eggCycles": 80,
+    "eggGroups": [
+      "Undiscovered"
+    ]
+  },
+  {
+    "id": 244,
+    "eggCycles": 80,
+    "eggGroups": [
+      "Undiscovered"
+    ]
+  },
+  {
+    "id": 245,
+    "eggCycles": 80,
+    "eggGroups": [
+      "Undiscovered"
+    ]
+  },
+  {
+    "id": 246,
+    "eggCycles": 40,
+    "eggGroups": [
+      "Monster"
+    ]
+  },
+  {
+    "id": 247,
+    "eggCycles": 40,
+    "eggGroups": [
+      "Monster"
+    ]
+  },
+  {
+    "id": 248,
+    "eggCycles": 40,
+    "eggGroups": [
+      "Monster"
+    ]
+  },
+  {
+    "id": 249,
+    "eggCycles": 120,
+    "eggGroups": [
+      "Undiscovered"
+    ]
+  },
+  {
+    "id": 250,
+    "eggCycles": 120,
+    "eggGroups": [
+      "Undiscovered"
+    ]
+  },
+  {
+    "id": 251,
+    "eggCycles": 120,
+    "eggGroups": [
+      "Undiscovered"
+    ]
+  }
+]

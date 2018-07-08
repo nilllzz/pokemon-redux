@@ -1,0 +1,1 @@
+{"id":129,"name":"MAGIKARP","gender":"equal","baseStats":[20,10,55,15,20,80],"experienceType":"slow","experienceYield":20,"type1":"water","type2":"none","eggGroups":["water2","dragon"],"eggCycles":5,"catchRate":255,"moves":[{"name":"SPLASH","level":1},{"name":"TACKLE","level":15},{"name":"FLAIL","level":30}],"colors":null}

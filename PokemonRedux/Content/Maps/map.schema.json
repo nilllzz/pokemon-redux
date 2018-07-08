@@ -1,0 +1,219 @@
+﻿{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "Map json schema file",
+
+  "definitions": {
+    "entityDefinition": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "type": {
+          "type": "string",
+          "enum": [ "floor", "prop", "field", "struct", "door", "script" ]
+        },
+        "textureFile": { "type": "string" },
+        "visible": {
+          "type": "boolean",
+          "default": true
+        },
+        "geometry": {
+          "type": "string",
+          "enum": [ "plane", "billboard", "walls", "wall", "corner", "ramp", "cube", "houseInside", "tube", "cylinder" ]
+        },
+        "textures": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": { "type": "integer" }
+          }
+        },
+        "size": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": { "type": "number" },
+          "default": [ 1, 1, 1 ]
+        },
+        "elevation": {
+          "type": "array",
+          "maxItems": 4,
+          "minItems": 4,
+          "items": { "type": "number" },
+          "default": [ 0, 0, 0, 0 ]
+        },
+        "isStatic": {
+          "type": "boolean",
+          "default": true
+        },
+        "isOpaque": {
+          "type": "boolean",
+          "default": true
+        },
+        "hasCollision": {
+          "type": "boolean",
+          "default": true
+        },
+        "tileTexture": {
+          "type": "boolean",
+          "default": false
+        },
+        "billboardTilt": {
+          "type": "number",
+          "default": 0.87079637
+        },
+        "frameDelay": {
+          "type": "integer",
+          "default": 0
+        },
+        "isAnimated": {
+          "type": "boolean",
+          "default": false
+        },
+        "frames": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": { "type": "integer" }
+          }
+        },
+        "tubeResolution": {
+          "type": "integer",
+          "default": 8
+        },
+        "wrapTexture": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "entity": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/entityDefinition"
+        },
+        {
+          "properties": {
+            // referenced entities
+            "position": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 3,
+              "items": { "type": "number" },
+              "default": [ 0, 0, 0 ]
+            },
+            "rotation": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 3,
+              "items": { "type": "number" },
+              "default": [ 0, 0, 0 ]
+            },
+
+            // fields
+            "entity": { "$ref": "#/definitions/entity" },
+            "steps": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 2,
+              "items": { "type": "number" },
+              "default": [ 1, 1 ]
+            },
+            "centered": {
+              "type": "boolean",
+              "default": false
+            },
+
+            // struct
+            "entities": {
+              "type": "array",
+              "description": "Entities within a struct that get placed multiple times on the map.",
+              "items": {
+                "type": "object",
+                "$ref": "#/definitions/entity"
+              }
+            },
+            "positions": {
+              "type": "array",
+              "description": "Placement of the struct entities.",
+              "items": {
+                "type": "array",
+                "items": { "type": "number" }
+              }
+            },
+
+            // door
+            "doorData": {
+              "type": "object",
+              "properties": {
+                "warpData": {
+                  "type": "object",
+                  "properties": {
+                    "map": {
+                      "type": "string"
+                    },
+                    "position": {
+                      "type": "array",
+                      "items": { "type": "number" },
+                      "maxItems": 3,
+                      "minItems": 1
+                    }
+                  }
+                },
+                "hidden": {
+                  "type": "boolean",
+                  "default": false
+                }
+              }
+            },
+            // script
+            "script": {
+              "type": "object",
+              "properties": {
+                "triggerType": {
+                  "type": "string",
+                  "enum": [ "interact", "collide" ]
+                },
+                "file": { "type": "string" }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+
+  "type": "object",
+  "required": [ "name", "worldOffset" ],
+
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The display name of the map."
+    },
+    "worldOffset": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 3,
+      "items": { "type": "number" }
+    },
+    "loadMaps": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "definitions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "#/definitions/entityDefinition"
+      }
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "#/definitions/entity"
+      }
+    }
+  }
+}

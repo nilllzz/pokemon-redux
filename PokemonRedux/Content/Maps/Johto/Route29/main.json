@@ -1,0 +1,1141 @@
+﻿{
+  "$schema": "../../map.schema.json?reload",
+  "name": "Route 29",
+  "worldOffset": [ 0, 0, 0 ],
+  "loadMaps": [
+    "Maps/Johto/Cherrygrove/main.json",
+    "Maps/Johto/Route46/main.json",
+    "Maps/Johto/NewBark/main.json"
+  ],
+  "definitions": [
+    {
+      "id": "grassFloor",
+      "type": "floor",
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/grass",
+      "tileTexture": true
+    },
+    {
+      "id": "pathFloor",
+      "type": "floor",
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/path",
+      "tileTexture": true
+    },
+    {
+      "id": "grassFloorProp",
+      "type": "prop",
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/grass",
+      "tileTexture": true
+    },
+    {
+      "id": "cliff",
+      "type": "prop",
+      "geometry": "walls",
+      "textureFile": "Johto/Outside/mountain",
+      "tileTexture": true
+    },
+    {
+      "id": "tree",
+      "type": "prop",
+      "geometry": "billboard",
+      "textureFile": "Johto/Outside/tree",
+      "size": [ 1, 2 ],
+      "isOpaque": false
+    },
+    {
+      "id": "bush",
+      "type": "prop",
+      "geometry": "billboard",
+      "textureFile": "Johto/Outside/bush",
+      "isOpaque": false
+    },
+    {
+      "id": "tallGrass",
+      "type": "prop",
+      "geometry": "billboard",
+      "textureFile": "Johto/Outside/tallGrass",
+      "size": [ 0.5, 0.5, 0.5 ],
+      "isOpaque": false,
+      "hasCollision": false,
+      "billboardTilt": 1.2
+    },
+    {
+      "id": "sign",
+      "type": "prop",
+      "geometry": "cube",
+      "textureFile": "Johto/Outside/sign",
+      "textures": [
+        [ 16, 0, 16, 14 ],
+        [ 0, 0, 16, 14 ],
+        [ 0, 17, 3, 14 ],
+        [ 0, 17, 3, 14 ],
+        [ 16, 0, 1, 1 ],
+        [ 0, 14, 16, 3 ]
+      ],
+      "size": [ 0.9, 0.7875, 0.16875 ],
+      "isOpaque": false
+    },
+    {
+      "id": "door",
+      "type": "door",
+      "geometry": "wall",
+      "textureFile": "Johto/Outside/door"
+    }
+  ],
+  "entities": [
+    // floors
+    {
+      "id": "grassFloor",
+      "position": [ 0, 0, 2 ],
+      "size": [ 8, 4 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 0, 0, 8 ],
+      "size": [ 6, 6 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 8, 0.5, 6 ],
+      "size": [ 6, 3 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 8, 0.5, 6 ],
+      "size": [ 6, 3 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 8, 0.5, 9 ],
+      "size": [ 3, 1 ]
+    },
+
+    {
+      "id": "grassFloor",
+      "position": [ 12, 0.5, 9 ],
+      "size": [ 2, 1 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 10, 1, 0 ],
+      "size": [ 1, 6 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 12, 1, 0 ],
+      "size": [ 4, 6 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 11, 1, 0 ],
+      "size": [ 1, 5 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 10, 0.5, 12 ],
+      "size": [ 4, 2 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 14, 0.5, 6 ],
+      "size": [ 8, 8 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 0, 0, 14 ],
+      "size": [ 22, 4 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 22, 0.5, 0 ],
+      "size": [ 10, 10 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 16, 0.5, 0 ],
+      "size": [ 6, 6 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 6, 0, 12 ],
+      "size": [ 4, 2 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 22, 0, 10 ],
+      "size": [ 6, 8 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 28, 0, 14 ],
+      "size": [ 2, 4 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 32, 0, 14 ],
+      "size": [ 4, 2 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 28, 0.5, 10 ],
+      "size": [ 3, 4 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 31, 0.5, 10 ],
+      "size": [ 1, 3 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 32, 0.5, 0 ],
+      "size": [ 12, 14 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 44, 0.5, 0 ],
+      "size": [ 8, 6 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 36, 0, 14 ],
+      "size": [ 8, 4 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 44, 0, 10 ],
+      "size": [ 16, 8 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 44, 0, 6 ],
+      "size": [ 16, 2 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 44, 0, 8 ],
+      "size": [ 6, 2 ]
+    },
+
+
+    {
+      "id": "pathFloor",
+      "position": [ 0, 0, 6 ],
+      "size": [ 8, 2 ]
+    },
+    {
+      "id": "pathFloor",
+      "position": [ 6, 0, 8 ],
+      "size": [ 2, 4 ]
+    },
+    {
+      "id": "pathFloor",
+      "position": [ 8, 0, 10 ],
+      "size": [ 4, 2 ]
+    },
+    {
+      "id": "pathFloor",
+      "position": [ 30, 0, 14 ],
+      "size": [ 2, 2 ]
+    },
+    {
+      "id": "pathFloor",
+      "position": [ 30, 0, 16 ],
+      "size": [ 6, 2 ]
+    },
+    {
+      "id": "pathFloor",
+      "position": [ 50, 0, 8 ],
+      "size": [ 10, 2 ]
+    },
+
+
+
+    // prop floors
+    {
+      "id": "grassFloorProp",
+      "position": [ 0, 0.5, 0 ],
+      "size": [ 10, 2 ]
+    },
+    {
+      "id": "grassFloorProp",
+      "position": [ 8, 0.5, 2 ],
+      "size": [ 2, 4 ]
+    },
+    {
+      "id": "grassFloorProp",
+      "position": [ 52, 0, 0 ],
+      "size": [ 8, 6 ]
+    },
+
+
+
+    // ramps
+    {
+      "type": "floor",
+      "position": [ 11, 0, 9 ],
+      "size": [ 1, 1 ],
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/grass",
+      "tileTexture": true,
+      "elevation": [ 0.5, 0.5, 0, 0 ]
+    },
+    {
+      "type": "floor",
+      "position": [ 11, 0.5, 5 ],
+      "size": [ 1, 1 ],
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/grass",
+      "tileTexture": true,
+      "elevation": [ 0.5, 0.5, 0, 0 ]
+    },
+    {
+      "type": "floor",
+      "position": [ 12, 0, 10 ],
+      "size": [ 2, 2 ],
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/grass",
+      "tileTexture": true,
+      "elevation": [ 0, 0.5, 0, 0.5 ]
+    },
+    {
+      "type": "floor",
+      "position": [ 31, 0, 13 ],
+      "size": [ 1, 1 ],
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/grass",
+      "tileTexture": true,
+      "elevation": [ 0.5, 0.5, 0, 0 ]
+    },
+
+    {
+      "type": "floor",
+      "position": [ 22, 0, 11 ],
+      "geometry": "ramp",
+      "textureFile": "Johto/Outside/ramp",
+      "textures": [
+        [ 0, 0, 16, 16 ],
+        [ 16, 0, 16, 8 ]
+      ],
+      "elevation": [ 0.5, 0, 0.5, 0 ]
+    },
+
+
+
+    // cliffs
+    {
+      "id": "cliff",
+      "position": [ 8, 0, 6 ],
+      "size": [ 3, 0.5, 4 ]
+    },
+    {
+      "id": "cliff",
+      "position": [ 8, 0, 2 ],
+      "size": [ 2, 0.5, 4 ]
+    },
+    {
+      "id": "cliff",
+      "position": [ 0, 0, 0 ],
+      "size": [ 8, 0.5, 2 ]
+    },
+    {
+      "id": "cliff",
+      "position": [ 12, 0, 9 ],
+      "size": [ 2, 0.5, 1 ]
+    },
+
+    {
+      "id": "cliff",
+      "position": [ 10, 0, 0 ],
+      "size": [ 1, 6 ]
+    },
+    {
+      "id": "cliff",
+      "position": [ 12, 0, 0 ],
+      "size": [ 4, 6 ]
+    },
+    {
+      "id": "cliff",
+      "position": [ 10, 0, 12 ],
+      "size": [ 12, 0.5, 2 ]
+    },
+    {
+      "id": "cliff",
+      "position": [ 22, 0, 9 ],
+      "size": [ 6, 0.5, 1 ]
+    },
+    {
+      "id": "cliff",
+      "position": [ 21, 0, 10 ],
+      "size": [ 1, 0.5, 1 ]
+    },
+    {
+      "id": "cliff",
+      "position": [ 28, 0, 10 ],
+      "size": [ 3, 0.5, 4 ]
+    },
+    {
+      "id": "cliff",
+      "position": [ 32, 0, 6 ],
+      "size": [ 12, 0.5, 8 ]
+    },
+    {
+      "id": "cliff",
+      "position": [ 44, 0, 0 ],
+      "size": [ 8, 0.5, 6 ]
+    },
+
+
+
+    // tall grass
+    {
+      "type": "field",
+      "position": [ 4, 0.22, 10 ],
+      "size": [ 4, 4 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "tallGrass"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 4, 0.22, 12 ],
+      "size": [ 12, 4 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "tallGrass"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 4, 0.22, 14 ],
+      "size": [ 8, 4 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "tallGrass"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 10, 0.72, 6 ],
+      "size": [ 16, 4 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "tallGrass"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 16, 0.72, 4 ],
+      "size": [ 8, 4 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "tallGrass"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 32, 0.72, 6 ],
+      "size": [ 12, 4 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "tallGrass"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 34, 0.72, 4 ],
+      "size": [ 4, 4 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "tallGrass"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 36, 0.72, 8 ],
+      "size": [ 4, 4 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "tallGrass"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 40, 0.72, 8 ],
+      "size": [ 4, 8 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "tallGrass"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 38, 0.72, 2 ],
+      "size": [ 16, 4 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "tallGrass"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 38, 0.72, 4 ],
+      "size": [ 12, 4 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "tallGrass"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 44, 0.22, 10 ],
+      "size": [ 8, 4 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "tallGrass"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 44, 0.22, 12 ],
+      "size": [ 20, 4 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "tallGrass"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 38, 0.22, 14 ],
+      "size": [ 20, 4 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "tallGrass"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 40, 0.22, 16 ],
+      "size": [ 8, 4 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "tallGrass"
+      }
+    },
+
+    // signs
+    {
+      "id": "sign",
+      "position": [ 51, 0, 7.5 ]
+    },
+    {
+      "id": "sign",
+      "position": [ 3, 0, 5.5 ]
+    },
+
+
+    // trees
+    {
+      "type": "field",
+      "position": [ 0, -0.333, 4 ],
+      "size": [ 2, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 0, 0.166, 0 ],
+      "size": [ 8, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 0, -0.333, 2 ],
+      "size": [ 8, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 8, 0.166, 0 ],
+      "size": [ 2, 6 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 14, 0.667, 0 ],
+      "size": [ 2, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 10, 0.166, 12 ],
+      "size": [ 2, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 16, 0.166, 0 ],
+      "size": [ 10, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 22, 0.166, 2 ],
+      "size": [ 2, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 0, -0.333, 8 ],
+      "size": [ 4, 8 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 0, -0.333, 16 ],
+      "size": [ 24, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 8, -0.333, 14 ],
+      "size": [ 6, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 30, 0.166, 0 ],
+      "size": [ 22, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 30, 0.166, 2 ],
+      "size": [ 8, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 32, 0.166, 4 ],
+      "size": [ 2, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 38, 0.166, 6 ],
+      "size": [ 2, 4 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 36, 0.166, 12 ],
+      "size": [ 2, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 34, -0.333, 14 ],
+      "size": [ 4, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 44, 0.166, 4 ],
+      "size": [ 8, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 50, 0.166, 2 ],
+      "size": [ 2, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 42, 0.166, 6 ],
+      "size": [ 2, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 52, -0.333, 0 ],
+      "size": [ 8, 6 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 54, -0.333, 6 ],
+      "size": [ 6, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 44, -0.333, 6 ],
+      "size": [ 2, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 54, -0.333, 10 ],
+      "size": [ 6, 4 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 48, -0.333, 14 ],
+      "size": [ 12, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 44, -0.333, 16 ],
+      "size": [ 16, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+
+
+
+    // bushes
+    {
+      "type": "field",
+      "position": [ 6, -0.222, 4 ],
+      "size": [ 2, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 7, -0.222, 5 ],
+      "size": [ 1, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 10, 0.778, 0 ],
+      "size": [ 4, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 10, 0.778, 1 ],
+      "size": [ 1, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 10, 0.778, 2 ],
+      "size": [ 1, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 12, 0.278, 12 ],
+      "size": [ 1, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 12, 0.278, 13 ],
+      "size": [ 2, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 17, 0.278, 11 ],
+      "size": [ 3, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 18, 0.278, 12 ],
+      "size": [ 4, 2 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 22, -0.222, 12 ],
+      "size": [ 1, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 22, -0.222, 10 ],
+      "size": [ 2, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 21, 0.278, 10 ],
+      "size": [ 1, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 14, 0.278, 9 ],
+      "size": [ 10, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 15, 0.278, 8 ],
+      "size": [ 8, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 18, 0.278, 7 ],
+      "size": [ 5, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 18, 0.278, 6 ],
+      "size": [ 3, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 20, 0.278, 5 ],
+      "size": [ 1, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 23, 0.278, 4 ],
+      "size": [ 1, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 19, 0.278, 2 ],
+      "size": [ 3, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 24, -0.222, 17 ],
+      "size": [ 2, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 28, 0.278, 9 ],
+      "size": [ 2, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 29, 0.278, 8 ],
+      "size": [ 1, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 30, 0.278, 4 ],
+      "size": [ 2, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 31, 0.278, 5 ],
+      "size": [ 1, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 31, 0.278, 9 ],
+      "size": [ 5, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 32, 0.278, 8 ],
+      "size": [ 4, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 34, 0.278, 13 ],
+      "size": [ 2, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 35, 0.278, 12 ],
+      "size": [ 1, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 49, 0.278, 2 ],
+      "size": [ 1, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 46, 0.278, 3 ],
+      "size": [ 4, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 46, -0.222, 6 ],
+      "size": [ 3, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 46, -0.222, 7 ],
+      "size": [ 1, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+
+    // gate
+    {
+      "type": "prop",
+      "position": [ 26, 0.5, 0 ],
+      "geometry": "walls",
+      "textureFile": "Johto/Route29/gate",
+      "textures": [
+        [ 0, 32, 64, 32 ],
+        [ 32, 32, 32, 32 ],
+        [ 0, 0, 0, 0 ],
+        [ 0, 32, 32, 32 ]
+      ],
+      "size": [ 4, 2, 2 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 26, 1.5, 1 ],
+      "geometry": "wall",
+      "textureFile": "Johto/Route29/gate",
+      "textures": [
+        [ 0, 0, 64, 16 ]
+      ],
+      "size": [ 4, 1, 1 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 26, 0.5, 1 ],
+      "geometry": "wall",
+      "textureFile": "Johto/Route29/gate",
+      "textures": [
+        [ 0, 16, 64, 16 ]
+      ],
+      "size": [ 4, 1, 1 ],
+      "isOpaque": false
+    },
+    {
+      "type": "prop",
+      "position": [ 26, 2.5, 0 ],
+      "geometry": "walls",
+      "textureFile": "Johto/Route29/gate",
+      "textures": [
+        [ 64, 0, 16, 4 ]
+      ],
+      "size": [ 4, 0.25, 2 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 26, 3.125, 1.5 ],
+      "geometry": "corner",
+      "textureFile": "Johto/Route29/gate",
+      "textures": [
+        [ 64, 4, 16, 7 ]
+      ],
+      "size": [ 0.5, 0.25, 0.5 ],
+      "rotation": [ 0, 1, 0 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 29.5, 3.125, 1.5 ],
+      "geometry": "corner",
+      "textureFile": "Johto/Route29/gate",
+      "textures": [
+        [ 64, 4, 16, 7 ]
+      ],
+      "size": [ 0.5, 0.25, 0.5 ],
+      "rotation": [ 0, 2, 0 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 26.5, 3, 1.5 ],
+      "geometry": "plane",
+      "textureFile": "Johto/Route29/gate",
+      "textures": [
+        [ 64, 4, 16, 7 ]
+      ],
+      "size": [ 3, 0.5, 0.5 ],
+      "elevation": [ 0.25, 0.25, 0, 0 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 29, 3, 0.5 ],
+      "geometry": "plane",
+      "textureFile": "Johto/Route29/gate",
+      "textures": [
+        [ 64, 4, 16, 7 ]
+      ],
+      "size": [ 1.5, 0.5, 0.5 ],
+      "elevation": [ 0.25, 0.25, 0, 0 ],
+      "rotation": [ 0, 1, 0 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 25.5, 3, 0.5 ],
+      "geometry": "plane",
+      "textureFile": "Johto/Route29/gate",
+      "textures": [
+        [ 64, 4, 16, 7 ]
+      ],
+      "size": [ 1.5, 0.5, 0.5 ],
+      "elevation": [ 0.25, 0.25, 0, 0 ],
+      "rotation": [ 0, 3, 0 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 26.5, 3, 0 ],
+      "geometry": "plane",
+      "textureFile": "Johto/Route29/gateRoof",
+      "tileTexture": true,
+      "size": [ 3, 1.5 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 27, 0.5, 1 ],
+      "geometry": "houseInside",
+      "textureFile": "Johto/Outside/houseInside"
+    },
+
+
+    // doors
+    {
+      "id": "door",
+      "position": [ 27, 0.5, 1 ],
+      "doorData": {
+        "warpData": {
+          "map": "Maps/Johto/Route46/main.json",
+          "position": [ 7, 0, 33 ]
+        }
+      }
+    }
+
+
+  ]
+}

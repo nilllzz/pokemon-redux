@@ -1,0 +1,1939 @@
+﻿[
+  {
+    "id": 1,
+    "newId": 226,
+    "name": "BULBASAUR"
+  },
+  {
+    "id": 2,
+    "newId": 227,
+    "name": "IVYSAUR"
+  },
+  {
+    "id": 3,
+    "newId": 228,
+    "name": "VENUSAUR"
+  },
+  {
+    "id": 4,
+    "newId": 229,
+    "name": "CHARMANDER"
+  },
+  {
+    "id": 5,
+    "newId": 230,
+    "name": "CHARMELEON"
+  },
+  {
+    "id": 6,
+    "newId": 231,
+    "name": "CHARIZARD"
+  },
+  {
+    "id": 7,
+    "newId": 232,
+    "name": "SQUIRTLE"
+  },
+  {
+    "id": 8,
+    "newId": 233,
+    "name": "WARTORTLE"
+  },
+  {
+    "id": 9,
+    "newId": 234,
+    "name": "BLASTOISE"
+  },
+  {
+    "id": 10,
+    "newId": 24,
+    "name": "CATERPIE",
+    "species": "WORM",
+    "height": 1.00,
+    "weigth": 6,
+    "text": "For protection, it\nreleases a horri-\nble stench from\n\nthe antenna on its\nhead to drive away\nenemies.",
+    "areas": [
+      "ROUTE 30",
+      "ROUTE 31",
+      "ILEX FOREST",
+      "NATIONAL PARK",
+      "ROUTE 2"
+    ]
+  },
+  {
+    "id": 11,
+    "newId": 25,
+    "name": "METAPOD",
+    "species": "COCOON",
+    "height": 2.04,
+    "weigth": 22,
+    "text": "Inside the shell,\nit is soft and\nweak as it pre-\n\npares to evolve.\nIt stays motion-\nless in the shell.",
+    "areas": [
+      "ROUTE 30",
+      "ROUTE 31",
+      "ILEX FOREST",
+      "NATIONAL PARK",
+      "ROUTE 2"
+    ]
+  },
+  {
+    "id": 12,
+    "newId": 26,
+    "name": "BUTTERFREE",
+    "species": "COCOON",
+    "height": 3.07,
+    "weigth": 71,
+    "text": "It collects honey\nevery day. It runs\nhoney onto the\n\nhairs on its legs\nto carry it back\nto its nest.",
+    "areas": [
+      "ROUTE 2"
+    ]
+  },
+  {
+    "id": 13,
+    "newId": 27,
+    "name": "WEEDLE",
+    "species": "HAIRY BUG",
+    "height": 1.00,
+    "weigth": 7,
+    "text": "It attacks using a\ntwo-inch poison\nbarb on its head.\n\nIt can usually be\nfound under the\nleaves it eats.",
+    "areas": [
+      "ROUTE 30",
+      "ROUTE 31",
+      "ILEX FOREST",
+      "NATIONAL PARK",
+      "ROUTE 2"
+    ]
+  },
+  {
+    "id": 14,
+    "newId": 28,
+    "name": "KAKUNA",
+    "species": "COCOON",
+    "height": 2.00,
+    "weigth": 22,
+    "text": "From this form,\nit will grow into\nan adult. As its\n\nbody becomes soft-\ner, the external\nshell hardens.",
+    "areas": [
+      "ROUTE 30",
+      "ROUTE 31",
+      "ILEX FOREST",
+      "NATIONAL PARK",
+      "ROUTE 2"
+    ]
+  },
+  {
+    "id": 15,
+    "newId": 29,
+    "name": "BEEDRILL",
+    "species": "POISON BEE",
+    "height": 3.03,
+    "weigth": 65,
+    "text": "It has three\npoison barbs.\nThe barb on its\n\ntail secretes the\nmost powerful\npoison.",
+    "areas": [
+      "ROUTE 2"
+    ]
+  },
+  {
+    "id": 16,
+    "newId": 10,
+    "name": "PIDGEY",
+    "species": "TINY BIRD",
+    "height": 1.00,
+    "weigth": 4,
+    "text": "It usually hides\nin tall grass. Be-\ncause it dislikes\n\nfighting, it pro-\ntects itself by\nkicking up sand.",
+    "areas": [
+      "ROUTE 29",
+      "ROUTE 30",
+      "ROUTE 31",
+      "ROUTE 35",
+      "ROUTE 36",
+      "ROUTE 37",
+      "ROUTE 2",
+      "ROUTE 3",
+      "ROUTE 25",
+      "ROUTE 5",
+      "ROUTE 6"
+    ]
+  },
+  {
+    "id": 17,
+    "newId": 11,
+    "name": "PIDGEOTTO",
+    "species": "BIRD",
+    "height": 3.07,
+    "weigth": 66,
+    "text": "It has outstanding\nvision. However\nhigh it flies, it\n\n is able to distin-\nguish the move-\nments of its prey.",
+    "areas": [
+      "ROUTE 36",
+      "ROUTE 43",
+      "ROUTE 2",
+      "ROUTE 25",
+      "ROUTE 8",
+      "ROUTE 13",
+      "ROUTE 14",
+      "ROUTE 15"
+    ]
+  },
+  {
+    "id": 18,
+    "newId": 12,
+    "name": "PIDGEOT",
+    "species": "BIRD",
+    "height": 4.11,
+    "weigth": 87,
+    "text": "Its well-developed\nchest muscles make\nit strong enough\n\nto whip up a gusty\nwindstorm with\njust a few flaps.",
+    "areas": []
+  },
+  {
+    "id": 19,
+    "newId": 17,
+    "name": "RATTATA",
+    "species": "RAT",
+    "height": 1.00,
+    "weigth": 8,
+    "text": "It eats anything.\nWherever food is\navailable, it will\n\nsettle down and\nproduce offspring\ncontinuously.",
+    "areas": [
+      "ROUTE 29",
+      "ROUTE 30",
+      "ROUTE 31",
+      "SPROUT TOWER",
+      "ROUTE 32",
+      "UNION CAVE",
+      "ROUTE 33",
+      "ROUTE 34",
+      "TIN TOWER",
+      "BURNED TOWER",
+      "ROUTE 38",
+      "ROUTE 39",
+      "MT.MORTAR",
+      "ROUTE 1",
+      "ROUTE 3",
+      "ROUTE 7",
+      "ROUTE 9",
+      "ROUTE 11",
+      "ROUTE 22",
+      "TOHJO FALLS"
+    ]
+  },
+  {
+    "id": 20,
+    "newId": 18,
+    "name": "RATICATE",
+    "species": "RAT",
+    "height": 2.04,
+    "weigth": 41,
+    "text": "Gnaws on anything\nwith its tough\nfangs. It can even\n\ntopple concrete\nbuildings by gnaw-\ning on them.",
+    "areas": [
+      "UNION CAVE",
+      "BURNED TOWER",
+      "ROUTE 38",
+      "ROUTE 39",
+      "MT.MORTAR",
+      "ROUTE 7",
+      "ROUTE 9",
+      "ROUTE 10",
+      "ROUTE 26",
+      "ROUTE 27",
+      "TOHJO FALLS"
+    ]
+  },
+  {
+    "id": 21,
+    "newId": 13,
+    "name": "SPEAROW",
+    "species": "TINY BIRD",
+    "height": 1.00,
+    "weigth": 4,
+    "text": "It flaps its short\nwings to flush out\ninsects from tall\n\ngrass. It then\nplucks them with\nits stubby beak.",
+    "areas": [
+      "ROUTE 33",
+      "ROUTE 42",
+      "ROUTE 46",
+      "ROUTE 3",
+      "ROUTE 4",
+      "ROUTE 7",
+      "ROUTE 9",
+      "ROUTE 10",
+      "ROUTE 22"
+    ]
+  },
+  {
+    "id": 22,
+    "newId": 14,
+    "name": "FEAROW",
+    "species": "BEAK",
+    "height": 3.11,
+    "weigth": 84,
+    "text": "It shoots itself\nsuddenly high into\nthe sky, then\n\nplummets down in\none fell swoop to\nstrike its prey.",
+    "areas": [
+      "ROUTE 9",
+      "ROUTE 10",
+      "ROUTE 16",
+      "ROUTE 17",
+      "ROUTE 18",
+      "ROUTE 22"
+    ]
+  },
+  {
+    "id": 23,
+    "newId": 50,
+    "name": "EKANS"
+  },
+  {
+    "id": 24,
+    "newId": 51,
+    "name": "ARBOK"
+  },
+  {
+    "id": 25,
+    "newId": 22,
+    "name": "PIKACHU",
+    "species": "MOUSE",
+    "height": 1.04,
+    "weigth": 13,
+    "text": "This intelligent\nPOKéMON roasts\nhard BERRIES with\n\nelectricity to\nmake them tender\nenough to eat.",
+    "areas": [
+      "ROUTE 2"
+    ]
+  },
+  {
+    "id": 26,
+    "newId": 23,
+    "name": "RAICHU"
+  },
+  {
+    "id": 27,
+    "newId": 48,
+    "name": "SANDSHREW"
+  },
+  {
+    "id": 28,
+    "newId": 49,
+    "name": "SANDSLASH"
+  },
+  {
+    "id": 29,
+    "newId": 95,
+    "name": "NIDORAN♀"
+  },
+  {
+    "id": 30,
+    "newId": 96,
+    "name": "NIDORINA"
+  },
+  {
+    "id": 31,
+    "newId": 97,
+    "name": "NIDOQUEEN"
+  },
+  {
+    "id": 32,
+    "newId": 98,
+    "name": "NIDORAN♂"
+  },
+  {
+    "id": 33,
+    "newId": 99,
+    "name": "NIDORINO"
+  },
+  {
+    "id": 34,
+    "newId": 100,
+    "name": "NIDOKING"
+  },
+  {
+    "id": 35,
+    "newId": 41,
+    "name": "CLEFAIRY"
+  },
+  {
+    "id": 36,
+    "newId": 42,
+    "name": "CLEFABLE"
+  },
+  {
+    "id": 37,
+    "newId": 125,
+    "name": "VULPIX"
+  },
+  {
+    "id": 38,
+    "newId": 126,
+    "name": "NINETALES"
+  },
+  {
+    "id": 39,
+    "newId": 44,
+    "name": "JIGGLYPUFF",
+    "species": "BALLOON",
+    "height": 1.08,
+    "weigth": 12,
+    "text": "If it inclates to\nSING a lullaby, it\ncan perform longer\n\nand cause sure\ndrowsiness in its\naudience.",
+    "areas": [
+      "ROUTE 46",
+      "ROUTE 3",
+      "ROUTE 4"
+    ]
+  },
+  {
+    "id": 40,
+    "newId": 45,
+    "name": "WIGGLYTUFF"
+  },
+  {
+    "id": 41,
+    "newid": 37,
+    "name": "ZUBAT",
+    "species": "BAT",
+    "height": 2.07,
+    "weigth": 17,
+    "text": "While flying, it\nconstantly emits\nultrasonic waves\n\nfrom its mouth to\ncheck its sur-\nroundings.",
+    "areas": [
+      "ROUTE 32",
+      "UNION CAVE",
+      "ROUTE 33",
+      "SLOWPOKE WELL",
+      "ILEX FOREST",
+      "BURNED TOWER",
+      "WHIRL ISLANDS",
+      "ROUTE 42",
+      "MT.MORTAR",
+      "ICE PATH",
+      "DARK CAVE",
+      "ROUTE 3",
+      "MT.MOON",
+      "ROUTE 4",
+      "ROCK TUNNEL",
+      "TOHJO FALLS"
+    ]
+  },
+  {
+    "id": 42,
+    "newId": 38,
+    "name": "GOLBAT",
+    "species": "BAT",
+    "height": 5.03,
+    "weigth": 121,
+    "text": "However hard its\nvictim^'s hide may\nbe, it punctures\n\nwith sharp fangs\nand gorges itself\nwith blood.",
+    "areas": [
+      "UNION CAVE",
+      "SLOWPOKE WELL",
+      "WHIRL ISLANDS",
+      "MT.MORTAR",
+      "ICE PATH",
+      "DARK CAVE",
+      "SILVER CAVE",
+      "VICTORY ROAD",
+      "TOHJO FALLS"
+    ]
+  },
+  {
+    "id": 43,
+    "newId": 83,
+    "name": "ODDISH"
+  },
+  {
+    "id": 44,
+    "newId": 84,
+    "name": "GLOOM"
+  },
+  {
+    "id": 45,
+    "newId": 85,
+    "name": "VILEPLUME"
+  },
+  {
+    "id": 46,
+    "newId": 70,
+    "name": "PARAS",
+    "species": "MUSHROOM",
+    "height": 1.00,
+    "weigth": 12,
+    "text": "It is doused with\nmushroom spores\nwhen it is born.\n\nAs its body grows,\nmushrooms sprout\nfrom its back.",
+    "areas": [
+      "ILEX FOREST",
+      "MT.MOON"
+    ]
+  },
+  {
+    "id": 47,
+    "newId": 71,
+    "name": "PARASECT"
+  },
+  {
+    "id": 48,
+    "newId": 108,
+    "name": "VENONAT"
+  },
+  {
+    "id": 49,
+    "newId": 109,
+    "name": "VENOMOTH"
+  },
+  {
+    "id": 50,
+    "newId": 132,
+    "name": "DIGLETT"
+  },
+  {
+    "id": 51,
+    "newId": 133,
+    "name": "DUGTRIO"
+  },
+  {
+    "id": 52,
+    "newId": 136,
+    "name": "MEOWTH"
+  },
+  {
+    "id": 53,
+    "newId": 137,
+    "name": "PERSIAN"
+  },
+  {
+    "id": 54,
+    "newId": 138,
+    "name": "PSYDUCK"
+  },
+  {
+    "id": 55,
+    "newId": 139,
+    "name": "GOLDUCK"
+  },
+  {
+    "id": 56,
+    "newId": 134,
+    "name": "MANKEY",
+    "species": "PIG MONKEY",
+    "height": 1.08,
+    "weigth": 62,
+    "text": "It is extremely\nill-tempered.\nGroups of them\n\nwill attack any\nhandy target for\nany reason.",
+    "areas": [
+      "ROUTE 42",
+      "ROUTE 9"
+    ]
+  },
+  {
+    "id": 57,
+    "newId": 135,
+    "name": "PRIMEAPE",
+    "species": "PIG MONKEY",
+    "height": 3.03,
+    "weigth": 71,
+    "text": "If approached\nwhile asleep, it\nmay awaken and\n\nangrily give chase\nin a groggy state\nof semi-sleep.",
+    "areas": [
+      "ROUTE 9"
+    ]
+  },
+  {
+    "id": 58,
+    "newId": 127,
+    "name": "GROWLITHE",
+    "species": "PUPPY",
+    "height": 2.04,
+    "weigth": 42,
+    "text": "It has a brave and\ntrustworthy na-\nture. It fear-\n\nlessly stands up\nto bigger and\nstronger foes.",
+    "areas": [
+      "ROUTE 36",
+      "ROUTE 37",
+      "ROUTE 7",
+      "ROUTE 8"
+    ]
+  },
+  {
+    "id": 59,
+    "newId": 128,
+    "name": "ARCANINE"
+  },
+  {
+    "id": 60,
+    "newId": 72,
+    "name": "POLIWAG",
+    "species": "TADPOLE",
+    "height": 2.00,
+    "weigth": 27,
+    "text": "Because it is in-\nept at walking on\nits newly grown\n\nlegs, it always\nswims around in\nwater.",
+    "areas": [
+      "ROUTE 30",
+      "ROUTE 31",
+      "VIOLET CITY",
+      "ECRUTEAK CITY",
+      "ROUTE 44",
+      "SILVER CAVE",
+      "VIRIDIAN CITY",
+      "ROUTE 22",
+      "ROUTE 28"
+    ]
+  },
+  {
+    "id": 61,
+    "newId": 73,
+    "name": "POLIWHIRL",
+    "species": "TADPOLE",
+    "height": 3.03,
+    "weigth": 44,
+    "text": "The swirl on its\nbelly subtly un-\ndulates. Staring\n\nat it may gradual-\nly cause drowsi-\nness.",
+    "areas": [
+      "ROUTE 30",
+      "ROUTE 31",
+      "VIOLET CITY",
+      "ECRUTEAK CITY",
+      "ROUTE 44",
+      "SILVER CAVE",
+      "VIRIDIAN CITY",
+      "ROUTE 22",
+      "ROUTE 28"
+    ]
+  },
+  {
+    "id": 62,
+    "newId": 74,
+    "name": "POLIWRATH"
+  },
+  {
+    "id": 63,
+    "newId": 89,
+    "name": "ABRA"
+  },
+  {
+    "id": 64,
+    "newId": 90,
+    "name": "KADABRA"
+  },
+  {
+    "id": 65,
+    "newId": 91,
+    "name": "ALAKAZAM"
+  },
+  {
+    "id": 66,
+    "newId": 140,
+    "name": "MACHOP"
+  },
+  {
+    "id": 67,
+    "newId": 141,
+    "name": "MACHOKE"
+  },
+  {
+    "id": 68,
+    "newId": 142,
+    "name": "MACHAMP"
+  },
+  {
+    "id": 69,
+    "newId": 64,
+    "name": "BELLSPROUT",
+    "species": "FLOWER",
+    "height": 2.04,
+    "weigth": 9,
+    "text": "Even though its\nbody is extremely\nskinny, it is\n\nblindingly fast\nwhen catching its\nprey.",
+    "areas": [
+      "ROUTE 31",
+      "ROUTE 32",
+      "ROUTE 44",
+      "ROUTE 24",
+      "ROUTE 25",
+      "ROUTE 5",
+      "ROUTE 6"
+    ]
+  },
+  {
+    "id": 70,
+    "newId": 65,
+    "name": "WEEPINBELL",
+    "species": "FLYCATCHER",
+    "height": 3.03,
+    "weigth": 14,
+    "text": "Even though it is\nfilled with ACID,\nit does not melt\n\nbecause it also\noozes a natural-\nizing fluid.",
+    "areas": [
+      "ROUTE 44",
+      "ROUTE 24",
+      "ROUTE 25"
+    ]
+  },
+  {
+    "id": 71,
+    "newId": 66,
+    "name": "VICTREEBEL"
+  },
+  {
+    "id": 72,
+    "newId": 162,
+    "name": "TENTACOOL",
+    "species": "JELLYFISH",
+    "height": 2.11,
+    "weigth": 100,
+    "text": "When the tide goes\nout, dehydrated\nTENTACOOL remains\n\ncan be found\nwashed up on the\nshore.",
+    "areas": [
+      "NEW BARK TOWN",
+      "CHERRYGROVE CITY",
+      "ROUTE 32",
+      "UNION CAVE",
+      "ROUTE 34",
+      "OLIVINE CITY",
+      "ROUTE 40",
+      "WHIRL ISLANDS",
+      "ROUTE 41",
+      "CIANWOOD CITY",
+      "PALLET TOWN",
+      "VERMILLION CITY",
+      "ROUTE 12",
+      "ROUTE 13",
+      "ROUTE 19",
+      "ROUTE 20",
+      "CINNABAR ISLAND",
+      "ROUTE 21",
+      "ROUTE 26",
+      "ROUTE 27"
+    ]
+  },
+  {
+    "id": 73,
+    "newId": 163,
+    "name": "TENTACRUEL",
+    "species": "JELLYFISH",
+    "height": 5.03,
+    "weigth": 121,
+    "text": "Its 80 tentacles\nabsorb water and\nstretch almost\n\nendlessly to CON-\nSTRICT its prey\nand enemies.",
+    "areas": [
+      "NEW BARK TOWN",
+      "CHERRYGROVE CITY",
+      "ROUTE 32",
+      "UNION CAVE",
+      "ROUTE 34",
+      "OLIVINE CITY",
+      "ROUTE 40",
+      "WHIRL ISLANDS",
+      "ROUTE 41",
+      "CIANWOOD CITY",
+      "PALLET TOWN",
+      "VERMILLION CITY",
+      "ROUTE 12",
+      "ROUTE 13",
+      "ROUTE 19",
+      "ROUTE 20",
+      "CINNABAR ISLAND",
+      "ROUTE 21",
+      "ROUTE 26",
+      "ROUTE 27"
+    ]
+  },
+  {
+    "id": 74,
+    "newId": 34,
+    "name": "GEODUDE",
+    "species": "ROCK",
+    "height": 1.04,
+    "weigth": 44,
+    "text": "Most people may\nnot notice, but\n a closer look\n\nshould reveal that\nthere are many\nGEODUDE around.",
+    "areas": [
+      "UNION CAVE",
+      "MT.MORTAR",
+      "ROUTE 45",
+      "ROUTE 46",
+      "DARK CAVE",
+      "MT.MOON",
+      "ROCK TUNNEL"
+    ]
+  },
+  {
+    "id": 75,
+    "newId": 35,
+    "name": "GRAVELER",
+    "species": "ROCK",
+    "height": 3.03,
+    "weigth": 232,
+    "text": "With a free and\nuncaring nature,\nit doesn^'t mind if\n\npieces break off\nwhile it rolls\ndown mountains.",
+    "areas": [
+      "MT.MORTAR",
+      "ROUTE 45",
+      "DARK CAVE",
+      "SILVER CAVE",
+      "VICTORY ROAD"
+    ]
+  },
+  {
+    "id": 76,
+    "newId": 36,
+    "name": "GOLEM"
+  },
+  {
+    "id": 77,
+    "newId": 201,
+    "name": "PONYTA"
+  },
+  {
+    "id": 78,
+    "newId": 202,
+    "name": "RAPIDASH"
+  },
+  {
+    "id": 79,
+    "newId": 80,
+    "name": "SLOWPOKE"
+  },
+  {
+    "id": 80,
+    "newId": 81,
+    "name": "SLOWBRO"
+  },
+  {
+    "id": 81,
+    "newId": 118,
+    "name": "MAGNEMITE"
+  },
+  {
+    "id": 82,
+    "newId": 119,
+    "name": "MAGNETON"
+  },
+  {
+    "id": 83,
+    "newId": 158,
+    "name": "FARFETCH'D"
+  },
+  {
+    "id": 84,
+    "newId": 199,
+    "name": "DODUO"
+  },
+  {
+    "id": 85,
+    "newId": 200,
+    "name": "DODRIO"
+  },
+  {
+    "id": 86,
+    "newId": 176,
+    "name": "SEEL"
+  },
+  {
+    "id": 87,
+    "newId": 177,
+    "name": "DEWGONG"
+  },
+  {
+    "id": 88,
+    "newId": 116,
+    "name": "GRIMER"
+  },
+  {
+    "id": 89,
+    "newId": 117,
+    "name": "MUK"
+  },
+  {
+    "id": 90,
+    "newId": 169,
+    "name": "SHELLDER"
+  },
+  {
+    "id": 91,
+    "newId": 170,
+    "name": "CLOYSTER"
+  },
+  {
+    "id": 92,
+    "newId": 58,
+    "name": "GASTLY",
+    "species": "GAS",
+    "height": 4.03,
+    "weigth": 0.2,
+    "text": "With its gas-like\nbody, it can sneak\ninto any place it\n\ndesires. However,\nit can be blown\naway by wind.",
+    "areas": [
+      "TIN TOWER",
+      "SPROUT TOWER"
+    ]
+  },
+  {
+    "id": 93,
+    "newId": 59,
+    "name": "HAUNTER",
+    "species": "GAS",
+    "height": 5.03,
+    "weigth": 0.2,
+    "text": "In total darkness,\nwhere nothing is\nvisible, HAUNTER\n\nlurks, silently\nstalking its next\nvictim.",
+    "areas": [
+      "ROUTE 8"
+    ]
+  },
+  {
+    "id": 94,
+    "newId": 60,
+    "name": "GENGAR"
+  },
+  {
+    "id": 95,
+    "newId": 62,
+    "name": "ONIX",
+    "species": "ROCK SNAKE",
+    "height": 28.10,
+    "weigth": 463,
+    "text": "It twists and\nsquirms through\nthe ground. The\n\nthunderous roar of\nits tunneling\nechoes a long way.",
+    "areas": [
+      "UNION CAVE",
+      "SILVER CAVE",
+      "ROCK TUNNEL",
+      "VICTORY ROAD"
+    ]
+  },
+  {
+    "id": 96,
+    "newId": 87,
+    "name": "DROWZEE"
+  },
+  {
+    "id": 97,
+    "newId": 88,
+    "name": "HYPNO"
+  },
+  {
+    "id": 98,
+    "newId": 164,
+    "name": "KRABBY"
+  },
+  {
+    "id": 99,
+    "newId": 165,
+    "name": "KINGLER"
+  },
+  {
+    "id": 100,
+    "newId": 120,
+    "name": "VOLTORB"
+  },
+  {
+    "id": 101,
+    "newId": 121,
+    "name": "ELECTRODE",
+    "species": "BALL",
+    "height": 3.11,
+    "weigth": 147,
+    "text": "It is dangerous.\nIf it has too much\nelectricity and\n\nhas nothing to do,\nit amuses itself\nby exploding.",
+    "areas": []
+  },
+  {
+    "id": 102,
+    "newId": 104,
+    "name": "EXEGGCUTE",
+    "species": "EGG",
+    "height": 1.04,
+    "weigth": 6,
+    "text": "The shell is very\ndurable. Even if\nit cracks, it can\n\nsurvive without\nspilling the\ncontents.",
+    "areas": []
+  },
+  {
+    "id": 103,
+    "newId": 105,
+    "name": "EXEGGUTOR"
+  },
+  {
+    "id": 104,
+    "newId": 203,
+    "name": "CUBONE"
+  },
+  {
+    "id": 105,
+    "newId": 204,
+    "name": "MAROWAK"
+  },
+  {
+    "id": 106,
+    "newId": 144,
+    "name": "HITMONLEE"
+  },
+  {
+    "id": 107,
+    "newId": 145,
+    "name": "HITMONCHAN"
+  },
+  {
+    "id": 108,
+    "newId": 178,
+    "name": "LICKITUNG"
+  },
+  {
+    "id": 109,
+    "newId": 114,
+    "name": "KOFFING"
+  },
+  {
+    "id": 110,
+    "newId": 115,
+    "name": "WEEZING"
+  },
+  {
+    "id": 111,
+    "newId": 206,
+    "name": "RHYHORN"
+  },
+  {
+    "id": 112,
+    "newId": 207,
+    "name": "RHYDON"
+  },
+  {
+    "id": 113,
+    "newId": 217,
+    "name": "CHANSEY"
+  },
+  {
+    "id": 114,
+    "newId": 179,
+    "name": "TANGELA"
+  },
+  {
+    "id": 115,
+    "newId": 205,
+    "name": "KANGASKHAN"
+  },
+  {
+    "id": 116,
+    "newId": 186,
+    "name": "HORSEA"
+  },
+  {
+    "id": 117,
+    "newId": 187,
+    "name": "SEADRA"
+  },
+  {
+    "id": 118,
+    "newId": 78,
+    "name": "GOLDEEN"
+  },
+  {
+    "id": 119,
+    "newId": 79,
+    "name": "SEAKING"
+  },
+  {
+    "id": 120,
+    "newId": 167,
+    "name": "STARYU"
+  },
+  {
+    "id": 121,
+    "newId": 168,
+    "name": "STARMIE"
+  },
+  {
+    "id": 122,
+    "newId": 156,
+    "name": "MR. MIME"
+  },
+  {
+    "id": 123,
+    "newId": 110,
+    "name": "SCYTHER"
+  },
+  {
+    "id": 124,
+    "newId": 153,
+    "name": "JYNX"
+  },
+  {
+    "id": 125,
+    "newId": 155,
+    "name": "ELECTABUZZ"
+  },
+  {
+    "id": 126,
+    "newId": 151,
+    "name": "MAGMAR"
+  },
+  {
+    "id": 127,
+    "newId": 112,
+    "name": "PINSIR"
+  },
+  {
+    "id": 128,
+    "newId": 148,
+    "name": "TAUROS"
+  },
+  {
+    "id": 129,
+    "newId": 76,
+    "name": "MAGIKARP"
+  },
+  {
+    "id": 130,
+    "newId": 77,
+    "name": "GYARADOS"
+  },
+  {
+    "id": 131,
+    "newId": 219,
+    "name": "LAPRAS"
+  },
+  {
+    "id": 132,
+    "newId": 92,
+    "name": "DITTO"
+  },
+  {
+    "id": 133,
+    "newId": 180,
+    "name": "EEVEE"
+  },
+  {
+    "id": 134,
+    "newId": 181,
+    "name": "VAPOREON"
+  },
+  {
+    "id": 135,
+    "newId": 182,
+    "name": "JOLTEON"
+  },
+  {
+    "id": 136,
+    "newId": 183,
+    "name": "FLAREON"
+  },
+  {
+    "id": 137,
+    "newId": 215,
+    "name": "PORYGON"
+  },
+  {
+    "id": 138,
+    "newId": 220,
+    "name": "OMANYTE"
+  },
+  {
+    "id": 139,
+    "newId": 221,
+    "name": "OMASTAR"
+  },
+  {
+    "id": 140,
+    "newId": 222,
+    "name": "KABUTO"
+  },
+  {
+    "id": 141,
+    "newId": 223,
+    "name": "KABUTOPS"
+  },
+  {
+    "id": 142,
+    "newId": 224,
+    "name": "AERODACTYL"
+  },
+  {
+    "id": 143,
+    "newId": 225,
+    "name": "SNORLAX",
+    "species": "SLEEPING",
+    "height": 6.11,
+    "weigth": 1014,
+    "text": "What sounds like\nits cry may ac-\ntually be its\n\nsnores or the\nrumblings of its\nhungry belly.",
+    "areas": []
+  },
+  {
+    "id": 144,
+    "newId": 235,
+    "name": "ARTICUNO"
+  },
+  {
+    "id": 145,
+    "newId": 236,
+    "name": "ZAPDOS"
+  },
+  {
+    "id": 146,
+    "newId": 237,
+    "name": "MOLTRES"
+  },
+  {
+    "id": 147,
+    "newId": 241,
+    "name": "DRATINI"
+  },
+  {
+    "id": 148,
+    "newId": 242,
+    "name": "DRAGONAIR"
+  },
+  {
+    "id": 149,
+    "newId": 243,
+    "name": "DRAGONITE"
+  },
+  {
+    "id": 150,
+    "newId": 249,
+    "name": "MEWTWO"
+  },
+  {
+    "id": 151,
+    "newId": 250,
+    "name": "MEW"
+  },
+  {
+    "id": 152,
+    "newId": 1,
+    "name": "CHIKORITA",
+    "species": "LEAF",
+    "height": 2.11,
+    "weigth": 14,
+    "text": "A sweet aroma\ngently wafts from\nthe leaf on its\n\nhead. It is docile\nand loves to soak\nup the sun^'s rays.",
+    "areas": []
+  },
+  {
+    "id": 153,
+    "newId": 2,
+    "name": "BAYLEEF"
+  },
+  {
+    "id": 154,
+    "newId": 3,
+    "name": "MEGANIUM"
+  },
+  {
+    "id": 155,
+    "newId": 4,
+    "name": "CYNDAQUIL",
+    "species": "FIRE MOUSE",
+    "height": 1.08,
+    "weigth": 17,
+    "text": "It is timid, and\nalways curls it-\nself up in a ball.\n\nIf attacked, it\nflares up its back\nfor protection.",
+    "areas": []
+  },
+  {
+    "id": 156,
+    "newId": 5,
+    "name": "QUILAVA",
+    "species": "VOLCANO",
+    "height": 2.11,
+    "weigth": 42,
+    "text": "This POKéMON is\nfully covered by\nnonflammable fur.\n\nIt can withstand\nany kind of fire\nattack.",
+    "areas": []
+  },
+  {
+    "id": 157,
+    "newId": 6,
+    "name": "TYPHLOSION",
+    "species": "VOLCANO",
+    "height": 5.07,
+    "weigth": 175,
+    "text": "It has a secret,\ndevastating move.\nIt rubs its blaz-\n\ning fur together\nto cause huge\nexplosions.",
+    "areas": []
+  },
+  {
+    "id": 158,
+    "newId": 7,
+    "name": "TOTODILE",
+    "species": "BIG JAW",
+    "height": 2,
+    "weigth": 21,
+    "text": "Its well-developed\njaws are powerful\nand capable of\n\ncrushing anything.\nEven its trainer\nmust be careful.",
+    "areas": []
+  },
+  {
+    "id": 159,
+    "newId": 8,
+    "name": "CROCONAW",
+    "species": "BIG JAW",
+    "height": 3.07,
+    "weigth": 55,
+    "text": "If it loses a\nfang, a new one\ngrows back in its\n\nplace. There are\nalways 48 fangs\nlining its mouth.",
+    "areas": []
+  },
+  {
+    "id": 160,
+    "newId": 9,
+    "name": "FERALIGATR",
+    "species": "BIG JAW",
+    "height": 7.07,
+    "weigth": 196,
+    "text": "When it bites with\nits massive and\npowerful jaws, it\n\nshakes its head\nand savagely tears\nits victim up.",
+    "areas": []
+  },
+  {
+    "id": 161,
+    "newId": 19,
+    "name": "SENTRET",
+    "species": "SCOUT",
+    "height": 2.07,
+    "weigth": 13,
+    "text": "A very cautious\nPOKéMON, it raises\nitself up using\n\nits tail to get a\nbetter view of its\nsurroundings.",
+    "areas": [
+      "ROUTE 29",
+      "ROUTE 2"
+    ]
+  },
+  {
+    "id": 162,
+    "newId": 20,
+    "name": "FURRET",
+    "species": "LONG BODY",
+    "height": 5.11,
+    "weigth": 72,
+    "text": "It makes a nest to\nsuit its long and\nskinny body. The\n\nnest is impossible\nfor other POKéMON\nto enter.",
+    "areas": [
+      "ROUTE 2"
+    ]
+  },
+  {
+    "id": 163,
+    "newId": 15,
+    "name": "HOOTHOOT",
+    "species": "OWL",
+    "height": 2.04,
+    "weigth": 47,
+    "text": "It always stands\non one foot. It\nchanges feet so\n\nfast, the movement\ncan rarely be\nseen.",
+    "areas": [
+      "ROUTE 29",
+      "ROUTE 30",
+      "ROUTE 31",
+      "ROUTE 35",
+      "NATIONAL PARK",
+      "ROUTE 36",
+      "ROUTE 37",
+      "ROUTE 1",
+      "ROUTE 2"
+    ]
+  },
+  {
+    "id": 164,
+    "newId": 16,
+    "name": "NOCTOWL",
+    "species": "OWL",
+    "height": 5.03,
+    "weigth": 90,
+    "text": "Its eyes are\nspecially adapted.\nThey concentrate\n\neven faint light\nand enable it to\nsee in the dark.",
+    "areas": [
+      "ROUTE 43",
+      "ROUTE 2",
+      "ROUTE 8",
+      "ROUTE 13",
+      "ROUTE 14",
+      "ROUTE 15"
+    ]
+  },
+  {
+    "id": 165,
+    "newId": 30,
+    "name": "LEDYBA",
+    "species": "FIVE STAR",
+    "height": 3.03,
+    "weigth": 24,
+    "text": "When the weather\nturns cold, lots\nof LEDYBA gather\n\nfrom everywhere to\ncluster and keep\neach other warm.",
+    "areas": [
+      "ROUTE 30",
+      "ROUTE 31",
+      "ROUTE 37",
+      "ROUTE 2"
+    ]
+  },
+  {
+    "id": 166,
+    "newId": 31,
+    "name": "LEDIAN",
+    "species": "FIVE STAR",
+    "height": 4.07,
+    "weigth": 78,
+    "text": "The star patterns\non its back grow\nlarger or smaller\n\ndepending on the\nnumber of stars in\nthe night sky.",
+    "areas": [
+      "ROUTE 2"
+    ]
+  },
+  {
+    "id": 167,
+    "newId": 32,
+    "name": "SPINARAK",
+    "species": "STRINGSPIT",
+    "height": 1.08,
+    "weigth": 19,
+    "text": "It lies still in\nthe same post for\ndays in its web,\n\nwaiting for its\nunsuspecting prey\nto wander close.",
+    "areas": [
+      "ROUTE 30",
+      "ROUTE 31",
+      "ROUTE 37",
+      "ROUTE 2"
+    ]
+  },
+  {
+    "id": 168,
+    "newId": 33,
+    "name": "ARIADOS",
+    "species": "LONG LEG",
+    "height": 3.07,
+    "weigth": 74,
+    "text": "It spins string\nnot only from its\nrear but also from\n\nits mouth. It is\nhard to tell which\nend is which.",
+    "areas": [
+      "ROUTE 2"
+    ]
+  },
+  {
+    "id": 169,
+    "newId": 39,
+    "name": "CROBAT",
+    "species": "BAT",
+    "height": 5.11,
+    "weigth": 165,
+    "text": "It flies so si-\nlently through the\ndark on its four\n\nwings that it may\nnot be noticed\neven when nearby.",
+    "areas": []
+  },
+  {
+    "id": 170,
+    "newId": 174,
+    "name": "CHINCHOU"
+  },
+  {
+    "id": 171,
+    "newId": 175,
+    "name": "LANTURN"
+  },
+  {
+    "id": 172,
+    "newId": 21,
+    "name": "PICHU"
+  },
+  {
+    "id": 173,
+    "newId": 40,
+    "name": "CLEFFA"
+  },
+  {
+    "id": 174,
+    "newId": 43,
+    "name": "IGGLYBUFF"
+  },
+  {
+    "id": 175,
+    "newId": 46,
+    "name": "TOGEPI",
+    "species": "SPIKE BALL",
+    "height": 1.00,
+    "weigth": 3,
+    "text": "The shell seems to\nbe filled with\njoy. It is said\n\nthat it will share\ngood luck when\ntreated kindly.",
+    "areas": []
+  },
+  {
+    "id": 176,
+    "newId": 47,
+    "name": "TOGETIC"
+  },
+  {
+    "id": 177,
+    "newId": 159,
+    "name": "NATU"
+  },
+  {
+    "id": 178,
+    "newId": 160,
+    "name": "XATU"
+  },
+  {
+    "id": 179,
+    "newId": 53,
+    "name": "MAREEP",
+    "species": "WOOL",
+    "height": 2.00,
+    "weigth": 17,
+    "text": "If static elec-\ntricity builds in\nits body, its\n\nfleece doubles in\nvolume. Touching\nit will shock you.",
+    "areas": [
+      "ROUTE 32",
+      "ROUTE 42",
+      "ROUTE 43"
+    ]
+  },
+  {
+    "id": 180,
+    "newId": 54,
+    "name": "FLAAFFY",
+    "species": "WOOL",
+    "height": 2.07,
+    "weigth": 29,
+    "text": "As a result of\nstoring too much\nelectricity, it\n\ndeveloped patches\nwhere even downy\nwool won't grow.",
+    "areas": [
+      "ROUTE 42",
+      "ROUTE 43"
+    ]
+  },
+  {
+    "id": 181,
+    "newId": 55,
+    "name": "AMPHAROS",
+    "species": "LIGHT",
+    "height": 4.07,
+    "weigth": 136,
+    "text": "The tail^'s tip\nshines brightly\nand can be seen\n\nfrom far away. It\nacts as a beacon\nfor lost people.",
+    "areas": []
+  },
+  {
+    "id": 182,
+    "newId": 86,
+    "name": "BELLOSSOM"
+  },
+  {
+    "id": 183,
+    "newId": 130,
+    "name": "MARILL",
+    "species": "AQUAMOUSE",
+    "height": 1.04,
+    "weigth": 19,
+    "text": "The tip of its\ntail, which con-\ntains oil that is\n\nlighter than wa-\nter, lets it swim\nwithout drowning.",
+    "areas": [
+      "MT.MORTAR"
+    ]
+  },
+  {
+    "id": 184,
+    "newId": 131,
+    "name": "AZUMARILL"
+  },
+  {
+    "id": 185,
+    "newId": 106,
+    "name": "SUDOWOODO",
+    "species": "IMITATION",
+    "height": 3.11,
+    "weigth": 84,
+    "text": "Although it always\npretends to be a\ntree, its composi-\n\ntion appears to be\ncloser to a rock\nthan a plant.",
+    "areas": []
+  },
+  {
+    "id": 186,
+    "newId": 75,
+    "name": "POLITOED"
+  },
+  {
+    "id": 187,
+    "newId": 67,
+    "name": "HOPPIP",
+    "species": "COTTONWEED",
+    "height": 1.04,
+    "weigth": 1,
+    "text": "To keep from being\nblown away by the\nwind, they gather\n\nin clusters. They\ndo enjoy gentle\nbreezes, though.",
+    "areas": [
+      "ROUTE 32",
+      "ROUTE 33",
+      "ROUTE 13",
+      "ROUTE 14",
+      "ROUTE 15"
+    ]
+  },
+  {
+    "id": 188,
+    "newId": 68,
+    "name": "SKIPLOOM",
+    "species": "COTTONWEED",
+    "height": 2.00,
+    "weigth": 2,
+    "text": "The bloom on top\nof its head opens\nand closes as the\n\ntemperature fluc-\ntuates up and\ndown.",
+    "areas": [
+      "ROUTE 14"
+    ]
+  },
+  {
+    "id": 189,
+    "newId": 69,
+    "name": "JUMPLUFF",
+    "species": "COTTONWEED",
+    "height": 2.07,
+    "weigth": 7,
+    "text": "Once it catches\nthe wind, it deft-\nly controls its\n\ncotton-puff spores\nto float, even\naround the world.",
+    "areas": []
+  },
+  {
+    "id": 190,
+    "newId": 122,
+    "name": "AIPOM",
+    "species": "LONG TAIL",
+    "height": 2.07,
+    "weigth": 25,
+    "text": "Its tail is so\npowerful that it\ncan use it to grab\n\na tree branch and\nhold itself up in\nthe air.",
+    "areas": []
+  },
+  {
+    "id": 191,
+    "newId": 102,
+    "name": "SUNKERN"
+  },
+  {
+    "id": 192,
+    "newId": 103,
+    "name": "SUNFLORA"
+  },
+  {
+    "id": 193,
+    "newId": 101,
+    "name": "YANMA"
+  },
+  {
+    "id": 194,
+    "newId": 56,
+    "name": "WOOPER"
+  },
+  {
+    "id": 195,
+    "newId": 57,
+    "name": "QUAGSIRE"
+  },
+  {
+    "id": 196,
+    "newId": 184,
+    "name": "ESPEON"
+  },
+  {
+    "id": 197,
+    "newId": 185,
+    "name": "UMBREON"
+  },
+  {
+    "id": 198,
+    "newId": 208,
+    "name": "MURKROW"
+  },
+  {
+    "id": 199,
+    "newId": 82,
+    "name": "SLOWKING"
+  },
+  {
+    "id": 200,
+    "newId": 214,
+    "name": "MISDREAVUS"
+  },
+  {
+    "id": 201,
+    "newId": 61,
+    "name": "UNOWN",
+    "species": "SYMBOL",
+    "height": 1.08,
+    "weigth": 11,
+    "text": "Their shapes look\nlike hieroglyphs\non ancient tab-\n\nlets. It is said\nthat the two are\nsomehow related.",
+    "areas": [
+      "RUINS OF ALPH"
+    ]
+  },
+  {
+    "id": 202,
+    "newId": 107,
+    "name": "WOBBUFFET",
+    "species": "PATIENT",
+    "height": 4.03,
+    "weigth": 63,
+    "text": "It hates light and\nshock. If attack-\ned, it inflates\n\nits body to pump\nup its counter-\nstrike.",
+    "areas": [
+      "DARK CAVE"
+    ]
+  },
+  {
+    "id": 203,
+    "newId": 147,
+    "name": "GIRAFARIG"
+  },
+  {
+    "id": 204,
+    "newId": 93,
+    "name": "PINECO",
+    "species": "BAGWORM",
+    "height": 2.00,
+    "weigth": 16,
+    "text": "It likes to make\nits shell thicker\nby adding layers\n\nof tree bark. The\nadditional weight\ndoesn^'s bother it.",
+    "areas": []
+  },
+  {
+    "id": 205,
+    "newId": 94,
+    "name": "FORRETRESS",
+    "species": "BAGWORM",
+    "height": 3.11,
+    "weigth": 277,
+    "text": "Its entire body is\nshielded by a\nsteel-hard shell.\n\nWhat lurks inside\nthe armor is a\ntotal mystery.",
+    "areas": []
+  },
+  {
+    "id": 206,
+    "newId": 52,
+    "name": "DUNSPARCE",
+    "species": "LAND SNAKE",
+    "height": 4.11,
+    "weigth": 31,
+    "text": "When spotted, this\nPOKéMON escapes\nbackwards by furi-\n\nously boring into\nthe ground with\nits tail.",
+    "areas": [
+      "DARK CAVE"
+    ]
+  },
+  {
+    "id": 207,
+    "newId": 189,
+    "name": "GLIGAR"
+  },
+  {
+    "id": 208,
+    "newId": 63,
+    "name": "STEELIX"
+  },
+  {
+    "id": 209,
+    "newId": 123,
+    "name": "SNUBBULL"
+  },
+  {
+    "id": 210,
+    "newId": 124,
+    "name": "GRANBULL"
+  },
+  {
+    "id": 211,
+    "newId": 161,
+    "name": "QWILFISH"
+  },
+  {
+    "id": 212,
+    "newId": 111,
+    "name": "SCIZOR"
+  },
+  {
+    "id": 213,
+    "newId": 166,
+    "name": "SHUCKLE",
+    "species": "MOLD",
+    "height": 2.00,
+    "weigth": 45,
+    "text": "The BERRIES it\nstores in its\nvase-like shell\n\ndecompose and\nbecome a gooey\nliquid.",
+    "areas": []
+  },
+  {
+    "id": 214,
+    "newId": 113,
+    "name": "HERACROSS",
+    "species": "SINGLEHORN",
+    "height": 4.11,
+    "weigth": 119,
+    "text": "This powerful\nPOKéMON thrusts\nits prized horn\n\nunder its enemies'\nbellies then lifts\nand throws them.",
+    "areas": []
+  },
+  {
+    "id": 215,
+    "newId": 213,
+    "name": "SNEASEL"
+  },
+  {
+    "id": 216,
+    "newId": 193,
+    "name": "TEDDIURSA",
+    "species": "LITTLEBEAR",
+    "height": 2.00,
+    "weigth": 19,
+    "text": "If it finds honey,\nits crescent mark\nglows. It always\n\nlicks its paws\nbecause they are\nsoaked with honey.",
+    "areas": [
+      "ROUTE 45"
+    ]
+  },
+  {
+    "id": 217,
+    "newId": 194,
+    "name": "URSARING",
+    "species": "HIBERNANT",
+    "height": 5.11,
+    "weigth": 277,
+    "text": "Although it is a\ngood climber, it\nprefers to snap\n\ntrees with its\nforelegs and eat\nfallen BERRIES.",
+    "areas": [
+      "SILVER CAVE",
+      "VICTORY ROAD",
+      "ROUTE 28"
+    ]
+  },
+  {
+    "id": 218,
+    "newId": 211,
+    "name": "SLUGMA"
+  },
+  {
+    "id": 219,
+    "newId": 212,
+    "name": "MAGCARGO"
+  },
+  {
+    "id": 220,
+    "newId": 191,
+    "name": "SWINUB",
+    "species": "PIG",
+    "height": 1.04,
+    "weigth": 14,
+    "text": "It rubs its snout\non the ground to\nfind and dig up\n\nfood. It sometimes\ndiscovers hot\nsprings.",
+    "areas": [
+      "ICE PATH"
+    ]
+  },
+  {
+    "id": 221,
+    "newId": 192,
+    "name": "PILOSWINE"
+  },
+  {
+    "id": 222,
+    "newId": 171,
+    "name": "CORSOLA"
+  },
+  {
+    "id": 223,
+    "newId": 172,
+    "name": "REMORAID"
+  },
+  {
+    "id": 224,
+    "newId": 173,
+    "name": "OCTILLERY"
+  },
+  {
+    "id": 225,
+    "newId": 190,
+    "name": "DELIBIRD"
+  },
+  {
+    "id": 226,
+    "newId": 197,
+    "name": "MANTINE"
+  },
+  {
+    "id": 227,
+    "newId": 198,
+    "name": "SKARMORY"
+  },
+  {
+    "id": 228,
+    "newId": 209,
+    "name": "HOUNDOUR"
+  },
+  {
+    "id": 229,
+    "newId": 210,
+    "name": "HOUNDOOM"
+  },
+  {
+    "id": 230,
+    "newId": 188,
+    "name": "KINGDRA"
+  },
+  {
+    "id": 231,
+    "newId": 195,
+    "name": "PHANPY",
+    "species": "LONG NOSE",
+    "height": 1.08,
+    "weigth": 74,
+    "text": "As a sign of af-\nfection, it bumps\nwith its snout.\n\nHowever, it is so\nstrong, it may\nsend you flying.",
+    "areas": [
+      "ROUTE 45"
+    ]
+  },
+  {
+    "id": 232,
+    "newId": 196,
+    "name": "DONPHAN",
+    "species": "ARMOR",
+    "height": 3.07,
+    "weigth": 265,
+    "text": "The longer and\nbigger its tusks,\nthe higher its\n\nrank in its herd.\nThe tusks take\nlong to grow.",
+    "areas": []
+  },
+  {
+    "id": 233,
+    "newId": 216,
+    "name": "PORYGON2"
+  },
+  {
+    "id": 234,
+    "newId": 129,
+    "name": "STANTLER"
+  },
+  {
+    "id": 235,
+    "newId": 157,
+    "name": "SMEARGLE"
+  },
+  {
+    "id": 236,
+    "newId": 143,
+    "name": "TYROGUE"
+  },
+  {
+    "id": 237,
+    "newId": 146,
+    "name": "HITMONTOP"
+  },
+  {
+    "id": 238,
+    "newId": 152,
+    "name": "SMOOCHUM"
+  },
+  {
+    "id": 239,
+    "newId": 154,
+    "name": "ELEKID"
+  },
+  {
+    "id": 240,
+    "newId": 150,
+    "name": "MAGBY"
+  },
+  {
+    "id": 241,
+    "newId": 149,
+    "name": "MILTANK"
+  },
+  {
+    "id": 242,
+    "newId": 218,
+    "name": "BLISSEY"
+  },
+  {
+    "id": 243,
+    "newId": 238,
+    "name": "RAIKOU"
+  },
+  {
+    "id": 244,
+    "newId": 239,
+    "name": "ENTEI"
+  },
+  {
+    "id": 245,
+    "newId": 240,
+    "name": "SUICUNE"
+  },
+  {
+    "id": 246,
+    "newId": 244,
+    "name": "LARVITAR"
+  },
+  {
+    "id": 247,
+    "newId": 245,
+    "name": "PUPITAR"
+  },
+  {
+    "id": 248,
+    "newId": 246,
+    "name": "TYRANITAR"
+  },
+  {
+    "id": 249,
+    "newId": 247,
+    "name": "LUGIA"
+  },
+  {
+    "id": 250,
+    "newId": 248,
+    "name": "HO-OH",
+    "species": "RAINBOW",
+    "height": 12.06,
+    "weigth": 439,
+    "text": "Legends claim this\nPOKéMON flies the\nworld^'s skies con-\n\ntinuously on its\nmagnificent seven-\ncolored wings.",
+    "areas": []
+  },
+  {
+    "id": 251,
+    "newId": 251,
+    "name": "CELEBI"
+  }
+]

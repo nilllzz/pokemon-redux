@@ -1,0 +1,312 @@
+{
+  "id": 216,
+  "name": "TEDDIURSA",
+  "gender": "equal",
+  "baseStats": [ 60, 80, 50, 50, 50, 40 ],
+  "experienceType": "mediumFast",
+  "experienceYield": 124,
+  "type1": "normal",
+  "type2": "none",
+  "eggGroups": [ "field" ],
+  "eggCycles": 20,
+  "catchRate": 120,
+  "wildFleeRate": 0.5,
+  "moves": [
+    {
+      "name": "SCRATCH",
+      "level": 1,
+      "tm": false,
+      "breeding": false
+    },
+    {
+      "name": "LEER",
+      "level": 1,
+      "tm": false,
+      "breeding": false
+    },
+    {
+      "name": "LICK",
+      "level": 8,
+      "tm": false,
+      "breeding": false
+    },
+    {
+      "name": "FURY SWIPES",
+      "level": 15,
+      "tm": false,
+      "breeding": false
+    },
+    {
+      "name": "FAINT ATTACK",
+      "level": 22,
+      "tm": false,
+      "breeding": false
+    },
+    {
+      "name": "REST",
+      "level": 29,
+      "tm": false,
+      "breeding": false
+    },
+    {
+      "name": "SLASH",
+      "level": 36,
+      "tm": false,
+      "breeding": false
+    },
+    {
+      "name": "SNORE",
+      "level": 43,
+      "tm": false,
+      "breeding": false
+    },
+    {
+      "name": "THRASH",
+      "level": 50,
+      "tm": false,
+      "breeding": false
+    },
+    {
+      "name": "DYNAMICPUNCH",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "HEADBUTT",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "CURSE",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "ROLLOUT",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "ROAR",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "TOXIC",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "ZAP CANNON",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "ROCK SMASH",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "HIDDEN POWER",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "SUNNY DAY",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "SNORE",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "PROTECT",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "ENDURE",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "FRUSTRATION",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "EARTHQUAKE",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "RETURN",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "DIG",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "MUD-SLAP",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "DOUBLE TEAM",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "ICE PUNCH",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "SWAGGER",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "SLEEP TALK",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "SWIFT",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "DEFENSE CURL",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "THUNDERPUNCH",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "REST",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "ATTRACT",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "THIEF",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "FIRE PUNCH",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "FURY CUTTER",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "CUT",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "STRENGTH",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "COUNTER",
+      "level": 0,
+      "tm": false,
+      "breeding": true
+    },
+    {
+      "name": "CRUNCH",
+      "level": 0,
+      "tm": false,
+      "breeding": true
+    },
+    {
+      "name": "FOCUS ENERGY",
+      "level": 0,
+      "tm": false,
+      "breeding": true
+    },
+    {
+      "name": "METAL CLAW",
+      "level": 0,
+      "tm": false,
+      "breeding": true
+    },
+    {
+      "name": "SEISMIC TOSS",
+      "level": 0,
+      "tm": false,
+      "breeding": true
+    },
+    {
+      "name": "TAKE DOWN",
+      "level": 0,
+      "tm": false,
+      "breeding": true
+    }
+  ],
+  "colors": {
+    "normal": [
+      [ 0, 0, 0 ],
+      [ 112, 56, 32 ],
+      [ 176, 112, 48 ],
+      [ 248, 248, 248 ]
+    ],
+    "shiny": [
+      [ 0, 0, 0 ],
+      [ 104, 160, 8 ],
+      [ 160, 232, 80 ],
+      [ 255, 255, 255 ]
+    ]
+  }
+}

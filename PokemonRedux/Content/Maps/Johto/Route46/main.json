@@ -1,0 +1,865 @@
+﻿{
+  "$schema": "../../map.schema.json?reload",
+  "name": "Route 46",
+  "worldOffset": [ 20, 0.5, -36 ],
+  "loadMaps": [
+    "Maps/Johto/Route29/main.json"
+  ],
+  "definitions": [
+    {
+      "id": "grassFloor",
+      "type": "floor",
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/grass",
+      "tileTexture": true
+    },
+    {
+      "id": "pathFloor",
+      "type": "floor",
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/path",
+      "tileTexture": true
+    },
+    {
+      "id": "doormat",
+      "type": "floor",
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/doormat",
+      "tileTexture": true
+    },
+    {
+      "id": "tree",
+      "type": "prop",
+      "geometry": "billboard",
+      "textureFile": "Johto/Outside/tree",
+      "size": [ 1, 2 ],
+      "isOpaque": false
+    },
+    {
+      "id": "tallGrass",
+      "type": "prop",
+      "geometry": "billboard",
+      "textureFile": "Johto/Outside/tallGrass",
+      "size": [ 0.5, 0.5, 0.5 ],
+      "isOpaque": false,
+      "hasCollision": false,
+      "billboardTilt": 1.2
+    },
+    {
+      "id": "cliff",
+      "type": "prop",
+      "geometry": "walls",
+      "textureFile": "Johto/Outside/mountain",
+      "tileTexture": true
+    },
+    {
+      "id": "mountainSide",
+      "type": "prop",
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/mountain",
+      "tileTexture": true,
+      "elevation": [ 1, 1, 0, 0 ],
+      "textures": [
+        [ 0, 0, 16, 24 ]
+      ]
+    },
+    {
+      "id": "mountainCorner",
+      "type": "prop",
+      "geometry": "corner",
+      "textureFile": "Johto/Outside/mountain",
+      "tileTexture": true,
+      "textures": [ [ 0, 0, 16, 24 ] ]
+    },
+    {
+      "id": "mountainTop",
+      "type": "prop",
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/rock",
+      "tileTexture": true
+    }
+  ],
+  "entities": [
+    // floors
+    {
+      "id": "grassFloor",
+      "position": [ 0, 0, 20 ],
+      "size": [ 6, 16 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 6, 0, 24 ],
+      "size": [ 8, 4 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 10, 0, 28 ],
+      "size": [ 10, 2 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 12, 0, 30 ],
+      "size": [ 8, 2 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 10, 0, 32 ],
+      "size": [ 10, 4 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 0, 0.5, 10 ],
+      "size": [ 4, 10 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 4, 0.5, 12 ],
+      "size": [ 2, 4 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 6, 0.5, 12 ],
+      "size": [ 2, 2 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 6, 0.5, 20 ],
+      "size": [ 8, 4 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 10, 0.5, 16 ],
+      "size": [ 2, 4 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 12, 0.5, 18 ],
+      "size": [ 2, 2 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 8, 1, 12 ],
+      "size": [ 8, 2 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 10, 1, 14 ],
+      "size": [ 2, 2 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 12, 1.5, 10 ],
+      "size": [ 4, 2 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 12, 1.5, 6 ],
+      "size": [ 8, 4 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 10, 1.5, 6 ],
+      "size": [ 2, 2 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 6, 1.5, 4 ],
+      "size": [ 4, 4 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 18, 1.5, 4 ],
+      "size": [ 2, 2 ]
+    },
+
+
+    {
+      "id": "pathFloor",
+      "position": [ 6, 0, 28 ],
+      "size": [ 4, 5 ]
+    },
+    {
+      "id": "pathFloor",
+      "position": [ 10, 0, 30 ],
+      "size": [ 2, 2 ]
+    },
+    {
+      "id": "pathFloor",
+      "position": [ 6, 0, 33 ],
+      "size": [ 1, 1 ]
+    },
+    {
+      "id": "pathFloor",
+      "position": [ 9, 0, 33 ],
+      "size": [ 1, 1 ]
+    },
+
+
+    {
+      "id": "doormat",
+      "position": [ 7, 0, 33 ],
+      "size": [ 2, 1 ]
+    },
+
+
+
+    // tall grass
+    {
+      "type": "field",
+      "position": [ 2, 0.22, 20 ],
+      "size": [ 8, 8 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "tallGrass"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 4, 0.22, 24 ],
+      "size": [ 20, 4 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "tallGrass"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 4, 0.22, 26 ],
+      "size": [ 4, 4 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "tallGrass"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 10, 0.22, 26 ],
+      "size": [ 8, 4 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "tallGrass"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 12, 0.22, 28 ],
+      "size": [ 4, 4 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "tallGrass"
+      }
+    },
+
+
+
+    // trees
+    {
+      "type": "field",
+      "position": [ 0, -0.333, 30 ],
+      "size": [ 6, 6 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 0, -0.333, 24 ],
+      "size": [ 4, 6 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 10, -0.333, 32 ],
+      "size": [ 10, 4 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 12, -0.333, 30 ],
+      "size": [ 8, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 14, -0.333, 28 ],
+      "size": [ 6, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 0, -0.333, 20 ],
+      "size": [ 2, 4 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 0, 0.166, 16 ],
+      "size": [ 2, 4 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 0, 0.166, 10 ],
+      "size": [ 4, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+
+
+
+    // cliffs
+    {
+      "id": "cliff",
+      "position": [ 0, 0, 19 ],
+      "size": [ 6, 0.5, 1 ]
+    },
+    {
+      "id": "cliff",
+      "position": [ 6, 0, 20 ],
+      "size": [ 8, 0.5, 4 ]
+    },
+    {
+      "id": "cliff",
+      "position": [ 14, 0, 24 ],
+      "size": [ 6, 1.5, 4 ]
+    },
+    {
+      "id": "cliff",
+      "position": [ 10, 0.5, 14 ],
+      "size": [ 2, 0.5, 2 ]
+    },
+    {
+      "id": "cliff",
+      "position": [ 8, 0.5, 12 ],
+      "size": [ 2, 0.5, 2 ]
+    },
+    {
+      "id": "cliff",
+      "position": [ 12, 0.5, 14 ],
+      "size": [ 4, 1, 4 ]
+    },
+    {
+      "id": "cliff",
+      "position": [ 14, 0.5, 18 ],
+      "size": [ 1, 1, 6 ]
+    },
+    {
+      "id": "cliff",
+      "position": [ 4, 0.5, 10 ],
+      "size": [ 12, 1, 2 ]
+    },
+    {
+      "id": "cliff",
+      "position": [ 0, 0.5, 9 ],
+      "size": [ 4, 1, 1 ]
+    },
+    {
+      "id": "cliff",
+      "position": [ 16, 1, 12 ],
+      "size": [ 1, 0.5, 2 ]
+    },
+
+
+    // mountains
+    // center
+    {
+      "id": "mountainSide",
+      "position": [ 5, 0.5, 19 ],
+      "size": [ 4, 1 ],
+      "rotation": [ 0, 0, 0 ]
+    },
+    {
+      "id": "mountainSide",
+      "position": [ 3.5, 0.5, 17.5 ],
+      "size": [ 2, 1 ],
+      "rotation": [ 0, 3, 0 ]
+    },
+    {
+      "id": "mountainSide",
+      "position": [ 5, 0.5, 16 ],
+      "size": [ 2, 1 ],
+      "rotation": [ 0, 2, 0 ]
+    },
+    {
+      "id": "mountainSide",
+      "position": [ 5.5, 0.5, 15.5 ],
+      "size": [ 2, 1 ],
+      "rotation": [ 0, 3, 0 ]
+    },
+    {
+      "id": "mountainSide",
+      "position": [ 7, 0.5, 14 ],
+      "size": [ 2, 1 ],
+      "rotation": [ 0, 2, 0 ]
+    },
+    {
+      "id": "mountainSide",
+      "position": [ 7.5, 0.5, 16.5 ],
+      "size": [ 4, 1 ],
+      "rotation": [ 0, 1, 0 ]
+    },
+    {
+      "id": "mountainCorner",
+      "position": [ 4, 0.5, 19 ],
+      "rotation": [ 0, 1, 0 ]
+    },
+    {
+      "id": "mountainCorner",
+      "position": [ 9, 0.5, 19 ],
+      "rotation": [ 0, 2, 0 ]
+    },
+    {
+      "id": "mountainCorner",
+      "position": [ 4, 0.5, 16 ],
+      "rotation": [ 0, 0, 0 ]
+    },
+    {
+      "id": "mountainCorner",
+      "position": [ 6, 0.5, 14 ],
+      "rotation": [ 0, 0, 0 ]
+    },
+    {
+      "id": "mountainCorner",
+      "position": [ 9, 0.5, 14 ],
+      "rotation": [ 0, 3, 0 ]
+    },
+    {
+      "id": "mountainTop",
+      "position": [ 7, 1.5, 15 ],
+      "size": [ 2, 2 ]
+    },
+    {
+      "id": "mountainTop",
+      "position": [ 5, 1.5, 17 ],
+      "size": [ 4, 2 ]
+    },
+
+    // right
+    {
+      "id": "mountainSide",
+      "position": [ 11.5, 1.5, 15.5 ],
+      "size": [ 2, 1 ],
+      "rotation": [ 0, 3, 0 ]
+    },
+    {
+      "id": "mountainSide",
+      "position": [ 13, 1.5, 17 ],
+      "size": [ 2, 1 ],
+      "rotation": [ 0, 0, 0 ]
+    },
+    {
+      "id": "mountainSide",
+      "position": [ 9.5, 1.5, 21.5 ],
+      "size": [ 10, 1 ],
+      "rotation": [ 0, 3, 0 ]
+    },
+    {
+      "id": "mountainSide",
+      "position": [ 13.5, 2.5, 21.5 ],
+      "size": [ 6, 1 ],
+      "rotation": [ 0, 3, 0 ]
+    },
+    {
+      "id": "mountainSide",
+      "position": [ 15, 1.5, 27 ],
+      "size": [ 5, 1 ],
+      "rotation": [ 0, 0, 0 ]
+    },
+    {
+      "id": "mountainSide",
+      "position": [ 17, 2.5, 25 ],
+      "size": [ 3, 1 ],
+      "rotation": [ 0, 0, 0 ]
+    },
+    {
+      "id": "mountainSide",
+      "position": [ 13, 1.5, 14 ],
+      "size": [ 4, 1 ],
+      "rotation": [ 0, 2, 0 ]
+    },
+    {
+      "id": "mountainSide",
+      "position": [ 14.5, 1.5, 12.5 ],
+      "size": [ 4, 1 ],
+      "rotation": [ 0, 3, 0 ]
+    },
+    {
+      "id": "mountainSide",
+      "position": [ 17, 2.5, 18 ],
+      "size": [ 3, 1 ],
+      "rotation": [ 0, 2, 0 ]
+    },
+    {
+      "id": "mountainSide",
+      "position": [ 17, 1.5, 10 ],
+      "size": [ 3, 1 ],
+      "rotation": [ 0, 2, 0 ]
+    },
+    {
+      "id": "mountainCorner",
+      "position": [ 12, 1.5, 17 ],
+      "rotation": [ 0, 1, 0 ]
+    },
+    {
+      "id": "mountainCorner",
+      "position": [ 14, 1.5, 27 ],
+      "rotation": [ 0, 1, 0 ]
+    },
+    {
+      "id": "mountainCorner",
+      "position": [ 16, 2.5, 18 ],
+      "rotation": [ 0, 0, 0 ]
+    },
+    {
+      "id": "mountainCorner",
+      "position": [ 16, 2.5, 25 ],
+      "rotation": [ 0, 1, 0 ]
+    },
+    {
+      "id": "mountainCorner",
+      "position": [ 12, 1.5, 14 ],
+      "rotation": [ 0, 0, 0 ]
+    },
+    {
+      "id": "mountainCorner",
+      "position": [ 16, 1.5, 10 ],
+      "rotation": [ 0, 0, 0 ]
+    },
+    {
+      "id": "mountainTop",
+      "position": [ 17, 2.5, 11 ],
+      "size": [ 3, 4 ]
+    },
+    {
+      "id": "mountainTop",
+      "position": [ 13, 2.5, 15 ],
+      "size": [ 7, 2 ]
+    },
+    {
+      "id": "mountainTop",
+      "position": [ 15, 2.5, 17 ],
+      "size": [ 5, 10 ]
+    },
+    {
+      "id": "mountainTop",
+      "position": [ 17, 3.5, 19 ],
+      "size": [ 3, 6 ]
+    },
+
+    // top
+    {
+      "id": "mountainSide",
+      "position": [ 5, 1.5, 11 ],
+      "size": [ 6, 1 ],
+      "rotation": [ 0, 0, 0 ]
+    },
+    {
+      "id": "mountainSide",
+      "position": [ 10.5, 1.5, 9.5 ],
+      "size": [ 2, 1 ],
+      "rotation": [ 0, 1, 0 ]
+    },
+    {
+      "id": "mountainSide",
+      "position": [ 5, 1.5, 8 ],
+      "size": [ 6, 1 ],
+      "rotation": [ 0, 2, 0 ]
+    },
+    {
+      "id": "mountainSide",
+      "position": [ 2.5, 1.5, 5.5 ],
+      "size": [ 6, 1 ],
+      "rotation": [ 0, 1, 0 ]
+    },
+    {
+      "id": "mountainSide",
+      "position": [ 3.5, 1.5, 9.5 ],
+      "size": [ 2, 1 ],
+      "rotation": [ 0, 3, 0 ]
+    },
+    {
+      "id": "mountainSide",
+      "position": [ 1, 1.5, 9 ],
+      "size": [ 4, 1 ],
+      "rotation": [ 0, 0, 0 ]
+    },
+    {
+      "id": "mountainSide",
+      "position": [ -1.5, 1.5, 6.5 ],
+      "size": [ 4, 1 ],
+      "rotation": [ 0, 3, 0 ]
+    },
+    {
+      "id": "mountainSide",
+      "position": [ 0, 1.5, 5 ],
+      "size": [ 1, 1 ],
+      "rotation": [ 0, 0, 0 ]
+    },
+    {
+      "id": "mountainSide",
+      "position": [ 5, 1.5, 3 ],
+      "size": [ 15, 1 ],
+      "rotation": [ 0, 0, 0 ]
+    },
+    {
+      "id": "mountainSide",
+      "position": [ 9.5, 1.5, 3.5 ],
+      "size": [ 2, 1 ],
+      "rotation": [ 0, 3, 0 ]
+    },
+    {
+      "id": "mountainSide",
+      "position": [ 16.5, 1.5, 3.5 ],
+      "size": [ 2, 1 ],
+      "rotation": [ 0, 1, 0 ]
+    },
+    {
+      "id": "mountainSide",
+      "position": [ 11, 1.5, 5 ],
+      "size": [ 3, 1 ],
+      "rotation": [ 0, 0, 0 ]
+    },
+    {
+      "id": "mountainSide",
+      "position": [ 15, 1.5, 5 ],
+      "size": [ 2, 1 ],
+      "rotation": [ 0, 0, 0 ]
+    },
+    {
+      "id": "mountainCorner",
+      "position": [ 11, 1.5, 11 ],
+      "rotation": [ 0, 2, 0 ]
+    },
+    {
+      "id": "mountainCorner",
+      "position": [ 4, 1.5, 11 ],
+      "rotation": [ 0, 1, 0 ]
+    },
+    {
+      "id": "mountainCorner",
+      "position": [ 11, 1.5, 8 ],
+      "rotation": [ 0, 3, 0 ]
+    },
+    {
+      "id": "mountainCorner",
+      "position": [ 0, 1.5, 9 ],
+      "rotation": [ 0, 1, 0 ]
+    },
+    {
+      "id": "mountainCorner",
+      "position": [ 10, 1.5, 5 ],
+      "rotation": [ 0, 1, 0 ]
+    },
+    {
+      "id": "mountainCorner",
+      "position": [ 17, 1.5, 5 ],
+      "rotation": [ 0, 2, 0 ]
+    },
+    {
+      "id": "mountainTop",
+      "position": [ 5, 2.5, 9 ],
+      "size": [ 6, 2 ]
+    },
+    {
+      "id": "mountainTop",
+      "position": [ 1, 2.5, 5 ],
+      "size": [ 4, 4 ]
+    },
+    {
+      "id": "mountainTop",
+      "position": [ 0, 2.5, 3 ],
+      "size": [ 5, 2 ]
+    },
+    {
+      "id": "mountainTop",
+      "position": [ 0, 2.5, 0 ],
+      "size": [ 20, 3 ]
+    },
+    {
+      "id": "mountainTop",
+      "position": [ 11, 2.5, 3 ],
+      "size": [ 6, 2 ]
+    },
+    // top top
+    {
+      "id": "mountainSide",
+      "position": [ 4, 2.5, 0 ],
+      "size": [ 1, 1 ],
+      "rotation": [ 0, 3, 0 ]
+    },
+    {
+      "id": "mountainSide",
+      "position": [ 15, 2.5, 0 ],
+      "size": [ 1, 1 ],
+      "rotation": [ 0, 1, 0 ]
+    },
+    {
+      "id": "mountainSide",
+      "position": [ 5, 2.5, 1 ],
+      "size": [ 10, 1 ],
+      "rotation": [ 0, 0, 0 ]
+    },
+    {
+      "id": "mountainCorner",
+      "position": [ 4, 2.5, 1 ],
+      "rotation": [ 0, 1, 0 ]
+    },
+    {
+      "id": "mountainCorner",
+      "position": [ 15, 2.5, 1 ],
+      "rotation": [ 0, 2, 0 ]
+    },
+    {
+      "id": "mountainTop",
+      "position": [ 5, 3.5, 0 ],
+      "size": [ 10, 1 ]
+    },
+
+
+    {
+      "type": "struct",
+      "positions": [
+        [ 14, 1.5, 5 ]
+      ],
+      "entities": [
+        {
+          "type": "prop",
+          "position": [ 0, 0, 0 ],
+          "geometry": "plane",
+          "textureFile": "Johto/Outside/caveEntrance",
+          "textures": [
+            [ 0, 0, 16, 16 ]
+          ],
+          "isOpaque": false,
+          "elevation": [ 1, 1, 0, 0 ]
+        },
+        {
+          "type": "prop",
+          "position": [ 0, 0, 0 ],
+          "geometry": "plane",
+          "textureFile": "Johto/Outside/caveEntrance",
+          "textures": [
+            [ 0, 16, 16, 16 ]
+          ]
+        },
+        {
+          "type": "prop",
+          "position": [ 0, 0, -0.2 ],
+          "geometry": "plane",
+          "textureFile": "Johto/Outside/caveEntrance",
+          "textures": [
+            [ 16, 0, 16, 16 ]
+          ],
+          "elevation": [ 0.9, 0.9, 0, 0 ]
+        }
+      ]
+    },
+
+
+
+    // gate
+    {
+      "type": "prop",
+      "position": [ 6, 0, 34 ],
+      "geometry": "walls",
+      "textureFile": "Johto/Route46/gate",
+      "textures": [
+        [ 0, 0, 64, 32 ],
+        [ 0, 32, 32, 32 ],
+        [ 0, 32, 64, 32 ],
+        [ 32, 32, 32, 32 ]
+      ],
+      "size": [ 4, 2, 2 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 6, 2, 34 ],
+      "geometry": "walls",
+      "textureFile": "Johto/Route46/gate",
+      "textures": [
+        [ 64, 0, 16, 4 ]
+      ],
+      "size": [ 4, 0.25, 2 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 6, 2.625, 34 ],
+      "geometry": "corner",
+      "textureFile": "Johto/Route46/gate",
+      "textures": [
+        [ 64, 4, 16, 7 ]
+      ],
+      "size": [ 0.5, 0.25, 0.5 ],
+      "rotation": [ 0, 0, 0 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 9.5, 2.625, 34 ],
+      "geometry": "corner",
+      "textureFile": "Johto/Route46/gate",
+      "textures": [
+        [ 64, 4, 16, 7 ]
+      ],
+      "size": [ 0.5, 0.25, 0.5 ],
+      "rotation": [ 0, 3, 0 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 6.5, 2.5, 34 ],
+      "geometry": "plane",
+      "textureFile": "Johto/Route46/gate",
+      "textures": [
+        [ 64, 4, 16, 7 ]
+      ],
+      "size": [ 3, 0.5, 0.5 ],
+      "elevation": [ 0, 0, 0.25, 0.25 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 9, 2.5, 35 ],
+      "geometry": "plane",
+      "textureFile": "Johto/Route46/gate",
+      "textures": [
+        [ 64, 4, 16, 7 ]
+      ],
+      "size": [ 1.5, 0.5, 0.5 ],
+      "elevation": [ 0.25, 0.25, 0, 0 ],
+      "rotation": [ 0, 1, 0 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 5.5, 2.5, 35 ],
+      "geometry": "plane",
+      "textureFile": "Johto/Route46/gate",
+      "textures": [
+        [ 64, 4, 16, 7 ]
+      ],
+      "size": [ 1.5, 0.5, 0.5 ],
+      "elevation": [ 0.25, 0.25, 0, 0 ],
+      "rotation": [ 0, 3, 0 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 6.5, 2.5, 34.5 ],
+      "geometry": "plane",
+      "textureFile": "Johto/Route46/gateRoof",
+      "tileTexture": true,
+      "size": [ 3, 1.5 ]
+    }
+
+
+  ]
+}

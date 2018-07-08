@@ -1,0 +1,8 @@
+﻿Custom menu sprites:
+	 - CHAMBER
+	 - SOLOO993
+	 - BLUE EMERALD
+	 - LAKE
+	 - NESLUG
+	 - PIKACHU25
+	 - RYTA

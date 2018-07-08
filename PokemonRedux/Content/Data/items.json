@@ -1,0 +1,81 @@
+﻿[
+  {
+    "name": "POTION",
+    "description": "Restores POKéMON\nHP by 20.",
+    "pocket": "items",
+    "cost": 300,
+    "canUseField": true,
+    "canUseBattle": true
+  },
+  {
+    "name": "ESCAPE ROPE",
+    "description": "Use for escaping\nfrom caves, etc.",
+    "pocket": "items",
+    "cost": 550,
+    "canUseField": true
+  },
+  {
+    "name": "REVIVE",
+    "description": "Restores a fainted\nPOKéMON to 1/2 HP.",
+    "pocket": "items",
+    "cost": 1500,
+    "canUseField": true,
+    "canUseBattle": true
+  },
+  {
+    "name": "FULL HEAL",
+    "description": "Eliminates all\nstatus problems.",
+    "pocket": "items",
+    "cost": 600,
+    "canUseField": true,
+    "canUseBattle": true
+  },
+  {
+    "name": "ETHER",
+    "description": "Restores PP of one\nmove by 10.",
+    "pocket": "items",
+    "cost": 1200,
+    "canUseField": true,
+    "canUseBattle": true
+  },
+  {
+    "name": "MIRACLE SEED",
+    "description": "Powers up grass-\ntype moves. (HOLD)",
+    "pocket": "items",
+    "cost": 1200
+  },
+  {
+    "name": "GREAT BALL",
+    "description": "A BALL with a de-\ncent success rate.",
+    "pocket": "balls",
+    "cost": 600
+  },
+  {
+    "name": "RED SCALE",
+    "description": "A scale from the\nred GYARADOS.",
+    "pocket": "keyItems"
+  },
+  {
+    "name": "DYNAMICPUNCH",
+    "pocket": "TMHM",
+    "cost": 3000,
+    "machineNumber": 1
+  },
+  {
+    "name": "CUT",
+    "pocket": "TMHM",
+    "machineNumber": 1
+  },
+  {
+    "name": "SURF MAIL",
+    "description": "LAPRAS-print MAIL.\n(HOLD)",
+    "pocket": "items",
+    "cost": 50
+  },
+  {
+    "name": "PORTRAITMAIL",
+    "description": "MAIL featuring the\nholder^'s likeness.",
+    "pocket": "items",
+    "cost": 50
+  }
+]

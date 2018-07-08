@@ -1,0 +1,421 @@
+﻿{
+  "$schema": "../../map.schema.json?reload",
+  "name": "New Bark Town",
+  "worldOffset": [ 0, 0, 0 ],
+  "loadMaps": [],
+  "definitions": [
+    {
+      "id": "floor",
+      "type": "floor",
+      "geometry": "plane",
+      "textureFile": "Johto/Inside/floor0",
+      "tileTexture": true
+    },
+    {
+      "id": "doormat",
+      "type": "floor",
+      "geometry": "plane",
+      "textureFile": "Johto/Inside/doormat0",
+      "tileTexture": true
+    },
+    {
+      "id": "wall",
+      "type": "prop",
+      "geometry": "wall",
+      "textureFile": "Johto/Inside/wall0",
+      "tileTexture": true
+    },
+    {
+      "id": "window",
+      "type": "prop",
+      "geometry": "wall",
+      "textureFile": "Johto/Inside/window0",
+      "tileTexture": true
+    },
+    {
+      "id": "door",
+      "type": "door",
+      "geometry": "wall",
+      "textureFile": "Johto/Outside/door"
+    },
+    {
+      "id": "plantLeaf",
+      "type": "prop",
+      "geometry": "wall",
+      "textureFile": "Johto/Inside/plant",
+      "size": [ 0.8, 0.9, 1 ],
+      "textures": [
+        [ 0, 10, 8, 9 ]
+      ],
+      "isOpaque": false,
+      "hasCollision": false
+    },
+    {
+      "id": "table",
+      "type": "prop",
+      "geometry": "cube",
+      "textureFile": "Johto/Inside/woodenDecor",
+      "size": [ 2, 0.45, 2 ],
+      "isOpaque": false,
+      "textures": [
+        [ 0, 32, 32, 7 ],
+        [ 0, 32, 32, 7 ],
+        [ 0, 32, 32, 7 ],
+        [ 0, 32, 32, 7 ],
+        [ 0, 38, 1, 1 ],
+        [ 0, 0, 32, 32 ]
+      ]
+    },
+    {
+      "id": "cabinet",
+      "type": "prop",
+      "geometry": "cube",
+      "textureFile": "Johto/Inside/woodenDecor",
+      "size": [ 1, 0.5, 1 ],
+      "textures": [
+        [ 16, 56, 16, 8 ],
+        [ 16, 48, 16, 8 ],
+        [ 16, 56, 16, 8 ],
+        [ 16, 56, 16, 8 ],
+        [ 0, 38, 1, 1 ],
+        [ 48, 16, 16, 16 ]
+      ]
+    }
+  ],
+  "entities": [
+    // floors
+    {
+      "id": "floor",
+      "position": [ 0, 0, 0 ],
+      "size": [ 8, 6 ]
+    },
+    {
+      "id": "floor",
+      "position": [ 0, 0, 6 ],
+      "size": [ 2, 1 ]
+    },
+    {
+      "id": "floor",
+      "position": [ 4, 0, 6 ],
+      "size": [ 4, 1 ]
+    },
+
+    {
+      "id": "doormat",
+      "position": [ 2, 0, 6 ],
+      "size": [ 2, 1 ]
+    },
+
+
+    // walls
+    {
+      "id": "wall",
+      "position": [ 0, 0, -1 ],
+      "size": [ 5, 1, 1 ]
+    },
+    {
+      "id": "wall",
+      "position": [ 6, 0, -1 ],
+      "size": [ 2, 1, 1 ]
+    },
+
+
+    // window
+    {
+      "id": "window",
+      "position": [ 5, 0, -1 ]
+    },
+
+
+    // cabinets
+    {
+      "type": "prop",
+      "geometry": "cube",
+      "position": [ 0, 0, 0 ],
+      "textureFile": "Johto/Inside/woodenDecor",
+      "size": [ 1, 0.45, 0.6 ],
+      "textures": [
+        [ 0, 48, 16, 7 ],
+        [ 0, 48, 16, 7 ],
+        [ 0, 48, 16, 7 ],
+        [ 0, 48, 16, 7 ],
+        [ 0, 38, 1, 1 ],
+        [ 48, 32, 16, 10 ]
+      ]
+    },
+    {
+      "type": "prop",
+      "geometry": "cube",
+      "position": [ 0, 0.45, 0 ],
+      "textureFile": "Johto/Inside/woodenDecor",
+      "size": [ 1, 1, 0.6 ],
+      "textures": [
+        [ 32, 16, 16, 16 ],
+        [ 48, 0, 16, 16 ],
+        [ 32, 32, 10, 16 ],
+        [ 32, 32, 10, 16 ],
+        [ 0, 38, 1, 1 ],
+        [ 48, 32, 16, 10 ]
+      ]
+    },
+
+    {
+      "id": "cabinet",
+      "position": [ 1, 0, 0 ]
+    },
+    {
+      "type": "prop",
+      "geometry": "cube",
+      "position": [ 1, 0.5, 0 ],
+      "textureFile": "Johto/Inside/woodenDecor",
+      "size": [ 1, 1, 1 ],
+      "textures": [
+        [ 32, 16, 16, 16 ],
+        [ 32, 0, 16, 16 ],
+        [ 32, 16, 16, 16 ],
+        [ 32, 16, 16, 16 ],
+        [ 0, 38, 1, 1 ],
+        [ 48, 16, 16, 16 ]
+      ]
+    },
+
+    // tv
+    {
+      "id": "cabinet",
+      "position": [ 2, 0, 0 ]
+    },
+    {
+      "type": "prop",
+      "geometry": "cube",
+      "position": [ 2.05, 0.5, 0.5 ],
+      "textureFile": "Johto/Inside/tv0",
+      "size": [ 0.9, 0.7, 0.3 ],
+      "textures": [
+        [ 16, 0, 16, 11 ],
+        [ 0, 0, 16, 11 ],
+        [ 18, 15, 6, 11 ],
+        [ 18, 15, 6, 11 ],
+        [ 16, 0, 16, 4 ],
+        [ 16, 0, 16, 4 ]
+      ]
+    },
+    {
+      "type": "prop",
+      "geometry": "cube",
+      "position": [ 2.1, 0.55, 0.3 ],
+      "textureFile": "Johto/Inside/tv0",
+      "size": [ 0.8, 0.6, 0.2 ],
+      "textures": [
+        [ 0, 17, 14, 9 ],
+        [ 0, 17, 14, 9 ],
+        [ 14, 16, 4, 10 ],
+        [ 14, 16, 4, 10 ],
+        [ 0, 14, 14, 3 ],
+        [ 0, 14, 14, 3 ]
+      ]
+    },
+
+
+    // radio
+    {
+      "id": "cabinet",
+      "position": [ 7, 0, 0 ]
+    },
+    {
+      "type": "prop",
+      "geometry": "cube",
+      "position": [ 7.1, 0.5, 0.5 ],
+      "textureFile": "Johto/Inside/radio0",
+      "size": [ 0.8, 0.4, 0.25 ],
+      "textures": [
+        [ 16, 0, 16, 9 ],
+        [ 0, 0, 16, 9 ],
+        [ 4, 9, 4, 7 ],
+        [ 0, 9, 4, 7 ],
+        [ 0, 7, 1, 1 ],
+        [ 16, 9, 16, 4 ]
+      ]
+    },
+    {
+      "type": "prop",
+      "geometry": "wall",
+      "position": [ 7.7, 0.9, -0.4 ],
+      "textureFile": "Johto/Inside/radio0",
+      "size": [ 0.1, 0.25, 1 ],
+      "textures": [
+        [ 8, 9, 3, 4 ]
+      ],
+      "isOpaque": false,
+      "hasCollision": false
+    },
+
+
+
+    // map
+    {
+      "type": "prop",
+      "geometry": "wall",
+      "position": [ 3.05, 0.25, -0.9 ],
+      "textureFile": "Johto/Inside/map",
+      "size": [ 0.9, 0.75, 1 ],
+      "textures": [
+        [ 0, 0, 14, 12 ]
+      ],
+      "hasCollision": false
+    },
+
+
+    // table
+    {
+      "id": "table",
+      "position": [ 3, 0, 2 ]
+    },
+
+
+
+    // plants
+    {
+      "type": "struct",
+      "positions": [
+        [ 0, 0, 6 ],
+        [ 7, 0, 6 ]
+      ],
+      "entities": [
+        {
+          "type": "prop",
+          "geometry": "tube",
+          "textureFile": "Johto/Inside/plant",
+          "rotation": [ 0, 0, 1 ],
+          "position": [ 0.25, 0, 0.25 ],
+          "size": [ 0.5, 0.5, 0.5 ],
+          "textures": [
+            [ 13, 0, 7, 16 ]
+          ],
+          "wrapTexture": true,
+          "tubeResolution": 16
+        },
+        {
+          "type": "prop",
+          "geometry": "cylinder",
+          "textureFile": "Johto/Inside/plant",
+          "rotation": [ 0, 0, 1 ],
+          "position": [ 0.2, 0.4, 0.2 ],
+          "size": [ 0.6, 0.15, 0.6 ],
+          "textures": [
+            [ 10, 0, 4, 16 ],
+            [ 0, 0, 10, 10 ],
+            [ 0, 0, 10, 10 ]
+          ],
+          "wrapTexture": true,
+          "tubeResolution": 16
+        },
+        {
+          "type": "prop",
+          "geometry": "cube",
+          "textureFile": "Johto/Inside/plant",
+          "position": [ 0.425, 0.5, 0.425 ],
+          "size": [ 0.15, 1, 0.15 ],
+          "textures": [
+            [ 20, 0, 4, 17 ],
+            [ 20, 0, 4, 17 ],
+            [ 20, 0, 4, 17 ],
+            [ 20, 0, 4, 17 ],
+            [ 20, 0, 1, 1 ],
+            [ 20, 0, 1, 1 ]
+          ]
+        },
+        {
+          "id": "plantLeaf",
+          "position": [ 0.75, 0.8, 0 ],
+          "rotation": [ 0, -0.5, 0 ]
+        },
+        {
+          "id": "plantLeaf",
+          "position": [ 0.1, 0.8, -0.6 ],
+          "rotation": [ 0, 0.5, 0 ]
+        },
+        {
+          "id": "plantLeaf",
+          "position": [ 0.15, 0.8, 0.7 ],
+          "rotation": [ 0, -1.5, 0 ]
+        },
+        {
+          "id": "plantLeaf",
+          "position": [ -0.6, 0.8, 0.1 ],
+          "rotation": [ 0, 1.5, 0 ]
+        }
+      ]
+    },
+
+    // doors
+    {
+      "type": "struct",
+      "positions": [
+        [ 2, 0, 7 ],
+        [ 3, 0, 7 ]
+      ],
+      "entities": [
+        {
+          "id": "door",
+          "rotation": [ 0, 2, 0 ],
+          "doorData": {
+            "warpData": {
+              "map": "Maps/Johto/NewBark/main.json",
+              "position": [ 3, 0, 12 ]
+            },
+            "hidden": true
+          }
+        }
+      ]
+    },
+
+
+    // scripts
+    {
+      "type": "script",
+      "position": [ 0, 0, 0 ],
+      "size": [ 1, 1, 0.6 ],
+      "script": {
+        "triggerType": "interact",
+        "file": "Scripts/Johto/NewBark/house0/bookshelf.js"
+      }
+    },
+    {
+      "type": "script",
+      "position": [ 1, 0, 0 ],
+      "size": [ 1, 1, 1 ],
+      "script": {
+        "triggerType": "interact",
+        "file": "Scripts/Johto/NewBark/house0/bookshelf.js"
+      }
+    },
+    {
+      "type": "script",
+      "position": [ 2, 0, 0 ],
+      "size": [ 1, 1, 1 ],
+      "script": {
+        "triggerType": "interact",
+        "file": "Scripts/Johto/NewBark/house0/tv.js"
+      }
+    },
+    {
+      "type": "script",
+      "position": [ 5, 0, -1 ],
+      "size": [ 1, 1, 1 ],
+      "script": {
+        "triggerType": "interact",
+        "file": "Scripts/Johto/NewBark/house0/window.js"
+      }
+    },
+    {
+      "type": "script",
+      "position": [ 3, 0, -0.9 ],
+      "size": [ 1, 1, 1 ],
+      "script": {
+        "triggerType": "interact",
+        "file": "Scripts/Johto/NewBark/house0/townmap.js"
+      }
+    }
+  ]
+
+}

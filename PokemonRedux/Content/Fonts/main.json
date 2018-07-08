@@ -1,0 +1,205 @@
+﻿{
+  "charWidth": 8,
+  "charHeight": 8,
+  "chars": [
+    {
+      "chars": "ABCDEFGHIJKLMNOPQRSTUVWXYZ():;[]abcdefghijklmnopqrstuvwxyz ",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "chars": "ÄÖÜäöü",
+      "x": 0,
+      "y": 4
+    },
+    {
+      "chars": "No",
+      "isStr": true,
+      "x": 6,
+      "y": 4
+    },
+    {
+      "chars": "[[",
+      "isStr": true,
+      "x": 7,
+      "y": 4
+    },
+    {
+      "chars": "]]",
+      "isStr": true,
+      "x": 8,
+      "y": 4
+    },
+    {
+      "chars": "'d",
+      "isStr": true,
+      "x": 0,
+      "y": 5
+    },
+    {
+      "chars": "'l",
+      "isStr": true,
+      "x": 1,
+      "y": 5
+    },
+    {
+      "chars": "'m",
+      "isStr": true,
+      "x": 2,
+      "y": 5
+    },
+    {
+      "chars": "'r",
+      "isStr": true,
+      "x": 3,
+      "y": 5
+    },
+    {
+      "chars": "'s",
+      "isStr": true,
+      "x": 4,
+      "y": 5
+    },
+    {
+      "chars": "'t",
+      "isStr": true,
+      "x": 5,
+      "y": 5
+    },
+    {
+      "chars": "'v",
+      "isStr": true,
+      "x": 6,
+      "y": 5
+    },
+    {
+      "chars": "'",
+      "x": 0,
+      "y": 6
+    },
+    {
+      "chars": "`",
+      "x": 0,
+      "y": 6
+    },
+    {
+      "chars": "PK",
+      "isStr": true,
+      "x": 1,
+      "y": 6
+    },
+    {
+      "chars": "MN",
+      "isStr": true,
+      "x": 2,
+      "y": 6
+    },
+    {
+      "chars": "..",
+      "isStr": true,
+      "x": 7,
+      "y": 5
+    },
+    {
+      "chars": "PO",
+      "isStr": true,
+      "x": 8,
+      "y": 5
+    },
+    {
+      "chars": "Ké",
+      "isStr": true,
+      "x": 9,
+      "y": 5
+    },
+    {
+      "chars": ":1",
+      "isStr": true,
+      "x": 10,
+      "y": 5
+    },
+    {
+      "chars": ":2",
+      "isStr": true,
+      "x": 11,
+      "y": 5
+    },
+    {
+      "chars": "ID",
+      "isStr": true,
+      "x": 12,
+      "y": 5
+    },
+    {
+      "chars": "NO",
+      "isStr": true,
+      "x": 13,
+      "y": 5
+    },
+    {
+      "chars": ":L",
+      "isStr": true,
+      "x": 14,
+      "y": 5
+    },
+    {
+      "chars": "PP",
+      "isStr": true,
+      "x": 15,
+      "y": 5
+    },
+    {
+      "chars": "-",
+      "x": 3,
+      "y": 6
+    },
+    {
+      "chars": "'1",
+      "isStr": true,
+      "x": 4,
+      "y": 6
+    },
+    {
+      "chars": "'2",
+      "isStr": true,
+      "x": 5,
+      "y": 6
+    },
+    {
+      "chars": "?!.&é<",
+      "x": 6,
+      "y": 6
+    },
+    {
+      "chars": ">>",
+      "isStr": true,
+      "x": 12,
+      "y": 6
+    },
+    {
+      "chars": ">",
+      "x": 13,
+      "y": 6
+    },
+    {
+      "chars": "♂",
+      "x": 15,
+      "y": 6
+    },
+    {
+      "chars": "$*",
+      "x": 0,
+      "y": 7
+    },
+    {
+      "chars": "/,♀",
+      "x": 3,
+      "y": 7
+    },
+    {
+      "chars": "0123456789",
+      "x": 6,
+      "y": 7
+    }
+  ]
+}

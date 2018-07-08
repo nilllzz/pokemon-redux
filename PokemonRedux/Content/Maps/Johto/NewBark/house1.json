@@ -1,0 +1,284 @@
+﻿{
+  "$schema": "../../map.schema.json?reload",
+  "name": "New Bark Town",
+  "worldOffset": [ 0, 0, 0 ],
+  "loadMaps": [],
+  "definitions": [
+    {
+      "id": "floor",
+      "type": "floor",
+      "geometry": "plane",
+      "textureFile": "Johto/Inside/floor1",
+      "tileTexture": true
+    },
+    {
+      "id": "doormat",
+      "type": "floor",
+      "geometry": "plane",
+      "textureFile": "Johto/Inside/doormat1",
+      "tileTexture": true
+    },
+    {
+      "id": "door",
+      "type": "door",
+      "geometry": "wall",
+      "textureFile": "Johto/Outside/door"
+    },
+    {
+      "id": "wall",
+      "type": "prop",
+      "geometry": "wall",
+      "textureFile": "Johto/Inside/wall1",
+      "tileTexture": true
+    },
+    {
+      "id": "table",
+      "type": "prop",
+      "geometry": "cube",
+      "textureFile": "Johto/Inside/woodenDecor",
+      "size": [ 2, 0.375, 2 ],
+      "isOpaque": false,
+      "textures": [
+        [ 0, 39, 32, 6 ],
+        [ 0, 39, 32, 6 ],
+        [ 0, 39, 32, 6 ],
+        [ 0, 39, 32, 6 ],
+        [ 0, 38, 1, 1 ],
+        [ 64, 0, 32, 32 ]
+      ]
+    }
+  ],
+  "entities": [
+    // floors
+    {
+      "id": "floor",
+      "position": [ 0, 0, 0 ],
+      "size": [ 8, 6 ]
+    },
+    {
+      "id": "floor",
+      "position": [ 0, 0, 6 ],
+      "size": [ 2, 1 ]
+    },
+    {
+      "id": "floor",
+      "position": [ 4, 0, 6 ],
+      "size": [ 4, 1 ]
+    },
+
+    {
+      "id": "doormat",
+      "position": [ 2, 0, 6 ],
+      "size": [ 2, 1 ]
+    },
+
+    // walls
+    {
+      "id": "wall",
+      "position": [ 0, 0, -1 ],
+      "size": [ 2, 1, 1 ]
+    },
+    {
+      "id": "wall",
+      "position": [ 3, 0, -1 ],
+      "size": [ 5, 1, 1 ]
+    },
+    {
+      "type": "prop",
+      "geometry": "wall",
+      "textureFile": "Johto/Inside/wall2",
+      "position": [ 2, 0, -1 ]
+    },
+
+    // window
+    {
+      "type": "prop",
+      "geometry": "plane",
+      "textureFile": "Johto/Inside/window1",
+      "position": [ 2, 0, 0 ],
+      "size": [ 1, 0.5 ],
+      "elevation": [ 1, 1, 0.75, 0.75 ],
+      "hasCollision": false
+    },
+
+
+
+    // table
+    {
+      "id": "table",
+      "position": [ 3, 0, 2 ]
+    },
+
+
+    // cabinets
+    // large 1
+    {
+      "type": "prop",
+      "geometry": "cube",
+      "position": [ 6, 0, 0 ],
+      "textureFile": "Johto/Inside/woodenDecor",
+      "size": [ 1, 0.5, 0.5 ],
+      "textures": [
+        [ 64, 40, 16, 8 ],
+        [ 48, 48, 16, 8 ],
+        [ 72, 32, 8, 8 ],
+        [ 72, 32, 8, 8 ],
+        [ 0, 38, 1, 1 ],
+        [ 48, 56, 16, 8 ]
+      ]
+    },
+    {
+      "type": "prop",
+      "geometry": "cube",
+      "position": [ 6, 0.5, 0 ],
+      "textureFile": "Johto/Inside/woodenDecor",
+      "size": [ 1, 1, 0.5 ],
+      "textures": [
+        [ 32, 16, 16, 16 ],
+        [ 64, 48, 16, 16 ],
+        [ 80, 32, 8, 16 ],
+        [ 80, 32, 8, 16 ],
+        [ 0, 38, 1, 1 ],
+        [ 48, 56, 16, 8 ]
+      ]
+    },
+    // large 2
+    {
+      "type": "prop",
+      "geometry": "cube",
+      "position": [ 7, 0, 0 ],
+      "textureFile": "Johto/Inside/woodenDecor",
+      "size": [ 1, 0.5, 0.5 ],
+      "textures": [
+        [ 64, 40, 16, 8 ],
+        [ 32, 56, 16, 8 ],
+        [ 72, 32, 8, 8 ],
+        [ 72, 32, 8, 8 ],
+        [ 0, 38, 1, 1 ],
+        [ 48, 56, 16, 8 ]
+      ]
+    },
+    {
+      "type": "prop",
+      "geometry": "cube",
+      "position": [ 7, 0.5, 0 ],
+      "textureFile": "Johto/Inside/woodenDecor",
+      "size": [ 1, 1, 0.5 ],
+      "textures": [
+        [ 32, 16, 16, 16 ],
+        [ 80, 48, 16, 16 ],
+        [ 80, 32, 8, 16 ],
+        [ 80, 32, 8, 16 ],
+        [ 0, 38, 1, 1 ],
+        [ 48, 56, 16, 8 ]
+      ]
+    },
+    // small 1
+    {
+      "type": "prop",
+      "geometry": "cube",
+      "position": [ 5, 0, 0 ],
+      "textureFile": "Johto/Inside/woodenDecor",
+      "size": [ 1, 0.5, 0.5 ],
+      "textures": [
+        [ 64, 40, 16, 8 ],
+        [ 32, 56, 16, 8 ],
+        [ 64, 32, 8, 8 ],
+        [ 64, 32, 8, 8 ],
+        [ 0, 38, 1, 1 ],
+        [ 48, 56, 16, 8 ]
+      ]
+    },
+
+    // tv
+    {
+      "type": "prop",
+      "geometry": "cube",
+      "position": [ 4, 0, 0 ],
+      "textureFile": "Johto/Inside/woodenDecor",
+      "size": [ 1, 0.5, 1 ],
+      "textures": [
+        [ 64, 40, 16, 8 ],
+        [ 32, 48, 16, 8 ],
+        [ 64, 40, 16, 8 ],
+        [ 64, 40, 16, 8 ],
+        [ 0, 38, 1, 1 ],
+        [ 48, 16, 16, 16 ]
+      ]
+    },
+    {
+      "type": "prop",
+      "geometry": "cube",
+      "position": [ 4, 0.5, 0.4 ],
+      "textureFile": "Johto/Inside/tv1",
+      "size": [ 1, 0.7, 0.4 ],
+      "textures": [
+        [ 16, 0, 16, 11 ],
+        [ 0, 0, 16, 11 ],
+        [ 18, 15, 6, 11 ],
+        [ 18, 15, 6, 11 ],
+        [ 16, 0, 16, 4 ],
+        [ 16, 0, 16, 4 ]
+      ]
+    },
+    {
+      "type": "prop",
+      "geometry": "cube",
+      "position": [ 4.1, 0.55, 0.2 ],
+      "textureFile": "Johto/Inside/tv1",
+      "size": [ 0.8, 0.6, 0.2 ],
+      "textures": [
+        [ 0, 17, 14, 9 ],
+        [ 0, 17, 14, 9 ],
+        [ 14, 16, 4, 10 ],
+        [ 14, 16, 4, 10 ],
+        [ 0, 14, 14, 3 ],
+        [ 0, 14, 14, 3 ]
+      ]
+    },
+
+
+
+    // pc
+    {
+      "type": "prop",
+      "geometry": "cube",
+      "position": [ 0, 0, 0 ],
+      "textureFile": "Johto/Inside/woodenDecor",
+      "size": [ 1, 0.375, 1 ],
+      "textures": [
+        [ 48, 42, 16, 6 ],
+        [ 48, 42, 16, 6 ],
+        [ 48, 42, 16, 6 ],
+        [ 48, 42, 16, 6 ],
+        [ 0, 38, 1, 1 ],
+        [ 48, 16, 16, 16 ]
+      ]
+    },
+
+
+
+
+    // doors
+    {
+      "type": "struct",
+      "positions": [
+        [ 2, 0, 7 ],
+        [ 3, 0, 7 ]
+      ],
+      "entities": [
+        {
+          "id": "door",
+          "rotation": [ 0, 2, 0 ],
+          "doorData": {
+            "warpData": {
+              "map": "Maps/Johto/NewBark/main.json",
+              "position": [ 11, 0, 14 ]
+            },
+            "hidden": true
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+﻿[
+  {
+    "id": 10, // caterpie
+    "method": "grass",
+    "levels": [ 3, 4 ],
+    "rates": [
+      {
+        "time": "morning",
+        "chance": 50
+      },
+      {
+        "time": "day",
+        "chance": 50
+      }
+    ]
+  },
+  {
+    "id": 13, // weedle
+    "method": "grass",
+    "levels": [ 3 ],
+    "rates": [
+      {
+        "time": "morning",
+        "chance": 5
+      },
+      {
+        "time": "day",
+        "chance": 5
+      }
+    ]
+  },
+  {
+    "id": 16, // pidgey
+    "method": "grass",
+    "rates": [
+      {
+        "time": "morning",
+        "chance": 10,
+        "levels": [ 4 ]
+      },
+      {
+        "time": "day",
+        "chance": 40,
+        "levels": [ 3, 4 ]
+      }
+    ]
+  },
+  {
+    "id": 41, // zubat
+    "method": "grass",
+    "levels": [ 3 ],
+    "rates": [
+      {
+        "time": "night",
+        "chance": 5
+      }
+    ]
+  },
+  {
+    "id": 60, // poliwag
+    "method": "grass",
+    "levels": [ 4 ],
+    "rates": [
+      {
+        "time": "night",
+        "chance": 20
+      }
+    ]
+  },
+  {
+    "id": 163, // hoothoot
+    "method": "grass",
+    "levels": [ 3, 4 ],
+    "rates": [
+      {
+        "time": "night",
+        "chance": 45
+      }
+    ]
+  },
+  {
+    "id": 165, // ledyba
+    "method": "grass",
+    "levels": [ 3 ],
+    "rates": [
+      {
+        "time": "morning",
+        "chance": 30
+      }
+    ]
+  },
+  {
+    "id": 167, // spinarak
+    "method": "grass",
+    "levels": [ 3 ],
+    "rates": [
+      {
+        "time": "night",
+        "chance": 30
+      }
+    ]
+  },
+  {
+    "id": 187, // hoppip
+    "method": "grass",
+    "levels": [ 4 ],
+    "rates": [
+      {
+        "time": "morning",
+        "chance": 5
+      },
+      {
+        "time": "day",
+        "chance": 5
+      }
+    ]
+  },
+
+  {
+    "id": 60, // poliwag
+    "method": "water",
+    "levels": [ 15, 24 ],
+    "chance": 90
+  },
+  {
+    "id": 61, // poliwhirl
+    "method": "water",
+    "levels": [ 20, 24 ],
+    "chance": 10
+  }
+]

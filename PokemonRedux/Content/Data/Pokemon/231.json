@@ -1,0 +1,240 @@
+{
+  "id": 231,
+  "name": "PHANPY",
+  "gender": "equal",
+  "baseStats": [ 90, 60, 60, 40, 40, 40 ],
+  "experienceType": "mediumFast",
+  "experienceYield": 124,
+  "type1": "ground",
+  "type2": "none",
+  "eggGroups": [ "field" ],
+  "eggCycles": 20,
+  "catchRate": 120,
+  "wildFleeRate": 0.5,
+  "moves": [
+    {
+      "name": "TACKLE",
+      "level": 1,
+      "tm": false,
+      "breeding": false
+    },
+    {
+      "name": "GROWL",
+      "level": 1,
+      "tm": false,
+      "breeding": false
+    },
+    {
+      "name": "DEFENSE CURL",
+      "level": 9,
+      "tm": false,
+      "breeding": false
+    },
+    {
+      "name": "FLAIL",
+      "level": 17,
+      "tm": false,
+      "breeding": false
+    },
+    {
+      "name": "TAKE DOWN",
+      "level": 25,
+      "tm": false,
+      "breeding": false
+    },
+    {
+      "name": "ROLLOUT",
+      "level": 33,
+      "tm": false,
+      "breeding": false
+    },
+    {
+      "name": "ENDURE",
+      "level": 41,
+      "tm": false,
+      "breeding": false
+    },
+    {
+      "name": "DOUBLE-EDGE",
+      "level": 49,
+      "tm": false,
+      "breeding": false
+    },
+    {
+      "name": "HEADBUTT",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "CURSE",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "ROLLOUT",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "ROAR",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "TOXIC",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "ROCK SMASH",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "HIDDEN POWER",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "SUNNY DAY",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "SNORE",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "PROTECT",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "ENDURE",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "FRUSTRATION",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "EARTHQUAKE",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "RETURN",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "MUD-SLAP",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "DOUBLE TEAM",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "SWAGGER",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "SLEEP TALK",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "SANDSTORM",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "DEFENSE CURL",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "REST",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "ATTRACT",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "STRENGTH",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "ANCIENTPOWER",
+      "level": 0,
+      "tm": false,
+      "breeding": true
+    },
+    {
+      "name": "BODY SLAM",
+      "level": 0,
+      "tm": false,
+      "breeding": true
+    },
+    {
+      "name": "FOCUS ENERGY",
+      "level": 0,
+      "tm": false,
+      "breeding": true
+    },
+    {
+      "name": "WATER GUN",
+      "level": 0,
+      "tm": false,
+      "breeding": true
+    }
+  ],
+  "colors": {
+    "normal": [
+      [ 0, 0, 0 ],
+      [ 184, 104, 72 ],
+      [ 136, 160, 208 ],
+      [ 248, 248, 248 ]
+    ],
+    "shiny": [
+      [ 0, 0, 0 ],
+      [ 197, 8, 49 ],
+      [ 181, 197, 206 ],
+      [ 255, 255, 255 ]
+    ]
+  }
+}

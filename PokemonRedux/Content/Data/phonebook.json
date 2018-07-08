@@ -1,0 +1,22 @@
+﻿{
+  "contacts": [
+    {
+      "name": "MOM",
+      "important": true,
+      "title": "",
+      "map": "Maps/Johto/NewBark/main.json"
+    },
+    {
+      "name": "PROF.ELM",
+      "important": true,
+      "title": "",
+      "map": "Maps/Johto/NewBark/lab.json"
+    },
+    {
+      "name": "ARNIE",
+      "important": false,
+      "title": "BUG CATCHER",
+      "map": "Maps/Johto/Route35/main.json"
+    }
+  ]
+}

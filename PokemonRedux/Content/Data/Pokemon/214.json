@@ -1,0 +1,234 @@
+{
+  "id": 214,
+  "name": "HERACROSS",
+  "gender": "equal",
+  "baseStats": [ 80, 125, 75, 40, 95, 85 ],
+  "experienceType": "slow",
+  "experienceYield": 200,
+  "type1": "bug",
+  "type2": "fighting",
+  "eggGroups": [ "bug" ],
+  "eggCycles": 25,
+  "catchRate": 45,
+  "wildFleeRate": 0.1,
+  "moves": [
+    {
+      "name": "TACKLE",
+      "level": 1,
+      "tm": false,
+      "breeding": false
+    },
+    {
+      "name": "LEER",
+      "level": 1,
+      "tm": false,
+      "breeding": false
+    },
+    {
+      "name": "HORN ATTACK",
+      "level": 6,
+      "tm": false,
+      "breeding": false
+    },
+    {
+      "name": "ENDURE",
+      "level": 12,
+      "tm": false,
+      "breeding": false
+    },
+    {
+      "name": "FURY ATTACK",
+      "level": 19,
+      "tm": false,
+      "breeding": false
+    },
+    {
+      "name": "COUNTER",
+      "level": 27,
+      "tm": false,
+      "breeding": false
+    },
+    {
+      "name": "TAKE DOWN",
+      "level": 35,
+      "tm": false,
+      "breeding": false
+    },
+    {
+      "name": "REVERSAL",
+      "level": 44,
+      "tm": false,
+      "breeding": false
+    },
+    {
+      "name": "MEGAHORN",
+      "level": 54,
+      "tm": false,
+      "breeding": false
+    },
+    {
+      "name": "HEADBUTT",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "CURSE",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "TOXIC",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "ROCK SMASH",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "HIDDEN POWER",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "SUNNY DAY",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "SNORE",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "PROTECT",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "ENDURE",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "FRUSTRATION",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "EARTHQUAKE",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "RETURN",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "DOUBLE TEAM",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "SWAGGER",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "SLEEP TALK",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "DETECT",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "REST",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "ATTRACT",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "THIEF",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "FURY CUTTER",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "CUT",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "STRENGTH",
+      "level": 0,
+      "tm": true,
+      "breeding": false
+    },
+    {
+      "name": "BIDE",
+      "level": 0,
+      "tm": false,
+      "breeding": true
+    },
+    {
+      "name": "FLAIL",
+      "level": 0,
+      "tm": false,
+      "breeding": true
+    },
+    {
+      "name": "HARDEN",
+      "level": 0,
+      "tm": false,
+      "breeding": true
+    }
+  ],
+  "colors": {
+    "normal": [
+      [ 0, 0, 0 ],
+      [ 24, 88, 120 ],
+      [ 128, 104, 152 ],
+      [ 248, 248, 248 ]
+    ],
+    "shiny": [
+      [ 0, 0, 0 ],
+      [ 107, 25, 132 ],
+      [ 123, 74, 197 ],
+      [ 255, 255, 255 ]
+    ]
+  }
+}

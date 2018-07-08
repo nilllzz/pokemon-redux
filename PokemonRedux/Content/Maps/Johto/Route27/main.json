@@ -1,0 +1,527 @@
+﻿{
+  "$schema": "../../map.schema.json?reload",
+  "name": "Route 27",
+  "worldOffset": [ 80, 0, 0 ],
+  "loadMaps": [
+    "Maps/Johto/NewBark/main.json"
+  ],
+  "definitions": [
+    {
+      "id": "grassFloor",
+      "type": "floor",
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/grass",
+      "tileTexture": true
+    },
+    {
+      "id": "grassFloorProp",
+      "type": "prop",
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/grass",
+      "tileTexture": true
+    },
+    {
+      "id": "tree",
+      "type": "prop",
+      "geometry": "billboard",
+      "textureFile": "Johto/Outside/tree",
+      "size": [ 1, 2 ],
+      "isOpaque": false
+    },
+    {
+      "id": "water",
+      "type": "floor",
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/water",
+      "tileTexture": true,
+      "isAnimated": true,
+      "frameDelay": 24,
+      "frames": [
+        [ 0, 0, 16, 16 ],
+        [ 16, 0, 16, 16 ],
+        [ 32, 0, 16, 16 ],
+        [ 16, 0, 16, 16 ]
+      ]
+    },
+    {
+      "id": "waterCliff",
+      "type": "prop",
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/mountain",
+      "tileTexture": true,
+      "hasCollision": false,
+      "elevation": [ 0.5, 0.5, 0, 0 ],
+      "textures": [
+        [ 0, 0, 16, 24 ]
+      ]
+    },
+    {
+      "id": "waterCliffCorner",
+      "type": "prop",
+      "geometry": "corner",
+      "textureFile": "Johto/Outside/mountain",
+      "textures": [
+        [ 0, 0, 8, 12 ]
+      ],
+      "size": [ 0.5, 0.5, 0.5 ],
+      "hasCollision": false
+    },
+    {
+      "id": "boulderCorner",
+      "type": "prop",
+      "geometry": "corner",
+      "textureFile": "Johto/Outside/mountain",
+      "textures": [
+        [ 0, 4, 8, 12 ]
+      ],
+      "size": [ 0.5, 0.5, 0.5 ]
+    },
+    {
+      "id": "boulderSide",
+      "type": "prop",
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/mountain",
+      "size": [ 1, 0.5, 0.5 ],
+      "textures": [
+        [ 0, 4, 16, 12 ]
+      ],
+      "elevation": [ 0.5, 0.5, 0, 0 ]
+    },
+    {
+      "id": "boulderTop",
+      "type": "prop",
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/rock"
+    },
+    {
+      "id": "bush",
+      "type": "prop",
+      "geometry": "billboard",
+      "textureFile": "Johto/Outside/bush",
+      "isOpaque": false
+    },
+    {
+      "id": "cliff",
+      "type": "prop",
+      "geometry": "walls",
+      "textureFile": "Johto/Outside/mountain",
+      "tileTexture": true
+    }
+  ],
+  "entities": [
+    // floors
+    {
+      "id": "grassFloor",
+      "position": [ 10, 0, 10 ],
+      "size": [ 14, 6 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 24, 0, 6 ],
+      "size": [ 6, 6 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 30, 0, 10 ],
+      "size": [ 8, 4 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 30, 0.5, 6 ],
+      "size": [ 8, 4 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 38, 0, 6 ],
+      "size": [ 2, 2 ],
+      "elevation": [ 0.5, 0, 0.5, 0 ]
+    },
+
+    // prop floors
+    {
+      "id": "grassFloorProp",
+      "position": [ 0, 0, 0 ],
+      "size": [ 14, 2 ]
+    },
+    {
+      "id": "grassFloorProp",
+      "position": [ 0, 0, 2 ],
+      "size": [ 16, 2 ]
+    },
+    {
+      "id": "grassFloorProp",
+      "position": [ 0, 0, 4 ],
+      "size": [ 6, 2 ]
+    },
+    {
+      "id": "grassFloorProp",
+      "position": [ 0, 0, 10 ],
+      "size": [ 4, 8 ]
+    },
+    {
+      "id": "grassFloorProp",
+      "position": [ 10, 0, 16 ],
+      "size": [ 10, 2 ]
+    },
+    {
+      "id": "grassFloorProp",
+      "position": [ 38, 0, 12 ],
+      "size": [ 10, 2 ]
+    },
+    {
+      "id": "grassFloorProp",
+      "position": [ 40, 0, 8 ],
+      "size": [ 2, 4 ]
+    },
+
+
+
+    // water
+    {
+      "id": "water",
+      "position": [ 0, -0.5, 6 ],
+      "size": [ 6, 4 ]
+    },
+    {
+      "id": "water",
+      "position": [ 6, -0.5, 4 ],
+      "size": [ 14, 6 ]
+    },
+    {
+      "id": "water",
+      "position": [ 20, -0.5, 6 ],
+      "size": [ 4, 4 ]
+    },
+    {
+      "id": "water",
+      "position": [ 4, -0.5, 10 ],
+      "size": [ 6, 8 ]
+    },
+
+    // cliffs
+    {
+      "id": "waterCliff",
+      "position": [ 0, -0.5, 6 ],
+      "size": [ 6, 0.5 ]
+    },
+    {
+      "id": "waterCliff",
+      "position": [ 0, -0.5, 9.5 ],
+      "size": [ 4, 0.5 ],
+      "rotation": [ 0, 2, 0 ]
+    },
+    {
+      "id": "waterCliffCorner",
+      "position": [ 4, -0.25, 9.5 ],
+      "rotation": [ 0, 3, 0 ]
+    },
+    {
+      "id": "waterCliff",
+      "position": [ 0.25, -0.5, 13.75 ],
+      "size": [ 8, 0.5 ],
+      "rotation": [ 0, 1, 0 ]
+    },
+    {
+      "id": "waterCliff",
+      "position": [ 5.75, -0.5, 13.75 ],
+      "size": [ 8, 0.5 ],
+      "rotation": [ 0, 3, 0 ]
+    },
+    {
+      "id": "waterCliffCorner",
+      "position": [ 6, -0.25, 6 ],
+      "rotation": [ 0, 2, 0 ]
+    },
+    {
+      "id": "waterCliff",
+      "position": [ 5.25, -0.5, 4.75 ],
+      "size": [ 2, 0.5 ],
+      "rotation": [ 0, 1, 0 ]
+    },
+    {
+      "id": "waterCliff",
+      "position": [ 6, -0.5, 4 ],
+      "size": [ 14, 0.5 ],
+      "rotation": [ 0, 0, 0 ]
+    },
+    {
+      "id": "waterCliff",
+      "position": [ 18.75, -0.5, 4.75 ],
+      "size": [ 2, 0.5 ],
+      "rotation": [ 0, 3, 0 ]
+    },
+    {
+      "id": "waterCliffCorner",
+      "position": [ 19.5, -0.25, 6 ],
+      "rotation": [ 0, 1, 0 ]
+    },
+    {
+      "id": "waterCliff",
+      "position": [ 20, -0.5, 6 ],
+      "size": [ 4, 0.5 ],
+      "rotation": [ 0, 0, 0 ]
+    },
+    {
+      "id": "waterCliff",
+      "position": [ 21.75, -0.5, 7.75 ],
+      "size": [ 4, 0.5 ],
+      "rotation": [ 0, 3, 0 ]
+    },
+    {
+      "id": "waterCliff",
+      "position": [ 10, -0.5, 9.5 ],
+      "size": [ 14, 0.5 ],
+      "rotation": [ 0, 2, 0 ]
+    },
+    {
+      "id": "waterCliffCorner",
+      "position": [ 9.5, -0.25, 9.5 ],
+      "rotation": [ 0, 0, 0 ]
+    },
+    {
+      "id": "waterCliff",
+      "position": [ 20, -0.5, 16 ],
+      "size": [ 4, 0.5 ],
+      "rotation": [ 0, 0, 0 ]
+    },
+    {
+      "id": "waterCliff",
+      "position": [ 19.25, -0.5, 16.75 ],
+      "size": [ 2, 0.5 ],
+      "rotation": [ 0, 1, 0 ]
+    },
+    {
+      "id": "waterCliff",
+      "position": [ 22.25, -0.5, 13.75 ],
+      "size": [ 4, 0.5 ],
+      "rotation": [ 0, 1, 0 ]
+    },
+    {
+      "id": "waterCliffCorner",
+      "position": [ 24, -0.25, 16 ],
+      "rotation": [ 0, 2, 0 ]
+    },
+    {
+      "id": "waterCliff",
+      "position": [ 24, -0.5, 12 ],
+      "size": [ 6, 0.5 ],
+      "rotation": [ 0, 0, 0 ]
+    },
+    {
+      "id": "waterCliff",
+      "position": [ 28.75, -0.5, 12.75 ],
+      "size": [ 2, 0.5 ],
+      "rotation": [ 0, 3, 0 ]
+    },
+
+
+    // cliffs
+    {
+      "id": "cliff",
+      "position": [ 30, 0, 6 ],
+      "size": [ 6, 0.5, 4 ]
+    },
+    {
+      "id": "cliff",
+      "position": [ 36, 0, 8 ],
+      "size": [ 4, 0.5, 2 ]
+    },
+
+
+
+    // trees
+    {
+      "type": "field",
+      "position": [ 0, -0.333, 0 ],
+      "size": [ 14, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 0, -0.333, 2 ],
+      "size": [ 16, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 0, -0.333, 4 ],
+      "size": [ 6, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 0, -0.333, 10 ],
+      "size": [ 4, 8 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 10, -0.333, 10 ],
+      "size": [ 6, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 10, -0.333, 12 ],
+      "size": [ 2, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 14, -0.333, 12 ],
+      "size": [ 6, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 10, -0.333, 14 ],
+      "size": [ 14, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 10, -0.333, 16 ],
+      "size": [ 10, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 28, -0.333, 6 ],
+      "size": [ 2, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 30, -0.333, 12 ],
+      "size": [ 2, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 34, -0.333, 12 ],
+      "size": [ 2, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 30, 0.166, 6 ],
+      "size": [ 2, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+
+
+    // bushes
+    {
+      "type": "field",
+      "position": [ 20, -0.222, 13 ],
+      "size": [ 4, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 34, -0.222, 11 ],
+      "size": [ 4, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+
+
+
+
+    // boulders
+    {
+      "type": "struct",
+      "positions": [
+        [ 12, 0, 12 ],
+        [ 4, -0.5, 14 ],
+        [ 6, -0.5, 14 ],
+        [ 8, -0.5, 12 ],
+        [ 8, -0.5, 6 ],
+        [ 14, 0, 0 ],
+        [ 16, 0, 10 ],
+        [ 18, -0.5, 6 ],
+        [ 20, -0.5, 8 ],
+        [ 32, 0, 12 ],
+        [ 36, 0, 12 ],
+        [ 38, 0.5, 8 ],
+        [ 38, 0, 10 ]
+      ],
+      "entities": [
+        {
+          "id": "boulderCorner",
+          "position": [ 0, 0.25, 0 ],
+          "rotation": [ 0, 0, 0 ]
+        },
+        {
+          "id": "boulderCorner",
+          "position": [ 0, 0.25, 1.5 ],
+          "rotation": [ 0, 1, 0 ]
+        },
+        {
+          "id": "boulderCorner",
+          "position": [ 1.5, 0.25, 1.5 ],
+          "rotation": [ 0, 2, 0 ]
+        },
+        {
+          "id": "boulderCorner",
+          "position": [ 1.5, 0.25, 0 ],
+          "rotation": [ 0, 3, 0 ]
+        },
+        {
+          "id": "boulderSide",
+          "position": [ 0.5, 0.25, 1.5 ],
+          "rotation": [ 0, 0, 0 ]
+        },
+        {
+          "id": "boulderSide",
+          "position": [ 1.25, 0.25, 0.75 ],
+          "rotation": [ 0, 1, 0 ]
+        },
+        {
+          "id": "boulderSide",
+          "position": [ 0.5, 0.25, 0 ],
+          "rotation": [ 0, 2, 0 ]
+        },
+        {
+          "id": "boulderSide",
+          "position": [ -0.25, 0.25, 0.75 ],
+          "rotation": [ 0, 3, 0 ]
+        },
+        {
+          "id": "boulderTop",
+          "position": [ 0.5, 0.5, 0.5 ]
+        }
+      ]
+    }
+
+  ]
+}

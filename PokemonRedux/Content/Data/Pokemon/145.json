@@ -1,0 +1,153 @@
+{
+  "id": 145,
+  "name": "ZAPDOS",
+  "gender": "genderless",
+  "baseStats": [ 90, 90, 85, 125, 90, 100 ],
+  "experienceType": "slow",
+  "experienceYield": 216,
+  "type1": "electric",
+  "type2": "flying",
+  "eggGroups": [ "undiscovered" ],
+  "eggCycles": 80,
+  "catchRate": 3,
+  "wildFleeRate": 0.5,
+  "moves": [
+    {
+      "name": "PECK",
+      "level": 1
+    },
+    {
+      "name": "THUNDERSHOCK",
+      "level": 1
+    },
+    {
+      "name": "THUNDER WAVE",
+      "level": 13
+    },
+    {
+      "name": "AGILITY",
+      "level": 25
+    },
+    {
+      "name": "DETECT",
+      "level": 37
+    },
+    {
+      "name": "DRILL PECK",
+      "level": 49
+    },
+    {
+      "name": "LIGHT SCREEN",
+      "level": 61
+    },
+    {
+      "name": "THUNDER",
+      "level": 73
+    },
+    {
+      "name": "CURSE",
+      "tm": true
+    },
+    {
+      "name": "ROAR",
+      "tm": true
+    },
+    {
+      "name": "TOXIC",
+      "tm": true
+    },
+    {
+      "name": "ZAP CANNON",
+      "tm": true
+    },
+    {
+      "name": "ROCK SMASH",
+      "tm": true
+    },
+    {
+      "name": "HIDDEN POWER",
+      "tm": true
+    },
+    {
+      "name": "SUNNY DAY",
+      "tm": true
+    },
+    {
+      "name": "SNORE",
+      "tm": true
+    },
+    {
+      "name": "HYPER BEAM",
+      "tm": true
+    },
+    {
+      "name": "PROTECT",
+      "tm": true
+    },
+    {
+      "name": "RAIN DANCE",
+      "tm": true
+    },
+    {
+      "name": "ENDURE",
+      "tm": true
+    },
+    {
+      "name": "FRUSTRATION",
+      "tm": true
+    },
+    {
+      "name": "THUNDER",
+      "tm": true
+    },
+    {
+      "name": "RETURN",
+      "tm": true
+    },
+    {
+      "name": "MUD-SLAP",
+      "tm": true
+    },
+    {
+      "name": "DOUBLE TEAM",
+      "tm": true
+    },
+    {
+      "name": "SWAGGER",
+      "tm": true
+    },
+    {
+      "name": "SLEEP TALK",
+      "tm": true
+    },
+    {
+      "name": "SANDSTORM",
+      "tm": true
+    },
+    {
+      "name": "SWIFT",
+      "tm": true
+    },
+    {
+      "name": "DETECT",
+      "tm": true
+    },
+    {
+      "name": "REST",
+      "tm": true
+    },
+    {
+      "name": "STEEL WING",
+      "tm": true
+    },
+    {
+      "name": "FLY",
+      "tm": true
+    },
+    {
+      "name": "FLASH",
+      "tm": true
+    }
+  ],
+  "colors": null
+}

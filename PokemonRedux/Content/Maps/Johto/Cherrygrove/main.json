@@ -1,0 +1,867 @@
+﻿{
+  "$schema": "../../map.schema.json?reload",
+  "name": "Cherrygrove City",
+  "worldOffset": [ -40, 0, 0 ],
+  "loadMaps": [
+    "Maps/Johto/Route29/main.json",
+    "Maps/Johto/Route30/main.json"
+  ],
+  "definitions": [
+    {
+      "id": "grassFloor",
+      "type": "floor",
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/grass",
+      "tileTexture": true
+    },
+    {
+      "id": "pathFloor",
+      "type": "floor",
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/path",
+      "tileTexture": true
+    },
+    {
+      "id": "grassFloorProp",
+      "type": "prop",
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/grass",
+      "tileTexture": true
+    },
+    {
+      "id": "cliff",
+      "type": "prop",
+      "geometry": "walls",
+      "textureFile": "Johto/Outside/mountain",
+      "tileTexture": true
+    },
+    {
+      "id": "tree",
+      "type": "prop",
+      "geometry": "billboard",
+      "textureFile": "Johto/Outside/tree",
+      "size": [ 1, 2 ],
+      "isOpaque": false
+    },
+    {
+      "id": "bush",
+      "type": "prop",
+      "geometry": "billboard",
+      "textureFile": "Johto/Outside/bush",
+      "isOpaque": false
+    },
+    {
+      "id": "flower",
+      "type": "prop",
+      "geometry": "billboard",
+      "textureFile": "Johto/Outside/flower",
+      "isOpaque": false,
+      "hasCollision": false,
+      "isAnimated": true,
+      "frameDelay": 24,
+      "size": [ 0.5, 0.5, 0.5 ],
+      "frames": [
+        [ 0, 0, 8, 8 ],
+        [ 8, 0, 8, 8 ]
+      ]
+    },
+    {
+      "id": "water",
+      "type": "floor",
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/water",
+      "tileTexture": true,
+      "isAnimated": true,
+      "frameDelay": 24,
+      "frames": [
+        [ 0, 0, 16, 16 ],
+        [ 16, 0, 16, 16 ],
+        [ 32, 0, 16, 16 ],
+        [ 16, 0, 16, 16 ]
+      ]
+    },
+    {
+      "id": "waterCliff",
+      "type": "prop",
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/mountain",
+      "tileTexture": true,
+      "hasCollision": false,
+      "elevation": [ 0.5, 0.5, 0, 0 ],
+      "textures": [
+        [ 0, 0, 16, 24 ]
+      ]
+    },
+    {
+      "id": "waterCliffCorner",
+      "type": "prop",
+      "geometry": "corner",
+      "textureFile": "Johto/Outside/mountain",
+      "textures": [
+        [ 0, 0, 8, 12 ]
+      ],
+      "size": [ 0.5, 0.5, 0.5 ],
+      "hasCollision": false
+    },
+    {
+      "id": "sign",
+      "type": "prop",
+      "geometry": "cube",
+      "textureFile": "Johto/Outside/sign",
+      "textures": [
+        [ 16, 0, 16, 14 ],
+        [ 0, 0, 16, 14 ],
+        [ 0, 17, 3, 14 ],
+        [ 0, 17, 3, 14 ],
+        [ 16, 0, 1, 1 ],
+        [ 0, 14, 16, 3 ]
+      ],
+      "size": [ 0.9, 0.7875, 0.16875 ],
+      "isOpaque": false
+    },
+    {
+      "id": "boulderCorner",
+      "type": "prop",
+      "geometry": "corner",
+      "textureFile": "Johto/Outside/mountain",
+      "textures": [
+        [ 0, 4, 8, 12 ]
+      ],
+      "size": [ 0.5, 0.5, 0.5 ]
+    },
+    {
+      "id": "boulderSide",
+      "type": "prop",
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/mountain",
+      "size": [ 1, 0.5, 0.5 ],
+      "textures": [
+        [ 0, 4, 16, 12 ]
+      ],
+      "elevation": [ 0.5, 0.5, 0, 0 ]
+    },
+    {
+      "id": "boulderTop",
+      "type": "prop",
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/rock"
+    },
+    {
+      "id": "rockFloor",
+      "type": "floor",
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/rock",
+      "tileTexture": true
+    },
+    {
+      "id": "waterRock",
+      "type": "prop",
+      "geometry": "billboard",
+      "textureFile": "Johto/Outside/waterRock",
+      "size": [ 0.5, 0.5, 0.5 ],
+      "isOpaque": false,
+      "billboardTilt": 1.2
+    },
+    {
+      "id": "door",
+      "type": "door",
+      "geometry": "wall",
+      "textureFile": "Johto/Outside/door"
+    }
+  ],
+  "entities": [
+    // floors
+    {
+      "id": "grassFloor",
+      "position": [ 22, 0, 6 ],
+      "size": [ 6, 4 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 18, 0, 12 ],
+      "size": [ 10, 2 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 34, 0, 2 ],
+      "size": [ 4, 2 ]
+    },
+
+    {
+      "id": "pathFloor",
+      "position": [ 34, 0, 6 ],
+      "size": [ 6, 2 ]
+    },
+    {
+      "id": "pathFloor",
+      "position": [ 28, 0, 6 ],
+      "size": [ 6, 8 ]
+    },
+    {
+      "id": "pathFloor",
+      "position": [ 22, 0, 4 ],
+      "size": [ 10, 2 ]
+    },
+    {
+      "id": "pathFloor",
+      "position": [ 10, 0, 4 ],
+      "size": [ 12, 6 ]
+    },
+    {
+      "id": "pathFloor",
+      "position": [ 14, 0, 10 ],
+      "size": [ 14, 2 ]
+    },
+    {
+      "id": "pathFloor",
+      "position": [ 16, 0, 0 ],
+      "size": [ 2, 4 ]
+    },
+
+    {
+      "id": "rockFloor",
+      "position": [ 4, 0, 12 ],
+      "size": [ 4, 2 ]
+    },
+
+    // floor props
+    {
+      "id": "grassFloorProp",
+      "position": [ 0, 0, 0 ],
+      "size": [ 16, 4 ]
+    },
+    {
+      "id": "grassFloorProp",
+      "position": [ 18, 0, 0 ],
+      "size": [ 16, 4 ]
+    },
+    {
+      "id": "grassFloorProp",
+      "position": [ 32, 0, 4 ],
+      "size": [ 8, 2 ]
+    },
+    {
+      "id": "grassFloorProp",
+      "position": [ 18, 0, 14 ],
+      "size": [ 16, 4 ]
+    },
+    {
+      "id": "grassFloorProp",
+      "position": [ 34, 0, 8 ],
+      "size": [ 6, 10 ]
+    },
+    {
+      "id": "grassFloorProp",
+      "position": [ 38, 0, 0 ],
+      "size": [ 2, 4 ]
+    },
+
+    // signs
+    {
+      "id": "sign",
+      "position": [ 30, 0, 8.5 ]
+    },
+    {
+      "id": "sign",
+      "position": [ 23, 0, 9.5 ]
+    },
+
+    // water
+    {
+      "id": "water",
+      "position": [ 0, -0.5, 4 ],
+      "size": [ 10, 14 ]
+    },
+    {
+      "id": "water",
+      "position": [ 10, -0.5, 10 ],
+      "size": [ 4, 8 ]
+    },
+    {
+      "id": "water",
+      "position": [ 14, -0.5, 12 ],
+      "size": [ 4, 6 ]
+    },
+    {
+      "id": "water",
+      "position": [ 34, -0.5, 0 ],
+      "size": [ 4, 2 ]
+    },
+
+    // water cliffs
+    {
+      "id": "waterCliff",
+      "position": [ 0, -0.5, 4 ],
+      "size": [ 10, 0.5 ]
+    },
+    {
+      "id": "cliff",
+      "position": [ 10, -0.5, 4 ],
+      "size": [ 4, 0.5, 6 ]
+    },
+    {
+      "id": "cliff",
+      "position": [ 14, -0.5, 10 ],
+      "size": [ 4, 0.5, 2 ]
+    },
+    {
+      "id": "cliff",
+      "position": [ 18, -0.5, 12 ],
+      "size": [ 1, 0.5, 6 ]
+    },
+    {
+      "id": "waterCliff",
+      "position": [ 33.25, -0.5, 0.75 ],
+      "size": [ 2, 0.5 ],
+      "rotation": [ 0, 1, 0 ]
+    },
+    {
+      "id": "waterCliff",
+      "position": [ 36.75, -0.5, 0.75 ],
+      "size": [ 2, 0.5 ],
+      "rotation": [ 0, 3, 0 ]
+    },
+    {
+      "id": "waterCliff",
+      "position": [ 4, -0.5, 14 ],
+      "size": [ 4, 0.5 ]
+    },
+    {
+      "id": "waterCliff",
+      "position": [ 1.75, -0.5, 11.75 ],
+      "size": [ 4, 0.5 ],
+      "rotation": [ 0, 3, 0 ]
+    },
+    {
+      "id": "waterCliff",
+      "position": [ 5.25, -0.5, 10.75 ],
+      "size": [ 2, 0.5 ],
+      "rotation": [ 0, 1, 0 ]
+    },
+    {
+      "id": "waterCliff",
+      "position": [ 7.25, -0.5, 12.75 ],
+      "size": [ 2, 0.5 ],
+      "rotation": [ 0, 1, 0 ]
+    },
+    {
+      "id": "waterCliffCorner",
+      "position": [ 3.5, -0.25, 14 ],
+      "rotation": [ 0, 1, 0 ]
+    },
+    {
+      "id": "waterCliffCorner",
+      "position": [ 8, -0.25, 14 ],
+      "rotation": [ 0, 2, 0 ]
+    },
+
+
+
+    // water rocks
+    {
+      "type": "field",
+      "position": [ 3, -0.28, 6 ],
+      "size": [ 2, 4 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "waterRock"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 2, -0.28, 8 ],
+      "size": [ 4, 2 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "waterRock"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 0, -0.28, 10 ],
+      "size": [ 2, 12 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "waterRock"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 0, -0.28, 16 ],
+      "size": [ 4, 2 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "waterRock"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 1, -0.28, 17 ],
+      "size": [ 8, 2 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "waterRock"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 4, -0.28, 16 ],
+      "size": [ 8, 2 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "waterRock"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 7, -0.28, 17 ],
+      "size": [ 12, 2 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "waterRock"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 12, -0.28, 15 ],
+      "size": [ 2, 4 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "waterRock"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 12, -0.28, 14 ],
+      "size": [ 4, 2 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "waterRock"
+      }
+    },
+
+
+
+    // trees
+    {
+      "type": "field",
+      "position": [ 34, -0.333, 8 ],
+      "size": [ 6, 6 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 0, -0.333, 0 ],
+      "size": [ 16, 4 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 18, -0.333, 0 ],
+      "size": [ 4, 4 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 26, -0.333, 0 ],
+      "size": [ 2, 4 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 32, -0.333, 0 ],
+      "size": [ 2, 4 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 32, -0.333, 4 ],
+      "size": [ 8, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 18, -0.333, 14 ],
+      "size": [ 22, 4 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 18, -0.333, 12 ],
+      "size": [ 4, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 38, -0.333, 0 ],
+      "size": [ 2, 4 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+
+    // bushes
+    {
+      "type": "field",
+      "position": [ 34, -0.222, 2 ],
+      "size": [ 1, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 34, -0.222, 3 ],
+      "size": [ 2, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+
+    // small houses
+    {
+      "type": "struct",
+      "positions": [
+        [ 16, 0, 6 ],
+        [ 24, 0, 8 ],
+        [ 30, 0, 10 ]
+      ],
+      "entities": [
+        {
+          "type": "prop",
+          "position": [ 0, 0, 0 ],
+          "geometry": "walls",
+          "textureFile": "Johto/Cherrygrove/smallHouse",
+          "textures": [
+            [ 0, 16, 64, 16 ],
+            [ 0, 32, 32, 16 ],
+            [ 0, 0, 0, 0 ],
+            [ 0, 32, 32, 16 ]
+          ],
+          "size": [ 4, 1, 2 ]
+        },
+        {
+          "type": "prop",
+          "position": [ 0, 0, 1 ],
+          "geometry": "wall",
+          "textureFile": "Johto/Cherrygrove/smallHouse",
+          "textures": [
+            [ 0, 0, 64, 16 ]
+          ],
+          "size": [ 4, 1, 1 ],
+          "isOpaque": false
+        },
+        {
+          "type": "prop",
+          "position": [ 0, 1, 0 ],
+          "geometry": "walls",
+          "textureFile": "Johto/Cherrygrove/smallHouse",
+          "textures": [
+            [ 32, 32, 16, 4 ]
+          ],
+          "size": [ 4, 0.25, 2 ]
+        },
+        {
+          "type": "prop",
+          "position": [ 0, 1.25, 0 ],
+          "geometry": "plane",
+          "textureFile": "Johto/Cherrygrove/roof",
+          "tileTexture": true,
+          "size": [ 4, 2 ]
+        },
+        {
+          "type": "prop",
+          "position": [ 1, 0, 1 ],
+          "geometry": "houseInside",
+          "textureFile": "Johto/Outside/houseInside"
+        }
+      ]
+    },
+
+    // mart
+    {
+      "type": "prop",
+      "position": [ 22, 0, 0 ],
+      "geometry": "walls",
+      "textureFile": "Johto/Cherrygrove/mart",
+      "textures": [
+        [ 0, 32, 64, 32 ],
+        [ 0, 32, 64, 32 ],
+        [ 0, 0, 0, 0 ],
+        [ 0, 32, 64, 32 ]
+      ],
+      "size": [ 4, 2, 4 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 22, 1, 3 ],
+      "geometry": "wall",
+      "textureFile": "Johto/Cherrygrove/mart",
+      "textures": [
+        [ 0, 0, 64, 16 ]
+      ],
+      "size": [ 4, 1, 1 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 22, 0, 3 ],
+      "geometry": "wall",
+      "textureFile": "Johto/Cherrygrove/mart",
+      "textures": [
+        [ 0, 16, 64, 16 ]
+      ],
+      "size": [ 4, 1, 1 ],
+      "isOpaque": false
+    },
+    {
+      "type": "prop",
+      "position": [ 22, 2, 0 ],
+      "geometry": "walls",
+      "textureFile": "Johto/Cherrygrove/mart",
+      "textures": [
+        [ 64, 0, 16, 4 ]
+      ],
+      "size": [ 4, 0.25, 4 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 22, 2.25, 0 ],
+      "geometry": "plane",
+      "textureFile": "Johto/Cherrygrove/roof",
+      "tileTexture": true,
+      "size": [ 4, 4 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 23, 0, 3 ],
+      "geometry": "houseInside",
+      "textureFile": "Johto/Outside/houseInside"
+    },
+    // center
+    {
+      "type": "prop",
+      "position": [ 28, 0, 0 ],
+      "geometry": "walls",
+      "textureFile": "Johto/Cherrygrove/poke",
+      "textures": [
+        [ 0, 32, 64, 32 ],
+        [ 0, 32, 64, 32 ],
+        [ 0, 0, 0, 0 ],
+        [ 0, 32, 64, 32 ]
+      ],
+      "size": [ 4, 2, 4 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 28, 1, 3 ],
+      "geometry": "wall",
+      "textureFile": "Johto/Cherrygrove/poke",
+      "textures": [
+        [ 0, 0, 64, 16 ]
+      ],
+      "size": [ 4, 1, 1 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 28, 0, 3 ],
+      "geometry": "wall",
+      "textureFile": "Johto/Cherrygrove/poke",
+      "textures": [
+        [ 0, 16, 64, 16 ]
+      ],
+      "size": [ 4, 1, 1 ],
+      "isOpaque": false
+    },
+    {
+      "type": "prop",
+      "position": [ 28, 2, 0 ],
+      "geometry": "walls",
+      "textureFile": "Johto/Cherrygrove/poke",
+      "textures": [
+        [ 64, 0, 16, 4 ]
+      ],
+      "size": [ 4, 0.25, 4 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 28, 2.25, 0 ],
+      "geometry": "plane",
+      "textureFile": "Johto/Cherrygrove/roof",
+      "tileTexture": true,
+      "size": [ 4, 4 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 29, 0, 3 ],
+      "geometry": "houseInside",
+      "textureFile": "Johto/Outside/houseInside"
+    },
+
+
+
+    // doors
+    {
+      "id": "door",
+      "position": [ 29, 0, 3 ],
+      "doorData": {
+        "warpData": {
+          "map": "Maps/Johto/Cherrygrove/main.json",
+          "position": [ 11, 0, 8 ]
+        }
+      }
+    },
+    {
+      "id": "door",
+      "position": [ 23, 0, 3 ],
+      "doorData": {
+        "warpData": {
+          "map": "Maps/Johto/Cherrygrove/main.json",
+          "position": [ 11, 0, 8 ]
+        }
+      }
+    },
+    {
+      "id": "door",
+      "position": [ 17, 0, 7 ],
+      "doorData": {
+        "warpData": {
+          "map": "Maps/Johto/Cherrygrove/main.json",
+          "position": [ 11, 0, 8 ]
+        }
+      }
+    },
+    {
+      "id": "door",
+      "position": [ 25, 0, 9 ],
+      "doorData": {
+        "warpData": {
+          "map": "Maps/Johto/Cherrygrove/main.json",
+          "position": [ 11, 0, 8 ]
+        }
+      }
+    },
+    {
+      "id": "door",
+      "position": [ 31, 0, 11 ],
+      "doorData": {
+        "warpData": {
+          "map": "Maps/Johto/Cherrygrove/main.json",
+          "position": [ 11, 0, 8 ]
+        }
+      }
+    },
+
+
+
+    // boulders
+    {
+      "type": "struct",
+      "positions": [
+        [ 10, 0, 4 ],
+        [ 8, -0.5, 4 ],
+        [ 2, -0.5, 4 ],
+        [ 16, -0.5, 12 ],
+        [ 14, -0.5, 14 ],
+        [ 0, -0.5, 8 ],
+        [ 4, 0, 10 ]
+      ],
+      "entities": [
+        {
+          "id": "boulderCorner",
+          "position": [ 0, 0.25, 0 ],
+          "rotation": [ 0, 0, 0 ]
+        },
+        {
+          "id": "boulderCorner",
+          "position": [ 0, 0.25, 1.5 ],
+          "rotation": [ 0, 1, 0 ]
+        },
+        {
+          "id": "boulderCorner",
+          "position": [ 1.5, 0.25, 1.5 ],
+          "rotation": [ 0, 2, 0 ]
+        },
+        {
+          "id": "boulderCorner",
+          "position": [ 1.5, 0.25, 0 ],
+          "rotation": [ 0, 3, 0 ]
+        },
+        {
+          "id": "boulderSide",
+          "position": [ 0.5, 0.25, 1.5 ],
+          "rotation": [ 0, 0, 0 ]
+        },
+        {
+          "id": "boulderSide",
+          "position": [ 1.25, 0.25, 0.75 ],
+          "rotation": [ 0, 1, 0 ]
+        },
+        {
+          "id": "boulderSide",
+          "position": [ 0.5, 0.25, 0 ],
+          "rotation": [ 0, 2, 0 ]
+        },
+        {
+          "id": "boulderSide",
+          "position": [ -0.25, 0.25, 0.75 ],
+          "rotation": [ 0, 3, 0 ]
+        },
+        {
+          "id": "boulderTop",
+          "position": [ 0.5, 0.5, 0.5 ]
+        }
+      ]
+    },
+
+
+    // flowers
+    {
+      "type": "field",
+      "position": [ 22.25, 0.1777, 6.25 ],
+      "size": [ 2, 1 ],
+      "entity": {
+        "id": "flower"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 21.75, 0.1777, 6.75 ],
+      "size": [ 2, 1 ],
+      "entity": {
+        "id": "flower"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 26.25, 0.1777, 12.25 ],
+      "size": [ 2, 1 ],
+      "entity": {
+        "id": "flower"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 25.75, 0.1777, 12.75 ],
+      "size": [ 2, 1 ],
+      "entity": {
+        "id": "flower"
+      }
+    }
+  ]
+}

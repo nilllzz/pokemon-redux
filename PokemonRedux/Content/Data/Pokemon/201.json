@@ -1,0 +1,36 @@
+{
+  "id": 201,
+  "name": "UNOWN",
+  "gender": "genderless",
+  "baseStats": [ 48, 72, 48, 72, 48, 48 ],
+  "experienceType": "mediumFast",
+  "experienceYield": 61,
+  "type1": "psychic",
+  "type2": "none",
+  "eggGroups": [ "undiscovered" ],
+  "eggCycles": 40,
+  "catchRate": 225,
+  "wildFleeRate": 0.1,
+  "moves": [
+    {
+      "name": "HIDDEN POWER",
+      "level": 1,
+      "tm": false,
+      "breeding": false
+    }
+  ],
+  "colors": {
+    "normal": [
+      [ 0, 0, 0 ],
+      [ 56, 56, 64 ],
+      [ 120, 120, 128 ],
+      [ 255, 255, 255 ]
+    ],
+    "shiny": [
+      [ 0, 0, 0 ],
+      [ 16, 88, 248 ],
+      [ 112, 152, 248 ],
+      [ 255, 255, 255 ]
+    ]
+  }
+}

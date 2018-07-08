@@ -1,0 +1,55 @@
+﻿{
+  "definitions": [
+    {
+      "id": "tree",
+      "type": "prop",
+      "geometry": "billboard",
+      "textureFile": "tree.png",
+      "size": [ 1, 2 ],
+      "isOpaque": false
+    }
+  ],
+  "entities": [
+    {
+      "type": "field",
+      "size": [ 10, 4 ],
+      "entity": {
+        "id": "tree",
+        "position": [ 0, -0.333, -3 ]
+      }
+    },
+    {
+      "type": "prop",
+      "position": [ 0, 0, 2 ],
+      "geometry": "cube",
+      "textureFile": "test.png"
+    },
+    {
+      "type": "prop",
+      "position": [ -2, 1.001, 1 ],
+      "geometry": "cube",
+      "textureFile": "test.png"
+    },
+    {
+      "type": "floor",
+      "position": [ 0, 0, 0 ],
+      "size": [ 10, 10 ],
+      "geometry": "plane",
+      "textureFile": "test1.png",
+      "textures": [
+        [ 0, 0, 160, 160 ]
+      ]
+    },
+    {
+      "type": "floor",
+      "position": [ 10, 0, 0 ],
+      "size": [ 10, 10 ],
+      "geometry": "plane",
+      "textureFile": "test1.png",
+      "textures": [
+        [ 0, 0, 160, 160 ]
+      ],
+      "elevation": [ 0, 1, 0, 1 ]
+    }
+  ]
+}

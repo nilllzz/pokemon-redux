@@ -1,0 +1,618 @@
+﻿{
+  "$schema": "../../map.schema.json?reload",
+  "name": "New Bark Town",
+  "worldOffset": [ 60, 0, 0 ],
+  "loadMaps": [
+    "Maps/Johto/Route27/main.json",
+    "Maps/Johto/Route29/main.json"
+  ],
+  "definitions": [
+    {
+      "id": "grassFloor",
+      "type": "floor",
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/grass",
+      "tileTexture": true
+    },
+    {
+      "id": "pathFloor",
+      "type": "floor",
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/path",
+      "tileTexture": true
+    },
+    {
+      "id": "grassFloorProp",
+      "type": "prop",
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/grass",
+      "tileTexture": true
+    },
+    {
+      "id": "tree",
+      "type": "prop",
+      "geometry": "billboard",
+      "textureFile": "Johto/Outside/tree",
+      "size": [ 1, 2 ],
+      "isOpaque": false
+    },
+    {
+      "id": "bush",
+      "type": "prop",
+      "geometry": "billboard",
+      "textureFile": "Johto/Outside/bush",
+      "isOpaque": false
+    },
+    {
+      "id": "flower",
+      "type": "prop",
+      "geometry": "billboard",
+      "textureFile": "Johto/Outside/flower",
+      "isOpaque": false,
+      "hasCollision": false,
+      "isAnimated": true,
+      "frameDelay": 24,
+      "size": [ 0.5, 0.5, 0.5 ],
+      "frames": [
+        [ 0, 0, 8, 8 ],
+        [ 8, 0, 8, 8 ]
+      ]
+    },
+    {
+      "id": "water",
+      "type": "floor",
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/water",
+      "tileTexture": true,
+      "isAnimated": true,
+      "frameDelay": 24,
+      "frames": [
+        [ 0, 0, 16, 16 ],
+        [ 16, 0, 16, 16 ],
+        [ 32, 0, 16, 16 ],
+        [ 16, 0, 16, 16 ]
+      ]
+    },
+    {
+      "id": "waterCliff",
+      "type": "prop",
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/mountain",
+      "tileTexture": true,
+      "hasCollision": false,
+      "elevation": [ 0.5, 0.5, 0, 0 ],
+      "textures": [
+        [ 0, 0, 16, 24 ]
+      ]
+    },
+    {
+      "id": "sign",
+      "type": "prop",
+      "geometry": "cube",
+      "textureFile": "Johto/Outside/sign",
+      "textures": [
+        [ 16, 0, 16, 14 ],
+        [ 0, 0, 16, 14 ],
+        [ 0, 17, 3, 14 ],
+        [ 0, 17, 3, 14 ],
+        [ 16, 0, 1, 1 ],
+        [ 0, 14, 16, 3 ]
+      ],
+      "size": [ 0.9, 0.7875, 0.16875 ],
+      "isOpaque": false
+    },
+    {
+      "id": "door",
+      "type": "door",
+      "geometry": "wall",
+      "textureFile": "Johto/Outside/door"
+    }
+  ],
+  "entities": [
+    // floors
+    {
+      "id": "grassFloor",
+      "position": [ 0, 0, 0 ],
+      "size": [ 4, 6 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 0, 0, 10 ],
+      "size": [ 2, 8 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 2, 0, 14 ],
+      "size": [ 4, 4 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 10, 0, 0 ],
+      "size": [ 10, 6 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 16, 0, 10 ],
+      "size": [ 4, 6 ]
+    },
+    {
+      "id": "grassFloor",
+      "position": [ 8, 0, 12 ],
+      "size": [ 6, 2 ]
+    },
+
+    {
+      "id": "pathFloor",
+      "position": [ 0, 0, 8 ],
+      "size": [ 2, 2 ]
+    },
+    {
+      "id": "pathFloor",
+      "position": [ 2, 0, 6 ],
+      "size": [ 16, 4 ]
+    },
+    {
+      "id": "pathFloor",
+      "position": [ 4, 0, 4 ],
+      "size": [ 6, 2 ]
+    },
+    {
+      "id": "pathFloor",
+      "position": [ 6, 0, 10 ],
+      "size": [ 10, 2 ]
+    },
+    {
+      "id": "pathFloor",
+      "position": [ 6, 0, 14 ],
+      "size": [ 10, 2 ]
+    },
+    {
+      "id": "pathFloor",
+      "position": [ 2, 0, 12 ],
+      "size": [ 6, 2 ]
+    },
+    {
+      "id": "pathFloor",
+      "position": [ 14, 0, 12 ],
+      "size": [ 2, 2 ]
+    },
+
+
+    // prop floors
+    {
+      "id": "grassFloorProp",
+      "position": [ 0, 0, 6 ],
+      "size": [ 2, 2 ]
+    },
+    {
+      "id": "grassFloorProp",
+      "position": [ 6, 0, 16 ],
+      "size": [ 14, 2 ]
+    },
+
+    // water
+    {
+      "id": "water",
+      "position": [ 18, -0.5, 6 ],
+      "size": [ 2, 4 ]
+    },
+
+    // cliffs
+    {
+      "id": "waterCliff",
+      "position": [ 18, -0.5, 6 ],
+      "size": [ 2, 0.5 ]
+    },
+    {
+      "id": "waterCliff",
+      "position": [ 16.25, -0.5, 7.75 ],
+      "size": [ 4, 0.5 ],
+      "rotation": [ 0, 1, 0 ]
+    },
+    {
+      "id": "waterCliff",
+      "position": [ 18, -0.5, 9.5 ],
+      "size": [ 2, 0.5 ],
+      "rotation": [ 0, 2, 0 ]
+    },
+
+
+    // trees
+    {
+      "type": "field",
+      "position": [ 0, -0.333, 0 ],
+      "size": [ 2, 8 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 2, -0.333, 0 ],
+      "size": [ 2, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 0, -0.333, 10 ],
+      "size": [ 2, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 0, -0.333, 14 ],
+      "size": [ 2, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 0, -0.333, 16 ],
+      "size": [ 20, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 10, -0.333, 0 ],
+      "size": [ 10, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 10, -0.333, 2 ],
+      "size": [ 2, 2 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 16, -0.333, 2 ],
+      "size": [ 4, 4 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 18, -0.333, 10 ],
+      "size": [ 2, 6 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+
+    // bushes
+    {
+      "type": "field",
+      "position": [ 2, -0.222, 15 ],
+      "size": [ 4, 1 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 17, -0.222, 10 ],
+      "size": [ 1, 6 ],
+      "entity": {
+        "id": "bush"
+      }
+    },
+
+
+
+    // flowers
+    {
+      "type": "field",
+      "position": [ 0.25, 0.1777, 12.25 ],
+      "size": [ 2, 1 ],
+      "entity": {
+        "id": "flower"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ -0.25, 0.1777, 12.75 ],
+      "size": [ 2, 1 ],
+      "entity": {
+        "id": "flower"
+      }
+    },
+
+
+
+    // signs
+    {
+      "id": "sign",
+      "position": [ 3, 0, 3.5 ]
+    },
+    {
+      "id": "sign",
+      "position": [ 11, 0, 5.5 ]
+    },
+    {
+      "id": "sign",
+      "position": [ 8, 0, 8.5 ]
+    },
+    {
+      "id": "sign",
+      "position": [ 9, 0, 13.5 ]
+    },
+
+
+
+    // player house
+    {
+      "type": "prop",
+      "position": [ 12, 0, 2 ],
+      "geometry": "walls",
+      "textureFile": "Johto/NewBark/playerHouse",
+      "textures": [
+        [ 0, 32, 64, 32 ],
+        [ 0, 32, 64, 32 ],
+        [ 0, 0, 0, 0 ],
+        [ 0, 32, 64, 32 ]
+      ],
+      "size": [ 4, 2, 4 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 12, 1, 5 ],
+      "geometry": "wall",
+      "textureFile": "Johto/NewBark/playerHouse",
+      "textures": [
+        [ 0, 0, 64, 16 ]
+      ],
+      "size": [ 4, 1, 1 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 12, 0, 5 ],
+      "geometry": "wall",
+      "textureFile": "Johto/NewBark/playerHouse",
+      "textures": [
+        [ 0, 16, 64, 16 ]
+      ],
+      "size": [ 4, 1, 1 ],
+      "isOpaque": false
+    },
+    {
+      "type": "prop",
+      "position": [ 12, 2, 2 ],
+      "geometry": "walls",
+      "textureFile": "Johto/NewBark/playerHouse",
+      "textures": [
+        [ 64, 0, 16, 4 ]
+      ],
+      "size": [ 4, 0.25, 4 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 12, 2.25, 2 ],
+      "geometry": "plane",
+      "textureFile": "Johto/NewBark/roof",
+      "tileTexture": true,
+      "size": [ 4, 4 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 13, 0, 5 ],
+      "geometry": "houseInside",
+      "textureFile": "Johto/Outside/houseInside"
+    },
+
+    // lab
+    {
+      "type": "prop",
+      "position": [ 4, 0, 0 ],
+      "geometry": "walls",
+      "textureFile": "Johto/NewBark/lab",
+      "textures": [
+        [ 0, 32, 64, 32 ],
+        [ 0, 32, 64, 32 ],
+        [ 0, 0, 0, 0 ],
+        [ 0, 32, 64, 32 ]
+      ],
+      "size": [ 6, 2, 4 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 4, 1, 3 ],
+      "geometry": "wall",
+      "textureFile": "Johto/NewBark/lab",
+      "textures": [
+        [ 0, 0, 96, 16 ]
+      ],
+      "size": [ 6, 1, 1 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 4, 0, 3 ],
+      "geometry": "wall",
+      "textureFile": "Johto/NewBark/lab",
+      "textures": [
+        [ 0, 16, 96, 16 ]
+      ],
+      "size": [ 6, 1, 1 ],
+      "isOpaque": false
+    },
+    {
+      "type": "prop",
+      "position": [ 4, 2, 0 ],
+      "geometry": "walls",
+      "textureFile": "Johto/NewBark/lab",
+      "textures": [
+        [ 64, 32, 16, 4 ]
+      ],
+      "size": [ 6, 0.25, 4 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 4, 2.25, 0 ],
+      "geometry": "plane",
+      "textureFile": "Johto/NewBark/roof",
+      "tileTexture": true,
+      "size": [ 6, 4 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 6, 0, 3 ],
+      "geometry": "houseInside",
+      "textureFile": "Johto/Outside/houseInside"
+    },
+
+
+    // small houses
+    {
+      "type": "struct",
+      "positions": [
+        [ 2, 0, 10 ],
+        [ 10, 0, 12 ]
+      ],
+      "entities": [
+        {
+          "type": "prop",
+          "position": [ 0, 0, 0 ],
+          "geometry": "walls",
+          "textureFile": "Johto/NewBark/smallHouse",
+          "textures": [
+            [ 0, 16, 64, 16 ],
+            [ 0, 32, 32, 16 ],
+            [ 0, 0, 0, 0 ],
+            [ 0, 32, 32, 16 ]
+          ],
+          "size": [ 4, 1, 2 ]
+        },
+        {
+          "type": "prop",
+          "position": [ 0, 0, 1 ],
+          "geometry": "wall",
+          "textureFile": "Johto/NewBark/smallHouse",
+          "textures": [
+            [ 0, 0, 64, 16 ]
+          ],
+          "size": [ 4, 1, 1 ],
+          "isOpaque": false
+        },
+        {
+          "type": "prop",
+          "position": [ 0, 1, 0 ],
+          "geometry": "walls",
+          "textureFile": "Johto/NewBark/smallHouse",
+          "textures": [
+            [ 32, 32, 16, 4 ]
+          ],
+          "size": [ 4, 0.25, 2 ]
+        },
+        {
+          "type": "prop",
+          "position": [ 0, 1.25, 0 ],
+          "geometry": "plane",
+          "textureFile": "Johto/NewBark/roof",
+          "tileTexture": true,
+          "size": [ 4, 2 ]
+        },
+        {
+          "type": "prop",
+          "position": [ 1, 0, 1 ],
+          "geometry": "houseInside",
+          "textureFile": "Johto/Outside/houseInside"
+        }
+      ]
+    },
+
+
+
+    // doors
+    {
+      "id": "door",
+      "position": [ 6, 0, 3 ],
+      "doorData": {
+        "warpData": {
+          "map": "Maps/Johto/Route29/main.json",
+          "position": [ 9, 0, 8 ]
+        }
+      }
+    },
+    {
+      "id": "door",
+      "position": [ 13, 0, 5 ],
+      "doorData": {
+        "warpData": {
+          "map": "Maps/Johto/NewBark/main.json",
+          "position": [ 9, 0, 8 ]
+        }
+      }
+    },
+    {
+      "id": "door",
+      "position": [ 3, 0, 11 ],
+      "doorData": {
+        "warpData": {
+          "map": "Maps/Johto/NewBark/house0.json",
+          "position": [ 2, 0, 6 ]
+        }
+      }
+    },
+    {
+      "id": "door",
+      "position": [ 11, 0, 13 ],
+      "doorData": {
+        "warpData": {
+          "map": "Maps/Johto/NewBark/house1.json",
+          "position": [ 2, 0, 6 ]
+        }
+      }
+    },
+
+
+    // scripts
+    {
+      "type": "script",
+      "position": [ 3, 0, 3.5 ],
+      "size": [ 0.9, 0.7875, 0.16875 ],
+      "script": {
+        "triggerType": "interact",
+        "file": "Scripts/Johto/NewBark/sign0.js"
+      }
+    },
+    {
+      "type": "script",
+      "position": [ 11, 0, 5.5 ],
+      "size": [ 0.9, 0.7875, 0.16875 ],
+      "script": {
+        "triggerType": "interact",
+        "file": "Scripts/Johto/NewBark/sign1.js"
+      }
+    },
+    {
+      "type": "script",
+      "position": [ 8, 0, 8.5 ],
+      "size": [ 0.9, 0.7875, 0.16875 ],
+      "script": {
+        "triggerType": "interact",
+        "file": "Scripts/Johto/NewBark/sign2.js"
+      }
+    },
+    {
+      "type": "script",
+      "position": [ 9, 0, 13.5 ],
+      "size": [ 0.9, 0.7875, 0.16875 ],
+      "script": {
+        "triggerType": "interact",
+        "file": "Scripts/Johto/NewBark/sign3.js"
+      }
+    }
+
+  ]
+}

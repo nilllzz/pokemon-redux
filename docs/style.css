@@ -1,0 +1,8 @@
+body {
+    max-width: 1000px;
+    margin: auto;
+    padding-top: 30px;
+    font-family: Segoe UI;
+    background-color: rgb(240, 240, 240);
+    color: rgb(75, 75, 75);
+}

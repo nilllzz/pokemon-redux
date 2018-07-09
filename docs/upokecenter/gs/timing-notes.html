@@ -1,0 +1,48 @@
+<html charset="UTF-8">
+    <head>
+        <meta charset=utf-8>
+        <link rel="stylesheet" type="text/css" href="../../style.css">
+
+        <title>Timing Notes</title>
+    </head>
+    <body>
+        <h1>Timing Notes</h1>
+
+        <p>This page details the series of steps the game takes when handling each turn of a Pokémon battle.</p>
+
+        <h2>Content</h2>
+        <nav>
+            <ul>
+                <li><a href="#roundphases">Round phases</a></li>
+                <li><a href="#priority">Priority</a></li>
+            </ul>
+        </nav>
+        <h2 id="roundphases">Round phases</h2>
+        <p>
+            The phases of a turn are: use of items (with the Bag command); voluntary switching; use of attacks; and end of turn. At the beginning of the turn, the menu of commands appears with "Fight", "Pokémon", "Pack", and "Run."
+
+            <ul>
+                <li>Fight: Choose a move from the list of moves that appears. This move chosen is called the move "chosen for use" for this turn.</li>
+                <li>Pokémon: Check data on Pokémon or switch the Pokémon in battle. Switching is not usable if a Pokémon "can't switch out" because of a move's effect.</li>
+                <li>Pack: Use an item on the Pokémon in battle, who skips its attack this turn.</li>
+                <li>Run: Attempt to run from a wild Pokémon battle. See the <a href="#escape">Chance of Running in Wild Battles</a> section, below, for how the game calculates the escape rate.</li>
+            </ul>
+        </p>
+
+        <h2 id="priority">Priority</h2>
+        <p>
+            After both Pokémon choose an attack the attack initiative (who gets to use the attack first) is determined. All attacks are categorized in four priority levels:
+        </p>
+        <p>2: Endure, Protect, Detect -> 1: Quick Attack, Mach Punch, Extremespeed -> 0: All other attacks -> -1: Counter, Mirror Coat, Whirlwind, Roar, Vital Throw
+                
+            <ul>
+                <li>The attack with the higher priority strikes first.</li>
+                <li>If both attacks have the same priority, the holder of Quick Claw has a 23.4% chance of striking first,. If this chance succeeds and both Pokémon hold a Quick Claw, the one who strikes first is randomly determined (in battles in which Exp. Points can be gained, the player's Pokémon always strikes first in this case).</li>
+                <li>Otherwise, the Pokémon with the higher Speed strikes first.</li>
+                <li>If both Pokémon have the same Speed, the one who strikes first is randomly determined.</li>
+            </ul>
+                
+        </p>
+
+    </body>
+</html>

@@ -13,11 +13,40 @@
         <h2>Content</h2>
         <nav>
             <ul>
-                <li><a href="#roundphases">Round phases</a></li>
-                <li><a href="#priority">Priority</a></li>
+                <li><a href="#round-phases">Round phases</a></li>
+                <li><a href="#priority">Priority</a>
+                    <ul>
+                        <li><a href="#calculating-speed">Calculating Speed</a></li>
+                    </ul>
+                </li>
+                <li><a href="#process">Process</a>
+                    <ul>
+                        <li><a href="#first-checks">First checks</a></li>
+                        <li><a href="#sleep-and-freeze">Sleep and Freeze Checks</a></li>
+                        <li><a href="#other-pre-attack-checks">Other Pre-Attack Checks</a></li>
+                        <li><a href="#obedience-check">Obedience check</a></li>
+                        <li><a href="#used-attack">Attacker uses the attack</a></li>
+                        <li><a href="#check-pp">Check PP (Power Points)</a></li>
+                        <li><a href="#critical-hit">Is it a critical hit?</a></li>
+                        <li><a href="#damage-calculation">Damage Calculation</a>
+                            <ul>
+                                <li><a href="#stat-stages">Stat Stages</a>
+                                <li><a href="#type-matchup-chart">Type Matchup Chart</a>
+                            </ul>
+                        </li>
+                        <li><a href="#accuracy">Accuracy</a></li>
+                        <li><a href="#additional-effects">Additional Effects</a></li>
+                    </ul>
+                </li>
+                <li><a href="#attack-effects">Attack Effects</a></li>
+                <li><a href="#multi-hit-attacks">Multi-hit attacks</a></li>
+                <li><a href="#switching-out">Switching Out</a></li>
+                <li><a href="#end-of-attack">End of attack</a></li>
+                <li><a href="#end-of-turn">End of turn</a></li>
+                <li><a href="#escape">Chance of Running in Wild Battles</a></li>
             </ul>
         </nav>
-        <h2 id="roundphases">Round phases</h2>
+        <h2 id="round-phases">Round phases</h2>
         <p>
             The phases of a turn are: use of items (with the Bag command); voluntary switching; use of attacks; and end of turn. At the beginning of the turn, the menu of commands appears with "Fight", "Pokémon", "Pack", and "Run."
 
@@ -42,6 +71,790 @@
                 <li>If both Pokémon have the same Speed, the one who strikes first is randomly determined.</li>
             </ul>
                 
+        </p>
+
+        <h3 id="calculating-speed">Calculating Speed</h3>
+        <p>
+            This process is followed to calculate a Pokémon's Speed in battle. These calculations are done in advance rather than when determining turn order.
+            <ol>
+                <li>Multiply the Speed by the Speed multiplier derived from the Pokémon's Speed stat stage.</li>
+                <li>In a battle in which Exp. Points can be gained, if the Pokémon is controlled by the player and the player has earned the Plain Badge, the Speed is raised by 1/8 of its previous value.</li>
+                <li>If the Pokémon is paralyzed, divide the Speed by 4.</li>
+            </ol>
+            
+            For the purposes of Detect, Endure, and Protect, Pokémon who chose to switch at the beginning of a turn are ignored when determining whether a particular Pokémon "strikes last" in that turn.
+        </p>
+
+        <h2 id="process">Process</h2>
+
+        <p>
+            After the initiative is determined, the following steps are taken for each Pokémon about to use an attack.
+        </p>
+
+        <h3 id="first-checks">First checks</h3>
+
+        <p>
+            If the Pokémon flinches and isn't asleep or frozen, it skips its attack.
+        </p>
+        <p>
+            If the Pokémon used Hyper Beam on its previous turn, it "must recharge" and skips its attack. (If the Pokémon also flinches, the "X must recharge!" message isn't shown but Hyper Beam's effect will still end.)
+        </p>
+
+        <h3 id="sleep-and-freeze">Sleep and Freeze Checks</h3>
+
+        <p>
+            Then, the game checks to see if the attacker is asleep. If so, the attack is not executed unless either Snore or Sleep Talk was chosen.<br />
+            Next, if Pokémon is asleep ("[Name] is fast asleep!") the game checks if the Pokémon has waken up. If the Pokémon is frozen, the Pokémon won't use the attack unless it's Flame Wheel or Sacred Fire (not even on the second attack turn of Fly, Dig, and so on).
+        </p>
+
+        <h3 id="other-pre-attack-checks">Other Pre-Attack Checks</h3>
+
+        <p>
+            <ol>
+                <li>If the attacker is confused, there is a 50% chance for the attacker to hit itself instead.</li>
+                <li>If the attacker is in love, there is a 50% chance for the attack to be canceled.</li>
+                <li>The attacker can't use the move if it can't be used because of Disable.</li>
+                <li>If the attacker is paralyzed, there is a 50% chance for the attacker to be unable to move.</li>
+                <li>Obedience check, see below.</li>
+            </ol>
+        </p>
+
+        <h3 id="obedience-check">Obedience check</h3>
+
+        <p>
+            In a battle in which Exp. Points can be gained, only after choosing an attack, the game checks to see if the Pokémon is of a different ID from that of the player. (The OT name is not considered.) If so, the following process is used:
+
+            <ul>
+                <li>The badge level (B) is determined based on the player's Badges.
+                    <ul>
+                        <li>If the player has no Badges, B is 10.</li>
+                        <li>If the player has the Hive Badge, B is 30.</li>
+                        <li>If the player has the Fog Badge, B is 50.</li>
+                        <li>If the player has the Storm Badge, B is 70.</li>
+                        <li>If the player has the Rising Badge, B is 101.</li>
+                    </ul>
+                </li>
+                <li>If the Pokémon's level (L) is greater than B and a random number from 0 through (L + B - 1) is greater than or equal to B and the Pokémon is attempting to use a move, the Pokémon becomes disobedient. When disobedient, the Pokémon no longer has a move it last used, Encore ends against the Pokémon, and one of the following happens:
+                    <ul>
+                        <li>If the Pokémon would use Snore or Sleep Talk while it's asleep, the Pokémon instead "ignore[s] orders sleeping".</li>
+                        <li>Otherwise, if another random number from 0 through (L + B - 1) is greater than or equal to B:
+                            <ul>
+                                <li>C is set to N - (L - B), where N is a random number from 0 through 255.</li>
+                                <li>If C is 0 or greater and is greater than or equal to L minus B, one of the following messages is used: "X is loafing around", "X ignored orders!", "X turned away!", "X won't obey!"</li>
+                                <li>If C is 0 or greater and is less than L minus B, the message shown is "X won't obey!" and the Pokémon deals confusion damage to itself.</li>
+                                <li>If C is less than 0, the message shown is "X began to nap!" and the Pokémon goes to sleep. (Not prevented by Safeguard or Substitute.)</li>
+                            </ul>
+                        </li>
+                        <li>Otherwise, the Pokémon will attempt to use a different move if possible. (It could not use a different move while asleep, during the effect of Disable, or if the different move has zero PP, but it could while frozen, even if the different move isn't Flame Wheel or Sacred Fire.) If it can't, one of the following messages is used: "X is loafing around", "X ignored orders!", "X turned away!", "X won't obey!" If the Pokémon uses a different move, the last move it used is not set to that move, the last move it chose for use is set to that move, and PP is reduced from that different move instead of from the move ordered.</li>
+                    </ul>
+                </li>
+
+            </ul>
+
+            An obedience check is done even if the Pokémon uses Pursuit as the opposing Pokémon is about to switch. An obedience check is not done if the Pokémon is continuing to use Thrash, Petal Dance, Outrage, Bide, Rollout, or a two-turn attack during their effects.
+        </p>
+
+        <h3 id="used-attack">Attacker uses the attack</h3>
+
+        <p>
+            "[Name] used [Attack]!"
+        </p>
+
+        <h3 id="check-pp">Check PP (Power Points)</h3>
+
+        <p>
+            If, as commands were chosen, there is no PP remaining for all moves ("There's no PP left for this move!"), the move Struggle is used instead. Otherwise, the move's PP is reduced by 1. If the PP can't be reduced this way, the Pokémon doesn't use that move instead. Fly, Dig, Petal Dance, Thrash, Rollout, and the like use up 1 PP only when selected. If a different attack is used because of disobedience, 1 PP is spent for the attack actually used. 
+        </p>
+
+        <h3 id="critical-hit">Is it a critical hit?</h3>
+
+        <p>
+            The method for determining a critical hit is below.
+            <ul>
+                <li>Set C to 0.</li>
+                <li>If Focus Energy is in effect for attacker, add 1 to C.</li>
+                <li>If attack is Aero Blast, Crab Hammer, Cross Chop, Karate Chop, Razor Leaf, or Slash, add 2 to C.</li>
+                <li>If attacker is holding Scope Lens, add 1 to C.</li>
+                <li>If attacker's current species is Chansey and the attacker is holding Lucky Punch, C is set to 2.</li>
+                <li>If attacker's current species is Farfetch'd and the attacker is holding Stick, C is set to 2.</li>
+                <li>The critical hit ratio is as follows: 
+                    <ul>
+                        <li>C = 0: 17/256</li>
+                        <li>C = 1: 32/256</li>
+                        <li>C = 2: 64/256</li>
+                        <li>C = 3: 85/256</li>
+                        <li>C = 4 or more: 128/256</li>
+                    </ul>
+                </li>
+            </ul>
+            A critical hit deals two times more damage than usual (see below). Also during a critical hit, if the attacker's Attack or Special Attack stat stage is equal to or less than the opposing Pokémon's Attack or Special Defense stat stage, changes to Attack, Defense, Special Attack, and Special Defense because of Reflect, Light Screen, badges, stat stages, and burns are ignored.
+        </p>
+
+        <h3 id="damage-calculation">Damage Calculation</h3>
+
+        <p>
+            After that, the damage is calculated. This is the damage calculation process for the second generation. The game performs each step in the following order.
+
+            <ul>
+                <li>In battles in which Exp. Points can be gained, the badges have the appropriate stat multiplied by 9 and divided by 8 for Pokémon controlled by the player (the Zephyr Badge raises Attack, the Plain Badge raises Speed, the Mineral Badge raises Defense, and the Glacier Badge raises Special Attack).* (This calculation is done in advance rather than during damage calculation.)</li>
+                <li>Stat stage modifying attacks (see below) modify the appropriate stat (Attack or Defense).* (This calculation is done in advance rather than during damage calculation.)</li>
+                <li>If the attacker is burned, halve the Attack value.* (This calculation is done in advance rather than during damage calculation.)</li>
+                <li>If the attack is Selfdestruct or Explosion, divide the opposing Pokémon's Defense by 2.</li>
+                <li>If Reflect is in effect for the opposing Pokémon, double the Defense value.*</li>
+                <li>If Light Screen is in effect for the opposing Pokémon, double the Special Defense value.*</li>
+                <li>If the attacker's original species is Pikachu and the attacker is holding Light Ball, Special Attack is doubled.</li>
+                <li>If the attacker's original species is Cubone or Marowak and the attacker is holding Thick Club, Attack is doubled.</li>
+                <li>If the Attack or Special Attack stat, the Defense or Special Defense stat, or both exceeds 255, divide both stats by 4 (In Gold/Silver/Crystal, the result is then truncated to an 8-bit integer; for example, 0x0123 in hexadecimal becomes 0x0023).</li>
+                <li>If the opposing Pokémon's original species is Ditto and the opposing Pokémon is holding Metal Powder, both Defense and Special Defense are multiplied by 1.5.</li>
+                <li>If the Attack or Special Attack stat, the Defense or Special Defense stat, or both is 0, it becomes 1.</li>
+                <li>
+                    <span>The damage is equal to:</span>
+                    <div>
+                        <span class="code-block">
+                            <code>int(int(int(2×<strong>L</strong> ÷ 5+2)×<strong>A</strong>×<strong>P</strong> ÷ <strong>D</strong>)/50)</code>
+                        </span>
+                    </div>
+                    <span>where <strong>L</strong> is the attacker's level, <strong>A</strong> is the attacker's Attack or Special Attack value, <strong>P</strong> is the attack's power, and <strong>D</strong> is the opposing Pokémon's Attack or Special Defense value. For physical attack types (Normal, Fighting, Flying, Poison, Ground, Rock, Bug, Ghost, Steel), use the Attack and Defense values. For special attack types (Fire, Water, Electric, Grass, Ice, Psychic, Dragon, Dark), use the Special Attack and Special Defense values.</span>
+                </li>
+                <li>When the attack does a critical hit (see above), the calculated damage is doubled.</li>
+                <li>If the attacker is holding certain items like Pink Bow and Charcoal, multiply the calculated damage by 1.1 (multiply by 110, divide by 100) if the attacker is using an attack of the appropriate type.</li>
+                <li>If the damage calculated is greater than 997, it becomes 997.</li>
+                <li>Add 2 to the calculated damage.</li>
+                <li>Weather. Sunny Day raises the damage of Fire-type attacks by 50% and lowers the damage of Water-type attacks by 50%. Rain Dance raises the damage of Water-type attacks by 50%, lowers the damage of Fire-type attacks by 50%, and halves the damage done by Solarbeam.</li>
+                <li>Badges. In the Gold/Silver/Crystal version, in battles in which Exp. Points can be gained, the Johto and Kanto badges multiply damage of the appropriate attack type by 9/8 for Pokémon controlled by the player, as shown here: Zephyr Badge: Flying; Hive Badge: Bug; Plain Badge: Normal; Mineral Badge: Steel; Glacier Badge: Ice; Fog Badge: Ghost; Storm Badge: Fighting; Rising Badge: Dragon; Soul Badge: Poison; Volcano Badge: Fire; Boulder Badge: Rock; Rainbow Badge: Grass; Marsh Badge: Psychic; Earth Badge: Ground; Thunder Badge: Electric; Cascade Badge: Water.</li>
+                <li>Same Type Attack Bonus. If the attack type shares a type with one of the user's types, the damage is multiplied by 1.5.</li>
+                <li>Types of attacker and defender. The damage calculated is multiplied by a multiplier that depends on the attacker's and the opposing Pokémon's types (see the Type Matchup Chart, below). As an exception, after Foresight is used against the opposing Pokémon, normal and fighting attacks against the opposing Pokémon are normally effective against the Ghost type.</li>
+                <li>Finally, in a process called "damage variance", a random number from 217 through 255 is multiplied in the currently calculated damage, and divided by 255.</li>
+            </ul>
+
+            * This effect is ignored if the attack does a critical hit and the attacker's Attack or Special Attack stat stage is less than or equal to the opposing Pokémon's Attack or Special Defense stat stage.
+        </p>
+
+        <h4 id="stat-stages">Stat Stages</h4>
+
+        <p>Stat stages refer to levels that increase or decrease stats during a battle. Each stat stage has 13 different levels.</p>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Stat Stage</th>
+                    <td>-6</td>
+                    <td>-5</td>
+                    <td>-4</td>
+                    <td>-3</td>
+                    <td>-2</td>
+                    <td>-1</td>
+                    <td><strong>0</strong></td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <th>Stat Multiplier</th>
+                    <td>2/8</td>
+                    <td>2/7</td>
+                    <td>2/6</td>
+                    <td>2/5</td>
+                    <td>2/4</td>
+                    <td>2/3</td>
+                    <td><strong>2/2</strong></td>
+                    <td>3/2</td>
+                    <td>4/2</td>
+                    <td>5/2</td>
+                    <td>6/2</td>
+                    <td>7/2</td>
+                    <td>8/2</td>
+                </tr>
+            </table>
+        </div>
+
+        <p>
+            That stat scale applies to the stat stages for Attack, Defense, Special Attack, Special Defense, and Speed. At the start of a battle, each Pokémon's stat stages begin at 0. The stat stages for a Pokémon are reset to 0 when the Pokémon leaves the battle, (except Baton Pass).<br />
+            Each stat stage can't go lower than -6 or higher than 6. To apply those stat stages, multiply the stat by the stat multiplier for the corresponding stat stage, then adjust the stat so that it's neither less than 1 nor greater than 999.
+        </p>
+        <p>
+            The term "stat stages" refers to those for Attack, Defense, Special Attack, Special Defense, and Speed, as well as those for Evasion and Accuracy (see the "Accuracy Check" section, below).
+        </p>
+
+        <h4 id="type-matchup-chart">Type Matchup Chart</h4>
+
+        <p>Attack types are the rows; Pokémon types are the columns.</p>
+
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Attack Type</th>
+
+                    <th title="Normal">NOR</th>
+                    <th title="Fighting">FIG</th>
+                    <th title="Flying">FLY</th>
+                    <th title="Poison">POI</th>
+                    <th title="Ground">GRO</th>
+                    <th title="Rock">ROC</th>
+                    <th title="Bug">BUG</th>
+                    <th title="Ghost">GHO</th>
+                    <th title="Steel">STE</th>
+                    <th title="Fire">FIR</th>
+                    <th title="Water">WAT</th>
+                    <th title="Grass">GRA</th>
+                    <th title="Electric">ELE</th>
+                    <th title="Psychic">PSY</th>
+                    <th title="Ice">ICE</th>
+                    <th title="Dragon">DRA</th>
+                    <th title="Dark">DAR</th>
+                </tr>
+                <tr>
+                    <td>NORMAL</td>
+
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>1/2</strong></td>
+                    <td>1x</td>
+                    <td><strong>0</strong></td>
+                    <td><strong>1/2</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                </tr>
+                <tr>
+                    <td>FIGHTING</td>
+
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                    <td><strong>1/2</strong></td>
+                    <td><strong>1/2</strong></td>
+                    <td>1x</td>
+                    <td><strong>2x</strong></td>
+                    <td><strong>1/2</strong></td>
+                    <td><strong>0</strong></td>
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>1/2</strong></td>
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                    <td><strong>2x</strong></td>
+                </tr>
+                <tr>
+                    <td>FLYING</td>
+                    
+                    <td>1x</td>
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>1/2</strong></td>
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                    <td><strong>1/2</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>2x</strong></td>
+                    <td><strong>1/2</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                </tr>
+                <tr>
+                    <td>POISON</td>
+                    
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>1/2</strong></td>
+                    <td><strong>1/2</strong></td>
+                    <td><strong>1/2</strong></td>
+                    <td>1x</td>
+                    <td><strong>1/2</strong></td>
+                    <td><strong>0</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                </tr>
+                <tr>
+                    <td>GROUND</td>
+                    
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>0</strong></td>
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                    <td><strong>2x</strong></td>
+                    <td><strong>1/2</strong></td>
+                    <td>1x</td>
+                    <td><strong>2x</strong></td>
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                    <td><strong>1/2</strong></td>
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                </tr>
+                <tr>
+                    <td>ROCK</td>
+                    
+                    <td>1x</td>
+                    <td><strong>1/2</strong></td>
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                    <td><strong>1/2</strong></td>
+                    <td>1x</td>
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                    <td><strong>1/2</strong></td>
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                </tr>
+                <tr>
+                    <td>BUG</td>
+                    
+                    <td>1x</td>
+                    <td><strong>1/2</strong></td>
+                    <td><strong>1/2</strong></td>
+                    <td><strong>1/2</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>1/2</strong></td>
+                    <td><strong>1/2</strong></td>
+                    <td><strong>1/2</strong></td>
+                    <td>1x</td>
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>2x</strong></td>
+                </tr>
+                <tr>
+                    <td>GHOST</td>
+                    
+                    <td><strong>0</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>2x</strong></td>
+                    <td><strong>1/2</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>1/2</strong></td>
+                </tr>
+                <tr>
+                    <td>STEEL</td>
+                    
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>1/2</strong></td>
+                    <td><strong>1/2</strong></td>
+                    <td><strong>1/2</strong></td>
+                    <td>1x</td>
+                    <td><strong>1/2</strong></td>
+                    <td>1x</td>
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                </tr>
+                <tr>
+                    <td>FIRE</td>
+                    
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>1/2</strong></td>
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                    <td><strong>2x</strong></td>
+                    <td><strong>1/2</strong></td>
+                    <td><strong>1/2</strong></td>
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>2x</strong></td>
+                    <td><strong>1/2</strong></td>
+                    <td>1x</td>
+                </tr>
+                <tr>
+                    <td>WATER</td>
+                    
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>2x</strong></td>
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>2x</strong></td>
+                    <td><strong>1/2</strong></td>
+                    <td><strong>1/2</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>1/2</strong></td>
+                    <td>1x</td>
+                </tr>
+                <tr>
+                    <td>GRASS</td>
+                    
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>1/2</strong></td>
+                    <td><strong>1/2</strong></td>
+                    <td><strong>2x</strong></td>
+                    <td><strong>2x</strong></td>
+                    <td><strong>1/2</strong></td>
+                    <td>1x</td>
+                    <td><strong>1/2</strong></td>
+                    <td><strong>1/2</strong></td>
+                    <td><strong>2x</strong></td>
+                    <td><strong>1/2</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>1/2</strong></td>
+                    <td>1x</td>
+                </tr>
+                <tr>
+                    <td>ELECTRIC</td>
+                    
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                    <td><strong>0</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>2x</strong></td>
+                    <td><strong>1/2</strong></td>
+                    <td><strong>1/2</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>1/2</strong></td>
+                    <td>1x</td>
+                </tr>
+                <tr>
+                    <td>PSYCHIC</td>
+                    
+                    <td>1x</td>
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>1/2</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>1/2</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>0</strong></td>
+                </tr>
+                <tr>
+                    <td>ICE</td>
+                    
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>1/2</strong></td>
+                    <td><strong>1/2</strong></td>
+                    <td><strong>1/2</strong></td>
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>1/2</strong></td>
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                </tr>
+                <tr>
+                    <td>DRAGON</td>
+                    
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>1/2</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                </tr>
+                <tr>
+                    <td>DARK</td>
+                    
+                    <td>1x</td>
+                    <td><strong>1/2</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>2x</strong></td>
+                    <td><strong>1/2</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>2x</strong></td>
+                    <td>1x</td>
+                    <td>1x</td>
+                    <td><strong>1/2</strong></td>
+                </tr>
+            </table>
+        </div>
+
+        <h3 id="accuracy">Accuracy</h3>
+
+        <p>
+            The following situations are checked in order. Earlier effects take precedence over later effects.
+        </p>
+
+        <ol>
+            <li>Using Dream Eater when the opposing Pokémon is not sleeping will fail.</li>
+            <li>If the opposing Pokémon had used Protect or Detect, attack will fail.</li>
+            <li>If attacker had used Mind Reader or Lock-on, attack won't hit Pokémon using Fly if attack is Earthquake, Fissure, or Magnitude, or the attack will succeed otherwise (Gust, Thunder, Twister, and Whirlwind will be effective even to opponents using Dig). Either way, the effect of Mind Reader and Lock-on now ends.</li>
+            <li>Absorb, Dream Eater, Giga Drain, Leech Life, and Mega Drain on a substitute will fail.</li>
+            <li>Gust, Thunder, Twister, and Whirlwind are effective to Pokémon using Fissure, Fly; Earthquake, and Magnitude are effective to Pokémon using Dig. All other attacks will fail in either case.</li>
+            <li>During Rain Dance, Thunder won't miss.</li>
+            <li>Swift won't miss.</li>
+        </ol>
+
+        <p>
+            Then, the accuracy rate is decided as follows. Each Pokémon has one stat stage each for evasion and accuracy, which are not really stats, but affect an attack's probability of hitting an opposing Pokémon. The table below shows the multipliers for evasion and accuracy.
+        </p>
+
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Stat Stage</th>
+                    <td>-6</td>
+                    <td>-5</td>
+                    <td>-4</td>
+                    <td>-3</td>
+                    <td>-2</td>
+                    <td>-1</td>
+                    <td><strong>0</strong></td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <th>Accuracy Multiplier</th>
+                    <td>0.33</td>
+                    <td>0.36</td>
+                    <td>0.43</td>
+                    <td>0.5</td>
+                    <td>0.6</td>
+                    <td>0.75</td>
+                    <td><strong>1</strong></td>
+                    <td>1.33</td>
+                    <td>1.66</td>
+                    <td>2</td>
+                    <td>2.33</td>
+                    <td>2.66</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <th>Evasion Multiplier</th>
+                    <td>3</td>
+                    <td>2.66</td>
+                    <td>2.33</td>
+                    <td>2</td>
+                    <td>1.33</td>
+                    <td>1.66</td>
+                    <td><strong>1</strong></td>
+                    <td>0.75</td>
+                    <td>0.6</td>
+                    <td>0.5</td>
+                    <td>0.43</td>
+                    <td>0.36</td>
+                    <td>0.33</td>
+                </tr>
+            </table>
+        </div>
+
+        <p>
+            An attack's accuracy is multiplied by its user's accuracy multiplier, as shown in the table above, but not to less than 1, then multiplied by its the opposing Pokémon's evasion multiplier, as shown in the table above, but not to less than 1 or greater than 255. For certain attacks, if the opposing Pokémon is holding BrightPowder, the accuracy is lowered by 20, but not to less than 0. Then, if the accuracy equals 255, it will hit. Otherwise, the attack will hit if a random number from 0 through 255 is less than its accuracy.
+        </p>
+        <p>
+            Accuracy and evasion are two of a Pokémon's stat stages. Like other stat stages, each Pokémon begins with a stat stage of 0, and a Pokémon's stat stages are reset to 0 when it leaves the battle (except Baton Pass).
+        </p>
+        <p>
+            Some attacks can't be evaded and always have the accuracy defined for the attack. No accuracy checks are performed for such attacks.
+        </p>
+
+        <h3 id="additional-effects">Additional Effects</h3>
+
+        <p>
+            If the attack has an additional effect such as a stat stage modification or a status problem, the probability of the effect happening is determined in this last step. If a random number from 0 through 255 is less than the attack's additional effect chance, the additional effect will occur. For instance, for Blizzard, there is a 51/256 chance the opposing Pokémon will become frozen. The additional effect won't occur if the opposing Pokémon faints because of damage (even if the attack is Ancientpower), Metal Claw, or Steel Wing.
+        </p>
+
+        <h2 id="attack-effects">Attack Effects</h2>
+
+        <p>
+            If an attack is successful (including each hit of a multi-hit attack), the following effects resolve:
+        </p>
+        
+        <ol>
+            <li>Recoil/Drain</li>
+            <li>Additional effect if the opposing Pokémon doesn't have zero HP</li>
+            <li>The opposing Pokémon faints if it has zero HP</li>
+            <li>Destiny Bond/Rage effect</li>
+            <li>Defrost check</li>
+        </ol>
+
+        <h2 id="multi-hit-attacks">Multi-hit attacks</h2>
+
+        <p>
+            The attack process, in its short form, for multi-hit attacks is below.
+        </p>
+
+        <ol>
+            <li>Check accuracy and success</li>
+            <li>For each hit:
+                <ol type="a">
+                    <li>Calculate damage</li>
+                    <li>Stop multi-hit attack if the opposing Pokémon fainted</li>
+                </ol>
+            </li>
+            <li>Check for additional effect</li>
+        </ol>
+
+        <h2 id="switching-out">Switching Out</h2>
+
+        <p>
+            When a Pokémon enters the battle, the effect of Spikes applies for that Pokémon and faints if it causes the Pokémon to have zero HP. If both sides have Spikes and both Pokémon are switched out, here is what happens:
+        </p>
+        <p>
+            Leader's Pokémon switches out → Leader's Pokémon loses HP because of Spikes → Other player's Pokémon switches out → Other player's Pokémon loses HP because of Spikes → Pokémon with zero HP faint
+        </p>
+
+        <h2 id="end-of-attack">End of attack</h2>
+
+        <p>
+            After a Pokémon's attack turn, any end-of-attack effects will happen for that Pokémon. These effects happen even if a Pokémon doesn't choose a move for use at the beginning of the attack turn. These effects are, in order:
+        </p>
+
+        <ol>
+            <li>HP loss from poison/burn</li>
+            <li>HP loss and recovery from Leech Seed</li>
+            <li>Effect of Nightmare</li>
+            <li>Effect of Curse</li>
+        </ol>
+
+        <h2 id="end-of-turn">End of turn</h2>
+
+        <p>
+            These effects are invoked at the end of the turn, after all Pokémon take their attack turns. The effects are, in order:
+        </p>
+
+        <ol>
+            <li>Future Sight (non-leader first)</li>
+            <li>Sandstorm/Sunny Day/Rain Dance</li>
+            <li>Multi-turn attacks</li>
+            <li>Perish Song</li>
+            <li>Recover with Leftovers</li>
+            <li>Check if defrosted</li>
+            <li>Check end of Reflect/Light Screen/Safeguard</li>
+            <li>Check for condition based on Berry</li>
+            <li>Check end of Encore</li>
+        </ol>
+
+        <p>
+            Effects above that apply to both players are resolved leader-first unless noted otherwise.
+        </p>
+        <p>
+            For Future Sight, Perish Song, and Sandstorm, the game applies the effect to each Pokémon; then each Pokémon with 0 HP faints; then the player's Pokémon gain Exp. Points for fainted opponents if necessary; then new Pokémon in battle are chosen if necessary; then the game is decided.
+        </p>
+
+        <h2 id="escape">Chance of Running in Wild Battles</h2>
+
+        <p>
+            In a wild battle, if the current Speed of the Pokémon trying to run is equal to or greater than the opposing Pokémon's, running is successful. Otherwise, the formula below is used.
+        </p>
+
+        <div>
+            <span class="code-block">
+                <code><strong>X</strong>=int(<strong>A</strong>*32/<strong>B</strong>)+(30*<strong>C</strong>)</code>
+            </span>
+        </div>
+
+        <p>
+            where:
+            <ul>
+                <li>A = Current Speed of Pokémon trying to run</li>
+                <li>B = Remainder of (D / 4) divided by 256 where D is the current Speed of the opposing Pokémon. If B equals 0, running is successful.</li>
+                <li>C = Number of times the player already tried to run this battle, not counting the current attempt. Doesn't count attempts to run when an effect (such as Mean Look) prevents the Pokémon from running. This variable is reset to 0 when the player chooses the Fight command, but doesn't change when the player's Pokémon changes.</li>
+            </ul>
+        </p>
+
+        <p>
+            If X is greater than 255, running is successful. Otherwise, if a random number from 0 through 255 is less than or equal to X, running is successful. Otherwise, running fails.
         </p>
 
     </body>

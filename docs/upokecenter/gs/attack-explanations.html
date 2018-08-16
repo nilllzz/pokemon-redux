@@ -1,0 +1,341 @@
+<html charset="UTF-8">
+    <head>
+        <meta charset=utf-8>
+        <link rel="stylesheet" type="text/css" href="../../style.css">
+
+        <title>Attack Explanations</title>
+    </head>
+    <body>
+        <h1 id="title">Attack Explanations</h1>
+        <sub><a href="index.html">← Back</a></sub>
+
+        <p>This guide is a supplement and an integral part of the Gold/Silver <a href="attack-list.html">attack list</a>.</p>
+
+        <h2>Content</h2>
+        <nav>
+            <ul>
+                <li><a href="#phraseology">Phraseology</a>
+                    <ul>
+                        <li><a href="#stadium-2">Stadium 2</a></li>
+                        <li><a href="#last-move-chosen">Last move chosen for use</a></li>
+                        <li><a href="#last-move-used">Last move used</a></li>
+                        <li><a href="#user-cant-take-action">User "can't take any action"</a></li>
+                    </ul>
+                </li>
+                <li><a href="#notes-on-effects">Notes on Effects</a>
+                    <ul>
+                        <li><a href="#weather">Weather</a></li>
+                        <li><a href="#fainting-and-switching-out">Fainting and Switching out</a></li>
+                        <li><a href="#stat-modification">Stat Modification</a></li>
+                    </ul>
+                </li>
+                <li><a href="#common-effects">Description of Common Effects</a>
+                    <ul>
+                        <li><a href="#poison">Poison (PSN)</a></li>
+                        <li><a href="#paralysis">Paralysis (PAR)</a></li>
+                        <li><a href="#burn">Burn (BRN)</a></li>
+                        <li><a href="#sleep">Sleep (SLP)</a></li>
+                        <li><a href="#frozen">Frozen (FRZ)</a></li>
+                        <li><a href="#confusion">Confusion</a></li>
+                        <li><a href="#flinch">Flinch</a></li>
+                    </ul>
+                </li>
+                <li><a href="#specific-kind-moves">Notes on Specific Kinds of Moves</a>
+                    <ul>
+                        <li><a href="#two-turn-attacks">Two-Turn Attacks</a></li>
+                        <li><a href="#multi-hit-attacks">Multi-Hit attacks</a></li>
+                    </ul>
+                </li>
+                <li><a href="#specific-moves">Notes on Specific Moves</a>
+                    <ul>
+                        <li><a href="#destiny-bond">Destiny Bond</a></li>
+                        <li><em>Present</em></li>
+                        <li><a href="#substitute">Substitute</a></li>
+                        <li><a href="#toxic">Toxic</a></li>
+                        <li><a href="#transform">Transform</a></li>
+                        <li><a href="#disable">Disable</a></li>
+                        <li><a href="#rage">Substitute</a></li>
+                        <li><a href="#belly-drum">Belly Drum</a></li>
+                    </ul>
+                </li>
+                <li><a href="#misc">Miscellaneous</a>
+                    <ul>
+                        <li><a href="#pp">PP</a></li>
+                        <li><a href="#tag-battles">Tag Battles</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        
+        <h2 id="phraseology">Phraseology</h2>
+
+        <h3 id="stadium-2">Stadium 2</h3>
+        <p>
+            "Stadium 2" means "Pokémon Stadium Gold and Silver" in Japan and "Pokémon Stadium 2" in the rest of the world. 
+        </p>
+
+        <h3 id="last-move-chosen">Last move chosen for use</h3>
+        <p>
+            The "last move chosen for use" changes when the player moves the cursor on the list of moves. The "last move chosen for use" is retained when a Pokémon leaves the battle,. Each Pokémon in battle has a different "last move chosen for use" variable.
+        </p>
+
+        <h3 id="last-move-used">Last move used</h3>
+        <p>
+            Several moves rely on the the last move a Pokémon had used, which need not occur immediately beforehand. For instance, the Pokémon may use an item or try to run away in between. This variable is reset when either Pokémon leaves the battle. This variable is reset if the move is Metronome, Mimic, Mirror Move, Sketch, Sleep Talk, or Transform, and the variable is not set to moves used by other moves. Hyper Beam and two-turn attacks are considered the last move used on both attack turns of use (except if they were used by other moves). The use of Pursuit as the opposing Pokémon is about to switch, and the returned attack from Future Sight, are ignored when determining the last move used.
+        </p>
+        <p>
+            Each Pokémon in battle has a different "last move used" variable.
+        </p>
+        <p>
+            The "last move used" is not reset if an attack is prevented from being used or if it can't be used because it has zero PP.
+        </p>
+        <p>
+            Encore uses a variant of the last move used, with the difference being that the variable is not reset for a Pokémon if it remains in battle but its the opposing Pokémon leaves the battle.
+        </p>
+
+        <h3 id="user-cant-take-action">User "can't take any action"</h3>
+        <p>
+            No extra PP is spent when Bide, Outrage, Petal Dance, Rollout, and Thrash continue to be used during their effects, or at the second attack turn of a two-turn attack or Hyper Beam and equivalent moves (even if the attacks just mentioned are used by other moves). These situations don't change what move the user "chose for use", even though the user couldn't choose an attack as the turn began. (Thus, for example, if the move the user chose for use on the last turn is Thrash, it remains Thrash this turn.) Moreover, the user doesn't choose these moves for use as their effect continues. Their effect continues even if the move has zero PP, unless noted otherwise.
+        </p>
+
+        <h2 id="notes-on-effects">Notes on Effects</h2>
+
+        <h3 id="weather">Weather</h3>
+        <p>
+            The weather moves (Sunny Day, Rain Dance, Sandstorm) can be used at any time, even during weather. A weather move, when used, resets the number of turns of the effect to 5 (including the current turn) and cancels any other weather effect. When one weather move is used, it will fail until its effect ends.
+        </p>
+
+        <h3 id="fainting-and-switching-out">Fainting and Switching out</h3>
+        <p>
+            If a Pokémon faints at any time during its attack turn, including the end of its attack turn, no end-of-attack effects are applied to either that Pokémon or the new Pokémon, and if the Pokémon struck first, the opposing Pokémon's attack turn is skipped. (If the opposing Pokémon used Hyper Beam on the previous turn, it "must recharge" on the next possible attack turn.)
+        </p>
+        <p>
+            If a Pokémon faints before the end of an opposing Pokémon's attack turn, usually as the result of an attack, no end-of-attack effects are applied to the opposing Pokémon.
+        </p>
+        <p>
+            When a Pokémon switches out or uses Baton Pass, the Pokémon that replaces it does nothing during its attack turn but any end-of-attack effects are still applied to that Pokémon.
+        </p>
+
+        <h3 id="stat-modification">Stat Modification</h3>
+        <p>
+            When an effect raises or reduces a Pokémon's Attack, Defense, Special Attack, Special Defense, or Speed stat stage; when an item is used to cure a status problem; when a Pokémon gains a level (after calculating new stats); when Haze is used by either Pokémon in battle; or when Rest is used, the new values of the Attack, Defense, Special Attack, Special Defense, and Speed stats are each the original stat modified by badges, stat stages, and (except in Stadium 2) paralysis and burns, but not less than 1 or greater than 999. When an effect paralyzes or burns a Pokémon, the current Speed or Attack, respectively, is reduced to 1/4 of its previous value, rounded down, but not less than 1, and other stats remain unchanged. When Transform is used, the opposing Pokémon's original Attack, Defense, Special stats, and Speed, as determined in the preceding sentences, are copied and the user's original stats become equal to those values until Transform's effect ends, but the user's current stats remain unchanged. When a Pokémon enters the battle, the new values of the Attack, Defense, Special Attack, Special Defense, and Speed stats are each the original stat modified by badges, paralysis, and burns.
+        </p>
+        <p>
+            When a Pokémon enters the battle because of Baton Pass, the new values of the Attack, Defense, Special Attack, Special Defense, and Speed stats are each the original stat modified by stat stages. In Stadium 2, if that Pokémon's stat stage would be greater than 0, its stats are also modified by paralysis and burns. 
+        </p>
+
+        <h2 id="common-effects">Description of Common Effects</h2>
+        <p>
+            Common effects of attacks include status problems, confusion, and flinch. These effects are described below. A status problem is one of burn, poison, paralysis, sleep, or freeze. Status problems do not go away by replacing Pokémon, and they linger after battle. (However, a Pokémon will be cured of its status problem, as well as have full HP and PP, when it's taken to a Pokémon Center nurse or placed in a PC storage box.) The status monitor also indicates fainting (FNT), when a Pokémon runs out of HP. Because of this, fainting overwrites other status problems. A status problem can't be inflicted on a Pokémon if it already has a status problem.
+        </p>
+
+        <h3 id="poison">Poison (PSN)</h3>
+        <p>
+            If a Pokémon is poisoned, it loses 1/8 of its maximum HP at the end of its attack turn. Poison types can't be poisoned. Steel types can't become poisoned by Poison-type attacks. Outside of battle, a poisoned Pokémon loses 1 HP every four steps the player walks. (The effect of Toxic is similar to poison, see "<a href="#toxic">Toxic</a>".)
+        </p>
+
+        <h3 id="paralysis">Paralysis (PAR)</h3>
+        <p>
+            When a Pokémon becomes paralyzed, its Speed is recalculated so that it is reduced to 25% (see "Stat Modification"). If a Pokémon is paralyzed, there is a 25% chance that it will lose its chance to attack. Ground types can't become paralyzed by Electric type attacks.
+        </p>
+
+        <h3 id="burn">Burn (BRN)</h3>
+        <p>
+            When a Pokémon becomes burned, its Attack is recalculated so that it is halved (see "Stat Modification"). If a Pokémon is burned, it loses 1/8 of its maximum HP at the end of its attack turn. Fire types can't become burned by Fire-type attacks.
+        </p>
+
+        <h3 id="sleep">Sleep (SLP)</h3>
+        <p>
+            A sleeping Pokémon can't normally do its attack during its attack turn. When a Pokémon becomes asleep, it receives a count of 2 to 7. In Stadium 2, the sleep count is 2 to 4 instead. At a sleep check, this count is reduced by 1. If the count reaches zero, the Pokémon wakes up and can attack on the same turn. Snore and Sleep Talk can be used by a sleeping Pokémon. The game stores the current duration of a Pokémon who is asleep, in case the Pokémon leaves battle and enters the battle in another one.
+        </p>
+
+        <h3 id="frozen">Frozen (FRZ)</h3>
+        <p>
+            A frozen Pokémon can't normally do its attack during its attack turn. The only moves that a frozen Pokémon can use are Flame Wheel and Sacred Fire, which will defrost it. If the Pokémon loses HP because of a Fire-type attack (considering Hidden Power as Normal), it becomes defrosted. There is a 25/256 chance at the end of each turn that a Pokémon will be defrosted. Ice types can't become frozen by Ice-type attacks.
+        </p>
+
+        <h3 id="confusion">Confusion</h3>
+        <p>
+            When a Pokémon becomes confused, it receives a count of 2 to 5. At the beginning of the Pokémon's attack turn, this count is reduced by 1, then if it is greater than 0, there is a 50% chance that the Pokémon will deal damage to itself rather than use an attack. The self-inflicted confusion attack is a physical attack, has a power of 40, has no type, can't be a critical hit, and is not varied with a random number. (Doesn't ignore the effect of Reflect.) Confusion is removed from the Pokémon when it leaves the battle (except Baton Pass). If the Berserk Gene causes confusion in the Gold/Silver/Crystal version, its holder will receive a confusion count of 256.
+        </p>
+
+        <h3 id="flinch">Flinch</h3>
+        <p>
+            After a Pokémon uses a move that makes the opposing Pokémon flinch in the same turn, the opposing Pokémon (unless it's asleep or frozen) can flinch when the beginning of its attack turn comes and thus skip its attack this turn.
+        </p>
+
+        <h2 id="specific-kind-moves">Notes on Specific Kinds of Moves</h2>
+
+        <h3 id="two-turn-attacks">Two-Turn Attacks</h3>
+        <p>
+            In a two-turn attack, the user prepares for the attack on the first attack turn, and hits the opposing Pokémon on the second attack turn. The user can't take any action until the user finishes using the two-turn attack. Two-turn attacks work by checking the last move the user chose for use on the turn after the first attack turn of the attack; if that move is a two-turn attack, the second attack turn of the attack is done. If the user is prevented from using the two-turn attack on that turn, its effect ends. If the user tries to use a two-turn attack with Mirror Move or Metronome, it fails if the user is asleep or frozen.
+        </p>
+        <p>
+            A two-turn attack is not a multi-turn attack, and vice versa. A two-turn attack remains a two-turn attack even if the attack would not take two turns.
+        </p>
+        <p>
+            For all two-turn attacks, on the first attack turn of the attack, no accuracy check is done and no check is made to determine whether the attack will be ineffective against the opposing Pokémon or otherwise be avoided by the opposing Pokémon.
+        </p>
+        <p>
+            The phrase "if the opposing Pokémon is using Dig/Fly" means "during the effect of Dig/Fly for the opposing Pokémon." For Mimic, it can copy Dig or Fly after the opposing Pokémon had used it to deal damage. The returned attack from Future Sight will miss the user while it is using Dig or Fly.
+        </p>
+
+        <h3 id="multi-hit-attacks">Multi-Hit attacks</h3>
+        <p>
+            The multi-hit attacks are labeled "Multi-hit attack" and "Strikes twice" in the attack descriptions, as well as Triple Kick and Beat Up. For all multi-hit attacks, an accuracy check is performed only once, namely, before the attack hits the opposing Pokémon multiple times.
+        </p>
+        <p>
+            When the opposing Pokémon of a multi-hit attack faints, the attack stops.
+        </p>
+        <p>
+            Twineedle's additional effect occurs after all hits of the attack have resolved.
+        </p>
+        <p>
+            Unless noted otherwise, each hit of a multi-hit attack is treated as a separate attack. For instance, the chance of a critical hit is checked separately for each hit.
+        </p>
+
+        <h2 id="specific-moves">Notes on Specific Moves</h2>
+
+        <h3 id="destiny-bond">Destiny Bond</h3>
+        <p>
+            The effect of Destiny Bond ends when the Bag command is used to use an item on the user or when the Run command is used and the user fails to run.
+        </p>
+
+        <h3>Present</h3>
+
+        <h3 id="substitute">Substitute</h3>
+        <p>
+            Substitute creates a copy of the user called a substitute; to make a substitute, the user loses 1/4 of its maximum HP. This attack fails if the HP reduced would faint the user or if the user already has a substitute. The substitute has life points equal to the HP lost this way. (The term "life points" is used here to differentiate it from HP, to avoid confusion when describing Substitute's effect.)
+        </p>
+        <p>
+            If an effect (such as a move or item) is absent in this description, it is assumed to work as normal both with and without Substitute's effect.
+        </p>
+        <p>
+            These are the main effects that happen while the user has a substitute:
+            <ul>
+                <li>Attacks by the opposing Pokémon can't inflict status problems, confusion, or flinching against the user. Additional effects of attacks by the opposing Pokémon can't inflict such effects if the user had a substitute as the attack began (for Twineedle, the additional effect is prevented even if the substitute fades on the first hit of the attack).</li>
+                <li>Attacks by the opposing Pokémon can't lower the user's stat stages. Additional effects of attacks by other Pokémon can't do so if the user had a substitute as the attack began.</li>
+                <li>If user would lose HP because of an attack by the opposing Pokémon, the user's substitute loses that many life points instead.</li>
+            </ul>
+        </p>
+        <p>
+            When the substitute has no life points left, it fades and Substitute's effect ends.
+        </p>
+        <p>
+            Any other effects that affect the user's HP do not involve the substitute in any way. This applies to reductions of the user's HP from poison, Leech Seed, Sandstorm, recoil, and so on; and to effects that recover the user's HP. Moreover, effects that need to know the user's HP (Super Fang, Reversal, Flail, False Swipe, and so on.) won't use the substitute's life points in place of the user's HP. (This is why "life points" is used instead of HP to describe the substitute's vitality.)
+        </p>
+        <p>
+            The substitute will be removed, and Substitute's effect will end, when the user leaves the battle (except Baton Pass) or if the user faints before the substitute fades. If the user uses Baton Pass, the substitute retains its current life points.
+        </p>
+        <p>
+            Other notes regarding Substitute are given below.
+            <ul>
+                <li>While the user has a substitute, attacks and confusion damage can deal damage equal to or greater than the user's HP even if an effect prevents it from fainting (such as Focus Band).</li>
+                <li>Counter and Mirror Coat will miss when used by the user. The opposing Pokémon can use these attacks normally.</li>
+                <li>Pain Split modifies the user's and the opposing Pokémon's HP and will work as normal for the user.</li>
+                <li>Damage from confusion is given to the user.</li>
+                <li>The returned attack from Future Sight is directed to the substitute, since it's considered an "attack by its user".</li>
+                <li>Bide can be used by the user, but it won't be affected by damage intercepted by a substitute. It will work as normal after the substitute fades. Rage and its effect will work as normal.</li>
+                <li>The opposing Pokémon is always given 1 HP of recoil damage when attacking a substitute with a recoil attack (because recoil damage is calculated from HP the attacker's the opposing Pokémon loses because of that attack; in this case the user doesn't lose any HP). Jump Kick and Hi Jump Kick, if they miss, cause the opposing Pokémon to lose HP as normal (because this HP loss is based on hypothetical damage).</li>
+                <li>The user can use Selfdestruct or Explosion and faint, or faint because of Destiny Bond or Perish Song, even if it has a substitute.</li>
+                <li>The game checks whether a substitute fades after every hit of a multi-hit attack. The multi-hit attack will continue even after the substitute fades.</li>
+                <li>Absorb, Dream Eater, Giga Drain, Leech Life (the attack will miss), and Mega Drain, as well as Pain Split (won't affect user) will fail for the opposing Pokémon. The user can use these attacks normally.</li>
+                <li>The secondary effect of multi-turn attacks won't occur when the opposing Pokémon uses a multi-turn attack against the user. The effect of multi-turn attacks against the user will end when the user creates a substitute.</li>
+                <li>Detect, Endure, and Protect will fail for the user. The opposing Pokémon can use these attacks normally.</li>
+                <li>Lock-on and Mind Reader (won't affect user) will fail for the opposing Pokémon. The user can use these attacks normally.</li>
+                <li>Nightmare will fail for the opposing Pokémon. If the opposing Pokémon is a Ghost type, Curse will fail for the opposing Pokémon. The user can use Nightmare and Curse normally, whether or not user is of Ghost type.</li>
+                <li>Leech Seed (attack will be evaded) will fail for the opposing Pokémon. The user can use Leech Seed normally.</li>
+                <li>The substitute will absorb damage from Pursuit if it attempts to switch normally.</li>
+                <li>If the opposing Pokémon uses Swagger, the substitute won't develop confusion but will receive the Attack increase. (These effects are covered elsewhere.) The user can use Swagger normally.</li>
+                <li>If Thief hits the user's substitute, it will damage the substitute but won't steal the item from the user. The user can use Thief normally.</li>
+                <li>Sketch will fail for the opposing Pokémon. The user can use Sketch normally.</li>
+                <li>Mimic will work as normal for both user and the opposing Pokémon.</li>
+                <li>Transform will work as normal.</li>
+                <li>Substitute can't prevent Whirlwind, Roar, Disable, Encore, Spite, Foresight, Attract, Haze, Destiny Bond, Spider Web, Mean Look, Spikes, or Perish Song.</li>
+            </ul>
+        </p>
+
+        <h3 id="toxic">Toxic</h3>
+        <p>
+            Toxic uses a value called T to calculate how much HP to remove from the opposing Pokémon. When Toxic is used, T is set to 0. At the end of the opposing Pokémon's attack turn every turn, including the current one, T is raised by 1 and the opposing Pokémon's HP is reduced by int(maximum HP/16)*T, as long as the opposing Pokémon remains poisoned. The current value of T is retained when the opposing Pokémon uses Baton Pass. It is not reset if the user uses another poison move such as Poisonpowder on the new Pokémon, and T will still increase if the new the opposing Pokémon becomes or is poisoned. T will stop increasing and the effect of Toxic will end when the battle ends or the opposing Pokémon leaves the battle (except Baton Pass), upon which all poisoning on the opposing Pokémon's side reverts to normal poison. Curing the poison will, of course, also end the effect.
+        </p>
+        <p>Toxic will fail if the opposing Pokémon is already poisoned, by any means.</p>
+        <p>Rest removes the PSN status and ends the effect of Toxic.</p>
+        <p>Haze has no effect on T when used by either player.</p>
+
+        <h3 id="transform">Transform</h3>
+        <p>
+            In the Gold, and Silver, and Crystal versions, there are several bugs related to DVs and gender calculation. If Transform is used by the player's the opposing Pokémon, it calculates gender using the DVs of user before the transformation, but if used by the player, gender is not recalculated. When a Pokémon that is controlled by the opposing Pokémon and is under the effect of Transform leaves the battle, the Pokémon that replaces it, if any, receives the DVs of the old Pokémon and a recalculated gender, both of which are reverted to their original values when the new Pokémon leaves the battle.
+        </p>
+        <p>
+            When Transform is used, the opposing Pokémon's Attack, Defense, Special Attack, Special Defense, and Speedstats, as modified by stat stages, badges, paralysis, and burns, are copied and the user's stats become equal to those values. (However, any further effects that change the user's stat stages, paralysis, or burns will use the user's original stat as a starting point, not the opposing Pokémon's stats.)
+        </p>
+        <p>
+            If a wild Pokémon has the effect of Transform and it is caught, its species becomes Ditto, regardless of its original species. After it is caught, its stats and moves become those of a wild Ditto at the same level, except current HP.
+        </p>
+        <p>
+            Even if Transform is in effect for the user, its stats are recalculated according to its level and original DVs when it levels up.
+        </p>
+        <p>
+            In battles in which Exp. Points can be gained, the player's Pokémon gain Exp. Points based on the original species of the opposing Pokémon under Transform.
+        </p>
+
+        <h3 id="disable">Disable</h3>
+        <p>
+            Disable causes the attack the opposing Pokémon last used to be prevented from being used or chosen. When Disable is used, the opposing Pokémon receives a count of 2 to 8 (random). Every turn, including the current turn, during the effect, this count is reduced by 1 when the opposing Pokémon begins to use an attack (before confusion check), except when it flinches. When the count is reduced to zero or the opposing Pokémon leaves the battle, the opposing Pokémon's Disable effect ends. Disable will fail if the selected attack has zero PP. During the effect, Disable will fail for the user.
+        </p>
+        <p>
+            In the unusual case that the opposing Pokémon has more than one copy of the attack, the first copy will be prevented from being chosen, and the other copies will be prevented from being used.
+        </p>
+
+        <h3 id="rage">Rage</h3>
+        <p>
+            Rage in generation 2 doesn't increase the user's Attack by 1 stage, as was previously believed.
+        </p>
+        <p>
+            Rage adds an additional multiplier in damage calculation (called R), which is calculated after the type modifier, and before the damage variance.
+        </p>
+        <p>
+            When Rage is successful and it isn't already in effect for the user, the effect begins and R is set to 1. The effect will continue as long as the user chose Rage for use as the turn began, even if Rage is prevented from being used or misses. During the effect, whenever the user is damaged by an attack by the opposing Pokémon (as well as Guillotine), R is raised by 1 (up to 255). The effect ends when the user leaves the battle. As soon as the effect ends, R is reset to 1.
+        </p>
+
+        <h3 id="belly-drum">Belly Drum</h3>
+        <p>
+            Belly Drum uses the following procedure when raising the Attack stat stage:
+            <ol>
+                <li>Raise stat stage by 2 (but not to more than +6) and calculate the modified Attack (as explained in "Stat Modification").</li>
+                <li>While the stat stage is less than +6:
+                    <ol type="a">
+                        <li>Raise stat stage by 2 (but not to more than +6).</li>
+                        <li>If the modified Attack is 999 then decrease stat stage by 1, calculate the modified Attack (as explained in "Stat Modification"), then stop.</li>
+                        <li>Otherwise, calculate the modified Attack (as explained in "Stat Modification").</li>
+                    </ol>
+                </li>
+            </ol>
+        </p>
+        <p>
+            Belly Drum fails if the reduced HP would faint the user or the user's Attack can't be raised. Because of a bug, however, the attack always does step 1 of the above process even if it fails because the reduced HP would faint the user (in which case the user doesn't lose HP).
+        </p>
+        <p>
+            In Stadium 2, Belly Drum raises the Attack stat stage to +6 instead, and will fail if the reduced HP would faint the user or the user's Attack can't be raised. The bug just mentioned doesn't occur in Stadium 2.
+        </p>
+
+        <h2 id="misc">Miscellaneous</h2>
+
+        <h3 id="pp">PP</h3>
+        <p>
+            PP Up raises the maximum PP of a move (up to 3 times). A move's maximum PP is equal to X+int(X*Y/5), where X is the move's original maximum PP and Y is the number of uses of PP Up on that move. PP Up won't have any effect if the move's maximum PP wouldn't be raised by at least 1 through a single use.
+        </p>
+
+        <h3 id="tag-battles">Tag Battles</h3>
+        <p>
+            In Stadium 2, two players can team up on a single side. Each player on a side enters six Pokémon, then chooses three of them before a battle begins. There are two variations of this so-called "tag battle":
+            <ul>
+                <li>For the Anything Goes rules, each player on a side with two players can choose only a Pokémon he or she controls when it's switched out or replaced with Baton Pass. Nevertheless, Whirlwind and Roar can replace the Pokémon on a side with another one controlled by either player on that side. If all Pokémon on a single side faint, that side loses.</li>
+                <li>For other rules, each player on a side with two players can choose only a Pokémon controlled by the other player on that side when it's switched out or replaced with Baton Pass. Nevertheless, Whirlwind and Roar can replace the Pokémon on either side with another one controlled by either player on that side. If all Pokémon controlled by even one of the players on a side faint, that side loses. (Because of this, the rules for Destiny Bond are, Explosion, Perish Song, and Selfdestruct applicable if one player on a side has only one Pokémon remaining.) </li>
+            </ul>
+        </p>
+
+        <p><sub><a href="#title">↑ Go up</a></sub></p>
+    </body>
+</html>

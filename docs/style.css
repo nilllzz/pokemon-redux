@@ -5,6 +5,7 @@ body {
     font-family: Segoe UI;
     background-color: rgb(240, 240, 240);
     color: rgb(75, 75, 75);
+    padding: 20px;
 }
 
 h2 {
@@ -53,4 +54,8 @@ th, td {
 
 th {
     background-color: rgb(200, 200, 200);
+}
+
+.text-muted {
+    color: rgb(120, 120, 120);
 }

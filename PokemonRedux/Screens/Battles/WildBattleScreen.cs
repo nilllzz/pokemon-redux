@@ -212,7 +212,7 @@ namespace PokemonRedux.Screens.Battles
 
         private void StartPokemonIntro()
         {
-            // run battle animations to throw pokeball from seperate thread
+            // run battle animations to throw pokeball from separate thread
             Task.Run(() =>
             {
                 SetPokemonVisibility(PokemonSide.Player, true);

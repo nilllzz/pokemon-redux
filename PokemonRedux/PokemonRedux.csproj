@@ -44,6 +44,9 @@
     </MonoGameContentReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Textures\Battle\Animations\cut.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Textures\Battle\Animations\ember.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -68,6 +71,9 @@
     <Content Include="Content\Textures\Battle\Animations\quickattack.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Textures\Battle\Animations\rapidspin.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Textures\Battle\Animations\sandattack.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -78,6 +84,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\Battle\Animations\smokescreen.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Battle\Animations\stringshot.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Battle\Animations\sleeppowder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Battle\Animations\stunspore.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\Battle\Animations\surf.png">
@@ -101,7 +116,13 @@
     <Content Include="Content\Textures\Battle\Animations\wingattack.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Textures\Battle\asleep.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Textures\Battle\confused.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Battle\levelup.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\Battle\pokeballOpening.png">
@@ -1035,7 +1056,9 @@
     <Compile Include="Game\Battles\Moves\HiddenPower.cs" />
     <Compile Include="Game\Battles\Moves\Leer.cs" />
     <Compile Include="Game\Battles\Moves\Poisonpowder.cs" />
+    <Compile Include="Game\Battles\Moves\Psybeam.cs" />
     <Compile Include="Game\Battles\Moves\QuickAttack.cs" />
+    <Compile Include="Game\Battles\Moves\RapidSpin.cs" />
     <Compile Include="Game\Battles\Moves\SandAttack.cs" />
     <Compile Include="Game\Battles\Moves\Slash.cs" />
     <Compile Include="Game\Battles\Moves\SleepPowder.cs" />
@@ -1046,16 +1069,27 @@
     <Compile Include="Game\Battles\Moves\Surf.cs" />
     <Compile Include="Game\Battles\Moves\Headbutt.cs" />
     <Compile Include="Game\Battles\Moves\HydroPump.cs" />
+    <Compile Include="Game\Battles\Moves\Cut.cs" />
     <Compile Include="Game\Battles\Moves\Thunderpunch.cs" />
     <Compile Include="Game\Battles\Moves\ThunderWave.cs" />
     <Compile Include="Game\Battles\Moves\WingAttack.cs" />
+    <Compile Include="Game\Battles\StatusMoveChecks.cs" />
+    <Compile Include="Game\Data\KeyboardData.cs" />
+    <Compile Include="Game\PokedexHelper.cs" />
+    <Compile Include="Screens\Battles\Animations\AsleepAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\ConfusedAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\LevelUpAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\Moves\ConfusionAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\CutAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\Moves\HardenAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\Moves\HydroPumpAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\SleepPowderAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\StunSporeAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\Moves\PoisonpowderAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\RapidSpinAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\Moves\SlashAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\Moves\SmokescreenAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\StringShotAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\Moves\SurfAnimation.cs" />
     <Compile Include="Game\Battles\Moves\Thundershock.cs" />
     <Compile Include="Game\Battles\Moves\Tackle.cs" />
@@ -1151,6 +1185,7 @@
     <Compile Include="Screens\Battles\IBattleUI.cs" />
     <Compile Include="Screens\Battles\PlayerPokemonStatus.cs" />
     <Compile Include="Screens\Battles\PlayerStatus.cs" />
+    <Compile Include="Screens\Battles\PokemonStats.cs" />
     <Compile Include="Screens\Battles\WildBattleScreen.cs" />
     <Compile Include="Screens\Border.cs" />
     <Compile Include="Screens\Computer\HallOfFameScreen.cs" />
@@ -1187,6 +1222,7 @@
     <Compile Include="Screens\Pokegear\PokegearScreen.cs" />
     <Compile Include="Screens\PokemonFontRenderer.cs" />
     <Compile Include="Screens\Pokemons\HPBar.cs" />
+    <Compile Include="Screens\Pokemons\MoveLearnScreen.cs" />
     <Compile Include="Screens\Pokemons\MovesScreen.cs" />
     <Compile Include="Screens\Pokemons\PartyMode.cs" />
     <Compile Include="Screens\Pokemons\PartyScreen.cs" />

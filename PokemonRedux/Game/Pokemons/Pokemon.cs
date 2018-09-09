@@ -85,7 +85,7 @@ namespace PokemonRedux.Game.Pokemons
             get => _saveData.experience;
             set
             {
-                var newExp = _saveData.experience + value;
+                var newExp = value;
                 var maxExp = PokemonStatHelper.GetExperienceForLevel(_data.ExperienceType, MAX_LEVEL);
 
                 _saveData.experience = MathHelper.Clamp(newExp, 0, maxExp);
@@ -184,6 +184,24 @@ namespace PokemonRedux.Game.Pokemons
         public PokemonSaveData GetSaveData()
         {
             return (PokemonSaveData)_saveData.Clone();
+        }
+
+        // returns all learnable moves by level up for the spe
+        public MovesetEntryData[] GetMovesForCurrentLevel()
+        {
+            return _data.moves.Where(m => !m.tm && !m.breeding && m.level == Level).ToArray();
+        }
+
+        public void AddMove(params PokemonMoveData[] moves)
+        {
+            _saveData.moves = _saveData.moves.Concat(moves).ToArray();
+        }
+
+        public void RemoveMove(int index)
+        {
+            var moves = _saveData.moves.ToList();
+            moves.RemoveAt(index);
+            _saveData.moves = moves.ToArray();
         }
 
         #region Sprites and palettes

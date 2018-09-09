@@ -58,18 +58,18 @@ namespace PokemonRedux.Screens.Battles.Animations
                     // reset visibility after animation
                     if (_target.Side == PokemonSide.Enemy)
                     {
-                        Controller.ActiveBattle.AnimationController.SetPokemonVisibility(_target.Side, true);
+                        Battle.ActiveBattle.AnimationController.SetPokemonVisibility(_target.Side, true);
                     }
                     else
                     {
-                        Controller.ActiveBattle.AnimationController.SetScreenOffset(Vector2.Zero);
+                        Battle.ActiveBattle.AnimationController.SetScreenOffset(Vector2.Zero);
                     }
                 }
                 else
                 {
                     if (_target.Side == PokemonSide.Enemy)
                     {
-                        Controller.ActiveBattle.AnimationController.SetPokemonVisibility(_target.Side, _flickerAmount % 2 == 0);
+                        Battle.ActiveBattle.AnimationController.SetPokemonVisibility(_target.Side, _flickerAmount % 2 == 0);
                     }
                     else
                     {
@@ -82,7 +82,7 @@ namespace PokemonRedux.Screens.Battles.Animations
                         {
                             yOffset = Border.SCALE;
                         }
-                        Controller.ActiveBattle.AnimationController.SetScreenOffset(new Vector2(0, yOffset));
+                        Battle.ActiveBattle.AnimationController.SetScreenOffset(new Vector2(0, yOffset));
                     }
                 }
             }

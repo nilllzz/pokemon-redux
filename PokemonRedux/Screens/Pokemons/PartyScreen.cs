@@ -33,7 +33,7 @@ namespace PokemonRedux.Screens.Pokemons
         private OptionsBox _options, _itemOptions, _confirmBox;
         private Textbox _textbox;
         private Texture2D _itemIcon, _mailIcon;
-        private Pokemon _currentlyBattling; // pokemon currently battling
+        private readonly Pokemon _currentlyBattling; // pokemon currently battling
 
         private int[] _animationIndices;
         private int[] _animationDelays;
@@ -93,7 +93,7 @@ namespace PokemonRedux.Screens.Pokemons
             _animationIndices = new int[Player.MAX_POKEMON];
             // init animation delays
             _animationDelays = new int[Player.MAX_POKEMON];
-            for (int i = 0; i < Controller.ActivePlayer.PartyPokemon.Length; i++)
+            for (var i = 0; i < Controller.ActivePlayer.PartyPokemon.Length; i++)
             {
                 _animationDelays[i] = GetAnimationDelay(Controller.ActivePlayer.PartyPokemon[i]);
             }
@@ -164,7 +164,7 @@ namespace PokemonRedux.Screens.Pokemons
 
             var selectionChar = DialogVisible ? "^>>" : ">";
 
-            for (int i = 0; i < Controller.ActivePlayer.PartyPokemon.Length; i++)
+            for (var i = 0; i < Controller.ActivePlayer.PartyPokemon.Length; i++)
             {
                 // compose and draw menu text
                 var menuText = "";
@@ -303,7 +303,7 @@ namespace PokemonRedux.Screens.Pokemons
         internal override void Update(GameTime gameTime)
         {
             // update sprite animations
-            for (int i = 0; i < Controller.ActivePlayer.PartyPokemon.Length; i++)
+            for (var i = 0; i < Controller.ActivePlayer.PartyPokemon.Length; i++)
             {
                 _animationDelays[i]--;
                 if (_animationDelays[i] == 0)

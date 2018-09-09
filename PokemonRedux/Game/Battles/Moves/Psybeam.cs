@@ -1,10 +1,9 @@
 ﻿namespace PokemonRedux.Game.Battles.Moves
 {
-    [BattleMove("SUPERSONIC")]
-    class Supersonic : BattleMove
+    [BattleMove("PSYBEAM")]
+    class Psybeam : BattleMove
     {
-        public override double Accuracy => 0.55;
-        public override MoveCategory GetCategory(BattlePokemon user) => MoveCategory.Status;
+        public override double EffectChance => 0.1;
 
         public override void ShowAnimation(BattlePokemon user, BattlePokemon target)
         {
@@ -14,11 +13,6 @@
         public override bool ExecuteSecondaryEffect(BattlePokemon user, BattlePokemon target)
         {
             return Battle.ActiveBattle.TryInflictConfusion(target);
-        }
-
-        public override bool StatusMoveCheck(BattlePokemon user, BattlePokemon target)
-        {
-            return StatusMoveChecks.CheckConfused(target);
         }
     }
 }

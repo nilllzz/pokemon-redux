@@ -1,6 +1,7 @@
 ﻿using GameDevCommon.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using PokemonRedux.Game.Data;
 using static Core;
 
 namespace PokemonRedux
@@ -13,79 +14,67 @@ namespace PokemonRedux
         private static GamePadHandler _gHandler;
         private static ControlsHandler _cHandler;
 
+        private static Keys _aKey, _bKey, _startKey, _selectKey;
+
         public static void Initialize()
         {
             _kHandler = GetComponent<KeyboardHandler>();
             _gHandler = GetComponent<GamePadHandler>();
             _cHandler = GetComponent<ControlsHandler>();
-        }
 
-        private static Keys GetAKey()
-        {
-            return Keys.Z;
-        }
-
-        private static Keys GetBKey()
-        {
-            return Keys.X;
-        }
-
-        private static Keys GetStartKey()
-        {
-            return Keys.Enter;
-        }
-
-        private static Keys GetSelectKey()
-        {
-            return Keys.Space;
+            var mapData = KeyboardData.Load();
+            _aKey = mapData.AButtonKey;
+            _bKey = mapData.BButtonKey;
+            _startKey = mapData.StartButtonKey;
+            _selectKey = mapData.SelectButtonKey;
         }
 
         public static bool APressed()
         {
             return Controller.IsActive &&
-                (_kHandler.KeyPressed(GetAKey()) ||
+                (_kHandler.KeyPressed(_aKey) ||
                 _gHandler.ButtonPressed(PlayerIndex.One, Buttons.A));
         }
 
         public static bool ADown()
         {
             return Controller.IsActive &&
-                (_kHandler.KeyDown(GetAKey()) ||
+                (_kHandler.KeyDown(_aKey) ||
                 _gHandler.ButtonDown(PlayerIndex.One, Buttons.A));
         }
 
         public static bool BPressed()
         {
             return Controller.IsActive &&
-                (_kHandler.KeyPressed(GetBKey()) ||
+                (_kHandler.KeyPressed(_bKey) ||
                 _gHandler.ButtonPressed(PlayerIndex.One, Buttons.B));
         }
 
         public static bool BDown()
         {
             return Controller.IsActive &&
-                (_kHandler.KeyDown(GetBKey()) ||
+                (_kHandler.KeyDown(_bKey) ||
                 _gHandler.ButtonDown(PlayerIndex.One, Buttons.B));
         }
 
         public static bool StartPressed()
         {
             return Controller.IsActive &&
-                (_kHandler.KeyPressed(GetStartKey()) ||
+                (_kHandler.KeyPressed(_startKey) ||
                 _gHandler.ButtonPressed(PlayerIndex.One, Buttons.Start));
         }
 
         public static bool SelectPressed()
         {
             return Controller.IsActive &&
-                (_kHandler.KeyPressed(GetSelectKey()) ||
+                (_kHandler.KeyPressed(_selectKey) ||
                 _gHandler.ButtonPressed(PlayerIndex.One, Buttons.Back));
         }
 
         public static bool SelectDown()
         {
             return Controller.IsActive &&
-                (_kHandler.KeyDown(GetSelectKey()) ||
+                (_kHandler.KeyDown(_selectKey) ||
                 _gHandler.ButtonDown(PlayerIndex.One, Buttons.Back));
         }
 

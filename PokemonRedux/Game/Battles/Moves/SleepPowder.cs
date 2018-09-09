@@ -1,4 +1,5 @@
 ﻿using PokemonRedux.Game.Pokemons;
+using PokemonRedux.Screens.Battles.Animations.Moves;
 
 namespace PokemonRedux.Game.Battles.Moves
 {
@@ -10,12 +11,18 @@ namespace PokemonRedux.Game.Battles.Moves
 
         public override void ShowAnimation(BattlePokemon user, BattlePokemon target)
         {
-            // TODO: animation
+            var animation = new SleepPowderAnimation(target);
+            Battle.ActiveBattle.AnimationController.ShowAnimationAndWait(animation);
         }
 
         public override bool ExecuteSecondaryEffect(BattlePokemon user, BattlePokemon target)
         {
             return Battle.ActiveBattle.TryInflictStatusEffect(target, PokemonStatus.SLP);
+        }
+
+        public override bool StatusMoveCheck(BattlePokemon user, BattlePokemon target)
+        {
+            return StatusMoveChecks.CheckPokemonStatus(target, PokemonStatus.SLP);
         }
     }
 }

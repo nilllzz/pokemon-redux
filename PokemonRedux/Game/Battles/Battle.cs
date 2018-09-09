@@ -1,5 +1,6 @@
 ﻿using PokemonRedux.Game.Battles.AIs;
 using PokemonRedux.Game.Battles.Moves;
+using PokemonRedux.Game.Data;
 using PokemonRedux.Game.Pokemons;
 using PokemonRedux.Screens.Battles;
 using PokemonRedux.Screens.Battles.Animations;
@@ -72,7 +73,7 @@ namespace PokemonRedux.Game.Battles
                     enemyAction.ActionType == BattleActionType.Move)
                 {
                     var playerMove = BattleMove.Get(playerAction.MoveName);
-                    var enemyMove = BattleMove.Get(enemyAction.MoveName);
+                    var enemyMove = BattleMove.Get("SLEEP POWDER"); //BattleMove.Get(enemyAction.MoveName);
 
                     playerGoesFirst = PlayerMoveGoesFirst(playerMove, enemyMove);
                     if (playerGoesFirst)
@@ -301,7 +302,7 @@ namespace PokemonRedux.Game.Battles
                 }
                 else if (enemyQuickclaw)
                 {
-                    return true;
+                    return false;
                 }
 
                 var playerSpeed = PlayerPokemon.GetStat(PokemonStat.Speed);
@@ -353,6 +354,7 @@ namespace PokemonRedux.Game.Battles
                 {
                     user.SleepTurns--;
                     UI.ShowMessageAndWait(user.GetDisplayName() + "\nis fast asleep!");
+                    AnimationController.ShowAnimationAndWait(new AsleepAnimation(user));
                     // if pokemon used sleep talk/snore, it will continue the turn
                     if (moveUsed.Name != "SLEEP TALK" && moveUsed.Name != "SNORE")
                     {
@@ -415,12 +417,12 @@ namespace PokemonRedux.Game.Battles
                 user.ConfusionTurns--;
                 if (user.ConfusionTurns == 0)
                 {
-                    UI.ShowMessageAndWait(user.GetDisplayName() + "^'s\nno longer confused!"); // TODO: Message
+                    UI.ShowMessageAndWait(user.GetDisplayName() + "^'s\nconfused no more!");
                 }
                 else
                 {
                     UI.ShowMessageAndKeepOpen(user.GetDisplayName() + "\nis confused!");
-                    AnimationController.ShowAnimationAndWait(new ConfusedAnimation(target));
+                    AnimationController.ShowAnimationAndWait(new ConfusedAnimation(user));
                     // confusion, 50% chance of hitting itself
                     if (Random.Next(0, 2) == 0)
                     {
@@ -428,7 +430,7 @@ namespace PokemonRedux.Game.Battles
                         UI.ShowMessageAndKeepOpen("It hurt itself in\nits confusion!");
                         // TODO: confusion hit animation
                         var damage = GetConfusionDamage(user);
-                        DealDamage(damage, target, true, false);
+                        DealDamage(damage, user, true, false);
                         return; // end turn after hitting self in confusion
                     }
                 }
@@ -452,7 +454,7 @@ namespace PokemonRedux.Game.Battles
             if (user.Pokemon.Status == PokemonStatus.PAR &&
                 Random.Next(0, 2) == 0)
             {
-                UI.ShowMessageAndWait(user.GetDisplayName() + "\nis fully\nparalyzed."); // TODO: message
+                UI.ShowMessageAndWait(user.GetDisplayName() + "^'s\nfully paralyzed.");
                 return;
             }
 
@@ -568,7 +570,7 @@ namespace PokemonRedux.Game.Battles
                 if (typeMultiplier != 0)
                 {
                     var hits = moveUsed.GetHitAmount();
-                    for (int i = 0; i < hits; i++)
+                    for (var i = 0; i < hits; i++)
                     {
                         var isCriticalHit = IsCriticalHit(moveUsed, user);
                         var damage = GetDamage(moveUsed, user, target, isCriticalHit);
@@ -644,11 +646,15 @@ namespace PokemonRedux.Game.Battles
             else
             {
                 // execute status move
-                if (Controller.ActivePlayer.BattleAnimations)
+                var canExecute = moveUsed.StatusMoveCheck(user, target);
+                if (canExecute)
                 {
-                    moveUsed.ShowAnimation(user, target);
+                    if (Controller.ActivePlayer.BattleAnimations)
+                    {
+                        moveUsed.ShowAnimation(user, target);
+                    }
+                    moveUsed.ExecuteSecondaryEffect(user, target);
                 }
-                moveUsed.ExecuteSecondaryEffect(user, target);
             }
         }
 
@@ -1143,10 +1149,74 @@ namespace PokemonRedux.Game.Battles
                 UI.ShowMessageAndWait(pokemon.DisplayName + " gained\na boosted" + exp.ToString() + "\nEXP. Points!");
             }
 
-            // TODO: add exp to pokemon
-            if (pokemon == PlayerPokemon.Pokemon)
+            var hasLeveledUp = false;
+            var queuedMoves = new List<MovesetEntryData>();
+
+            while (exp > 0)
             {
-                // TODO: animation exp bar and show level ups
+                var expThisLevel = exp;
+                var expToNextLevel = PokemonStatHelper.GetExperienceForLevel(pokemon.ExperienceType, pokemon.Level + 1) - pokemon.Experience;
+                if (expToNextLevel <= exp)
+                {
+                    // level up
+                    expThisLevel = expToNextLevel;
+                    exp -= expThisLevel;
+
+                    if (pokemon == PlayerPokemon.Pokemon)
+                    {
+                        pokemon.Experience += expThisLevel - 1;
+                        UI.AnimatePlayerExpAndWait();
+
+                        UI.SetPokemonArtificialLevelUp(true);
+                        AnimationController.ShowAnimationAndWait(new LevelUpAnimation());
+
+                        UI.ShowMessageAndWait($"{pokemon.DisplayName} grew to\nlevel {pokemon.Level + 1}!");
+
+                        pokemon.Experience++;
+                        UI.SetPokemonArtificialLevelUp(false);
+                        UI.AnimatePlayerExpAndWait(instant: true); // resets exp bar to empty
+                    }
+                    else
+                    {
+                        pokemon.Experience += expThisLevel;
+                    }
+
+                    hasLeveledUp = true;
+                    queuedMoves.AddRange(pokemon.GetMovesForCurrentLevel());
+                }
+                else
+                {
+                    pokemon.Experience += exp;
+                    exp = 0;
+                    if (pokemon == PlayerPokemon.Pokemon)
+                    {
+                        UI.AnimatePlayerExpAndWait();
+                    }
+                }
+            }
+
+            if (hasLeveledUp)
+            {
+                // if a pokemon levels up that isn't the active pokemon,
+                // the "Pokemon reached level X" is shown after all exp is given.
+                if (pokemon != PlayerPokemon.Pokemon)
+                {
+                    UI.ShowMessageAndWait($"{pokemon.DisplayName} grew to\nlevel {pokemon.Level}!");
+                }
+
+                UI.ShowPokemonStatsAndWait(pokemon);
+
+                foreach (var move in queuedMoves)
+                {
+                    if (pokemon.Moves.Length < Pokemon.MAX_MOVES)
+                    {
+                        pokemon.AddMove(move.ToPokemonMoveData());
+                    }
+                    else
+                    {
+                        UI.ShowLearnMoveScreen(pokemon, move.ToPokemonMoveData());
+                    }
+                }
             }
         }
 
@@ -1256,65 +1326,55 @@ namespace PokemonRedux.Game.Battles
 
         public bool ChangeStat(BattlePokemon target, PokemonStat stat, PokemonStatChange change)
         {
-            var currentStat = target.StatModifications[stat];
+            var canChange = StatusMoveChecks.CheckStatChange(target, stat, change);
+            if (!canChange)
+            {
+                return false;
+            }
+
             var statName = PokemonStatHelper.GetDisplayString(stat);
-            if (currentStat == 6 && (change == PokemonStatChange.Increase || change == PokemonStatChange.SharpIncrease))
+            var newStat = target.StatModifications[stat];
+            switch (change)
             {
-                // TODO: message
-                UI.ShowMessageAndWait(target.GetDisplayName() + "^'s\n" + statName + " won^'t\nrise anymore!");
-                return false;
+                case PokemonStatChange.Increase:
+                    newStat++;
+                    UI.ShowMessageAndWait(target.GetDisplayName() + "^'s\n" + statName + " went up!");
+                    break;
+                case PokemonStatChange.SharpIncrease:
+                    newStat += 2;
+                    UI.ShowMessageAndWait(target.GetDisplayName() + "^'s\n" + statName + "\nwent way up!");
+                    break;
+                case PokemonStatChange.Decrease:
+                    newStat--;
+                    AnimationController.ShowAnimationAndWait(new StatFallAnimation(target));
+                    UI.ShowMessageAndWait(target.GetDisplayName() + "^'s\n" + statName + " fell!");
+                    break;
+                case PokemonStatChange.SharpDecrease:
+                    newStat -= 2;
+                    AnimationController.ShowAnimationAndWait(new StatFallAnimation(target));
+                    UI.ShowMessageAndWait(target.GetDisplayName() + "^'s\n" + statName + "\nsharply fell!");
+                    break;
+                case PokemonStatChange.Reset:
+                    newStat = 0; // no message
+                    break;
             }
-            else if (currentStat == -6 && (change == PokemonStatChange.Decrease || change == PokemonStatChange.SharpDecrease))
+            if (newStat > 6)
             {
-                // TODO: message
-                UI.ShowMessageAndWait(target.GetDisplayName() + "^'s\n" + statName + " won^'t\ndrop anymore!");
-                return false;
+                newStat = 6;
             }
-            else
+            else if (newStat < -6)
             {
-                var newStat = currentStat;
-                switch (change)
-                {
-                    case PokemonStatChange.Increase:
-                        newStat++;
-                        UI.ShowMessageAndWait(target.GetDisplayName() + "^'s\n" + statName + " went up!");
-                        break;
-                    case PokemonStatChange.SharpIncrease:
-                        newStat += 2;
-                        UI.ShowMessageAndWait(target.GetDisplayName() + "^'s\n" + statName + "\nwent way up!");
-                        break;
-                    case PokemonStatChange.Decrease:
-                        newStat--;
-                        AnimationController.ShowAnimationAndWait(new StatFallAnimation(target));
-                        UI.ShowMessageAndWait(target.GetDisplayName() + "^'s\n" + statName + " fell!");
-                        break;
-                    case PokemonStatChange.SharpDecrease:
-                        newStat -= 2;
-                        AnimationController.ShowAnimationAndWait(new StatFallAnimation(target));
-                        UI.ShowMessageAndWait(target.GetDisplayName() + "^'s\n" + statName + "\nsharply fell!");
-                        break;
-                    case PokemonStatChange.Reset:
-                        newStat = 0; // no message
-                        break;
-                }
-                if (newStat > 6)
-                {
-                    newStat = 6;
-                }
-                else if (newStat < -6)
-                {
-                    newStat = -6;
-                }
-                target.StatModifications[stat] = newStat;
-                return true;
+                newStat = -6;
             }
+            target.StatModifications[stat] = newStat;
+            return true;
         }
 
         public bool TryInflictStatusEffect(BattlePokemon target, PokemonStatus status)
         {
             if (target.Pokemon.Status == PokemonStatus.OK && target.Pokemon.HP > 0)
             {
-                // TODO: SLP, BRN, FRZ, TOX
+                // TODO: BRN, FRZ, TOX
                 target.Pokemon.Status = status;
                 switch (status)
                 {
@@ -1323,6 +1383,10 @@ namespace PokemonRedux.Game.Battles
                         break;
                     case PokemonStatus.PSN:
                         UI.ShowMessageAndWait(target.GetDisplayName() + "\nwas poisoned!");
+                        break;
+                    case PokemonStatus.SLP:
+                        UI.ShowMessageAndWait(target.GetDisplayName() + "\nfell asleep!");
+                        target.SetAsleep();
                         break;
                 }
                 return true;

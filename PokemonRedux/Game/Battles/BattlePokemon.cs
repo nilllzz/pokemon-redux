@@ -106,7 +106,7 @@ namespace PokemonRedux.Game.Battles
 
         public void SetAsleep()
         {
-            SleepTurns = Controller.ActiveBattle.Random.Next(MIN_SLEEP_TURNS, MAX_SLEEP_TURNS + 1);
+            SleepTurns = Battle.ActiveBattle.Random.Next(MIN_SLEEP_TURNS, MAX_SLEEP_TURNS + 1);
             Pokemon.Status = PokemonStatus.SLP;
         }
 

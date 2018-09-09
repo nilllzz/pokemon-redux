@@ -23,7 +23,6 @@ namespace PokemonRedux
         public ComponentManager GetComponentManager() => ComponentManager;
         internal Rectangle ClientRectangle => new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
         internal Player ActivePlayer { get; set; }
-        internal Battle ActiveBattle => Battle.ActiveBattle; // shortcut
 
         public GameController()
         {

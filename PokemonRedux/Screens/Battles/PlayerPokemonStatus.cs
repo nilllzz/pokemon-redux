@@ -2,13 +2,13 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using PokemonRedux.Content;
+using PokemonRedux.Game.Battles;
 using PokemonRedux.Game.Pokemons;
 using System;
 using static Core;
 
 namespace PokemonRedux.Screens.Battles
 {
-    // TODO: status
     class PlayerPokemonStatus
     {
         private const float ANIMATION_SPEED = 0.03f;
@@ -22,12 +22,14 @@ namespace PokemonRedux.Screens.Battles
         private Texture2D _texture;
         private PokemonFontRenderer _fontRenderer;
 
+        private float _animationState = 1f;
+        private double _hpState;
+        private double _expState;
+
         public bool Visible { get; set; }
         public bool AnimationFinished => _animationState == 1f;
         public Vector2 Offset { get; set; } = Vector2.Zero;
-
-        private float _animationState = 1f;
-        private double _hpState;
+        public bool ArtificialLevelUpActive { get; set; } = false; // increases the own pokemon level display by 1 to simulate a level up
 
         public void LoadContent()
         {
@@ -37,6 +39,7 @@ namespace PokemonRedux.Screens.Battles
             _fontRenderer.LoadContent();
 
             _hpState = GetTargetHPState();
+            _expState = GetTargetExpState();
         }
 
         public void UnloadContent()
@@ -52,7 +55,7 @@ namespace PokemonRedux.Screens.Battles
                 startX = (int)(startX + Offset.X * Border.SCALE);
                 var startY = (int)(BattleScreen.StartY + Offset.Y * Border.SCALE);
 
-                var pokemon = Controller.ActiveBattle.PlayerPokemon.Pokemon;
+                var pokemon = Battle.ActiveBattle.PlayerPokemon.Pokemon;
 
                 // name
                 _fontRenderer.DrawText(batch, pokemon.DisplayName,
@@ -60,13 +63,33 @@ namespace PokemonRedux.Screens.Battles
 
                 // level/gender
                 string levelStr;
-                if (pokemon.Level == Pokemon.MAX_LEVEL)
+                switch (pokemon.Status)
                 {
-                    levelStr = pokemon.Level.ToString();
-                }
-                else
-                {
-                    levelStr = "^:L" + pokemon.Level.ToString().PadRight(2);
+                    case PokemonStatus.PAR:
+                    case PokemonStatus.SLP:
+                    case PokemonStatus.BRN:
+                    case PokemonStatus.FRZ:
+                    case PokemonStatus.PSN:
+                        levelStr = pokemon.Status.ToString().ToUpper();
+                        break;
+                    case PokemonStatus.TOX:
+                        levelStr = "PSN";
+                        break;
+                    default:
+                        var level = pokemon.Level;
+                        if (ArtificialLevelUpActive)
+                        {
+                            level++;
+                        }
+                        if (level == Pokemon.MAX_LEVEL)
+                        {
+                            levelStr = level.ToString();
+                        }
+                        else
+                        {
+                            levelStr = "^:L" + level.ToString().PadRight(2);
+                        }
+                        break;
                 }
                 _fontRenderer.DrawText(batch, levelStr + PokemonStatHelper.GetGenderChar(pokemon.Gender),
                     new Vector2(startX + unit * 14, startY + unit * 8), Color.Black, Border.SCALE);
@@ -83,7 +106,7 @@ namespace PokemonRedux.Screens.Battles
                     new Vector2(startX + unit * 11, startY + unit * 10), Color.Black, Border.SCALE);
 
                 // hp bar
-                var barWidth = (int)(Math.Ceiling(HP_BAR_WIDTH * Border.SCALE * GetCurrentHPState()));
+                var barWidth = (int)Math.Ceiling(HP_BAR_WIDTH * Border.SCALE * GetCurrentHPState());
                 var barHeight = (int)(BAR_HEIGHT * Border.SCALE);
 
                 var barColor = PokemonStatHelper.GetHPBarColor(PokemonStatHelper.GetPokemonHealth(hp, pokemon.MaxHP));
@@ -95,10 +118,7 @@ namespace PokemonRedux.Screens.Battles
                 // exp bar
                 if (pokemon.Level < Pokemon.MAX_LEVEL)
                 {
-                    var expCurrentLv = PokemonStatHelper.GetExperienceForLevel(pokemon.ExperienceType, pokemon.Level);
-                    var expProgress = (double)(pokemon.Experience - expCurrentLv) /
-                        (PokemonStatHelper.GetExperienceForLevel(pokemon.ExperienceType, pokemon.Level + 1) - expCurrentLv);
-                    var expBarWidth = (int)(Math.Ceiling(EXP_BAR_WIDTH * Border.SCALE * expProgress));
+                    var expBarWidth = (int)Math.Ceiling(EXP_BAR_WIDTH * Border.SCALE * GetCurrentExpState());
                     batch.DrawRectangle(new Rectangle(
                         (int)(startX + unit * 10 + EXP_BAR_WIDTH * Border.SCALE - expBarWidth),
                         (int)(startY + unit * 11 + Border.SCALE * BAR_OFFSET_Y),
@@ -117,11 +137,17 @@ namespace PokemonRedux.Screens.Battles
                     _animationState += ANIMATION_SPEED;
                     if (_animationState >= 1f)
                     {
-                        _animationState = 1f;
-                        _hpState = GetTargetHPState();
+                        SkipToTarget();
                     }
                 }
             }
+        }
+
+        public void SkipToTarget()
+        {
+            _animationState = 1f;
+            _hpState = GetTargetHPState();
+            _expState = GetTargetExpState();
         }
 
         public void AnimateToTarget()
@@ -137,8 +163,31 @@ namespace PokemonRedux.Screens.Battles
 
         private double GetTargetHPState()
         {
-            var pokemon = Controller.ActiveBattle.PlayerPokemon.Pokemon;
+            var pokemon = Battle.ActiveBattle.PlayerPokemon.Pokemon;
             return pokemon.HP / (double)pokemon.MaxHP;
+        }
+
+        private double GetCurrentExpState()
+        {
+            var diff = _expState - GetTargetExpState();
+            return _expState - diff * _animationState;
+        }
+
+        private double GetTargetExpState()
+        {
+            var pokemon = Battle.ActiveBattle.PlayerPokemon.Pokemon;
+
+            // to show the level up animation correctly, 1 gets subtracted from the exp needed to level up
+            // but the bar should be displayed as completely full, so when a pokemon needs 1xp to level up, fill bar completely
+            if (pokemon.NeededExperience == 1)
+            {
+                return 1f;
+            }
+
+            var expCurrentLv = PokemonStatHelper.GetExperienceForLevel(pokemon.ExperienceType, pokemon.Level);
+            var expProgress = (double)(pokemon.Experience - expCurrentLv) /
+                (PokemonStatHelper.GetExperienceForLevel(pokemon.ExperienceType, pokemon.Level + 1) - expCurrentLv);
+            return expProgress;
         }
     }
 }

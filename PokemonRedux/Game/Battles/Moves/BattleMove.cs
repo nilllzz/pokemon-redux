@@ -54,5 +54,6 @@ namespace PokemonRedux.Game.Battles.Moves
             throw new NotImplementedException($"This move ({Name}) does not have a secondary effect.");
         }
         public abstract void ShowAnimation(BattlePokemon user, BattlePokemon target);
+        public virtual bool StatusMoveCheck(BattlePokemon user, BattlePokemon target) => true;
     }
 }

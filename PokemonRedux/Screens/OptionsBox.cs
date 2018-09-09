@@ -9,7 +9,7 @@ namespace PokemonRedux.Screens
     class OptionsBox
     {
         private string[] _options;
-        private int _width, _height;
+        private int _width;
         private int _cancelIndex; // index of the option that gets activated when B is pressed
         private PokemonFontRenderer _fontRenderer;
 
@@ -19,7 +19,7 @@ namespace PokemonRedux.Screens
         public int OffsetY { get; set; } // baseline of the box, gets drawn -height of box
         public int BufferUp { get; set; } = 0; // the amount of buffer units above the first option
         public int BufferRight { get; set; } = 0; // the amount of buffer to the right of options
-        public int Height => _height;
+        public int Height { get; private set; }
         public bool CloseAfterSelection { get; set; } = true;
 
         // string == name of option, int == index of option
@@ -47,7 +47,7 @@ namespace PokemonRedux.Screens
 
             _options = options;
 
-            _height = 2 + (_options.Length - 1) * 2 + 1 + BufferUp;
+            Height = 2 + (_options.Length - 1) * 2 + 1 + BufferUp;
             _width = 3 + _options.Max(t => PokemonFontRenderer.PrintableCharAmount(t)) + BufferRight;
 
             _cancelIndex = cancelIndex;
@@ -67,12 +67,12 @@ namespace PokemonRedux.Screens
             if (Visible)
             {
                 var width = (int)(_width * Border.UNIT * Border.SCALE);
-                var height = (int)(_height * Border.UNIT * Border.SCALE);
+                var height = (int)(Height * Border.UNIT * Border.SCALE);
                 var unit = (int)(Border.UNIT * Border.SCALE);
                 var startX = OffsetX;
                 var startY = OffsetY - height;
 
-                Border.Draw(batch, startX, startY, _width, _height, Border.SCALE, color);
+                Border.Draw(batch, startX, startY, _width, Height, Border.SCALE, color);
 
                 var text = string.Join(Environment.NewLine, _options.Select((t, i) => (i == Index ? ">" : " ") + t));
 

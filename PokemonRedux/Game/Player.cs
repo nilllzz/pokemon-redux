@@ -30,7 +30,7 @@ namespace PokemonRedux.Game
         }
         public TimeSpan TimePlayed =>
             _elapsedSinceLastSave + new TimeSpan(0, 0, _data.secondsPlayed);
-        public int[] PokedexSeen => _data.pokedexSeen;
+        public int[] PokedexSeen => _data.pokedexSeen; // only includes non-caught seen pokemon
         public int[] PokedexCaught => _data.pokedexCaught;
         public bool VisitedKanto => _data.visitedKanto;
         public string Map => _data.map;

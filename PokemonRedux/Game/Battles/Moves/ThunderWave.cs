@@ -18,5 +18,10 @@ namespace PokemonRedux.Game.Battles.Moves
         {
             return Battle.ActiveBattle.TryInflictStatusEffect(target, PokemonStatus.PAR);
         }
+
+        public override bool StatusMoveCheck(BattlePokemon user, BattlePokemon target)
+        {
+            return StatusMoveChecks.CheckPokemonStatus(target, PokemonStatus.PAR);
+        }
     }
 }

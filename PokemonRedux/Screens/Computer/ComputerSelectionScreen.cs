@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using PokemonRedux.Game;
 using PokemonRedux.Screens.Pack;
 using System.Collections.Generic;
 using static Core;
@@ -37,6 +38,10 @@ namespace PokemonRedux.Screens.Computer
             _optionsBox.LoadContent();
             _optionsBox.OffsetY = 0;
 
+            _confirmationBox = new OptionsBox();
+            _confirmationBox.LoadContent();
+            _confirmationBox.OffsetX += (int)(Border.SCALE * Border.UNIT * 14);
+
             ShowMain();
         }
 
@@ -53,6 +58,7 @@ namespace PokemonRedux.Screens.Computer
 
             _textbox.Draw(_batch, Border.DefaultWhite);
             _optionsBox.Draw(_batch, Border.DefaultWhite);
+            _confirmationBox.Draw(_batch, Border.DefaultWhite);
 
             _batch.End();
         }
@@ -82,7 +88,14 @@ namespace PokemonRedux.Screens.Computer
                 }
                 else
                 {
-                    _optionsBox.Update();
+                    if (_confirmationBox.Visible)
+                    {
+                        _confirmationBox.Update();
+                    }
+                    else
+                    {
+                        _optionsBox.Update();
+                    }
                 }
             }
         }
@@ -118,7 +131,7 @@ namespace PokemonRedux.Screens.Computer
 
         private void MainOptionSelected(string option, int index)
         {
-            if (option == Controller.ActivePlayer.Name + "^'s PC") // no constant expression in switch allowed
+            if (option == Controller.ActivePlayer.Name + "^'s PC") // no non-constant expression in switch allowed
             {
                 _optionsBox.OptionSelected -= MainOptionSelected;
                 ShowPlayersPC();
@@ -132,7 +145,8 @@ namespace PokemonRedux.Screens.Computer
                         ShowBillsPC();
                         break;
                     case "PROF.OAK^'s PC":
-                        // TODO: prof oak evaluation
+                        _optionsBox.OptionSelected -= MainOptionSelected;
+                        ShowProfOaksPC();
                         break;
                     case "HALL OF FAME":
                         {
@@ -149,11 +163,59 @@ namespace PokemonRedux.Screens.Computer
             }
         }
 
+        #region Prof. Oak's PC
+
+        private void ShowProfOaksPC()
+        {
+            _textbox.Show("PROF.OAK^'s PC\naccessed.\n\nPOKéDEX Rating\nSystem opened.\n\nWant to get your\nPOKéDEX rated?");
+            _textboxFocused = true;
+            _textbox.Finished += ShowProfOaksPCFinished;
+        }
+
+        private void ShowProfOaksPCFinished()
+        {
+            _textbox.Finished -= ShowProfOaksPCFinished;
+            _textboxFocused = false;
+
+            _confirmationBox.CloseAfterSelection = true;
+            _confirmationBox.Show(new[] { "YES", "NO" });
+            _confirmationBox.OffsetY = (int)(Border.SCREEN_HEIGHT * Border.SCALE * Border.UNIT - Textbox.HEIGHT * Border.UNIT * Border.SCALE);
+            _confirmationBox.OptionSelected += ProfOaksPCOptionSelected;
+        }
+
+        private void ProfOaksPCOptionSelected(string option, int index)
+        {
+            switch (option)
+            {
+                case "YES": // evaluate pokedex
+                    var evalMessage = PokedexHelper.GetRatingMessage();
+                    var caught = Controller.ActivePlayer.PokedexCaught.Length;
+                    var seen = caught + Controller.ActivePlayer.PokedexSeen.Length;
+                    _textbox.Show($"Current POKéDEX\ncompletion level:\n\n{seen} POKéMON seen\n{caught} POKéMON owned\n\nPROF.OAK^'s\nRating:\n\n{evalMessage}\n\nThe link to PROF.\nOAK^'s PC closed.");
+                    _textboxFocused = true;
+                    _textbox.Closed += PokedexEvaluationFinished;
+                    break;
+
+                case "NO":
+                    _confirmationBox.OptionSelected -= ProfOaksPCOptionSelected;
+                    ShowMain();
+                    break;
+            }
+        }
+
+        private void PokedexEvaluationFinished()
+        {
+            _textbox.Closed -= PokedexEvaluationFinished;
+            ShowMain();
+        }
+
+        #endregion
+
         #region Bills PC
 
         private void ShowBillsPC()
         {
-            _textbox.Show("BILL^s PC\naccessed.\n\nPOKéMON Storage\nSystem opened.");
+            _textbox.Show("BILL^'s PC\naccessed.\n\nPOKéMON Storage\nSystem opened.");
             _textboxFocused = true;
             _textbox.Closed += ShowBillsPCFinished;
         }

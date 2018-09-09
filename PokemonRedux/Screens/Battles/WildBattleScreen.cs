@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using GameDevCommon.Drawing;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using PokemonRedux.Game.Battles;
 using PokemonRedux.Game.Pokemons;
@@ -54,7 +55,7 @@ namespace PokemonRedux.Screens.Battles
                     characterAlpha = 255;
                 }
 
-                var pokemon = Controller.ActiveBattle.EnemyPokemon.Pokemon;
+                var pokemon = Battle.ActiveBattle.EnemyPokemon.Pokemon;
                 Texture2D sprite;
                 if (_introProgress < 1f)
                 {
@@ -134,11 +135,11 @@ namespace PokemonRedux.Screens.Battles
                 Texture2D sprite;
                 if (_playerPokemonPalette == null)
                 {
-                    sprite = Controller.ActiveBattle.PlayerPokemon.Pokemon.GetBackSprite();
+                    sprite = Battle.ActiveBattle.PlayerPokemon.Pokemon.GetBackSprite();
                 }
                 else
                 {
-                    sprite = Controller.ActiveBattle.PlayerPokemon.Pokemon.GetBackSprite(_playerPokemonPalette);
+                    sprite = Battle.ActiveBattle.PlayerPokemon.Pokemon.GetBackSprite(_playerPokemonPalette);
                 }
                 var spriteWidth = (int)((int)(sprite.Width * _playerPokemonSize) * Border.SCALE);
                 var spriteHeight = spriteWidth;

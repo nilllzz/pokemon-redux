@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using PokemonRedux.Content;
-using PokemonRedux.Game.Pokemons;
 using System.Linq;
 using static Core;
 

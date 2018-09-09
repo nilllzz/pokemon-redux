@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using PokemonRedux.Content;
+using PokemonRedux.Game.Battles;
 using PokemonRedux.Game.Pokemons;
 using System;
 using System.Linq;
@@ -9,7 +10,6 @@ using static Core;
 
 namespace PokemonRedux.Screens.Battles
 {
-    // TODO: status
     class EnemyPokemonStatus
     {
         private const float ANIMATION_SPEED = 0.03f;
@@ -52,13 +52,13 @@ namespace PokemonRedux.Screens.Battles
                 startX = (int)(startX + Offset.X * Border.SCALE);
                 var startY = (int)(BattleScreen.StartY + Offset.Y * Border.SCALE);
 
-                var pokemon = Controller.ActiveBattle.EnemyPokemon.Pokemon;
+                var pokemon = Battle.ActiveBattle.EnemyPokemon.Pokemon;
                 // name
                 _fontRenderer.DrawText(batch, pokemon.DisplayName,
                     new Vector2(startX + unit, startY), Color.Black, Border.SCALE);
 
                 // caught
-                if (Controller.ActiveBattle.IsWildBattle &&
+                if (Battle.ActiveBattle.IsWildBattle &&
                     Controller.ActivePlayer.PokedexCaught.Contains(pokemon.Id))
                 {
                     batch.Draw(_caughtIndicator, new Rectangle(startX + unit, startY + unit,
@@ -68,13 +68,28 @@ namespace PokemonRedux.Screens.Battles
 
                 // level/gender
                 string levelStr;
-                if (pokemon.Level == Pokemon.MAX_LEVEL)
+                switch (pokemon.Status)
                 {
-                    levelStr = pokemon.Level.ToString();
-                }
-                else
-                {
-                    levelStr = "^:L" + pokemon.Level.ToString().PadRight(2);
+                    case PokemonStatus.PAR:
+                    case PokemonStatus.SLP:
+                    case PokemonStatus.BRN:
+                    case PokemonStatus.FRZ:
+                    case PokemonStatus.PSN:
+                        levelStr = pokemon.Status.ToString().ToUpper();
+                        break;
+                    case PokemonStatus.TOX:
+                        levelStr = "PSN";
+                        break;
+                    default:
+                        if (pokemon.Level == Pokemon.MAX_LEVEL)
+                        {
+                            levelStr = pokemon.Level.ToString();
+                        }
+                        else
+                        {
+                            levelStr = "^:L" + pokemon.Level.ToString().PadRight(2);
+                        }
+                        break;
                 }
                 _fontRenderer.DrawText(batch, levelStr + PokemonStatHelper.GetGenderChar(pokemon.Gender),
                     new Vector2(startX + unit * 6, startY + unit), Color.Black, Border.SCALE);
@@ -85,7 +100,7 @@ namespace PokemonRedux.Screens.Battles
                     (int)(_texture.Height * Border.SCALE)), Color.White);
 
                 // hp bar
-                var barWidth = (int)(Math.Ceiling(BAR_WIDTH * Border.SCALE * GetCurrentHPState()));
+                var barWidth = (int)Math.Ceiling(BAR_WIDTH * Border.SCALE * GetCurrentHPState());
                 var barHeight = (int)(BAR_HEIGHT * Border.SCALE);
                 var hp = (int)(GetCurrentHPState() * pokemon.MaxHP);
 
@@ -126,7 +141,7 @@ namespace PokemonRedux.Screens.Battles
 
         private double GetTargetHPState()
         {
-            var pokemon = Controller.ActiveBattle.EnemyPokemon.Pokemon;
+            var pokemon = Battle.ActiveBattle.EnemyPokemon.Pokemon;
             return pokemon.HP / (double)pokemon.MaxHP;
         }
     }

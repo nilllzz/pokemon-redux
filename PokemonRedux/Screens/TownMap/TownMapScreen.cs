@@ -14,13 +14,13 @@ namespace PokemonRedux.Screens.TownMap
         private readonly string _region;
         private readonly string _location;
         private readonly MapEntry[] _entries;
+        private readonly int _playerIndex;
 
         private SpriteBatch _batch;
         private Texture2D _map, _selector, _player;
         private PokemonFontRenderer _fontRenderer;
 
         private int _selectedIndex;
-        private int _playerIndex;
         private int _playerFrameIndex = 0;
         private int _playerFrameDelay = PLAYER_FRAME_TIME;
 
@@ -40,7 +40,7 @@ namespace PokemonRedux.Screens.TownMap
                     break;
             }
 
-            for (int i = 0; i < _entries.Length; i++)
+            for (var i = 0; i < _entries.Length; i++)
             {
                 var entry = _entries[i];
                 if (entry.Name.Replace('\n', ' ').ToLower() == _location.ToLower())

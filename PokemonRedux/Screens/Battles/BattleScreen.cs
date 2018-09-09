@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using PokemonRedux.Content;
 using PokemonRedux.Game.Battles;
+using PokemonRedux.Game.Data;
 using PokemonRedux.Game.Pokemons;
 using PokemonRedux.Screens.Battles.Animations;
 using PokemonRedux.Screens.Pokemons;
@@ -37,6 +38,7 @@ namespace PokemonRedux.Screens.Battles
         protected PlayerPokemonStatus _playerPokemonStatus;
         protected PlayerStatus _playerStatus;
         private Textbox _battleTextbox;
+        private PokemonStats _pokemonStats;
 
         protected BattleMenuState _menuState = BattleMenuState.Off;
         private int _mainMenuIndex, _moveMenuIndex;
@@ -86,6 +88,8 @@ namespace PokemonRedux.Screens.Battles
             _playerPokemonStatus.LoadContent();
             _playerStatus = new PlayerStatus();
             _playerStatus.LoadContent();
+            _pokemonStats = new PokemonStats();
+            _pokemonStats.LoadContent();
         }
 
         internal override void UnloadContent()
@@ -115,6 +119,7 @@ namespace PokemonRedux.Screens.Battles
             _enemyPokemonStatus.Draw(_batch);
             _playerPokemonStatus.Draw(_batch);
             _playerStatus.Draw(_batch);
+            _pokemonStats.Draw(_batch);
 
             // battle messages
             _battleTextbox.Draw(_batch, Border.DefaultWhite);
@@ -125,7 +130,7 @@ namespace PokemonRedux.Screens.Battles
                 Border.Draw(_batch, startX + unit * 8, StartY + unit * 12, 12, 6, Border.SCALE);
 
                 var menuStr = "";
-                for (int i = 0; i < MENU_OPTIONS.Length; i++)
+                for (var i = 0; i < MENU_OPTIONS.Length; i++)
                 {
                     if (i == _mainMenuIndex)
                     {
@@ -152,9 +157,9 @@ namespace PokemonRedux.Screens.Battles
                 Border.Draw(_batch, startX + unit * 4, StartY + unit * 12, 16, 6, Border.SCALE);
 
                 // move list
-                var pokemon = Controller.ActiveBattle.PlayerPokemon.Pokemon;
+                var pokemon = Battle.ActiveBattle.PlayerPokemon.Pokemon;
                 var moveListStr = "";
-                for (int i = 0; i < Pokemon.MAX_MOVES; i++)
+                for (var i = 0; i < Pokemon.MAX_MOVES; i++)
                 {
                     if (i == _moveMenuIndex)
                     {
@@ -183,8 +188,8 @@ namespace PokemonRedux.Screens.Battles
 
                 var selectedMove = pokemon.Moves[_moveMenuIndex];
                 // disabled?
-                if (Controller.ActiveBattle.PlayerPokemon.DisabledMove == selectedMove &&
-                    Controller.ActiveBattle.PlayerPokemon.DisabledTurns > 0)
+                if (Battle.ActiveBattle.PlayerPokemon.DisabledMove == selectedMove &&
+                    Battle.ActiveBattle.PlayerPokemon.DisabledTurns > 0)
                 {
                     _fontRenderer.DrawText(_batch, "Disabled!",
                         new Vector2(startX + unit, StartY + unit * 10), Color.Black, Border.SCALE);
@@ -278,7 +283,7 @@ namespace PokemonRedux.Screens.Battles
                         case 3: // RUN
                             // TODO: trainer battles
                             _menuState = BattleMenuState.Off;
-                            Controller.ActiveBattle.StartRound(new BattleAction
+                            Battle.ActiveBattle.StartRound(new BattleAction
                             {
                                 ActionType = BattleActionType.Run
                             });
@@ -291,7 +296,7 @@ namespace PokemonRedux.Screens.Battles
                 if (GameboyInputs.DownPressed())
                 {
                     _moveMenuIndex++;
-                    if (_moveMenuIndex == Controller.ActiveBattle.PlayerPokemon.Pokemon.Moves.Length)
+                    if (_moveMenuIndex == Battle.ActiveBattle.PlayerPokemon.Pokemon.Moves.Length)
                     {
                         _moveMenuIndex = 0;
                     }
@@ -301,17 +306,17 @@ namespace PokemonRedux.Screens.Battles
                     _moveMenuIndex--;
                     if (_moveMenuIndex == -1)
                     {
-                        _moveMenuIndex = Controller.ActiveBattle.PlayerPokemon.Pokemon.Moves.Length - 1;
+                        _moveMenuIndex = Battle.ActiveBattle.PlayerPokemon.Pokemon.Moves.Length - 1;
                     }
                 }
 
                 if (GameboyInputs.APressed())
                 {
                     _menuState = BattleMenuState.Off;
-                    Controller.ActiveBattle.StartRound(new BattleAction
+                    Battle.ActiveBattle.StartRound(new BattleAction
                     {
                         ActionType = BattleActionType.Move,
-                        MoveName = Controller.ActiveBattle.PlayerPokemon.Pokemon.Moves[_moveMenuIndex].name
+                        MoveName = Battle.ActiveBattle.PlayerPokemon.Pokemon.Moves[_moveMenuIndex].name
                     });
                 }
                 else if (GameboyInputs.BPressed())
@@ -335,6 +340,7 @@ namespace PokemonRedux.Screens.Battles
 
                 _enemyPokemonStatus.Update();
                 _playerPokemonStatus.Update();
+                _pokemonStats.Update();
 
                 lock (_animations)
                 {
@@ -368,7 +374,7 @@ namespace PokemonRedux.Screens.Battles
         private void SelectedPokemonForSwitch(int partyIndex)
         {
             _menuState = BattleMenuState.Off;
-            Controller.ActiveBattle.StartRound(new BattleAction
+            Battle.ActiveBattle.StartRound(new BattleAction
             {
                 ActionType = BattleActionType.Switch,
                 SwitchToIndex = partyIndex
@@ -425,6 +431,19 @@ namespace PokemonRedux.Screens.Battles
         {
             _playerPokemonStatus.AnimateToTarget();
             SpinWait.SpinUntil(() => _playerPokemonStatus.AnimationFinished);
+        }
+
+        public void AnimatePlayerExpAndWait(bool instant = false)
+        {
+            if (instant)
+            {
+                _playerPokemonStatus.SkipToTarget();
+            }
+            else
+            {
+                _playerPokemonStatus.AnimateToTarget();
+                SpinWait.SpinUntil(() => _playerPokemonStatus.AnimationFinished);
+            }
         }
 
         public void ShowAnimationAndWait(BattleAnimation animation, int delay = 0)
@@ -572,6 +591,26 @@ namespace PokemonRedux.Screens.Battles
                 _playerPokemonPalette = palette;
                 return currentPalette;
             }
+        }
+
+        public void SetPokemonArtificialLevelUp(bool active)
+        {
+            _playerPokemonStatus.ArtificialLevelUpActive = active;
+        }
+
+        public void ShowPokemonStatsAndWait(Pokemon pokemon)
+        {
+            _pokemonStats.Show(pokemon);
+            SpinWait.SpinUntil(() => !_pokemonStats.Visible);
+        }
+
+        public void ShowLearnMoveScreen(Pokemon pokemon, PokemonMoveData moveData)
+        {
+            var screen = new MoveLearnScreen(this, pokemon, moveData, StartY);
+            screen.LoadContent();
+            var screenManager = GetComponent<ScreenManager>();
+            screenManager.SetScreen(screen);
+            SpinWait.SpinUntil(() => screenManager.ActiveScreen.GetType() != typeof(MoveLearnScreen));
         }
 
         #endregion

@@ -14,6 +14,7 @@ namespace PokemonRedux.Game
         private const int MAX_HALL_OF_FAME_ENTRIES = 180; // max amount of entries to be stored simultaniously
         private const int MAX_HALL_OF_FAME_ENTRY_COUNT = 999; // highest number a hall of fame entry can display as "x-time famer"
         public const int MAX_POKEMON = 6;
+        public const int MAX_NAME_LENGTH = 7;
 
         private PlayerData _data;
         private TimeSpan _elapsedSinceLastSave; // elapsed time since last game save

@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 using PokemonRedux.Game;
 using PokemonRedux.Game.Data;
 using PokemonRedux.Game.Overworld;
+using PokemonRedux.Screens.Intro;
 using PokemonRedux.Screens.Options;
 using PokemonRedux.Screens.Overworld;
 using PokemonRedux.Screens.Save;
@@ -129,12 +130,26 @@ namespace PokemonRedux.Screens.SaveSelection
                     _showInfoText = true;
                     _infoText = SaveScreen.GetInfoText();
                     break;
+                case "NEW GAME":
+                    NewGame();
+                    break;
                 case "OPTION":
                     var optionsScreen = new OptionsScreen(this, true);
                     optionsScreen.LoadContent();
                     GetComponent<ScreenManager>().SetScreen(optionsScreen);
                     break;
             }
+        }
+
+        private void NewGame()
+        {
+            var introScreen = new IntroScreen();
+            introScreen.LoadContent();
+
+            var transitionScreen = new FadeTransitionScreen(this, introScreen, 0.05f);
+            transitionScreen.LoadContent();
+
+            GetComponent<ScreenManager>().SetScreen(transitionScreen);
         }
 
         private void ContinueGame(GameTime gameTime)

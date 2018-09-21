@@ -183,7 +183,7 @@ namespace PokemonRedux.Screens.Computer
                     break;
                 case 1: // name
                     {
-                        var namingScreen = new NamingScreen(this, "BOX NAME?", StorageBox.MAX_NAME_LENGTH);
+                        var namingScreen = new BoxNamingScreen(this);
                         namingScreen.LoadContent();
                         namingScreen.SetIcon(Controller.Content.LoadDirect<Texture2D>("Textures/UI/Computer/boxIcon.png"));
                         namingScreen.NameSelected += ConfirmBoxName;

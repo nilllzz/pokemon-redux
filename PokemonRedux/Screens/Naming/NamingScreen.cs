@@ -7,28 +7,15 @@ using static System.Environment;
 
 namespace PokemonRedux.Screens.Naming
 {
-    class NamingScreen : Screen
+    abstract class NamingScreen : Screen
     {
         private const int CHARS_PER_LINE = 9;
         private const int SELECTOR_FLICKER_DELAY = 3;
         private const int MENU_OPTIONS_COUNT = 3;
         private const int ICON_ANIMATION_DELAY = 10;
-        private static readonly string[] UPPER_CHARS = new[]
-        {
-            "A","B","C","D","E","F","G","H","I",
-            "J","K","L","M","N","O","P","Q","R",
-            "S","T","U","V","W","X","Y","Z"," ",
-            "*","(",")",":",";","[","]","^PK","^MN",
-            "-","?","!","♂","♀","/",".",",","&",
-        };
-        private static readonly string[] LOWER_CHARS = new[]
-        {
-            "a","b","c","d","e","f","g","h","i",
-            "j","k","l","m","n","o","p","q","r",
-            "s","t","u","v","w","x","y","z"," ",
-            "é","^'d","^'l","^'m","^'r","^'s","^'t","^'v","0",
-            "1","2","3","4","5","6","7","8","9",
-        };
+
+        protected abstract string[] UpperChars { get; }
+        protected abstract string[] LowerChars { get; }
 
         private readonly Screen _preScreen;
         private readonly int _maxLength;
@@ -55,9 +42,9 @@ namespace PokemonRedux.Screens.Naming
         public event Action<string> NameSelected;
 
         private int MenuColumn => (int)Math.Floor((double)_charX / 3);
-        private string[] ActiveCharset => _isLower ? LOWER_CHARS : UPPER_CHARS;
+        private string[] ActiveCharset => _isLower ? LowerChars : UpperChars;
 
-        public NamingScreen(Screen preScreen, string title, int maxLength, string currentName = "")
+        protected NamingScreen(Screen preScreen, string title, int maxLength, string currentName = "")
         {
             _preScreen = preScreen;
             _title = title;
@@ -107,8 +94,10 @@ namespace PokemonRedux.Screens.Naming
                 _batch.Draw(_border, new Rectangle(startX, unit * i, unit, unit), Color.White);
                 _batch.Draw(_border, new Rectangle(startX + unit * 19, unit * i, unit, unit), Color.White);
             }
+
+            var verticalOffset = (5 - ActiveCharset.Length / CHARS_PER_LINE) * 2;
             // horizontal
-            var horizontalBars = new[] { 0, 5, 15, 17 };
+            var horizontalBars = new[] { 0, 5 + verticalOffset, 15, 17 };
             for (int i = 1; i < Border.SCREEN_WIDTH - 1; i++)
             {
                 foreach (var y in horizontalBars)
@@ -134,14 +123,14 @@ namespace PokemonRedux.Screens.Naming
 
             // name
             _fontRenderer.DrawText(_batch, _name,
-                new Vector2(startX + unit * 5, unit * 4), Color.Black, Border.SCALE);
+                new Vector2(startX + unit * 5, unit * (4 + verticalOffset)), Color.Black, Border.SCALE);
             var nameLength = PokemonFontRenderer.PrintableCharAmount(_name);
             for (int i = nameLength; i < _maxLength; i++)
             {
                 var textureOffset = i > nameLength ? 1 : 0;
                 _batch.Draw(_placeholders,
                     new Rectangle(
-                        startX + unit * 5 + unit * i, unit * 4,
+                        startX + unit * 5 + unit * i, unit * (4 + verticalOffset),
                         (int)(_placeholders.Height * Border.SCALE),
                         (int)(_placeholders.Height * Border.SCALE)),
                     new Rectangle(textureOffset * 8, 0, 8, 8), Color.White);
@@ -162,7 +151,7 @@ namespace PokemonRedux.Screens.Naming
                 }
             }
             _fontRenderer.DrawText(_batch, charListText,
-                new Vector2(startX + unit * 2, unit * 6), Color.Black, Border.SCALE);
+                new Vector2(startX + unit * 2, unit * (6 + verticalOffset)), Color.Black, Border.SCALE);
 
             // menu
             var menuText = "";
@@ -193,7 +182,7 @@ namespace PokemonRedux.Screens.Naming
                 {
                     _batch.Draw(_selector, new Rectangle(
                         (int)(startX + unit * _charX * 2 + unit * 2 - Border.SCALE),
-                        (int)(unit * _charY * 2 + unit * 6 - Border.SCALE),
+                        (int)(unit * _charY * 2 + unit * (6 + verticalOffset) - Border.SCALE),
                         (int)(_selector.Width * Border.SCALE),
                         (int)(_selector.Height * Border.SCALE)), Color.White);
                 }

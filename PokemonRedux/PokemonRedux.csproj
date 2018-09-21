@@ -152,6 +152,15 @@
     <Content Include="Content\Textures\UI\Battle\caughtIndicator.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Textures\UI\Intro\namingIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\UI\Intro\oak.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\UI\Intro\player.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Textures\UI\Title\clouds.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1251,10 +1260,13 @@
     <Compile Include="Screens\Computer\StorageSystemChooseBoxScreen.cs" />
     <Compile Include="Screens\Computer\StorageSystemWithdrawScreen.cs" />
     <Compile Include="Screens\GameboyInputs.cs" />
+    <Compile Include="Screens\Intro\IntroScreen.cs" />
     <Compile Include="Screens\ITextboxScreen.cs" />
     <Compile Include="Screens\Mails\MailComposeScreen.cs" />
     <Compile Include="Screens\Mails\MailViewScreen.cs" />
+    <Compile Include="Screens\Naming\BoxNamingScreen.cs" />
     <Compile Include="Screens\Naming\NamingScreen.cs" />
+    <Compile Include="Screens\Naming\PlayerNamingScreen.cs" />
     <Compile Include="Screens\OptionsBox.cs" />
     <Compile Include="Screens\Options\OptionsScreen.cs" />
     <Compile Include="Screens\Overworld\EncounterTransitionAnimation.cs" />

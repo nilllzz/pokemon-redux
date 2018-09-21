@@ -46,6 +46,7 @@ namespace PokemonRedux.Game.Battles
         public int ToxicCounter { get; set; } = 0;
         public bool Flinched { get; set; }
         public int ConfusionTurns { get; set; } = 0;
+        public int LastDamageReceived { get; set; } = 0;
 
         // carry over to switched pokemon
         public int ReflectTurns { get; set; }

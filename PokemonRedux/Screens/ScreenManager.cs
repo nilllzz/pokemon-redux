@@ -9,9 +9,8 @@ namespace PokemonRedux.Screens
 
         public void Initialize()
         {
-            var worldScreen = new WorldScreen();
-            SetScreen(worldScreen);
-            //SetScreen(new CardRevealScreen(BoosterProvider.GetBooster(Expansion.BaseSet, "Standard Booster")));
+            var titleScreen = new Title.TitleScreen();
+            SetScreen(titleScreen);
         }
 
         public void SetScreen(Screen screen)

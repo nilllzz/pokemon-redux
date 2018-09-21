@@ -145,7 +145,7 @@ namespace PokemonRedux.Screens.Overworld
             EncounterStarted = false;
 
             // load battle screen
-            var battleScreen = new WildBattleScreen(this, Pokemon.Get(155, 5));
+            var battleScreen = new WildBattleScreen(this, Pokemon.Get(16, 2));
             battleScreen.LoadContent();
             GetComponent<ScreenManager>().SetScreen(battleScreen);
         }

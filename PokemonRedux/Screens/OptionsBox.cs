@@ -21,6 +21,7 @@ namespace PokemonRedux.Screens
         public int BufferRight { get; set; } = 0; // the amount of buffer to the right of options
         public int Height { get; private set; }
         public bool CloseAfterSelection { get; set; } = true;
+        public bool CanCancel { get; set; } = true;
 
         // string == name of option, int == index of option
         public event Action<string, int> OptionSelected;
@@ -102,7 +103,7 @@ namespace PokemonRedux.Screens
                         Index = 0;
                     }
                 }
-                else if (GameboyInputs.BPressed())
+                else if (CanCancel && GameboyInputs.BPressed())
                 {
                     if (_options.Length > _cancelIndex)
                     {

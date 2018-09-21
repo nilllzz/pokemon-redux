@@ -50,6 +50,12 @@
     <Content Include="Content\Textures\Battle\Animations\ember.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Textures\Battle\Animations\flash.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Battle\Animations\fly.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Textures\Battle\Animations\growl.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -60,6 +66,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\Battle\Animations\hydropump.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Battle\Animations\leechlife.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\Battle\Animations\leer.png">
@@ -74,6 +83,9 @@
     <Content Include="Content\Textures\Battle\Animations\rapidspin.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Textures\Battle\Animations\rocksmash.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Textures\Battle\Animations\sandattack.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -84,6 +96,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\Battle\Animations\smokescreen.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Battle\Animations\strength.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\Battle\Animations\stringshot.png">
@@ -102,6 +117,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\Battle\Animations\tackle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Battle\Animations\takedown.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\Battle\Animations\thunderpunch.png">
@@ -128,7 +146,25 @@
     <Content Include="Content\Textures\Battle\pokeballOpening.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Textures\Battle\shinySparkle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Textures\UI\Battle\caughtIndicator.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\UI\Title\clouds.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\UI\Title\copyright.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\UI\Title\hooh.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\UI\Title\horizon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\UI\Title\logo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\UI\World\Encounter\0.png">
@@ -212,6 +248,7 @@
     <Content Include="Content\Textures\UI\Pokemon\mail.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Credits.txt" />
     <None Include="App.config" />
     <Content Include="Content\Data\items.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -1050,10 +1087,13 @@
     <Compile Include="Game\Battles\Moves\BattleMoveAttribute.cs" />
     <Compile Include="Game\Battles\Moves\Confusion.cs" />
     <Compile Include="Game\Battles\Moves\Ember.cs" />
+    <Compile Include="Game\Battles\Moves\Flash.cs" />
+    <Compile Include="Game\Battles\Moves\Fly.cs" />
     <Compile Include="Game\Battles\Moves\Growl.cs" />
     <Compile Include="Game\Battles\Moves\Gust.cs" />
     <Compile Include="Game\Battles\Moves\Harden.cs" />
     <Compile Include="Game\Battles\Moves\HiddenPower.cs" />
+    <Compile Include="Game\Battles\Moves\LeechLife.cs" />
     <Compile Include="Game\Battles\Moves\Leer.cs" />
     <Compile Include="Game\Battles\Moves\Poisonpowder.cs" />
     <Compile Include="Game\Battles\Moves\Psybeam.cs" />
@@ -1063,6 +1103,8 @@
     <Compile Include="Game\Battles\Moves\Slash.cs" />
     <Compile Include="Game\Battles\Moves\SleepPowder.cs" />
     <Compile Include="Game\Battles\Moves\Smokescreen.cs" />
+    <Compile Include="Game\Battles\Moves\RockSmash.cs" />
+    <Compile Include="Game\Battles\Moves\Strength.cs" />
     <Compile Include="Game\Battles\Moves\StringShot.cs" />
     <Compile Include="Game\Battles\Moves\StunSpore.cs" />
     <Compile Include="Game\Battles\Moves\Supersonic.cs" />
@@ -1070,17 +1112,27 @@
     <Compile Include="Game\Battles\Moves\Headbutt.cs" />
     <Compile Include="Game\Battles\Moves\HydroPump.cs" />
     <Compile Include="Game\Battles\Moves\Cut.cs" />
+    <Compile Include="Game\Battles\Moves\TakeDown.cs" />
     <Compile Include="Game\Battles\Moves\Thunderpunch.cs" />
     <Compile Include="Game\Battles\Moves\ThunderWave.cs" />
     <Compile Include="Game\Battles\Moves\WingAttack.cs" />
-    <Compile Include="Game\Battles\StatusMoveChecks.cs" />
+    <Compile Include="Game\Battles\MoveHelper.cs" />
     <Compile Include="Game\Data\KeyboardData.cs" />
+    <Compile Include="Game\Data\OptionsData.cs" />
     <Compile Include="Game\PokedexHelper.cs" />
+    <Compile Include="Game\Options.cs" />
     <Compile Include="Screens\Battles\Animations\AsleepAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\ConfusedAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\FlyAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\LeechLifeAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\RockSmashAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\StrengthAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\TakeDownAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\ShinyAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\LevelUpAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\Moves\ConfusionAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\Moves\CutAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\FlashAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\Moves\HardenAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\Moves\HydroPumpAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\Moves\SleepPowderAnimation.cs" />
@@ -1227,10 +1279,12 @@
     <Compile Include="Screens\Pokemons\PartyMode.cs" />
     <Compile Include="Screens\Pokemons\PartyScreen.cs" />
     <Compile Include="Screens\Pokemons\SummaryScreen.cs" />
+    <Compile Include="Screens\SaveSelection\SaveSelectionScreen.cs" />
     <Compile Include="Screens\Save\SaveScreen.cs" />
     <Compile Include="Screens\Screen.cs" />
     <Compile Include="Screens\ScreenManager.cs" />
     <Compile Include="Screens\Textbox.cs" />
+    <Compile Include="Screens\Title\TitleScreen.cs" />
     <Compile Include="Screens\TownMap\MapEntry.cs" />
     <Compile Include="Screens\TownMap\TownMapScreen.cs" />
     <Compile Include="Screens\TrainerCard\TrainerCardScreen.cs" />

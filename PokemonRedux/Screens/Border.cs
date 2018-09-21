@@ -31,7 +31,7 @@ namespace PokemonRedux.Screens
 
         private static Texture2D GetTexture()
         {
-            return Controller.Content.LoadDirect<Texture2D>($"Textures/UI/Borders/{Controller.ActivePlayer.BorderFrameType}.png");
+            return Controller.Content.LoadDirect<Texture2D>($"Textures/UI/Borders/{Controller.GameOptions.BorderFrameType}.png");
         }
 
         public static void Draw(SpriteBatch batch, int startX, int startY, int width, int height, float scale)

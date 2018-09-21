@@ -259,7 +259,7 @@ namespace PokemonRedux.Screens.Computer
         {
             _mails = Controller.ActivePlayer.Mails;
             // if the cursor/scroll is in an invalid position, scroll up
-            if (_scrollIndex + MAILS_VISIBLE > _mails.Length + 1) // +1 because cancel
+            if (_scrollIndex + _index > _mails.Length + 1) // +1 because cancel
             {
                 _scrollIndex--;
             }

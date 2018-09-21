@@ -23,11 +23,8 @@ namespace PokemonRedux.Screens.Save
         private bool _saved = false;
         private int _savedDelay; // delay until the "Saved the game" message closes itself
 
-        public SaveScreen(Screen preScreen, PlayerCharacter playerEntity)
+        public static string GetInfoText()
         {
-            _preScreen = preScreen;
-            _playerEntity = playerEntity;
-
             var badges = Controller.ActivePlayer.Badges.Length.ToString();
 
             var (hours, minutes) = Controller.ActivePlayer.GetDisplayTime();
@@ -41,10 +38,19 @@ namespace PokemonRedux.Screens.Save
                 dexStr = "POKéDEX" + pokedex.PadLeft(7);
             }
 
-            _infoText = $"PLAYER {Controller.ActivePlayer.Name}" + Environment.NewLine +
+            var text = $"PLAYER {Controller.ActivePlayer.Name}" + Environment.NewLine +
                 "BADGES" + badges.PadLeft(8) + Environment.NewLine +
                  dexStr + Environment.NewLine +
                 "TIME" + time.PadLeft(12);
+
+            return text;
+        }
+
+        public SaveScreen(Screen preScreen, PlayerCharacter playerEntity)
+        {
+            _preScreen = preScreen;
+            _playerEntity = playerEntity;
+            _infoText = GetInfoText();
         }
 
         internal override void LoadContent()

@@ -3,7 +3,6 @@ using GameDevCommon.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using PokemonRedux.Game;
-using PokemonRedux.Game.Battles;
 using PokemonRedux.Game.Data;
 using PokemonRedux.Screens;
 using static Core;
@@ -23,6 +22,7 @@ namespace PokemonRedux
         public ComponentManager GetComponentManager() => ComponentManager;
         internal Rectangle ClientRectangle => new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
         internal Player ActivePlayer { get; set; }
+        internal Options GameOptions { get; private set; }
 
         public GameController()
         {
@@ -52,18 +52,9 @@ namespace PokemonRedux
         {
             base.LoadContent();
 
-            // TODO: move player loading
-            // load player here
-            ActivePlayer = new Player();
-            if (!PlayerData.SaveFileExists())
-            {
-                var data = PlayerData.CreateNew("NILS");
-                ActivePlayer.Load(data);
-            }
-            else
-            {
-                ActivePlayer.Load(null);
-            }
+            // load global options
+            GameOptions = new Options();
+            GameOptions.Load();
 
             _batch = new SpriteBatch(GraphicsDevice);
             RenderTargetManager.Initialize(RENDER_WIDTH, RENDER_HEIGHT);

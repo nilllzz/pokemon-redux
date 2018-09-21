@@ -10,6 +10,7 @@ namespace PokemonRedux.Screens.Options
         private const int OPTIONS_COUNT = 6; // 5 options + 1 cancel button
 
         private readonly Screen _preScreen;
+        private readonly bool _saveOnClose;
 
         private SpriteBatch _batch;
         private PokemonFontRenderer _fontRenderer;
@@ -17,9 +18,10 @@ namespace PokemonRedux.Screens.Options
         private int _index = 0;
         private string _optionsText;
 
-        public OptionsScreen(Screen preScreen)
+        public OptionsScreen(Screen preScreen, bool saveOnClose)
         {
             _preScreen = preScreen;
+            _saveOnClose = saveOnClose;
         }
 
         internal override void LoadContent()
@@ -65,7 +67,7 @@ namespace PokemonRedux.Screens.Options
 
             // 0: text speed
             text += getSelector(0) + "TEXT SPEED\n         :";
-            switch (Controller.ActivePlayer.TextSpeed)
+            switch (Controller.GameOptions.TextSpeed)
             {
                 case 0:
                     text += "FAST";
@@ -79,16 +81,16 @@ namespace PokemonRedux.Screens.Options
             }
             // 1: battle scene
             text += "\n" + getSelector(1) + "BATTLE SCENE\n         :";
-            text += Controller.ActivePlayer.BattleAnimations ? "ON" : "OFF";
+            text += Controller.GameOptions.BattleAnimations ? "ON" : "OFF";
             // 2: battle style
             text += "\n" + getSelector(2) + "BATTLE STYLE\n         :";
-            text += Controller.ActivePlayer.BattleStyle ? "SET" : "SHIFT";
+            text += Controller.GameOptions.BattleStyle ? "SET" : "SHIFT";
             // 3: menu account
             text += "\n" + getSelector(3) + "MENU ACCOUNT\n         :";
-            text += Controller.ActivePlayer.MenuExplanations ? "ON" : "OFF";
+            text += Controller.GameOptions.MenuExplanations ? "ON" : "OFF";
             // 4: border frame type
             text += "\n" + getSelector(4) + "FRAME\n         :TYPE ";
-            text += (Controller.ActivePlayer.BorderFrameType + 1).ToString();
+            text += (Controller.GameOptions.BorderFrameType + 1).ToString();
 
             // 5: cancel option
             text += "\n" + getSelector(5) + "CANCEL";
@@ -136,6 +138,10 @@ namespace PokemonRedux.Screens.Options
 
         private void Close()
         {
+            if (_saveOnClose)
+            {
+                Controller.GameOptions.Save();
+            }
             var screenManager = GetComponent<ScreenManager>();
             screenManager.SetScreen(_preScreen);
         }
@@ -146,42 +152,42 @@ namespace PokemonRedux.Screens.Options
             {
                 // text speed
                 case 0:
-                    Controller.ActivePlayer.TextSpeed += direction;
-                    if (Controller.ActivePlayer.TextSpeed == PlayerData.TEXT_SPEEDS)
+                    Controller.GameOptions.TextSpeed += direction;
+                    if (Controller.GameOptions.TextSpeed == PlayerData.TEXT_SPEEDS)
                     {
-                        Controller.ActivePlayer.TextSpeed = 0;
+                        Controller.GameOptions.TextSpeed = 0;
                     }
-                    else if (Controller.ActivePlayer.TextSpeed == -1)
+                    else if (Controller.GameOptions.TextSpeed == -1)
                     {
-                        Controller.ActivePlayer.TextSpeed = PlayerData.TEXT_SPEEDS - 1;
+                        Controller.GameOptions.TextSpeed = PlayerData.TEXT_SPEEDS - 1;
                     }
                     break;
 
                 // battle scene
                 case 1:
-                    Controller.ActivePlayer.BattleAnimations = !Controller.ActivePlayer.BattleAnimations;
+                    Controller.GameOptions.BattleAnimations = !Controller.GameOptions.BattleAnimations;
                     break;
 
                 // battle style
                 case 2:
-                    Controller.ActivePlayer.BattleStyle = !Controller.ActivePlayer.BattleStyle;
+                    Controller.GameOptions.BattleStyle = !Controller.GameOptions.BattleStyle;
                     break;
 
                 // menu account
                 case 3:
-                    Controller.ActivePlayer.MenuExplanations = !Controller.ActivePlayer.MenuExplanations;
+                    Controller.GameOptions.MenuExplanations = !Controller.GameOptions.MenuExplanations;
                     break;
 
                 // frame
                 case 4:
-                    Controller.ActivePlayer.BorderFrameType += direction;
-                    if (Controller.ActivePlayer.BorderFrameType == Border.BORDER_TYPES)
+                    Controller.GameOptions.BorderFrameType += direction;
+                    if (Controller.GameOptions.BorderFrameType == Border.BORDER_TYPES)
                     {
-                        Controller.ActivePlayer.BorderFrameType = 0;
+                        Controller.GameOptions.BorderFrameType = 0;
                     }
-                    else if (Controller.ActivePlayer.BorderFrameType == -1)
+                    else if (Controller.GameOptions.BorderFrameType == -1)
                     {
-                        Controller.ActivePlayer.BorderFrameType = Border.BORDER_TYPES - 1;
+                        Controller.GameOptions.BorderFrameType = Border.BORDER_TYPES - 1;
                     }
                     break;
             }

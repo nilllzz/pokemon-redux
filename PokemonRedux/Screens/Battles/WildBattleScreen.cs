@@ -192,10 +192,7 @@ namespace PokemonRedux.Screens.Battles
                 if (_introProgress >= 1f)
                 {
                     _introProgress = 1f;
-                    _playerStatus.Visible = true;
-                    _textbox.AlwaysDisplayContinueArrow = true;
-                    _textbox.Show($"Wild {Battle.ActiveBattle.EnemyPokemon.Pokemon.DisplayName}\nappeared!");
-                    _textbox.Closed += WildPokemonMessageClosed;
+                    StartWildIntro();
                 }
             }
 
@@ -211,6 +208,21 @@ namespace PokemonRedux.Screens.Battles
             _enemyPokemonStatus.Visible = true;
         }
 
+        private void StartWildIntro()
+        {
+            Task.Run(() =>
+            {
+                if (Battle.ActiveBattle.EnemyPokemon.Pokemon.IsShiny)
+                {
+                    ShowAnimationAndWait(new ShinyAnimation(Battle.ActiveBattle.EnemyPokemon));
+                }
+                _playerStatus.Visible = true;
+                _textbox.AlwaysDisplayContinueArrow = true;
+                _textbox.Show($"Wild {Battle.ActiveBattle.EnemyPokemon.Pokemon.DisplayName}\nappeared!");
+                _textbox.Closed += WildPokemonMessageClosed;
+            });
+        }
+
         private void StartPokemonIntro()
         {
             // run battle animations to throw pokeball from separate thread
@@ -220,6 +232,10 @@ namespace PokemonRedux.Screens.Battles
                 ShowMessageAndKeepOpen($"Go! {Battle.ActiveBattle.PlayerPokemon.GetDisplayName()}!", 10);
                 ShowAnimation(new PokemonSizeChangeAnimation(Battle.ActiveBattle.PlayerPokemon, 0f, 1f, 0.07f), 6);
                 ShowAnimationAndWait(new PokeballOpeningAnimation(Battle.ActiveBattle.PlayerPokemon));
+                if (Battle.ActiveBattle.PlayerPokemon.Pokemon.IsShiny)
+                {
+                    ShowAnimationAndWait(new ShinyAnimation(Battle.ActiveBattle.PlayerPokemon));
+                }
                 SetPokemonStatusVisible(PokemonSide.Player, true);
                 ResetMenu();
             });

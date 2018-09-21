@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PokemonRedux.Game.Overworld;
+using System;
 using System.Globalization;
 
 namespace PokemonRedux.Game
@@ -23,6 +24,21 @@ namespace PokemonRedux.Game
                     return "Friday";
                 case DayOfWeek.Saturday:
                     return "Saturday";
+            }
+
+            return "";
+        }
+
+        public static string GetDisplayDaytime(Daytime daytime)
+        {
+            switch (daytime)
+            {
+                case Daytime.Morning:
+                    return "Morn";
+                case Daytime.Day:
+                    return "Day";
+                case Daytime.Night:
+                    return "Nite";
             }
 
             return "";

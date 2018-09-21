@@ -42,13 +42,6 @@ namespace PokemonRedux.Game.Data
         public string map;
         public float[] position;
 
-        // options
-        public int textSpeed; // 0 => fast, 1 => mid, 2 => slow
-        public bool battleScene; // battle animations on/off
-        public bool battleStyle; // false => Shift, true => Set
-        public bool menuAccount; // start menu descriptions on/off
-        public int frame; // 0-7 frames
-
         // progression
         public bool visitedKanto; // if the player has ever been to Kanto
 
@@ -122,12 +115,6 @@ namespace PokemonRedux.Game.Data
 
                 map = "Maps/Johto/NewBark/main.json",
                 position = new float[] { 9, 0, 12 },
-
-                textSpeed = 1,
-                battleScene = true,
-                battleStyle = false,
-                menuAccount = true,
-                frame = 0,
 
                 visitedKanto = false,
             };

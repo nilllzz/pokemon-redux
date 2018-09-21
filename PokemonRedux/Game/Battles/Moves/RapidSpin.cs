@@ -5,7 +5,7 @@ namespace PokemonRedux.Game.Battles.Moves
     [BattleMove("RAPID SPIN")]
     class RapidSpin : BattleMove
     {
-        public override double EffectChance => 1f;
+        public override double EffectChance => 1;
 
         public override void ShowAnimation(BattlePokemon user, BattlePokemon target)
         {

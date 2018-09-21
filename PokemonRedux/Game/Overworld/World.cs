@@ -332,7 +332,7 @@ namespace PokemonRedux.Game.Overworld
             }
         }
 
-        private static Daytime DetermineDaytime()
+        public static Daytime DetermineDaytime()
         {
             var hour = DateTime.Now.Hour;
 

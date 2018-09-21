@@ -8,7 +8,14 @@ namespace PokemonRedux.Game.Battles.AIs
         {
             var actor = Battle.ActiveBattle.EnemyPokemon;
 
-            // wild pokemon can flee
+            // multi turn moves
+            var multiTurnMoveAction = GetMultiTurnMoveAction(actor);
+            if (multiTurnMoveAction.HasValue)
+            {
+                return multiTurnMoveAction.Value;
+            }
+
+            // some wild pokemon can flee
             if (actor.Pokemon.FleeRate > 0 && actor.GetCanFlee())
             {
                 var r = Battle.ActiveBattle.Random.NextDouble();

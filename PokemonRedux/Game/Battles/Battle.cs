@@ -73,7 +73,7 @@ namespace PokemonRedux.Game.Battles
                     enemyAction.ActionType == BattleActionType.Move)
                 {
                     var playerMove = BattleMove.Get(playerAction.MoveName);
-                    var enemyMove = BattleMove.Get("SLEEP POWDER"); //BattleMove.Get(enemyAction.MoveName);
+                    var enemyMove = BattleMove.Get(enemyAction.MoveName); // BattleMove.Get("SLEEP POWDER"); 
 
                     playerGoesFirst = PlayerMoveGoesFirst(playerMove, enemyMove);
                     if (playerGoesFirst)
@@ -264,11 +264,16 @@ namespace PokemonRedux.Game.Battles
 
             PlayerPokemon = battlePokemon;
 
-            UI.ShowMessageAndKeepOpen("Go!" + PlayerPokemon.GetDisplayName() + "!", 60);
+            UI.ShowMessageAndKeepOpen("Go! " + PlayerPokemon.GetDisplayName() + "!", 60);
             AnimationController.ShowAnimation(new PokemonSizeChangeAnimation(ActiveBattle.PlayerPokemon, 0f, 1f, 0.07f), 6);
             AnimationController.ShowAnimationAndWait(new PokeballOpeningAnimation(ActiveBattle.PlayerPokemon));
             AnimationController.SetPokemonVisibility(PokemonSide.Player, true);
+            if (PlayerPokemon.Pokemon.IsShiny)
+            {
+                AnimationController.ShowAnimationAndWait(new ShinyAnimation(PlayerPokemon));
+            }
             UI.SetPokemonStatusVisible(PokemonSide.Player, true);
+            UI.SkipPokemonStatusUI(); // resets the UI animations for the new pokemon
         }
 
         private bool PlayerMoveGoesFirst(BattleMove playerMove, BattleMove enemyMove)
@@ -392,6 +397,7 @@ namespace PokemonRedux.Game.Battles
                 {
                     user.Flinched = false;
                     UI.ShowMessageAndWait(user.GetDisplayName() + "\nflinched!");
+                    moveUsed.MoveFailed(user, target);
                     return;
                 }
             }
@@ -431,6 +437,7 @@ namespace PokemonRedux.Game.Battles
                         // TODO: confusion hit animation
                         var damage = GetConfusionDamage(user);
                         DealDamage(damage, user, true, false);
+                        moveUsed.MoveFailed(user, target);
                         return; // end turn after hitting self in confusion
                     }
                 }
@@ -440,6 +447,7 @@ namespace PokemonRedux.Game.Battles
             if (user.IsInfatuated && Random.Next(0, 2) == 0)
             {
                 UI.ShowMessageAndWait(user.GetDisplayName() + "\nis in love."); // TODO: message
+                moveUsed.MoveFailed(user, target);
                 return;
             }
 
@@ -447,6 +455,7 @@ namespace PokemonRedux.Game.Battles
             if (user.DisabledTurns > 0 && moveUsed.Name == user.DisabledMove.name)
             {
                 UI.ShowMessageAndWait(user.GetDisplayName() + "^'s\n" + user.DisabledMove.name + " is\ndisabled!"); // TODO: message
+                moveUsed.MoveFailed(user, target);
                 return;
             }
 
@@ -455,6 +464,7 @@ namespace PokemonRedux.Game.Battles
                 Random.Next(0, 2) == 0)
             {
                 UI.ShowMessageAndWait(user.GetDisplayName() + "^'s\nfully paralyzed.");
+                moveUsed.MoveFailed(user, target);
                 return;
             }
 
@@ -466,35 +476,44 @@ namespace PokemonRedux.Game.Battles
                 {
                     user.LastUsedMove = null;
                     // TODO: stop encore
+                    moveUsed.MoveFailed(user, target);
                     return;
                 }
             }
 
-            if (Controller.ActivePlayer.BattleAnimations)
+            if (moveUsed.ShouldShowUsedText(user))
             {
-                UI.ShowMessageAndKeepOpen(user.GetDisplayName() + "\nused " + moveUsed.Name + "!", 20);
-            }
-            else
-            {
-                UI.ShowMessageAndWait(user.GetDisplayName() + "\nused " + moveUsed.Name + "!");
+                if (moveUsed.ShouldShowAnimation)
+                {
+                    UI.ShowMessageAndKeepOpen(user.GetDisplayName() + "\nused " + moveUsed.Name + "!", 20);
+                }
+                else
+                {
+                    UI.ShowMessageAndWait(user.GetDisplayName() + "\nused " + moveUsed.Name + "!");
+                }
             }
 
-            user.ReducePP(moveUsed.Name);
+            if (moveUsed.ShouldConsumePP(user))
+            {
+                user.ReducePP(moveUsed.Name);
+            }
 
             // determine if move hits or misses
-            if (moveUsed.AccuracyCheck)
+            if (moveUsed.HasAccuracyCheck(user))
             {
                 var lockedOn = false;
                 // dream eater
                 if (moveUsed.Name == "DREAM EATER" && target.Pokemon.Status != PokemonStatus.SLP)
                 {
                     UI.ShowMessageAndWait("But it failed!");
+                    moveUsed.MoveFailed(user, target);
                     return;
                 }
                 // protect/detect
                 else if (target.Protected)
                 {
                     UI.ShowMessageAndWait("But it failed!");
+                    moveUsed.MoveFailed(user, target);
                     return;
                 }
                 // lock on guarantees hit
@@ -506,6 +525,7 @@ namespace PokemonRedux.Game.Battles
                         target.IsFlying)
                     {
                         UI.ShowMessageAndWait("It doesn^'t affect\n" + target.GetDisplayName() + "!");
+                        moveUsed.MoveFailed(user, target);
                         return;
                     }
                     else
@@ -515,12 +535,13 @@ namespace PokemonRedux.Game.Battles
                     }
                 }
                 // life drain moves fail against a substitute
-                if (target.SubstituteHP > 0 && moveUsed.Name == "ABSORB" ||
+                if (target.SubstituteHP > 0 && (moveUsed.Name == "ABSORB" ||
                     moveUsed.Name == "DREAM EATER" ||
                     moveUsed.Name == "GIGA DRAIN" ||
-                    moveUsed.Name == "LEECH LIFE")
+                    moveUsed is LeechLife))
                 {
                     UI.ShowMessageAndWait("But it failed!");
+                    moveUsed.MoveFailed(user, target);
                     return;
                 }
                 // flying targets can only be hit by these moves, others miss
@@ -531,14 +552,16 @@ namespace PokemonRedux.Game.Battles
                     moveUsed.Name == "WHIRLWIND"))
                 {
                     UI.ShowMessageAndWait(user.GetDisplayName() + "^'s\nattack missed!");
+                    moveUsed.MoveFailed(user, target);
                     return;
                 }
-                // dug under targets cano only be hit by these moves, others miss
+                // dug under targets can only be hit by these moves, others miss
                 else if (target.IsUnderground && !(
                     moveUsed.Name == "EARTHQUAKE" ||
                     moveUsed.Name == "MAGNITUDE"))
                 {
                     UI.ShowMessageAndWait(user.GetDisplayName() + "^'s\nattack missed!");
+                    moveUsed.MoveFailed(user, target);
                     return;
                 }
                 // during rain, thunder will not miss
@@ -558,6 +581,7 @@ namespace PokemonRedux.Game.Battles
                     {
                         UI.ShowMessageAndWait(user.GetDisplayName() + "^'s\nattack missed!");
                     }
+                    moveUsed.MoveFailed(user, target);
                     return;
                 }
             }
@@ -577,11 +601,12 @@ namespace PokemonRedux.Game.Battles
                         if (damage == 0)
                         {
                             UI.ShowMessageAndWait("It doesn^'t affect\n" + target.GetDisplayName() + "!");
+                            moveUsed.MoveFailed(user, target);
                             return;
                         }
                         else
                         {
-                            if (Controller.ActivePlayer.BattleAnimations)
+                            if (moveUsed.ShouldShowAnimation)
                             {
                                 moveUsed.ShowAnimation(user, target);
                             }
@@ -640,6 +665,7 @@ namespace PokemonRedux.Game.Battles
                 {
                     // move has no effect due to types, show message
                     UI.ShowMessageAndWait("It doesn^'t affect\n" + target.GetDisplayName() + "!");
+                    moveUsed.MoveFailed(user, target);
                     return;
                 }
             }
@@ -649,11 +675,15 @@ namespace PokemonRedux.Game.Battles
                 var canExecute = moveUsed.StatusMoveCheck(user, target);
                 if (canExecute)
                 {
-                    if (Controller.ActivePlayer.BattleAnimations)
+                    if (moveUsed.ShouldShowAnimation)
                     {
                         moveUsed.ShowAnimation(user, target);
                     }
                     moveUsed.ExecuteSecondaryEffect(user, target);
+                }
+                else
+                {
+                    moveUsed.MoveFailed(user, target);
                 }
             }
         }
@@ -1039,21 +1069,23 @@ namespace PokemonRedux.Game.Battles
             }
         }
 
-        private void DealDamage(int damage, BattlePokemon target, bool substituteAffected, bool multiHit)
+        public void DealDamage(int damage, BattlePokemon target, bool substituteAffected = true, bool hideAnimation = false)
         {
             // TODO: substitute
 
             // within a multi strike move, the blinking/shaking animation does not play until the last hit
-            if (!multiHit)
+            // also hides animation for stuff like poison damage
+            if (!hideAnimation)
             {
                 AnimationController.ShowAnimationAndWait(new DamageAnimation(target));
             }
 
-            target.Pokemon.HP -= damage;
-            if (target.Pokemon.HP < 0)
+            if (damage > target.Pokemon.HP)
             {
-                target.Pokemon.HP = 0;
+                damage = target.Pokemon.HP;
             }
+            target.Pokemon.HP -= damage;
+            target.LastDamageReceived = damage;
 
             if (target == PlayerPokemon)
             {
@@ -1261,25 +1293,25 @@ namespace PokemonRedux.Game.Battles
                 if (pokemon.Pokemon.Status == PokemonStatus.PSN)
                 {
                     var damage = (int)Math.Ceiling(pokemon.Pokemon.MaxHP / 8D);
-                    DealDamage(damage, pokemon, false, false);
-                    UI.ShowMessageAndWait(pokemon.GetDisplayName() + "\nis hurt by poison!");
+                    UI.ShowMessageAndKeepOpen(pokemon.GetDisplayName() + "\nis hurt by poison!");
                     // TODO: animation
+                    DealDamage(damage, pokemon, substituteAffected: false, hideAnimation: true);
                 }
                 else if (pokemon.Pokemon.Status == PokemonStatus.TOX)
                 {
                     pokemon.ToxicCounter++;
 
                     var damage = (int)Math.Ceiling(pokemon.Pokemon.MaxHP * 0.0625 * pokemon.ToxicCounter);
-                    DealDamage(damage, pokemon, false, false);
-                    UI.ShowMessageAndWait(pokemon.GetDisplayName() + "\nis hurt by poison!");
+                    UI.ShowMessageAndKeepOpen(pokemon.GetDisplayName() + "\nis hurt by poison!");
                     // TODO: animation
+                    DealDamage(damage, pokemon, substituteAffected: false, hideAnimation: true);
                 }
                 else if (pokemon.Pokemon.Status == PokemonStatus.BRN)
                 {
                     var damage = (int)Math.Ceiling(pokemon.Pokemon.MaxHP / 8D);
-                    DealDamage(damage, pokemon, false, false);
-                    UI.ShowMessageAndWait(pokemon.GetDisplayName() + "^'s\nhurt by its burn!");
+                    UI.ShowMessageAndKeepOpen(pokemon.GetDisplayName() + "^'s\nhurt by its burn!");
                     // TODO: animation
+                    DealDamage(damage, pokemon, substituteAffected: false, hideAnimation: true);
                 }
 
                 // TODO: leech seed
@@ -1326,7 +1358,7 @@ namespace PokemonRedux.Game.Battles
 
         public bool ChangeStat(BattlePokemon target, PokemonStat stat, PokemonStatChange change)
         {
-            var canChange = StatusMoveChecks.CheckStatChange(target, stat, change);
+            var canChange = MoveHelper.CheckStatChange(target, stat, change);
             if (!canChange)
             {
                 return false;

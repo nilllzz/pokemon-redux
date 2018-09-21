@@ -20,7 +20,7 @@ namespace PokemonRedux.Game.Battles.Moves
 
         public override bool StatusMoveCheck(BattlePokemon user, BattlePokemon target)
         {
-            return StatusMoveChecks.CheckStatChange(target, PokemonStat.Attack, PokemonStatChange.Decrease);
+            return MoveHelper.CheckStatChange(target, PokemonStat.Attack, PokemonStatChange.Decrease);
         }
     }
 }

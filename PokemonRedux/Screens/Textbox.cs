@@ -117,7 +117,7 @@ namespace PokemonRedux.Screens
             {
                 if (_scrolling)
                 {
-                    switch (Controller.ActivePlayer.TextSpeed)
+                    switch (Controller.GameOptions.TextSpeed)
                     {
                         case 0:
                             _scrollValue += Border.SCALE * 2;
@@ -160,7 +160,7 @@ namespace PokemonRedux.Screens
                         }
                         else
                         {
-                            switch (Controller.ActivePlayer.TextSpeed)
+                            switch (Controller.GameOptions.TextSpeed)
                             {
                                 case 0:
                                     _charDelay = CHARDELAY_FAST;

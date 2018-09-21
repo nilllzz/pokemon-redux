@@ -17,6 +17,7 @@ namespace PokemonRedux.Screens.Battles
         void SetPokemonStatusOffset(PokemonSide side, Vector2 offset);
         void SetPokemonArtificialLevelUp(bool active);
         void ShowPokemonStatsAndWait(Pokemon pokemon);
+        void SkipPokemonStatusUI();
         void ShowLearnMoveScreen(Pokemon pokemon, PokemonMoveData moveData);
         void EndBattle(bool won);
     }

@@ -246,6 +246,11 @@ namespace PokemonRedux.Screens.Battles
         {
             if (_menuState == BattleMenuState.Main)
             {
+                if (StartMultiTurnMove())
+                {
+                    return;
+                }
+
                 if (GameboyInputs.RightPressed() && _mainMenuIndex % 2 == 0)
                 {
                     _mainMenuIndex++;
@@ -369,6 +374,24 @@ namespace PokemonRedux.Screens.Battles
                     _fadeOutProgress = 1f;
                 }
             }
+        }
+
+        private bool StartMultiTurnMove()
+        {
+            // checks if any multi turn move (fly, rollout, etc.) is active and runs it
+            // returns whether such a move was initiated
+
+            if (Battle.ActiveBattle.PlayerPokemon.IsFlying)
+            {
+                _menuState = BattleMenuState.Off;
+                Battle.ActiveBattle.StartRound(new BattleAction
+                {
+                    ActionType = BattleActionType.Move,
+                    MoveName = "FLY",
+                });
+                return true;
+            }
+            return false;
         }
 
         private void SelectedPokemonForSwitch(int partyIndex)
@@ -611,6 +634,12 @@ namespace PokemonRedux.Screens.Battles
             var screenManager = GetComponent<ScreenManager>();
             screenManager.SetScreen(screen);
             SpinWait.SpinUntil(() => screenManager.ActiveScreen.GetType() != typeof(MoveLearnScreen));
+        }
+
+        public void SkipPokemonStatusUI()
+        {
+            _playerPokemonStatus.SkipToTarget();
+            _enemyPokemonStatus.SkipToTarget();
         }
 
         #endregion

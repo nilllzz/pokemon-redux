@@ -5,6 +5,7 @@ using PokemonRedux.Game.Overworld.Entities;
 using PokemonRedux.Game.Pokemons;
 using System;
 using System.Linq;
+using static Core;
 
 namespace PokemonRedux.Game
 {
@@ -23,10 +24,7 @@ namespace PokemonRedux.Game
         public int Money
         {
             get => _data.money;
-            set
-            {
-                _data.money = MathHelper.Clamp(_data.money + value, 0, 999999);
-            }
+            set => _data.money = MathHelper.Clamp(_data.money + value, 0, 999999);
         }
         public TimeSpan TimePlayed =>
             _elapsedSinceLastSave + new TimeSpan(0, 0, _data.secondsPlayed);
@@ -35,31 +33,6 @@ namespace PokemonRedux.Game
         public bool VisitedKanto => _data.visitedKanto;
         public string Map => _data.map;
         public Vector3 Position => DataHelper.GetVector3(_data.position, 0f);
-        public int BorderFrameType
-        {
-            get => _data.frame;
-            set => _data.frame = value;
-        }
-        public int TextSpeed
-        {
-            get => _data.textSpeed;
-            set => _data.textSpeed = value;
-        }
-        public bool BattleAnimations
-        {
-            get => _data.battleScene;
-            set => _data.battleScene = value;
-        }
-        public bool BattleStyle
-        {
-            get => _data.battleStyle;
-            set => _data.battleStyle = value;
-        }
-        public bool MenuExplanations
-        {
-            get => _data.menuAccount;
-            set => _data.menuAccount = value;
-        }
         public bool HasPokedex
         {
             get => _data.hasPokedex;
@@ -104,12 +77,15 @@ namespace PokemonRedux.Game
             _elapsedSinceLastSave += gameTime.ElapsedGameTime;
         }
 
-        public void Load(PlayerData data)
+        public void Load(PlayerData data = null)
         {
-            _data = data;
-            if (_data == null)
+            if (data == null)
             {
                 _data = PlayerData.Load();
+            }
+            else
+            {
+                _data = data;
             }
 
             // load pokemon from save data
@@ -134,13 +110,16 @@ namespace PokemonRedux.Game
                 pos.Z,
             };
             _data.map = playerEntity.Map.MapFile;
-            _data.secondsPlayed = (int)(TimePlayed.TotalSeconds);
+            _data.secondsPlayed = (int)TimePlayed.TotalSeconds;
 
             _data.pokemon = PartyPokemon.Select(p => p.GetSaveData()).ToArray();
 
             _data.Save();
 
             _elapsedSinceLastSave = new TimeSpan();
+
+            // also save current global options when player data is saved
+            Controller.GameOptions.Save();
         }
 
         public void SeenPokemon(int id)

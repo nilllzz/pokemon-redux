@@ -18,7 +18,7 @@
 
         public override bool StatusMoveCheck(BattlePokemon user, BattlePokemon target)
         {
-            return StatusMoveChecks.CheckConfused(target);
+            return MoveHelper.CheckConfused(target);
         }
     }
 }

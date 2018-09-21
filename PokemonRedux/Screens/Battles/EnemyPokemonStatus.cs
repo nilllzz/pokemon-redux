@@ -121,11 +121,16 @@ namespace PokemonRedux.Screens.Battles
                     _animationState += ANIMATION_SPEED;
                     if (_animationState >= 1f)
                     {
-                        _animationState = 1f;
-                        _hpState = GetTargetHPState();
+                        SkipToTarget();
                     }
                 }
             }
+        }
+
+        public void SkipToTarget()
+        {
+            _animationState = 1f;
+            _hpState = GetTargetHPState();
         }
 
         public void AnimateToTarget()

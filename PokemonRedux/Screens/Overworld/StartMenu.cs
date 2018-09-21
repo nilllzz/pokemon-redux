@@ -102,7 +102,7 @@ namespace PokemonRedux.Screens.Overworld
                 _fontRenderer.DrawText(batch, text, new Vector2(startX + unit, startY + unit * 2), Color.Black, SCALE);
 
                 // draw explanations
-                if (Controller.ActivePlayer.MenuExplanations)
+                if (Controller.GameOptions.MenuExplanations)
                 {
                     Border.DrawCenter(batch, startX, startY + height, WIDTH, 5, SCALE);
 
@@ -213,7 +213,7 @@ namespace PokemonRedux.Screens.Overworld
                     // open options screen
                     {
                         var screenManager = GetComponent<ScreenManager>();
-                        var optionsScreen = new Options.OptionsScreen(_parentScreen);
+                        var optionsScreen = new Options.OptionsScreen(_parentScreen, false);
                         optionsScreen.LoadContent();
                         screenManager.SetScreen(optionsScreen);
                     }

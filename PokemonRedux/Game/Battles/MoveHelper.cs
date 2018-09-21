@@ -1,9 +1,35 @@
 ﻿using PokemonRedux.Game.Pokemons;
+using System;
 
 namespace PokemonRedux.Game.Battles
 {
-    static class StatusMoveChecks
+    static class MoveHelper
     {
+        // calculates restored HP for moves like Leech Life
+        public static int GetRestoredHP(BattlePokemon target, int damage)
+        {
+            var hp = 1;
+            if (damage > 1)
+            {
+                // 50%, ceiling division (5 damage results in 3 hp)
+                hp = (int)Math.Ceiling(damage / 2f);
+            }
+
+            if (hp + target.Pokemon.HP > target.Pokemon.MaxHP)
+            {
+                hp = target.Pokemon.MaxHP - target.Pokemon.HP;
+            }
+
+            return hp;
+        }
+
+        public static void DealRecoilDamage(BattlePokemon user, BattlePokemon target, double amount)
+        {
+            var damage = (int)Math.Ceiling(target.LastDamageReceived * amount);
+            Battle.ActiveBattle.DealDamage(damage, user, substituteAffected: false, hideAnimation: true);
+            Battle.ActiveBattle.UI.ShowMessageAndKeepOpen($"{user.GetDisplayName()}^'s\nhit with recoil!", 20);
+        }
+
         public static bool CheckConfused(BattlePokemon target)
         {
             if (target.ConfusionTurns > 0)

@@ -1,5 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
-using PokemonRedux.Screens.Overworld;
+using PokemonRedux.Screens.Intro;
 
 namespace PokemonRedux.Screens
 {
@@ -9,8 +9,8 @@ namespace PokemonRedux.Screens
 
         public void Initialize()
         {
-            var titleScreen = new Title.TitleScreen();
-            SetScreen(titleScreen);
+            var introScreen = new GameFreakScreen();
+            SetScreen(introScreen);
         }
 
         public void SetScreen(Screen screen)

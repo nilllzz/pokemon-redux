@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 using PokemonRedux.Game;
 using PokemonRedux.Game.Data;
 using PokemonRedux.Game.Overworld;
-using PokemonRedux.Screens.Intro;
+using PokemonRedux.Screens.NewGame;
 using PokemonRedux.Screens.Options;
 using PokemonRedux.Screens.Overworld;
 using PokemonRedux.Screens.Save;
@@ -143,10 +143,10 @@ namespace PokemonRedux.Screens.SaveSelection
 
         private void NewGame()
         {
-            var introScreen = new IntroScreen();
-            introScreen.LoadContent();
+            var newGameScreen = new NewGameScreen();
+            newGameScreen.LoadContent();
 
-            var transitionScreen = new FadeTransitionScreen(this, introScreen, 0.05f);
+            var transitionScreen = new FadeTransitionScreen(this, newGameScreen, 0.05f);
             transitionScreen.LoadContent();
 
             GetComponent<ScreenManager>().SetScreen(transitionScreen);

@@ -152,13 +152,16 @@
     <Content Include="Content\Textures\UI\Battle\caughtIndicator.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\UI\Intro\namingIcon.png">
+    <Content Include="Content\Textures\UI\Intro\gameFreak.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\UI\Intro\oak.png">
+    <Content Include="Content\Textures\UI\NewGame\namingIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\UI\Intro\player.png">
+    <Content Include="Content\Textures\UI\NewGame\oak.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\UI\NewGame\player.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\UI\Title\clouds.png">
@@ -1260,7 +1263,8 @@
     <Compile Include="Screens\Computer\StorageSystemChooseBoxScreen.cs" />
     <Compile Include="Screens\Computer\StorageSystemWithdrawScreen.cs" />
     <Compile Include="Screens\GameboyInputs.cs" />
-    <Compile Include="Screens\Intro\IntroScreen.cs" />
+    <Compile Include="Screens\Intro\GameFreakScreen.cs" />
+    <Compile Include="Screens\NewGame\NewGameScreen.cs" />
     <Compile Include="Screens\ITextboxScreen.cs" />
     <Compile Include="Screens\Mails\MailComposeScreen.cs" />
     <Compile Include="Screens\Mails\MailViewScreen.cs" />

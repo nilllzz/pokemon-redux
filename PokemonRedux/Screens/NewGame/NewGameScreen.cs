@@ -12,9 +12,9 @@ using PokemonRedux.Screens.Transition;
 using System;
 using static Core;
 
-namespace PokemonRedux.Screens.Intro
+namespace PokemonRedux.Screens.NewGame
 {
-    class IntroScreen : Screen
+    class NewGameScreen : Screen
     {
         private const int INITIAL_TEXT_DELAY = 60;
         private const float BRIGHTNESS_INCREASE = 0.025f;
@@ -67,9 +67,9 @@ namespace PokemonRedux.Screens.Intro
             _fontRenderer = new PokemonFontRenderer();
             _fontRenderer.LoadContent();
 
-            _oak = Controller.Content.LoadDirect<Texture2D>("Textures/UI/Intro/oak.png");
-            _player = Controller.Content.LoadDirect<Texture2D>("Textures/UI/Intro/player.png");
-            _namingIcon = Controller.Content.LoadDirect<Texture2D>("Textures/UI/Intro/namingIcon.png");
+            _oak = Controller.Content.LoadDirect<Texture2D>("Textures/UI/NewGame/oak.png");
+            _player = Controller.Content.LoadDirect<Texture2D>("Textures/UI/NewGame/player.png");
+            _namingIcon = Controller.Content.LoadDirect<Texture2D>("Textures/UI/NewGame/namingIcon.png");
 
             _random = new Random();
             _previewPokemon = Pokemon.Get(POKEMON_PREVIEW_IDS[_random.Next(0, POKEMON_PREVIEW_IDS.Length)], 1);

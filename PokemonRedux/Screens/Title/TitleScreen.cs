@@ -4,7 +4,6 @@ using Microsoft.Xna.Framework.Graphics;
 using PokemonRedux.Content;
 using PokemonRedux.Screens.SaveSelection;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using static Core;
 
 namespace PokemonRedux.Screens.Title
@@ -15,15 +14,14 @@ namespace PokemonRedux.Screens.Title
         private const int HOOH_STAGES = 6;
         private const int HOOH_DELAY = 12;
         private static readonly Color BACKGROUND_COLOR = new Color(120, 160, 248);
-        private static readonly ReadOnlyDictionary<int, int> HOOH_OFFSET_FRAMES =
-            new ReadOnlyDictionary<int, int>(new Dictionary<int, int>() {
+        private static readonly IReadOnlyDictionary<int, int> HOOH_OFFSET_FRAMES = new Dictionary<int, int> {
             { 6, -1 },
             { 17, -2 },
             { 18, -1 },
             { 28, 0 },
             { 40, 1 },
             { 64, 0 },
-        });
+        };
 
         private Texture2D _clouds, _copyright, _logo, _horizon, _hooh;
         private SpriteBatch _batch;

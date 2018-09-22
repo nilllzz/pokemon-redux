@@ -19,7 +19,7 @@ namespace PokemonRedux.Screens.Pack
         private static Color ARROW_COLOR = new Color(248, 0, 0);
 
         private readonly Screen _preScreen;
-        private PackMode _mode;
+        private readonly PackMode _mode;
 
         private Pokemon _targetPokemon; // give held item to
         private SpriteBatch _batch;
@@ -133,7 +133,7 @@ namespace PokemonRedux.Screens.Pack
             var items = GetVisiblePocketItems();
 
             var itemListText = "";
-            for (int i = 0; i < ITEMS_VISIBLE; i++)
+            for (var i = 0; i < ITEMS_VISIBLE; i++)
             {
                 if (items.Length > i)
                 {
@@ -178,7 +178,7 @@ namespace PokemonRedux.Screens.Pack
                 }
             }
 
-            int itemListTextX = PocketIndex == (int)ItemPocket.TMHM ? 5 : 8;
+            var itemListTextX = PocketIndex == (int)ItemPocket.TMHM ? 5 : 8;
             _fontRenderer.DrawText(_batch, itemListText,
                             new Vector2(startX + unit * itemListTextX, unit * 2), Color.Black, Border.SCALE);
 

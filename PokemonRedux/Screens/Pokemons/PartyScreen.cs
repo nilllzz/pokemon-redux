@@ -2,7 +2,6 @@
 using Microsoft.Xna.Framework.Graphics;
 using PokemonRedux.Content;
 using PokemonRedux.Game;
-using PokemonRedux.Game.Data;
 using PokemonRedux.Game.Items;
 using PokemonRedux.Game.Items.Normal;
 using PokemonRedux.Game.Pokemons;

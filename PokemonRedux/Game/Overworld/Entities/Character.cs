@@ -37,9 +37,9 @@ namespace PokemonRedux.Game.Overworld.Entities
             var texture = Controller.Content.LoadDirect<Texture2D>("Textures/World/Characters/" + _data.textureFile + ".png");
             var spriteSize = new Point(texture.Width / SPRITES_X, texture.Height / SPRITES_Y);
 
-            for (int y = 0; y < SPRITES_Y; y++)
+            for (var y = 0; y < SPRITES_Y; y++)
             {
-                for (int x = 0; x < SPRITES_X; x++)
+                for (var x = 0; x < SPRITES_X; x++)
                 {
                     var spriteData = texture.GetData(new Rectangle(x * spriteSize.X, y * spriteSize.Y, spriteSize.X, spriteSize.Y));
                     var sprite = new Texture2D(Controller.GraphicsDevice, spriteSize.X, spriteSize.Y);

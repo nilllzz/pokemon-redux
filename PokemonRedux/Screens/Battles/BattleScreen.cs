@@ -8,7 +8,6 @@ using PokemonRedux.Game.Pokemons;
 using PokemonRedux.Screens.Battles.Animations;
 using PokemonRedux.Screens.Pokemons;
 using PokemonRedux.Screens.Transition;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;

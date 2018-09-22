@@ -10,10 +10,10 @@ namespace PokemonRedux.Screens.Overworld
         private const float WARP_ZOOM_MAX = 1.5f;
         private const float WARP_ZOOM_SPEED = 0.1f;
 
+        private readonly float _zoomLevel = 3.5f;
         private Entity _lockEntity;
         private World _world;
         private float _warpZoom = 0f;
-        private float _zoomLevel = 3.5f;
 
         public WorldCamera(World world, Entity lockEntity)
         {

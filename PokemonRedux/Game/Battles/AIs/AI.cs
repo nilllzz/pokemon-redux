@@ -1,4 +1,6 @@
-﻿namespace PokemonRedux.Game.Battles.AIs
+﻿using PokemonRedux.Game.Battles.Moves;
+
+namespace PokemonRedux.Game.Battles.AIs
 {
     abstract class AI
     {
@@ -14,7 +16,7 @@
                 return new BattleAction
                 {
                     ActionType = BattleActionType.Move,
-                    MoveName = "FLY",
+                    MoveName = BattleMove.GetMoveName<Fly>(),
                 };
             }
 

@@ -109,7 +109,7 @@ namespace PokemonRedux.Screens.Pokemons
 
             // move list
             var moveListText = "";
-            for (int i = 0; i < Pokemon.MAX_MOVES; i++)
+            for (var i = 0; i < Pokemon.MAX_MOVES; i++)
             {
                 if (i < Pokemon.Moves.Length)
                 {

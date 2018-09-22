@@ -76,7 +76,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
 
         public override void Update()
         {
-            for (int i = 0; i < _sands.Count; i++)
+            for (var i = 0; i < _sands.Count; i++)
             {
                 _sands[i] += SAND_SPEED;
                 if (_sands[i] >= 1)

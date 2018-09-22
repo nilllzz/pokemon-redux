@@ -30,7 +30,7 @@ namespace PokemonRedux.Game.Pokemons
 
         public static int GetLevelForExperience(ExperienceType experienceType, int experience)
         {
-            for (int i = 1; i <= Pokemon.MAX_LEVEL; i++)
+            for (var i = 1; i <= Pokemon.MAX_LEVEL; i++)
             {
                 var exp = GetExperienceForLevel(experienceType, i + 1);
                 if (exp > experience)

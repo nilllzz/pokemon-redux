@@ -148,7 +148,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
                 }
             }
 
-            for (int i = 0; i < _clouds.Count; i++)
+            for (var i = 0; i < _clouds.Count; i++)
             {
                 var cloud = _clouds[i];
                 void spawnCloud()

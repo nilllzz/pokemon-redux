@@ -95,7 +95,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
         {
             if (_stage < ELLIPSE_STAGES)
             {
-                for (int i = 0; i < _positions.Length; i++)
+                for (var i = 0; i < _positions.Length; i++)
                 {
                     var newPosition = _positions[i] - ROTATION_SPEED;
                     if (newPosition < 0)

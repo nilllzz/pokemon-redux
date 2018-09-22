@@ -58,7 +58,7 @@ namespace PokemonRedux.Game.Overworld.Entities
                 else
                 {
                     var cuboidTexture = new TextureCuboidWrapper();
-                    for (int i = 0; i < 6; i++)
+                    for (var i = 0; i < 6; i++)
                     {
                         if (textures.Length > i)
                         {
@@ -114,14 +114,14 @@ namespace PokemonRedux.Game.Overworld.Entities
             {
                 if (textures.Length < 4)
                 {
-                    for (int i = 0; i < 4; i++)
+                    for (var i = 0; i < 4; i++)
                     {
                         setTexture(textures[0], i);
                     }
                 }
                 else
                 {
-                    for (int i = 0; i < 4; i++)
+                    for (var i = 0; i < 4; i++)
                     {
                         setTexture(textures[i], i);
                     }
@@ -129,7 +129,7 @@ namespace PokemonRedux.Game.Overworld.Entities
             }
             else
             {
-                for (int i = 0; i < 4; i++)
+                for (var i = 0; i < 4; i++)
                 {
                     setTexture(propTexture.Bounds, i);
                 }
@@ -153,7 +153,7 @@ namespace PokemonRedux.Game.Overworld.Entities
             vertices.AddRange(right);
 
             var removedOffset = 0;
-            for (int i = 0; i < 4; i++)
+            for (var i = 0; i < 4; i++)
             {
                 if (textureDefsRects[i].Width == 0 && textureDefsRects[i].Height == 0)
                 {

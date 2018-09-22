@@ -13,13 +13,13 @@ namespace PokemonRedux.Screens.Save
 
         private readonly Screen _preScreen;
         private readonly PlayerCharacter _playerEntity;
+        private readonly string _infoText;
 
         private Textbox _textbox;
         private OptionsBox _optionsBox;
         private SpriteBatch _batch;
         private PokemonFontRenderer _fontRenderer;
 
-        private string _infoText;
         private bool _saved = false;
         private int _savedDelay; // delay until the "Saved the game" message closes itself
 

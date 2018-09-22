@@ -74,7 +74,7 @@ namespace PokemonRedux.Game.Overworld.Entities
                 if (frames != null && frames.Length > 0)
                 {
                     _frames = new Texture2D[frames.Length];
-                    for (int i = 0; i < frames.Length; i++)
+                    for (var i = 0; i < frames.Length; i++)
                     {
                         var frame = frames[i];
                         var frameColor = Texture.GetData(frame);
@@ -141,15 +141,15 @@ namespace PokemonRedux.Game.Overworld.Entities
                 var indexOffset = 0;
                 var vLength = vertices.Length;
 
-                for (int z = 0; z < _fieldSize.Y; z++)
+                for (var z = 0; z < _fieldSize.Y; z++)
                 {
-                    for (int x = 0; x < _fieldSize.X; x++)
+                    for (var x = 0; x < _fieldSize.X; x++)
                     {
                         // optimize field geometry for creation time
                         // do not index vertices 
                         Geometry.AddIndexedVertices(vertices);
                         var indices = new int[vLength];
-                        for (int i = 0; i < vLength; i++)
+                        for (var i = 0; i < vLength; i++)
                         {
                             indices[i] = indexOffset + i;
                         }
@@ -173,7 +173,7 @@ namespace PokemonRedux.Game.Overworld.Entities
                 {
                     if (_frames != null)
                     {
-                        for (int i = 0; i < _frames.Length; i++)
+                        for (var i = 0; i < _frames.Length; i++)
                         {
                             _frames[i].Dispose();
                         }

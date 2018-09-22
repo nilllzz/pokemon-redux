@@ -89,7 +89,7 @@ namespace PokemonRedux.Screens.Naming
 
             // draw border
             // vertical
-            for (int i = 0; i < Border.SCREEN_HEIGHT; i++)
+            for (var i = 0; i < Border.SCREEN_HEIGHT; i++)
             {
                 _batch.Draw(_border, new Rectangle(startX, unit * i, unit, unit), Color.White);
                 _batch.Draw(_border, new Rectangle(startX + unit * 19, unit * i, unit, unit), Color.White);
@@ -98,7 +98,7 @@ namespace PokemonRedux.Screens.Naming
             var verticalOffset = (5 - ActiveCharset.Length / CHARS_PER_LINE) * 2;
             // horizontal
             var horizontalBars = new[] { 0, 5 + verticalOffset, 15, 17 };
-            for (int i = 1; i < Border.SCREEN_WIDTH - 1; i++)
+            for (var i = 1; i < Border.SCREEN_WIDTH - 1; i++)
             {
                 foreach (var y in horizontalBars)
                 {
@@ -125,7 +125,7 @@ namespace PokemonRedux.Screens.Naming
             _fontRenderer.DrawText(_batch, _name,
                 new Vector2(startX + unit * 5, unit * (4 + verticalOffset)), Color.Black, Border.SCALE);
             var nameLength = PokemonFontRenderer.PrintableCharAmount(_name);
-            for (int i = nameLength; i < _maxLength; i++)
+            for (var i = nameLength; i < _maxLength; i++)
             {
                 var textureOffset = i > nameLength ? 1 : 0;
                 _batch.Draw(_placeholders,
@@ -138,7 +138,7 @@ namespace PokemonRedux.Screens.Naming
 
             // char list
             var charListText = "";
-            for (int i = 0; i < ActiveCharset.Length; i++)
+            for (var i = 0; i < ActiveCharset.Length; i++)
             {
                 charListText += ActiveCharset[i];
                 if ((i + 1) % CHARS_PER_LINE == 0)

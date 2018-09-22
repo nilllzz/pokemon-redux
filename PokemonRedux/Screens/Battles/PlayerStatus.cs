@@ -45,7 +45,7 @@ namespace PokemonRedux.Screens.Battles
                     (int)(_texture.Height * Border.SCALE)), Color.White);
 
                 // party indicators
-                for (int i = 0; i < Player.MAX_POKEMON; i++)
+                for (var i = 0; i < Player.MAX_POKEMON; i++)
                 {
                     int textureX;
                     if (Controller.ActivePlayer.PartyPokemon.Length <= i)

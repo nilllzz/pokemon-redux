@@ -55,7 +55,7 @@ namespace PokemonRedux.Screens.Pokedex
             {
                 "----"
             };
-            for (int i = 0; i < Pokemon.TYPES_AMOUNT; i++)
+            for (var i = 0; i < Pokemon.TYPES_AMOUNT; i++)
             {
                 type1Options.Add(((PokemonType)(i + 1)).ToString().ToUpper());
                 type2Options.Add(((PokemonType)(i + 1)).ToString().ToUpper());

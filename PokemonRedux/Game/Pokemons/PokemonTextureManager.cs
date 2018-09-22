@@ -21,7 +21,7 @@ namespace PokemonRedux.Game.Pokemons
             var texture = new Texture2D(Controller.GraphicsDevice, TEXTURE_SIZE, TEXTURE_SIZE);
             var pixels = template.GetData(new Rectangle(x * TEXTURE_SIZE, 0, TEXTURE_SIZE, TEXTURE_SIZE));
 
-            for (int i = 0; i < pixels.Length; i++)
+            for (var i = 0; i < pixels.Length; i++)
             {
                 var pixel = pixels[i];
                 if (pixel.A == 255)
@@ -76,7 +76,7 @@ namespace PokemonRedux.Game.Pokemons
         private static Texture2D GetTexture(string id, bool front, Color[] palette)
         {
             var key = id + $":{(front ? SIDE_FRONT : SIDE_BACK)}:" + string.Join(",", palette.Select(c => c.ToString()));
-            int sideId = front ? 0 : 1;
+            var sideId = front ? 0 : 1;
             if (!_spriteCache.TryGetValue(key, out var texture))
             {
                 var template = Controller.Content.LoadDirect<Texture2D>($"Textures/Pokemon/Main/{id}.png");

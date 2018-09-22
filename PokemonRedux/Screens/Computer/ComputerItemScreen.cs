@@ -94,7 +94,7 @@ namespace PokemonRedux.Screens.Computer
                 visibleItems.Add("CANCEL");
             }
             var itemListText = "";
-            for (int i = 0; i < visibleItems.Count; i++)
+            for (var i = 0; i < visibleItems.Count; i++)
             {
                 if (i == _index)
                 {

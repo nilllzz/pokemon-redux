@@ -59,7 +59,7 @@ namespace PokemonRedux.Screens
                 new Rectangle(UNIT * 2, UNIT * 2, UNIT, UNIT), color);
 
             // draw horizontal lines
-            for (int x = 1; x < width - 1; x++)
+            for (var x = 1; x < width - 1; x++)
             {
                 // upper
                 batch.Draw(texture, new Rectangle(startX + x * unit, startY, unit, unit),
@@ -69,7 +69,7 @@ namespace PokemonRedux.Screens
                     new Rectangle(UNIT, UNIT * 2, UNIT, UNIT), color);
             }
             // draw vertical lines
-            for (int y = 1; y < height - 1; y++)
+            for (var y = 1; y < height - 1; y++)
             {
                 // left
                 batch.Draw(texture, new Rectangle(startX, startY + y * unit, unit, unit),

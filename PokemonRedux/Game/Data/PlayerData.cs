@@ -123,7 +123,7 @@ namespace PokemonRedux.Game.Data
         private static StorageBoxData[] GenerateBoxes()
         {
             var boxes = new List<StorageBoxData>();
-            for (int i = 0; i < StorageBox.BOX_COUNT; i++)
+            for (var i = 0; i < StorageBox.BOX_COUNT; i++)
             {
                 boxes.Add(new StorageBoxData
                 {

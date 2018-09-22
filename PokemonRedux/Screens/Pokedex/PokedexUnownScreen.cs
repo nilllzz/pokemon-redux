@@ -103,7 +103,7 @@ namespace PokemonRedux.Screens.Pokedex
 
             // word
             var word = UNOWN_TEXTS[selectedLetter];
-            for (int i = 0; i < word.Length; i++)
+            for (var i = 0; i < word.Length; i++)
             {
                 var c = word[i] - 65;
                 DrawUnownLetter(c, startX + unit * (4 + i), unit * 15);
@@ -138,7 +138,7 @@ namespace PokemonRedux.Screens.Pokedex
                 (int)(Border.SCALE * _selector.Height)), Border.DefaultWhite);
 
             // unown letter frame
-            for (int i = 0; i < Controller.ActivePlayer.UnownsCaught.Length; i++)
+            for (var i = 0; i < Controller.ActivePlayer.UnownsCaught.Length; i++)
             {
                 Point letterPos;
                 if (i < 8)

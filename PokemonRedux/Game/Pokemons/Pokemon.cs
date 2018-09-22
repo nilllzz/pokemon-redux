@@ -113,10 +113,7 @@ namespace PokemonRedux.Game.Pokemons
         public int HP
         {
             get => _saveData.hp;
-            set
-            {
-                _saveData.hp = MathHelper.Clamp(value, 0, MaxHP);
-            }
+            set => _saveData.hp = MathHelper.Clamp(value, 0, MaxHP);
         }
         public int MaxHP => PokemonStatHelper.CalcHPStat(Level, _data.baseStats[0], _saveData.DVHP, _saveData.ev[0]);
         public int Attack => PokemonStatHelper.CalcStat(Level, _data.baseStats[1], _saveData.DVAttack, _saveData.ev[1]);

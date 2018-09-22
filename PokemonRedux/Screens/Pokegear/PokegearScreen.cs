@@ -19,6 +19,7 @@ namespace PokemonRedux.Screens.Pokegear
         private static Color TINTED_WHITE = new Color(224, 248, 160);
 
         private readonly Screen _preScreen;
+        private readonly Contact _emptyContact; // visible representation of an empty contact
 
         private SpriteBatch _batch;
         private Texture2D _arrow, _buttons, _switchButton, _timeBox, _mapOverlay, _phoneBackground, _reception;
@@ -29,7 +30,6 @@ namespace PokemonRedux.Screens.Pokegear
         private OptionsBox _phoneOptionsBox, _deleteNumberOptionsBox;
         private TownMapScreen _mapScreen;
         private Phonebook _phonebook;
-        private Contact _emptyContact; // visible representation of an empty contact
 
         private int _pageIndex = 0;
         private int _phoneScroll = 0;
@@ -132,7 +132,7 @@ namespace PokemonRedux.Screens.Pokegear
             }
 
             // draw buttons and selection arrow
-            for (int i = 0; i < MODULES_COUNT; i++)
+            for (var i = 0; i < MODULES_COUNT; i++)
             {
                 if ((i == 0) || // time/exit
                     (i == 1 && Controller.ActivePlayer.HasMapModule) ||
@@ -220,7 +220,7 @@ namespace PokemonRedux.Screens.Pokegear
             // contacts
             var visibleContacts = new Contact[CONTACTS_VISIBLE];
             var contacts = Controller.ActivePlayer.Contacts;
-            for (int i = 0; i < visibleContacts.Length; i++)
+            for (var i = 0; i < visibleContacts.Length; i++)
             {
                 var index = i + _phoneScroll;
                 if (contacts.Length > index)

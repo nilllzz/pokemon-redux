@@ -72,7 +72,7 @@ namespace PokemonRedux.Screens
                 x += charWidth;
             }
 
-            for (int i = 0; i < text.Length; i++)
+            for (var i = 0; i < text.Length; i++)
             {
                 var c = text[i];
 

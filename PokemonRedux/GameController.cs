@@ -3,7 +3,6 @@ using GameDevCommon.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using PokemonRedux.Game;
-using PokemonRedux.Game.Data;
 using PokemonRedux.Screens;
 using static Core;
 

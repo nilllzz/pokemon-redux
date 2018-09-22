@@ -1,11 +1,9 @@
-﻿using GameDevCommon.Drawing;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using PokemonRedux.Game.Battles;
 using PokemonRedux.Game.Pokemons;
 using PokemonRedux.Screens.Battles.Animations;
 using System.Threading.Tasks;
-using static Core;
 
 namespace PokemonRedux.Screens.Battles
 {

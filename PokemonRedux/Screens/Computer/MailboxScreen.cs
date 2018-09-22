@@ -82,7 +82,7 @@ namespace PokemonRedux.Screens.Computer
                 visibleMails.Add("CANCEL");
             }
             var listText = "";
-            for (int i = 0; i < visibleMails.Count; i++)
+            for (var i = 0; i < visibleMails.Count; i++)
             {
                 if (i == _index)
                 {

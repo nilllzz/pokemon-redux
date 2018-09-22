@@ -86,9 +86,9 @@ namespace PokemonRedux.Screens.Mails
             Border.DrawCenter(_batch, startX, 0, Border.SCREEN_WIDTH, Border.SCREEN_HEIGHT, Border.SCALE);
 
             // borders
-            for (int x = 0; x < Border.SCREEN_WIDTH; x++)
+            for (var x = 0; x < Border.SCREEN_WIDTH; x++)
             {
-                for (int y = 0; y < 6; y++)
+                for (var y = 0; y < 6; y++)
                 {
                     if (y == 0 || x == 0 || x == Border.SCREEN_WIDTH - 1 || y == 5)
                     {
@@ -117,7 +117,7 @@ namespace PokemonRedux.Screens.Mails
 
             // placeholders
             var messageLength = PokemonFontRenderer.PrintableCharAmount(_message);
-            for (int i = messageLength; i < Mail.MESSAGE_MAX_LENGTH; i++)
+            for (var i = messageLength; i < Mail.MESSAGE_MAX_LENGTH; i++)
             {
                 var y = 0;
                 var x = i;
@@ -137,7 +137,7 @@ namespace PokemonRedux.Screens.Mails
 
             // char list
             var charListText = "";
-            for (int i = 0; i < ActiveCharset.Length; i++)
+            for (var i = 0; i < ActiveCharset.Length; i++)
             {
                 charListText += ActiveCharset[i];
                 if ((i + 1) % CHARS_PER_LINE == 0)

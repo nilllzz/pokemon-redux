@@ -43,7 +43,7 @@ namespace PokemonRedux.Screens.Pokedex
             // list
             var visibleEntries = _entries.Skip(_scrollIndex).Take(VisibleEntries).ToArray();
             var listText = "";
-            for (int i = 0; i < VisibleEntries; i++)
+            for (var i = 0; i < VisibleEntries; i++)
             {
                 if (i < visibleEntries.Length)
                 {

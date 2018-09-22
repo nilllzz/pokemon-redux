@@ -144,8 +144,8 @@ namespace PokemonRedux.Screens.Computer
                 if (_isMoving)
                 {
                     _batch.Draw(_moveSelector, new Rectangle(
-                        (int)(startX + unit * 9),
-                        (int)(unit * 3 + unit * 2 * _index),
+                        startX + unit * 9,
+                        unit * 3 + unit * 2 * _index,
                         (int)(_moveSelector.Width * Border.SCALE),
                         (int)(_moveSelector.Height * Border.SCALE)), Color.White);
                 }

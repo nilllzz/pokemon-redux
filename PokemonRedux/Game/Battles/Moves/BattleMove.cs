@@ -12,7 +12,7 @@ namespace PokemonRedux.Game.Battles.Moves
     {
         private static Dictionary<string, BattleMove> _moveBuffer;
 
-        public static BattleMove Get(string name)
+        private static void InitializeMoveBuffer()
         {
             if (_moveBuffer == null)
             {
@@ -21,8 +21,25 @@ namespace PokemonRedux.Game.Battles.Moves
                     .ToDictionary(t => t.GetCustomAttribute<BattleMoveAttribute>().Name,
                                   t => (BattleMove)Activator.CreateInstance(t));
             }
+        }
 
+        public static BattleMove Get(string name)
+        {
+            InitializeMoveBuffer();
             return _moveBuffer[name];
+        }
+
+        public static string GetMoveName<MoveClass>() where MoveClass : BattleMove
+        {
+            InitializeMoveBuffer();
+            var searchType = typeof(MoveClass);
+
+            var move = _moveBuffer.Values.FirstOrDefault(m => m.GetType() == searchType);
+            if (move == null)
+            {
+                throw new Exception($"No move for the move class {searchType.Name} found.");
+            }
+            return move.Name;
         }
 
         private MoveData _data;

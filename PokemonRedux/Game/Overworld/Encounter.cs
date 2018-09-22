@@ -37,10 +37,10 @@ namespace PokemonRedux.Game.Overworld
         // if no encounter data is present for the input data, null is returned.
         public EncounterResult? GetResult(EncounterMethod method, Daytime daytime)
         {
-            var applicable = _data.Where(d => d.DoesApply(method, daytime)).ToArray();
+            var applicable = _data.Where(d => d.DoesApply(method, daytime));
 
             // no data found for the input
-            if (applicable.Length == 0)
+            if (applicable.Count() == 0)
             {
                 return null;
             }
@@ -50,7 +50,7 @@ namespace PokemonRedux.Game.Overworld
             var totalChance = rates.Sum(r => r.chance);
             var pick = _random.Next(0, totalChance) + 1;
             var runner = 0;
-            for (int i = 0; i < rates.Length; i++)
+            for (var i = 0; i < rates.Length; i++)
             {
                 var rate = rates[i];
                 runner += rate.chance;

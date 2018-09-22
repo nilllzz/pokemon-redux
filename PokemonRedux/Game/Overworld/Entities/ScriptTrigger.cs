@@ -8,7 +8,7 @@ namespace PokemonRedux.Game.Overworld.Entities
 {
     class ScriptTrigger : Entity
     {
-        private ScriptTriggerType _triggerType;
+        private readonly ScriptTriggerType _triggerType;
 
         public ScriptTrigger(EntityData data)
             : base(data)

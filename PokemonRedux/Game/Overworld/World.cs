@@ -42,7 +42,7 @@ namespace PokemonRedux.Game.Overworld
                 if (_daytime != value)
                 {
                     _daytime = value;
-                    for (int i = 0; i < _entities.Count; i++)
+                    for (var i = 0; i < _entities.Count; i++)
                     {
                         _entities[i].LoadTexture();
                     }
@@ -50,13 +50,7 @@ namespace PokemonRedux.Game.Overworld
             }
         }
 
-        public bool PlayerCanMove
-        {
-            get
-            {
-                return !_warping && !IsPaused;
-            }
-        }
+        public bool PlayerCanMove => !_warping && !IsPaused;
 
         public bool IsPaused { get; set; }
 
@@ -136,7 +130,7 @@ namespace PokemonRedux.Game.Overworld
         public void ClearLoaded(string[] keep)
         {
             var keepLower = keep?.Select(k => k.ToLower());
-            for (int i = 0; i < _loadedMaps.Count; i++)
+            for (var i = 0; i < _loadedMaps.Count; i++)
             {
                 if (_loadedMaps[i] != ActiveMap &&
                     (keepLower == null || !keepLower.Contains(_loadedMaps[i].MapFile)))
@@ -155,7 +149,7 @@ namespace PokemonRedux.Game.Overworld
         public void DisposeMap(Map map)
         {
             // disposes of all entities belonging to a map
-            for (int i = 0; i < _entities.Count; i++)
+            for (var i = 0; i < _entities.Count; i++)
             {
                 if (_entities[i].Map == map && !(_entities[i] is PlayerCharacter))
                 {
@@ -194,7 +188,7 @@ namespace PokemonRedux.Game.Overworld
 
             UpdateDaytime(gameTime);
 
-            for (int i = 0; i < _entities.Count; i++)
+            for (var i = 0; i < _entities.Count; i++)
             {
                 _entities[i].Update();
             }
@@ -308,7 +302,7 @@ namespace PokemonRedux.Game.Overworld
         public Entity GetCollision(CollisionType collisionType, Vector3 position, Vector3 size, Entity other)
         {
             Entity ent = null;
-            for (int i = 0; i < _entities.Count; i++)
+            for (var i = 0; i < _entities.Count; i++)
             {
                 if (_entities[i] != other && _entities[i].DoesCollide(collisionType, position, size, other))
                 {

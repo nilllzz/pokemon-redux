@@ -115,7 +115,7 @@ namespace PokemonRedux.Screens.Pokedex
                 _spriteAnimationStack.Insert(0, 0);
             }
 
-            for (int i = _entryStack.Count - 1; i >= 0; i--)
+            for (var i = _entryStack.Count - 1; i >= 0; i--)
             {
                 var stackEntry = _entryStack[i];
                 var animation = _spriteAnimationStack[i];
@@ -190,7 +190,7 @@ namespace PokemonRedux.Screens.Pokedex
             }
 
             var stackEntryIsComplete = false;
-            for (int i = 0; i < _entryStack.Count; i++)
+            for (var i = 0; i < _entryStack.Count; i++)
             {
                 _spriteAnimationStack[i] += 0.2;
                 if (_spriteAnimationStack[i] >= 1.0)

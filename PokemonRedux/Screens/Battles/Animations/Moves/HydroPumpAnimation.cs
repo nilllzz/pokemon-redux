@@ -81,7 +81,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
             _effectOffset += EFFECT_OFFSET_SPEED;
             _shader.Parameters["offset"].SetValue(_effectOffset);
 
-            for (int i = 0; i < _pillars.Count; i++)
+            for (var i = 0; i < _pillars.Count; i++)
             {
                 var pillar = _pillars[i];
                 pillar.StageDelay--;

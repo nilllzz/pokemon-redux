@@ -29,28 +29,26 @@ namespace PokemonRedux.Game.Pokemons
             });
         }
 
-        private readonly MailData _data;
+        public string Author => Data.author;
+        public string Template => Data.template;
+        public int PokemonId
+        {
+            get => Data.pokemonId;
+            set => Data.pokemonId = value;
+        }
+        public string[] Lines => GetLinesFromMessage(Data.message);
+        public MailData Data { get; }
 
         private Mail(MailData data)
         {
-            _data = data;
+            Data = data;
         }
-
-        public string Author => _data.author;
-        public string Template => _data.template;
-        public int PokemonId
-        {
-            get => _data.pokemonId;
-            set => _data.pokemonId = value;
-        }
-        public string[] Lines => GetLinesFromMessage(_data.message);
-        public MailData Data => _data;
 
         public Item GetItem()
             => Item.Get(Template);
 
         public string GetItemData()
-            => GenerateItemData(Author, _data.message);
+            => GenerateItemData(Author, Data.message);
 
         public static string[] GetLinesFromMessage(string message)
         {

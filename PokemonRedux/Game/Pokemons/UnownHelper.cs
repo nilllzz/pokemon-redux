@@ -29,7 +29,7 @@ namespace PokemonRedux.Game.Pokemons
             var bits = new BitArray(BitConverter.GetBytes(dv));
 
             byte combination = 0;
-            for (int i = 0; i < BIT_INDICES.Length; i++)
+            for (var i = 0; i < BIT_INDICES.Length; i++)
             {
                 var bitIndex = BIT_INDICES[i];
                 var bit = bits.Get(bitIndex);
@@ -91,7 +91,7 @@ namespace PokemonRedux.Game.Pokemons
             }
 
             // get color index from unown letter position in the alphabet
-            var index = (int)Math.Floor((unownLetter / (double)(UNOWN_AMOUNT - 1)) * (UNOWN_LETTER_COLOR_RED.Length - 1));
+            var index = (int)Math.Floor(unownLetter / (double)(UNOWN_AMOUNT - 1) * (UNOWN_LETTER_COLOR_RED.Length - 1));
             return new Color(UNOWN_LETTER_COLOR_RED[index], UNOWN_LETTER_COLOR_GREEN[index], UNOWN_LETTER_COLOR_BLUE[index]);
         }
     }

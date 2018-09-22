@@ -122,7 +122,7 @@ namespace PokemonRedux.Screens.TrainerCard
             var badges = Controller.ActivePlayer.Badges;
             var x = 0;
             var y = 0;
-            for (int i = 9; i <= 16; i++)
+            for (var i = 9; i <= 16; i++)
             {
                 if (badges.Contains(i))
                 {

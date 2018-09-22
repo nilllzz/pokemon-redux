@@ -99,7 +99,7 @@ namespace PokemonRedux.Screens.Pokemons
             _fontRenderer.DrawText(_batch,
                 "<      >",
                 new Vector2(startX + unit * 12, unit * 6), Color.Black, Border.SCALE);
-            for (int i = 0; i < PAGE_COUNT; i++)
+            for (var i = 0; i < PAGE_COUNT; i++)
             {
                 _batch.Draw(_pages, new Rectangle(startX + unit * 13 + i * 2 * unit, unit * 5, unit * 2, unit * 2),
                     new Rectangle(i * 16, i == _pageIndex ? 16 : 0, 16, 16), Color.White);
@@ -201,7 +201,7 @@ namespace PokemonRedux.Screens.Pokemons
                         }
 
                         var moveListText = "";
-                        for (int i = 0; i < Pokemon.MAX_MOVES; i++)
+                        for (var i = 0; i < Pokemon.MAX_MOVES; i++)
                         {
                             if (i == 0)
                             {

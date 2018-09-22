@@ -92,7 +92,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
 
         public override void Update()
         {
-            for (int i = 0; i < _flames.Count; i++)
+            for (var i = 0; i < _flames.Count; i++)
             {
                 var flame = _flames[i];
                 if (flame.Progress < 1)

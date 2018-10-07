@@ -61,9 +61,9 @@ namespace SpriteGenerator
             var shinyColors = new List<Color>();
 
             // find and order colors
-            for (int y = 0; y < inFront.Height; y++)
+            for (var y = 0; y < inFront.Height; y++)
             {
-                for (int x = 0; x < inFront.Width; x++)
+                for (var x = 0; x < inFront.Width; x++)
                 {
                     void addColor(Bitmap img, List<Color> colors)
                     {
@@ -93,9 +93,9 @@ namespace SpriteGenerator
                 }
             }
             // set front colors
-            for (int y = 0; y < inFront.Height; y++)
+            for (var y = 0; y < inFront.Height; y++)
             {
-                for (int x = 0; x < inFront.Width; x++)
+                for (var x = 0; x < inFront.Width; x++)
                 {
                     void setColor(Bitmap img, List<Color> colors)
                     {
@@ -112,9 +112,9 @@ namespace SpriteGenerator
             }
 
             // set back colors
-            for (int y = 0; y < inFront.Height; y++)
+            for (var y = 0; y < inFront.Height; y++)
             {
-                for (int x = 0; x < inFront.Width; x++)
+                for (var x = 0; x < inFront.Width; x++)
                 {
                     void setPixel(Bitmap img, List<Color> colors)
                     {
@@ -125,7 +125,7 @@ namespace SpriteGenerator
                             var maxDiff = 0;
                             do
                             {
-                                for (int i = 0; i < colors.Count; i++)
+                                for (var i = 0; i < colors.Count; i++)
                                 {
                                     var c = colors[i];
                                     var diffR = Math.Abs(pixel.R - c.R);
@@ -158,6 +158,7 @@ namespace SpriteGenerator
             var solutionFolder = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.Parent.Parent.FullName;
             var imgFile = Path.Combine(solutionFolder, "PokemonRedux/Content/Textures/Pokemon/Main", number + ".png");
             outBmp.Save(imgFile, ImageFormat.Png);
+            Console.WriteLine("Sprite written to " + imgFile);
 
             var data = new Palette
             {
@@ -172,6 +173,7 @@ namespace SpriteGenerator
                 existingData.colors = data;
                 var json = JsonConvert.SerializeObject(existingData);
                 File.WriteAllText(dataFile, json);
+                Console.WriteLine("Palette information written to " + dataFile);
             }
         }
 

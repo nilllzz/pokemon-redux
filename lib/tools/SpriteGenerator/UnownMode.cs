@@ -23,7 +23,7 @@ namespace SpriteGenerator
             var number = 201;
             var letters = Enumerable.Range(0, 26).Select(i => (char)(i + 65)).ToArray();
 
-            for (int letterIndex = 0; letterIndex < letters.Length; letterIndex++)
+            for (var letterIndex = 0; letterIndex < letters.Length; letterIndex++)
             {
                 var letter = letters[letterIndex];
 
@@ -58,9 +58,9 @@ namespace SpriteGenerator
                 var shinyColors = new List<Color>();
 
                 // find and order colors
-                for (int y = 0; y < inFront.Height; y++)
+                for (var y = 0; y < inFront.Height; y++)
                 {
-                    for (int x = 0; x < inFront.Width; x++)
+                    for (var x = 0; x < inFront.Width; x++)
                     {
                         void addColor(Bitmap img, List<Color> colors)
                         {
@@ -90,9 +90,9 @@ namespace SpriteGenerator
                     }
                 }
                 // set front colors
-                for (int y = 0; y < inFront.Height; y++)
+                for (var y = 0; y < inFront.Height; y++)
                 {
-                    for (int x = 0; x < inFront.Width; x++)
+                    for (var x = 0; x < inFront.Width; x++)
                     {
                         void setColor(Bitmap img, List<Color> colors)
                         {
@@ -109,9 +109,9 @@ namespace SpriteGenerator
                 }
 
                 // set back colors
-                for (int y = 0; y < inFront.Height; y++)
+                for (var y = 0; y < inFront.Height; y++)
                 {
-                    for (int x = 0; x < inFront.Width; x++)
+                    for (var x = 0; x < inFront.Width; x++)
                     {
                         void setPixel(Bitmap img, List<Color> colors)
                         {
@@ -122,7 +122,7 @@ namespace SpriteGenerator
                                 var maxDiff = 0;
                                 do
                                 {
-                                    for (int i = 0; i < colors.Count; i++)
+                                    for (var i = 0; i < colors.Count; i++)
                                     {
                                         var c = colors[i];
                                         var diffR = Math.Abs(pixel.R - c.R);

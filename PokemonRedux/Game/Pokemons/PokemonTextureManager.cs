@@ -105,5 +105,35 @@ namespace PokemonRedux.Game.Pokemons
         {
             return colorData.Select(c => new Color(c[0], c[1], c[2])).ToArray();
         }
+
+        /// <summary>
+        /// Shifts a palette in a specific direction
+        /// </summary>
+        /// <param name="direction">true => right (copies from first), false => left (copes from last)</param>
+        public static Color[] ShiftPalette(Color[] input, bool direction, int places)
+        {
+            // shallow copy the array
+            var output = (Color[])input.Clone();
+
+            for (var p = 0; p < places; p++)
+            {
+                if (direction)
+                {
+                    for (var i = output.Length - 1; i > 0; i--)
+                    {
+                        output[i] = output[i - 1];
+                    }
+                }
+                else
+                {
+                    for (var i = 0; i < output.Length - 1; i++)
+                    {
+                        output[i] = output[i + 1];
+                    }
+                }
+            }
+
+            return output;
+        }
     }
 }

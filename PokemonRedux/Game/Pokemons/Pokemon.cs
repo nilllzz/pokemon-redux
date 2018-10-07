@@ -203,7 +203,7 @@ namespace PokemonRedux.Game.Pokemons
 
         #region Sprites and palettes
 
-        private Color[] GetPalette()
+        public Color[] GetPalette()
             => PokemonTextureManager.GetPalette(IsShiny ? _data.colors.shiny : _data.colors.normal);
 
         public Texture2D GetFrontSprite() => GetFrontSprite(GetPalette());

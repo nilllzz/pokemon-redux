@@ -1627,7 +1627,14 @@
   {
     "id": 203,
     "newId": 147,
-    "name": "GIRAFARIG"
+    "name": "GIRAFARIG",
+    "species": "LONG NECK",
+    "height": 4.11,
+    "weigth": 91,
+    "text": "Its tail has a\nsmall brain of its\nown. Beware! If\n\nyou get close, it\nmay react to your\nscent and bite.",
+    "areas": [
+      "ROUTE 43"
+    ]
   },
   {
     "id": 204,

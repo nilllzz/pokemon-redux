@@ -22,5 +22,10 @@ namespace PokemonRedux
             }
             return l;
         }
+
+        public static bool NextBool(this Random r)
+        {
+            return r.Next(0, 2) == 0;
+        }
     }
 }

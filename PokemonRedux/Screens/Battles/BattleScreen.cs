@@ -286,6 +286,7 @@ namespace PokemonRedux.Screens.Battles
                         // TODO: inventory
                         case 3: // RUN
                             // TODO: trainer battles
+                            // TODO: trapping moves like BIND
                             _menuState = BattleMenuState.Off;
                             Battle.ActiveBattle.StartRound(new BattleAction
                             {

@@ -1,34 +1,27 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using PokemonRedux.Content;
 using PokemonRedux.Game.Battles;
-using static Core;
 
 namespace PokemonRedux.Screens.Battles.Animations.Moves
 {
-    class SlashAnimation : BattleAnimation
+    class SlashAnimation : BattleMoveAnimation
     {
         private const int ANIMATION_STAGES = 6;
         private const int ANIMATION_DELAY = 3;
         private const int ANIMATION_FLICKER_AMOUNT = 8;
         private const int ANIMATION_FRAME_SIZE = 56;
 
-        private readonly BattlePokemon _target;
-
-        private Texture2D _texture;
-
         private int _animationDelay = ANIMATION_DELAY;
         private int _animationStage = 0;
         private int _flickerAmount = 0;
 
-        public SlashAnimation(BattlePokemon target)
-        {
-            _target = target;
-        }
+        public SlashAnimation(BattlePokemon user, BattlePokemon target)
+            : base(user, target)
+        { }
 
         public override void LoadContent()
         {
-            _texture = Controller.Content.LoadDirect<Texture2D>("Textures/Battle/Animations/slash.png");
+            LoadTexture("slash");
         }
 
         public override void Draw(SpriteBatch batch)
@@ -58,7 +51,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
                     _flickerAmount++;
                     if (_flickerAmount == ANIMATION_FLICKER_AMOUNT)
                     {
-                        IsFinished = true;
+                        Finish();
                     }
                 }
                 else

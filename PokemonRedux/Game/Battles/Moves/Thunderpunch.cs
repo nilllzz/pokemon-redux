@@ -10,7 +10,7 @@ namespace PokemonRedux.Game.Battles.Moves
 
         public override void ShowAnimation(BattlePokemon user, BattlePokemon target)
         {
-            var animation = new ThunderpunchAnimation(target);
+            var animation = new ThunderpunchAnimation(user, target);
             Battle.ActiveBattle.AnimationController.ShowAnimationAndWait(animation);
         }
 

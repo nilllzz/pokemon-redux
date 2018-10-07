@@ -1,38 +1,26 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using PokemonRedux.Content;
 using PokemonRedux.Game.Battles;
-using static Core;
 
 namespace PokemonRedux.Screens.Battles.Animations.Moves
 {
-    class TackleAnimation : BattleAnimation
+    class TackleAnimation : BattleMoveAnimation
     {
         private const int TEXTURE_VISIBLE_FRAMES = 5;
         private const int MOVE_OFFSET = 6;
-
-        private readonly BattlePokemon _target;
-        private Texture2D _texture;
 
         private int _offsetX = 0;
         private bool _moveBack = false;
         private bool _textureVisible = false;
         private int _textureVisibleFrames = TEXTURE_VISIBLE_FRAMES;
 
-        public TackleAnimation(BattlePokemon target)
-        {
-            _target = target;
-        }
+        public TackleAnimation(BattlePokemon user, BattlePokemon target)
+            : base(user, target)
+        { }
 
         public override void LoadContent()
         {
-            _texture = Controller.Content.LoadDirect<Texture2D>("Textures/Battle/Animations/tackle.png");
-        }
-
-        public override void Show()
-        {
-            // hide status of user
-            Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), false);
+            LoadTexture("tackle");
         }
 
         public override void Draw(SpriteBatch batch)
@@ -78,9 +66,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
 
             if (!_textureVisible && _moveBack && _offsetX == 0)
             {
-                IsFinished = true;
-                // show status again
-                Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), true);
+                Finish();
             }
 
             var offsetX = _offsetX;

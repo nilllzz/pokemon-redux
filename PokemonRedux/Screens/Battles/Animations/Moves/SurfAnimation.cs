@@ -1,12 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using PokemonRedux.Content;
 using PokemonRedux.Game.Battles;
 using static Core;
 
 namespace PokemonRedux.Screens.Battles.Animations.Moves
 {
-    internal class SurfAnimation : BattleAnimation
+    internal class SurfAnimation : BattleMoveAnimation
     {
         private const float EFFECT_OFFSET_SPEED = 1f;
         private const int WAVE_HEIGHT = 8;
@@ -22,9 +21,6 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
             8f
         };
 
-        private readonly BattlePokemon _target;
-
-        private Texture2D _texture;
         private Effect _shader;
 
         private float _startY = 0;
@@ -35,14 +31,13 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
         private int _fallToIndex = 0;
         private float _waveXOffset = 0f;
 
-        public SurfAnimation(BattlePokemon target)
-        {
-            _target = target;
-        }
+        public SurfAnimation(BattlePokemon user, BattlePokemon target)
+            : base(user, target)
+        { }
 
         public override void LoadContent()
         {
-            _texture = Controller.Content.LoadDirect<Texture2D>("Textures/Battle/Animations/surf.png");
+            LoadTexture("surf");
             _shader = Controller.Content.Load<Effect>("Shaders/Battle/underwater");
 
             _startY = WAVE_LOWER_Y;
@@ -52,8 +47,8 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
 
         public override void Show()
         {
-            // hide status of user
-            Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), false);
+            base.Show();
+
             Battle.ActiveBattle.AnimationController.SetScreenEffect(_shader);
 
             _shader.Parameters["offset"].SetValue(_effectOffset);
@@ -127,9 +122,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
                 }
                 else if (_startY >= WAVE_LOWER_Y)
                 {
-                    IsFinished = true;
-                    // show status again
-                    Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), true);
+                    Finish();
                     Battle.ActiveBattle.AnimationController.SetScreenEffect();
                 }
             }

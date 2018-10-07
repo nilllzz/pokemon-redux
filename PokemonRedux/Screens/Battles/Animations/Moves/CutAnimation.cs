@@ -1,41 +1,28 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using PokemonRedux.Content;
 using PokemonRedux.Game.Battles;
-using static Core;
 
 namespace PokemonRedux.Screens.Battles.Animations.Moves
 {
-    class CutAnimation : BattleAnimation
+    class CutAnimation : BattleMoveAnimation
     {
         private const int STAGE_DELAY = 3;
         private const int TOTAL_STAGES = 5;
         private const int BLINK_DELAY = 3;
         private const int TOTAL_BLINKS = 6;
 
-        private readonly BattlePokemon _target;
-
-        private Texture2D _texture;
-
         private int _stage = 0;
         private int _stageDelay = STAGE_DELAY;
         private int _blinks = 0;
         private int _blinkDelay = BLINK_DELAY;
 
-        public CutAnimation(BattlePokemon target)
-        {
-            _target = target;
-        }
+        public CutAnimation(BattlePokemon user, BattlePokemon target)
+            : base(user, target)
+        { }
 
         public override void LoadContent()
         {
-            _texture = Controller.Content.LoadDirect<Texture2D>("Textures/Battle/Animations/cut.png");
-        }
-
-        public override void Show()
-        {
-            // hide status of user
-            Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), false);
+            LoadTexture("cut");
         }
 
         public override void Draw(SpriteBatch batch)
@@ -74,9 +61,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
                     _blinks++;
                     if (_blinks == TOTAL_BLINKS)
                     {
-                        IsFinished = true;
-                        // show status again
-                        Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), true);
+                        Finish();
                     }
                 }
             }

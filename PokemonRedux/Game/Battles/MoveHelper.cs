@@ -5,6 +5,30 @@ namespace PokemonRedux.Game.Battles
 {
     static class MoveHelper
     {
+        // get amount of hits for moves like fury swipes
+        // or amount of turns for moves like bind
+        public static int GetMultiHitAmount()
+        {
+            // 37.5% => 2x
+            // 37.5% => 3x
+            // 12.5% => 4x
+            // 12.5% => 5x
+            var r = Battle.ActiveBattle.Random.Next(0, 1000);
+            if (r < 375)
+            {
+                return 2;
+            }
+            else if (r < 750)
+            {
+                return 3;
+            }
+            else if (r < 875)
+            {
+                return 4;
+            }
+            return 5;
+        }
+
         // calculates restored HP for moves like Leech Life
         public static int GetRestoredHP(BattlePokemon target, int damage)
         {

@@ -9,7 +9,7 @@ namespace PokemonRedux.Game.Battles.Moves
 
         public override void ShowAnimation(BattlePokemon user, BattlePokemon target)
         {
-            var animation = new LeechLifeAnimation(target);
+            var animation = new LeechLifeAnimation(user, target);
             Battle.ActiveBattle.AnimationController.ShowAnimationAndWait(animation);
         }
 

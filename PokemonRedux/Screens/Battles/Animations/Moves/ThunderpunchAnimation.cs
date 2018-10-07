@@ -1,12 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using PokemonRedux.Content;
 using PokemonRedux.Game.Battles;
-using static Core;
 
 namespace PokemonRedux.Screens.Battles.Animations.Moves
 {
-    class ThunderpunchAnimation : BattleAnimation
+    class ThunderpunchAnimation : BattleMoveAnimation
     {
         private const int FLASH_STAGES = 4;
         private const int FLASH_ANIMATION_DELAY = 6;
@@ -18,10 +16,6 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
         private const int FLASH_HEIGHT = 56;
         private const int PUNCH_SIZE = 24;
 
-        private readonly BattlePokemon _target;
-
-        private Texture2D _texture;
-
         private int _flashStage = 0;
         private int _flashDelay = FLASH_ANIMATION_DELAY;
         private bool _punchVisible = false;
@@ -30,20 +24,19 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
         private int _punchDelay = PUNCH_ANIMATION_DELAY;
         private int _totalPunches = 0;
 
-        public ThunderpunchAnimation(BattlePokemon target)
-        {
-            _target = target;
-        }
+        public ThunderpunchAnimation(BattlePokemon user, BattlePokemon target)
+            : base(user, target)
+        { }
 
         public override void LoadContent()
         {
-            _texture = Controller.Content.LoadDirect<Texture2D>("Textures/Battle/Animations/thunderpunch.png");
+            LoadTexture("thunderpunch");
         }
 
         public override void Show()
         {
-            // hide status of user
-            Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), false);
+            base.Show();
+
             Battle.ActiveBattle.AnimationController.SetScreenColorInvert(true);
         }
 
@@ -132,9 +125,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
                         }
                         if (_totalPunches == TOTAL_PUNCHES)
                         {
-                            IsFinished = true;
-                            // show status again
-                            Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), true);
+                            Finish();
                         }
                     }
                 }

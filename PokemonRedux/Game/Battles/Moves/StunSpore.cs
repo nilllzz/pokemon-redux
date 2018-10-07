@@ -11,7 +11,7 @@ namespace PokemonRedux.Game.Battles.Moves
 
         public override void ShowAnimation(BattlePokemon user, BattlePokemon target)
         {
-            var animation = new StunSporeAnimation(target);
+            var animation = new StunSporeAnimation(user, target);
             Battle.ActiveBattle.AnimationController.ShowAnimationAndWait(animation);
         }
 

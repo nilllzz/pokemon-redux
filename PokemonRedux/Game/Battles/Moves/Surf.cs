@@ -7,7 +7,7 @@ namespace PokemonRedux.Game.Battles.Moves
     {
         public override void ShowAnimation(BattlePokemon user, BattlePokemon target)
         {
-            var animation = new SurfAnimation(target);
+            var animation = new SurfAnimation(user, target);
             Battle.ActiveBattle.AnimationController.ShowAnimationAndWait(animation);
         }
     }

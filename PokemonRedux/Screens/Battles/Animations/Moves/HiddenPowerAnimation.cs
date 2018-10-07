@@ -1,14 +1,12 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using PokemonRedux.Content;
 using PokemonRedux.Game.Battles;
 using System;
 using System.Linq;
-using static Core;
 
 namespace PokemonRedux.Screens.Battles.Animations.Moves
 {
-    class HiddenPowerAnimation : BattleAnimation
+    class HiddenPowerAnimation : BattleMoveAnimation
     {
         private const int BALL_AMOUNT = 8;
         private const double ROTATION_SPEED = 0.015;
@@ -22,10 +20,6 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
         private const int HIT_DELAY = 4;
         private const int HIT_SIZE = 32;
 
-        private readonly BattlePokemon _target;
-
-        private Texture2D _texture;
-
         private double[] _positions;
         private double _totalRotation = 0;
         private int _stage = 0;
@@ -33,30 +27,20 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
         private int _hitStage = 0;
         private int _hitDelay = HIT_DELAY;
 
-        public HiddenPowerAnimation(BattlePokemon target)
-        {
-            _target = target;
-            _positions = new double[BALL_AMOUNT]
-                .Select((v, i) => (double)i / BALL_AMOUNT).ToArray();
-        }
+        public HiddenPowerAnimation(BattlePokemon user, BattlePokemon target)
+            : base(user, target)
+        { }
 
         public override void LoadContent()
         {
-            _texture = Controller.Content.LoadDirect<Texture2D>("Textures/Battle/Animations/hiddenpower.png");
-        }
-
-        public override void Show()
-        {
-            // hide status of user
-            Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), false);
+            LoadTexture("hiddenpower");
         }
 
         public override void Draw(SpriteBatch batch)
         {
             if (_stage <= ELLIPSE_STAGES)
             {
-                var userSide = BattlePokemon.ReverseSide(_target.Side);
-                var center = GetCenter(userSide);
+                var center = GetCenter(_user.Side);
                 var width = (int)(ELLIPSE_WIDTH * Border.SCALE * _ellipseSize);
                 var height = (int)(ELLIPSE_HEIGHT * Border.SCALE * _ellipseSize);
                 var ballSize = BALL_SIZE * Border.SCALE;
@@ -146,9 +130,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
                     _hitStage++;
                     if (_hitStage == HIT_STAGES)
                     {
-                        IsFinished = true;
-                        // show status again
-                        Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), true);
+                        Finish();
                     }
                 }
             }

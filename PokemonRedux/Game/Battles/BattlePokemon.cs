@@ -48,6 +48,13 @@ namespace PokemonRedux.Game.Battles
         public int ConfusionTurns { get; set; } = 0;
         public int LastDamageReceived { get; set; } = 0;
 
+        // trap moves
+        public int BindTurns { get; set; } = 0;
+        public int WrapTurns { get; set; } = 0;
+        public int ClampTurns { get; set; } = 0;
+        public int FireSpinTurns { get; set; } = 0;
+        public int WhirlpoolTurns { get; set; } = 0;
+
         // carry over to switched pokemon
         public int ReflectTurns { get; set; }
         public int LightScreenTurns { get; set; }
@@ -123,12 +130,30 @@ namespace PokemonRedux.Game.Battles
         public bool GetCanFlee()
         {
             // unable to flee when frozen or asleep
-            if (Pokemon.Status == PokemonStatus.FRZ || Pokemon.Status == PokemonStatus.SLP)
+            // also unable to if trapped by a move
+            if (Pokemon.Status == PokemonStatus.FRZ ||
+                Pokemon.Status == PokemonStatus.SLP ||
+                WrapTurns > 0 ||
+                BindTurns > 0 ||
+                ClampTurns > 0 ||
+                FireSpinTurns > 0 ||
+                WhirlpoolTurns > 0)
             {
                 return false;
             }
 
             return true;
+        }
+
+        // enemy switched or fainted
+        public void EnemyLeftBattle()
+        {
+            // clear trapping moves when the other pokemon switched out
+            WrapTurns = 0;
+            BindTurns = 0;
+            FireSpinTurns = 0;
+            ClampTurns = 0;
+            WhirlpoolTurns = 0;
         }
 
         public void TransferStateTo(BattlePokemon target, bool batonPass)

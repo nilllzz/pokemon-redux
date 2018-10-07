@@ -9,7 +9,7 @@ namespace PokemonRedux.Game.Battles.Moves
 
         public override void ShowAnimation(BattlePokemon user, BattlePokemon target)
         {
-            var animation = new HydroPumpAnimation(target);
+            var animation = new HydroPumpAnimation(user, target);
             Battle.ActiveBattle.AnimationController.ShowAnimationAndWait(animation);
         }
     }

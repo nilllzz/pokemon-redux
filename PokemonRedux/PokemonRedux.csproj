@@ -44,6 +44,28 @@
     </MonoGameContentReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Data\Pokemon\pokemon.txt" />
+    <Content Include="Content\Textures\Battle\Animations\acid.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Battle\Animations\barrage.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Battle\Animations\bind.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Battle\Animations\bite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Battle\Animations\bodyslam.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Battle\Animations\charm.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Battle\Animations\constrict.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Textures\Battle\Animations\cut.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -56,6 +78,9 @@
     <Content Include="Content\Textures\Battle\Animations\fly.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Textures\Battle\Animations\furyswipes.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Textures\Battle\Animations\growl.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -63,6 +88,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\Battle\Animations\hiddenpower.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Battle\Animations\hornattack.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\Battle\Animations\hydropump.png">
@@ -74,6 +102,12 @@
     <Content Include="Content\Textures\Battle\Animations\leer.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Textures\Battle\Animations\lick.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Battle\Animations\peck.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Textures\Battle\Animations\poisonpowder.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -81,6 +115,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\Battle\Animations\rapidspin.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Battle\Animations\reflect.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\Battle\Animations\rocksmash.png">
@@ -134,6 +171,9 @@
     <Content Include="Content\Textures\Battle\Animations\wingattack.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Textures\Battle\Animations\wrap.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Textures\Battle\asleep.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -147,6 +187,546 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\Battle\shinySparkle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\100.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\101.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\103.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\104.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\105.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\106.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\107.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\108.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\109.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\110.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\111.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\112.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\113.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\114.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\115.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\116.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\117.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\118.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\119.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\120.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\121.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\122.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\123.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\124.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\125.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\126.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\127.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\128.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\129.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\130.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\131.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\132.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\133.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\134.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\135.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\136.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\137.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\138.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\139.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\140.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\141.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\142.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\144.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\145.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\146.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\147.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\148.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\149.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\150.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\151.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\153.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\154.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\159.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\160.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\170.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\171.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\172.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\173.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\174.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\176.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\177.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\178.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\182.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\184.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\186.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\191.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\192.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\193.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\194.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\195.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\196.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\197.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\198.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\199.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\203.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\207.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\208.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\209.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\210.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\211.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\212.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\215.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\218.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\219.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\221.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\222.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\223.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\224.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\225.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\226.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\227.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\228.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\229.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\23.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\230.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\233.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\234.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\235.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\236.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\237.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\238.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\239.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\24.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\240.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\241.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\242.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\243.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\244.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\245.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\246.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\247.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\248.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\249.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\251.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\26.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\27.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\28.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\29.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\30.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\31.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\32.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\33.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\34.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\35.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\36.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\37.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\38.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\40.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\43.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\44.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\45.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\47.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\48.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\49.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\50.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\51.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\52.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\53.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\54.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\55.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\59.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\62.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\63.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\64.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\65.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\66.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\67.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\68.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\7.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\71.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\76.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\77.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\78.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\79.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\8.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\80.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\81.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\82.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\83.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\84.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\85.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\86.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\87.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\88.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\89.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\9.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\90.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\91.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\94.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\96.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\97.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\98.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Pokemon\Main\99.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\UI\Battle\caughtIndicator.png">
@@ -261,6 +841,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Credits.txt" />
+    <Content Include="Game\Battles\Moves\moves.txt" />
     <None Include="App.config" />
     <Content Include="Content\Data\items.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -1095,8 +1676,20 @@
     <Compile Include="Game\Battles\BattlePokemon.cs" />
     <Compile Include="Game\Battles\Battle.cs" />
     <Compile Include="Game\Battles\MoveCategory.cs" />
+    <Compile Include="Game\Battles\Moves\Acid.cs" />
+    <Compile Include="Game\Battles\Moves\Barrage.cs" />
     <Compile Include="Game\Battles\Moves\BattleMove.cs" />
     <Compile Include="Game\Battles\Moves\BattleMoveAttribute.cs" />
+    <Compile Include="Game\Battles\Moves\Bite.cs" />
+    <Compile Include="Game\Battles\Moves\BodySlam.cs" />
+    <Compile Include="Game\Battles\Moves\Charm.cs" />
+    <Compile Include="Game\Battles\Moves\Constrict.cs" />
+    <Compile Include="Game\Battles\Moves\FurySwipes.cs" />
+    <Compile Include="Game\Battles\Moves\HornAttack.cs" />
+    <Compile Include="Game\Battles\Moves\Lick.cs" />
+    <Compile Include="Game\Battles\Moves\Peck.cs" />
+    <Compile Include="Game\Battles\Moves\Wrap.cs" />
+    <Compile Include="Game\Battles\Moves\Bind.cs" />
     <Compile Include="Game\Battles\Moves\Confusion.cs" />
     <Compile Include="Game\Battles\Moves\Ember.cs" />
     <Compile Include="Game\Battles\Moves\Flash.cs" />
@@ -1111,6 +1704,7 @@
     <Compile Include="Game\Battles\Moves\Psybeam.cs" />
     <Compile Include="Game\Battles\Moves\QuickAttack.cs" />
     <Compile Include="Game\Battles\Moves\RapidSpin.cs" />
+    <Compile Include="Game\Battles\Moves\Reflect.cs" />
     <Compile Include="Game\Battles\Moves\SandAttack.cs" />
     <Compile Include="Game\Battles\Moves\Slash.cs" />
     <Compile Include="Game\Battles\Moves\SleepPowder.cs" />
@@ -1134,9 +1728,23 @@
     <Compile Include="Game\PokedexHelper.cs" />
     <Compile Include="Game\Options.cs" />
     <Compile Include="Screens\Battles\Animations\AsleepAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\BattleMoveAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\BiteAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\ConfusedAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\AcidAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\BarrageAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\BodySlamAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\CharmAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\ConstrictAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\FurySwipesAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\HornAttackAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\LickAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\PeckAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\WrapAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\BindAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\Moves\FlyAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\Moves\LeechLifeAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\ReflectAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\Moves\RockSmashAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\Moves\StrengthAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\Moves\TakeDownAnimation.cs" />

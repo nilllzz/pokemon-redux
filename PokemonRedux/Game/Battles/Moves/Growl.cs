@@ -9,7 +9,7 @@ namespace PokemonRedux.Game.Battles.Moves
 
         public override void ShowAnimation(BattlePokemon user, BattlePokemon target)
         {
-            var animation = new GrowlAnimation(target);
+            var animation = new GrowlAnimation(user, target);
             Battle.ActiveBattle.AnimationController.ShowAnimationAndWait(animation);
         }
 

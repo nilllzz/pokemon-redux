@@ -4,22 +4,19 @@ using static Core;
 
 namespace PokemonRedux.Screens.Battles.Animations.Moves
 {
-    class ConfusionAnimation : BattleAnimation
+    class ConfusionAnimation : BattleMoveAnimation
     {
         private const float EFFECT_OFFSET_SPEED = 0.6f;
         private const int TOTAL_DURATION = 120;
-
-        private readonly BattlePokemon _target;
 
         private Effect _shader;
 
         private float _effectOffset = 0f;
         private int _duration;
 
-        public ConfusionAnimation(BattlePokemon target)
-        {
-            _target = target;
-        }
+        public ConfusionAnimation(BattlePokemon user, BattlePokemon target)
+            : base(user, target)
+        { }
 
         public override void LoadContent()
         {
@@ -28,8 +25,8 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
 
         public override void Show()
         {
-            // hide status of user
-            Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), false);
+            base.Show();
+
             // setup shader
             Battle.ActiveBattle.AnimationController.SetScreenEffect(_shader);
 
@@ -40,9 +37,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
         }
 
         public override void Draw(SpriteBatch batch)
-        {
-
-        }
+        { }
 
         public override void Update()
         {
@@ -52,9 +47,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
             _duration++;
             if (_duration == TOTAL_DURATION)
             {
-                IsFinished = true;
-                // show status again
-                Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), true);
+                Finish();
                 Battle.ActiveBattle.AnimationController.SetScreenEffect();
             }
         }

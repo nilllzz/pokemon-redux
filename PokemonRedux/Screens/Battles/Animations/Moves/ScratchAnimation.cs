@@ -1,49 +1,45 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using PokemonRedux.Content;
 using PokemonRedux.Game.Battles;
-using static Core;
 
 namespace PokemonRedux.Screens.Battles.Animations.Moves
 {
-    class ScratchAnimation : BattleAnimation
+    class ScratchAnimation : BattleMoveAnimation
     {
         private const int ANIMATION_STAGES = 4;
         private const int ANIMATION_DELAY = 3;
         private const int ANIMATION_FLICKER_AMOUNT = 8;
         private const int ANIMATION_FRAME_SIZE = 48;
 
-        private readonly BattlePokemon _target;
-
-        private Texture2D _texture;
-
         private int _animationDelay = ANIMATION_DELAY;
         private int _animationStage = 0;
         private int _flickerAmount = 0;
 
-        public ScratchAnimation(BattlePokemon target)
-        {
-            _target = target;
-        }
+        public ScratchAnimation(BattlePokemon user, BattlePokemon target)
+            : base(user, target)
+        { }
 
         public override void LoadContent()
         {
-            _texture = Controller.Content.LoadDirect<Texture2D>("Textures/Battle/Animations/scratch.png");
+            LoadTexture("scratch");
         }
 
         public override void Draw(SpriteBatch batch)
         {
-            var center = GetCenter(_target.Side);
-
-            var frameSize = ANIMATION_FRAME_SIZE * Border.SCALE;
-            var x = (int)(center.X - frameSize / 2f);
-            var y = (int)(center.Y - frameSize / 2f);
-
             if (_flickerAmount % 2 == 0)
             {
+                var center = GetCenter(_target.Side);
+
+                var frameSize = ANIMATION_FRAME_SIZE * Border.SCALE;
+                var x = (int)(center.X - frameSize / 2f);
+                var y = (int)(center.Y - frameSize / 2f);
+
+                var effect = _user.Side == PokemonSide.Player ?
+                    SpriteEffects.None : SpriteEffects.FlipHorizontally;
+
                 batch.Draw(_texture, new Rectangle(x, y, (int)frameSize, (int)frameSize),
                     new Rectangle(_animationStage * ANIMATION_FRAME_SIZE, 0, ANIMATION_FRAME_SIZE, ANIMATION_FRAME_SIZE),
-                    Color.White);
+                    Color.White, 0f, Vector2.Zero, effect, 0f);
             }
         }
 
@@ -58,7 +54,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
                     _flickerAmount++;
                     if (_flickerAmount == ANIMATION_FLICKER_AMOUNT)
                     {
-                        IsFinished = true;
+                        Finish();
                     }
                 }
                 else

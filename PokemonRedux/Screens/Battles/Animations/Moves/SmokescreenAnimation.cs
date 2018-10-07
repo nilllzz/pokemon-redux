@@ -1,14 +1,12 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using PokemonRedux.Content;
 using PokemonRedux.Game.Battles;
 using System;
 using System.Collections.Generic;
-using static Core;
 
 namespace PokemonRedux.Screens.Battles.Animations.Moves
 {
-    class SmokescreenAnimation : BattleAnimation
+    class SmokescreenAnimation : BattleMoveAnimation
     {
         private class Cloud
         {
@@ -28,10 +26,6 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
         private const int TOTAL_CLOUDS = 8;
         private const float CLOUD_SPEED = 0.07f;
 
-        private readonly BattlePokemon _target;
-
-        private Texture2D _texture;
-
         private bool _ballVisible = true;
         private float _ballProgress = 0f;
         private bool _smokeVisible = false;
@@ -40,25 +34,18 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
         private List<Cloud> _clouds = new List<Cloud>();
         private int _totalClouds = 0;
 
-        public SmokescreenAnimation(BattlePokemon target)
-        {
-            _target = target;
-        }
+        public SmokescreenAnimation(BattlePokemon user, BattlePokemon target)
+            : base(user, target)
+        { }
 
         public override void LoadContent()
         {
-            _texture = Controller.Content.LoadDirect<Texture2D>("Textures/Battle/Animations/smokescreen.png");
-        }
-
-        public override void Show()
-        {
-            // hide status of user
-            Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), false);
+            LoadTexture("smokescreen");
         }
 
         public override void Draw(SpriteBatch batch)
         {
-            var startPoint = GetCenter(BattlePokemon.ReverseSide(_target.Side));
+            var startPoint = GetCenter(_user.Side);
             var endPoint = GetCenter(_target.Side);
             var halfSpriteSize = GetPokemonSpriteSize() / 2f;
             var ballSize = (int)(BALL_SIZE * Border.SCALE);
@@ -201,9 +188,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
                     i--;
                     if (_clouds.Count == 0)
                     {
-                        IsFinished = true;
-                        // show status again
-                        Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), true);
+                        Finish();
                     }
                 }
             }

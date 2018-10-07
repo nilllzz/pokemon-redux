@@ -1,12 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using PokemonRedux.Content;
 using PokemonRedux.Game.Battles;
-using static Core;
 
 namespace PokemonRedux.Screens.Battles.Animations.Moves
 {
-    class TakeDownAnimation : BattleAnimation
+    class TakeDownAnimation : BattleMoveAnimation
     {
         private const int MOVE_OFFSET = 6;
         private const int INVERT_FRAMES = 6;
@@ -14,23 +12,18 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
         private const int HIT_FRAMES = 8;
         private const int HIT_START_FRAME = 3;
 
-        private readonly BattlePokemon _target;
-
-        private Texture2D _texture;
-
         private int _offsetX = 0;
         private bool _moveBack = false;
         private int _invertFrames = 0;
         private int _hit1State = 0, _hit2State = 0;
 
-        public TakeDownAnimation(BattlePokemon target)
-        {
-            _target = target;
-        }
+        public TakeDownAnimation(BattlePokemon user, BattlePokemon target)
+            : base(user, target)
+        { }
 
         public override void LoadContent()
         {
-            _texture = Controller.Content.LoadDirect<Texture2D>("Textures/Battle/Animations/takedown.png");
+            LoadTexture("takedown");
         }
 
         public override void Draw(SpriteBatch batch)
@@ -78,9 +71,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
                 _hit2State--;
                 if (_hit2State == 0)
                 {
-                    IsFinished = true;
-                    // show status again
-                    Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), true);
+                    Finish();
                 }
             }
 

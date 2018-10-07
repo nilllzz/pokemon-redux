@@ -6,38 +6,27 @@ using static Core;
 
 namespace PokemonRedux.Screens.Battles.Animations.Moves
 {
-    class WingAttackAnimation : BattleAnimation
+    class WingAttackAnimation : BattleMoveAnimation
     {
         private const int TEXTURE_SIZE = 24;
         private const float SPEED = 0.04f;
 
-        private readonly BattlePokemon _target;
-
-        private Texture2D _texture;
-
         private float _progress;
 
-        public WingAttackAnimation(BattlePokemon target)
-        {
-            _target = target;
-        }
+        public WingAttackAnimation(BattlePokemon user, BattlePokemon target)
+            : base(user, target)
+        { }
 
         public override void LoadContent()
         {
-            _texture = Controller.Content.LoadDirect<Texture2D>("Textures/Battle/Animations/wingattack.png");
-        }
-
-        public override void Show()
-        {
-            // hide status of user
-            Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), false);
+            LoadTexture("wingattack");
         }
 
         public override void Draw(SpriteBatch batch)
         {
             var center = GetCenter(_target.Side);
             var textureSize = (int)(TEXTURE_SIZE * Border.SCALE);
-            var y = (int)(center.Y);
+            var y = (int)center.Y;
             var xLeft = (int)(center.X - textureSize / 2f - (GetPokemonSpriteSize() / 2f * (1f - _progress)));
             var xRight = (int)(center.X - textureSize / 2f + (GetPokemonSpriteSize() / 2f * (1f - _progress)));
             batch.Draw(_texture, new Rectangle(xLeft, y, textureSize, textureSize), Color.White);
@@ -50,9 +39,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
 
             if (_progress >= 1f)
             {
-                IsFinished = true;
-                // show status again
-                Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), true);
+                Finish();
             }
         }
     }

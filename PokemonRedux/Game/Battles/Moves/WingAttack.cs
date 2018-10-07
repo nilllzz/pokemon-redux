@@ -7,7 +7,7 @@ namespace PokemonRedux.Game.Battles.Moves
     {
         public override void ShowAnimation(BattlePokemon user, BattlePokemon target)
         {
-            var animation = new WingAttackAnimation(target);
+            var animation = new WingAttackAnimation(user, target);
             Battle.ActiveBattle.AnimationController.ShowAnimationAndWait(animation);
         }
     }

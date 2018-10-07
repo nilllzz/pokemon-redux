@@ -1,14 +1,12 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using PokemonRedux.Content;
 using PokemonRedux.Game.Battles;
 using System.Collections.Generic;
 using System.Linq;
-using static Core;
 
 namespace PokemonRedux.Screens.Battles.Animations.Moves
 {
-    class EmberAnimation : BattleAnimation
+    class EmberAnimation : BattleMoveAnimation
     {
         private class Flame
         {
@@ -26,37 +24,26 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
         private const int FLAME_STAGES = 2;
         private const int TOTAL_LARGE_FLAME_STAGES = 4;
 
-        private readonly BattlePokemon _target;
-
-        private Texture2D _texture;
-
         private List<Flame> _flames = new List<Flame>();
         private bool _largeFlamesVisible = false;
         private int _largeFlameStage = 0;
         private int _largeFlameDelay = LARGE_FLAME_DELAY;
         private int _totalLargeFlameStages = 0;
 
-        public EmberAnimation(BattlePokemon target)
-        {
-            _target = target;
-        }
+        public EmberAnimation(BattlePokemon user, BattlePokemon target)
+            : base(user, target)
+        { }
 
         public override void LoadContent()
         {
-            _texture = Controller.Content.LoadDirect<Texture2D>("Textures/Battle/Animations/ember.png");
+            LoadTexture("ember");
             _flames.Add(new Flame { Number = 2 });
-        }
-
-        public override void Show()
-        {
-            // hide status of user
-            Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), false);
         }
 
         public override void Draw(SpriteBatch batch)
         {
             var smallFlameSize = (int)(SMALL_FLAME_SIZE * Border.SCALE);
-            var startPoint = GetCenter(BattlePokemon.ReverseSide(_target.Side));
+            var startPoint = GetCenter(_user.Side);
             if (_target.Side == PokemonSide.Enemy)
             {
                 startPoint.X += GetPokemonSpriteSize() / 2 - smallFlameSize * 2;
@@ -136,9 +123,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
                         _totalLargeFlameStages++;
                         if (_totalLargeFlameStages == TOTAL_LARGE_FLAME_STAGES)
                         {
-                            IsFinished = true;
-                            // show status again
-                            Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), true);
+                            Finish();
                         }
                     }
                 }

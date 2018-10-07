@@ -1,42 +1,35 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using PokemonRedux.Content;
 using PokemonRedux.Game.Battles;
 using System;
 using System.Collections.Generic;
-using static Core;
 
 namespace PokemonRedux.Screens.Battles.Animations.Moves
 {
-    class SandAttackAnimation : BattleAnimation
+    class SandAttackAnimation : BattleMoveAnimation
     {
         private const int TOTAL_SANDS = 8;
         private const double SAND_SPEED = 0.05;
         private const int SAND_WIDTH = 14;
         private const int SAND_HEIGHT = 35;
 
-        private readonly BattlePokemon _target;
-
-        private Texture2D _texture;
-
         private List<double> _sands = new List<double>();
         private int _totalSands = 0;
         private double _elapsed = 0;
 
-        public SandAttackAnimation(BattlePokemon target)
-        {
-            _target = target;
-        }
+        public SandAttackAnimation(BattlePokemon user, BattlePokemon target)
+            : base(user, target)
+        { }
 
         public override void LoadContent()
         {
-            _texture = Controller.Content.LoadDirect<Texture2D>("Textures/Battle/Animations/sandattack.png");
+            LoadTexture("sandattack");
         }
 
         public override void Show()
         {
-            // hide status of user
-            Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), false);
+            base.Show();
+
             _sands.Add(0);
             _totalSands++;
         }
@@ -45,7 +38,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
         {
             var sandWidth = (int)(SAND_WIDTH * Border.SCALE);
             var sandHeight = (int)(SAND_HEIGHT * Border.SCALE);
-            var startPoint = GetCenter(BattlePokemon.ReverseSide(_target.Side));
+            var startPoint = GetCenter(_user.Side);
             if (_target.Side == PokemonSide.Enemy)
             {
                 startPoint.X += GetPokemonSpriteSize() / 2f - sandWidth;
@@ -97,9 +90,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
             }
             if (_sands.Count == 0)
             {
-                IsFinished = true;
-                // show status again
-                Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), true);
+                Finish();
             }
         }
     }

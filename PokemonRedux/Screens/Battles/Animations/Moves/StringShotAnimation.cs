@@ -1,20 +1,15 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using PokemonRedux.Content;
 using PokemonRedux.Game.Battles;
 using System;
 using System.Linq;
-using static Core;
 
 namespace PokemonRedux.Screens.Battles.Animations.Moves
 {
-    class StringShotAnimation : BattleAnimation
+    class StringShotAnimation : BattleMoveAnimation
     {
         private const int COLOR_SWAP_DELAY = 6;
         private const int STATIC_FRAME_AMOUNT = 60;
-
-        private readonly BattlePokemon _target;
-        private Texture2D _texture;
 
         private readonly int[] _lineStatus = new[] { 0, -16, -22 };
         private readonly int[] _wrapStatus = new[] { -10, -30, -20 };
@@ -23,20 +18,13 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
         private int _staticFrames = STATIC_FRAME_AMOUNT;
         private bool _countStaticFrames = false;
 
-        public StringShotAnimation(BattlePokemon target)
-        {
-            _target = target;
-        }
+        public StringShotAnimation(BattlePokemon user, BattlePokemon target)
+            : base(user, target)
+        { }
 
         public override void LoadContent()
         {
-            _texture = Controller.Content.LoadDirect<Texture2D>("Textures/Battle/Animations/stringshot.png");
-        }
-
-        public override void Show()
-        {
-            // hide status of user
-            Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), false);
+            LoadTexture("stringshot");
         }
 
         public override void Draw(SpriteBatch batch)
@@ -61,7 +49,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
 
         private void DrawLine(SpriteBatch batch, int lineIndex, int lineStatus)
         {
-            var center = GetCenter(BattlePokemon.ReverseSide(_target.Side));
+            var center = GetCenter(_user.Side);
             var linePartWidth = Border.SCALE * 16;
             var linePartHeight = Border.SCALE * 8;
 
@@ -155,9 +143,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
                 _staticFrames--;
                 if (_staticFrames == 0)
                 {
-                    IsFinished = true;
-                    // show status again
-                    Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), true);
+                    Finish();
                 }
             }
         }

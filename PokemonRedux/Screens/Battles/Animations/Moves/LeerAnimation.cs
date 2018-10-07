@@ -1,36 +1,24 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using PokemonRedux.Content;
 using PokemonRedux.Game.Battles;
-using static Core;
 
 namespace PokemonRedux.Screens.Battles.Animations.Moves
 {
-    class LeerAnimation : BattleAnimation
+    class LeerAnimation : BattleMoveAnimation
     {
         private const int SWITCH_AMOUNT = 6;
         private const int SWITCH_DELAY = 4;
 
-        private readonly BattlePokemon _target;
-        private Texture2D _texture;
-
         private int _index = 0;
         private int _switchDelay = SWITCH_DELAY;
 
-        public LeerAnimation(BattlePokemon target)
-        {
-            _target = target;
-        }
+        public LeerAnimation(BattlePokemon user, BattlePokemon target)
+            : base(user, target)
+        { }
 
         public override void LoadContent()
         {
-            _texture = Controller.Content.LoadDirect<Texture2D>("Textures/Battle/Animations/leer.png");
-        }
-
-        public override void Show()
-        {
-            // hide status of user
-            Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), false);
+            LoadTexture("leer");
         }
 
         public override void Draw(SpriteBatch batch)
@@ -59,9 +47,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
                 _index++;
                 if (_index == SWITCH_AMOUNT)
                 {
-                    IsFinished = true;
-                    // show status again
-                    Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), true);
+                    Finish();
                 }
             }
         }

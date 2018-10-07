@@ -1,21 +1,15 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using PokemonRedux.Content;
 using PokemonRedux.Game.Battles;
 using System;
 using System.Linq;
-using static Core;
 
 namespace PokemonRedux.Screens.Battles.Animations.Moves
 {
-    class RapidSpinAnimation : BattleAnimation
+    class RapidSpinAnimation : BattleMoveAnimation
     {
         private const int TEXTURE_VISIBLE_FRAMES = 5;
         private const int MOVE_OFFSET = 6;
-
-        private readonly BattlePokemon _target;
-
-        private Texture2D _texture;
 
         private readonly int[] _bladeStates = new[] { -1, -4, -7, -10, -13 };
         private int _waitFrames = 20;
@@ -24,26 +18,19 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
         private bool _textureVisible = false;
         private int _textureVisibleFrames = TEXTURE_VISIBLE_FRAMES;
 
-        public RapidSpinAnimation(BattlePokemon target)
-        {
-            _target = target;
-        }
+        public RapidSpinAnimation(BattlePokemon user, BattlePokemon target)
+            : base(user, target)
+        { }
 
         public override void LoadContent()
         {
-            _texture = Controller.Content.LoadDirect<Texture2D>("Textures/Battle/Animations/rapidspin.png");
-        }
-
-        public override void Show()
-        {
-            // hide status of user
-            Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), false);
+            LoadTexture("rapidspin");
         }
 
         public override void Draw(SpriteBatch batch)
         {
             (_, _, var unit) = GetScreenValues();
-            var userCenter = GetCenter(BattlePokemon.ReverseSide(_target.Side));
+            var userCenter = GetCenter(_user.Side);
             var bladeWidth = (int)(32 * Border.SCALE);
             var bladeHeight = (int)(16 * Border.SCALE);
 
@@ -131,9 +118,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
 
                     if (!_textureVisible && _moveBack && _offsetX == 0)
                     {
-                        IsFinished = true;
-                        // show status again
-                        Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), true);
+                        Finish();
                     }
 
                     var offsetX = _offsetX;

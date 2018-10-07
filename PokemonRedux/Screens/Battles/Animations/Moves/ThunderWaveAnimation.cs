@@ -1,12 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using PokemonRedux.Content;
 using PokemonRedux.Game.Battles;
-using static Core;
 
 namespace PokemonRedux.Screens.Battles.Animations.Moves
 {
-    class ThunderWaveAnimation : BattleAnimation
+    class ThunderWaveAnimation : BattleMoveAnimation
     {
         private const int FRAME_WIDTH = 44;
         private const int FRAME_HEIGHT = 40;
@@ -16,10 +14,6 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
         private const int INVERT_DELAY = 10;
         private const int TOTAL_FLASHES = 20;
 
-        private readonly BattlePokemon _target;
-
-        private Texture2D _texture;
-
         private int _stage = 0;
         private int _stageDelay = STAGE_DELAY_BUILDUP;
         private bool _inverted = false;
@@ -27,20 +21,13 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
         private bool _flashing = false;
         private int _flashes = 0;
 
-        public ThunderWaveAnimation(BattlePokemon target)
-        {
-            _target = target;
-        }
+        public ThunderWaveAnimation(BattlePokemon user, BattlePokemon target)
+            : base(user, target)
+        { }
 
         public override void LoadContent()
         {
-            _texture = Controller.Content.LoadDirect<Texture2D>("Textures/Battle/Animations/thunderwave.png");
-        }
-
-        public override void Show()
-        {
-            // hide status of user
-            Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), false);
+            LoadTexture("thunderwave");
         }
 
         public override void Draw(SpriteBatch batch)
@@ -103,9 +90,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
                     _flashes++;
                     if (_flashes == TOTAL_FLASHES)
                     {
-                        IsFinished = true;
-                        // show status again and disable color inversion
-                        Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), true);
+                        Finish();
                         Battle.ActiveBattle.AnimationController.SetScreenColorInvert(false);
                     }
                 }

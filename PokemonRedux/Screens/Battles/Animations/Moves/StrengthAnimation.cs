@@ -1,12 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using PokemonRedux.Content;
 using PokemonRedux.Game.Battles;
-using static Core;
 
 namespace PokemonRedux.Screens.Battles.Animations.Moves
 {
-    class StrengthAnimation : BattleAnimation
+    class StrengthAnimation : BattleMoveAnimation
     {
         private static readonly int[] SCREEN_SHAKE = new[] { -1, -1, -1, 1, 1, 1, -1, -1, -1, 1, 1, 1, -1, -1, -1 };
         private const float RAISE_PER_FRAME = 1 / 70f;
@@ -15,10 +13,6 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
         private const float THROW_PER_FRAME = 1 / 20f;
         private const int HIT_FRAMES = 10;
 
-        private readonly BattlePokemon _target;
-
-        private Texture2D _texture;
-
         private int _shakeFrame = 0;
         private float _raiseState = 0f;
         private int _rockShakeState = 0;
@@ -26,20 +20,13 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
         private float _throwState = 0f;
         private int _hitState = 0;
 
-        public StrengthAnimation(BattlePokemon target)
-        {
-            _target = target;
-        }
+        public StrengthAnimation(BattlePokemon user, BattlePokemon target)
+            : base(user, target)
+        { }
 
         public override void LoadContent()
         {
-            _texture = Controller.Content.LoadDirect<Texture2D>("Textures/Battle/Animations/strength.png");
-        }
-
-        public override void Show()
-        {
-            // hide status of user
-            Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), false);
+            LoadTexture("strength");
         }
 
         public override void Draw(SpriteBatch batch)
@@ -47,7 +34,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
             var targetCenter = GetCenter(_target.Side);
             if (_throwState < 1f)
             {
-                var userCenter = GetCenter(BattlePokemon.ReverseSide(_target.Side));
+                var userCenter = GetCenter(_user.Side);
                 var pokemonSize = GetPokemonSpriteSize();
                 var rockWidth = 30 * Border.SCALE;
                 var rockHeight = 24 * Border.SCALE;
@@ -122,9 +109,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
                         _hitState++;
                         if (_hitState == HIT_FRAMES)
                         {
-                            IsFinished = true;
-                            // show status again
-                            Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), true);
+                            Finish();
                         }
                     }
                 }

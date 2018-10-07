@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using PokemonRedux.Content;
 using PokemonRedux.Game.Battles;
 using static Core;
 
@@ -8,15 +7,11 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
 {
     // basically two animations:
     // the beam animation for when the move starts, the hit animation for when it lands
-    class FlyAnimation : BattleAnimation
+    class FlyAnimation : BattleMoveAnimation
     {
         private readonly static int[] BEAM_FRAMES = new[] { 0, 0, 1, 3, 2, 4, 5, 7, 6, 6, 7 };
         private const int BEAM_EMPTY_FRAMES = 20;
         private const int HIT_FRAMES = 15;
-
-        private readonly BattlePokemon _user, _target;
-
-        private Texture2D _texture;
 
         private int _beamState = 0;
         private int _beamEmptyFrames = BEAM_EMPTY_FRAMES;
@@ -26,14 +21,12 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
         private bool DoBeamAnimation => !_user.IsFlying; // flying state change happens after animation
 
         public FlyAnimation(BattlePokemon user, BattlePokemon target)
-        {
-            _user = user;
-            _target = target;
-        }
+            : base(user, target)
+        { }
 
         public override void LoadContent()
         {
-            _texture = Controller.Content.LoadDirect<Texture2D>("Textures/Battle/Animations/fly.png");
+            LoadTexture("fly");
         }
 
         public override void Show()
@@ -41,7 +34,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
             if (Controller.GameOptions.BattleAnimations)
             {
                 // hide status of user, only with battle animations enabled
-                Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), false);
+                Battle.ActiveBattle.UI.SetPokemonStatusVisible(_user.Side, false);
             }
             if (DoBeamAnimation)
             {
@@ -115,11 +108,11 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
             }
         }
 
-        private void Finish()
+        protected override void Finish()
         {
             IsFinished = true;
             // show status again
-            Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), true);
+            Battle.ActiveBattle.UI.SetPokemonStatusVisible(_user.Side, true);
             if (!DoBeamAnimation)
             {
                 // show user when the second part of the animation plays

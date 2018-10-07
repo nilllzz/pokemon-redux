@@ -1,12 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using PokemonRedux.Content;
 using PokemonRedux.Game.Battles;
-using static Core;
 
 namespace PokemonRedux.Screens.Battles.Animations.Moves
 {
-    class GrowlAnimation : BattleAnimation
+    class GrowlAnimation : BattleMoveAnimation
     {
         /**
          * Animation description
@@ -24,44 +22,32 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
         private const int COLOR_FLICKERS = 6;
         private const float COLOR_SPEED = 0.1f;
 
-        private readonly BattlePokemon _target;
-
-        private Texture2D _texture;
-
         private int _waveStage = 0;
         private int _waveRepeat = 0;
         private int _waveAnimationDelay = WAVE_ANIMATION_DELAY;
         private float _pokemonColor = 1f;
         private int _colorFlickers = 0;
 
-        public GrowlAnimation(BattlePokemon target)
-        {
-            _target = target;
-        }
+        public GrowlAnimation(BattlePokemon user, BattlePokemon target)
+            : base(user, target)
+        { }
 
         public override void LoadContent()
         {
-            _texture = Controller.Content.LoadDirect<Texture2D>("Textures/Battle/Animations/growl.png");
-        }
-
-        public override void Show()
-        {
-            // hide status of user
-            Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), false);
+            LoadTexture("growl");
         }
 
         public override void Draw(SpriteBatch batch)
         {
             if (_waveRepeat < WAVE_REPEATS)
             {
-                var side = BattlePokemon.ReverseSide(_target.Side);
-                var center = GetCenter(side);
+                var center = GetCenter(_user.Side);
                 var waveWidth = (int)(_texture.Width / 2f * Border.SCALE);
 
                 var x = (int)center.X;
                 var y = (int)center.Y;
 
-                if (side == PokemonSide.Enemy)
+                if (_target.Side == PokemonSide.Player)
                 {
                     x -= waveWidth;
                     x -= (int)(_waveStage * 3 * Border.SCALE);
@@ -71,7 +57,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
                     x += (int)(_waveStage * 3 * Border.SCALE);
                 }
 
-                var effects = side == PokemonSide.Player ? SpriteEffects.None : SpriteEffects.FlipHorizontally;
+                var effects = _target.Side == PokemonSide.Enemy ? SpriteEffects.None : SpriteEffects.FlipHorizontally;
 
                 var waveColor = (_waveStage / 2) % 2;
 
@@ -118,9 +104,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
                 Battle.ActiveBattle.AnimationController.SetPokemonColor(_target.Side, new Color(color, color, color));
                 if (_colorFlickers == COLOR_FLICKERS)
                 {
-                    IsFinished = true;
-                    // show status again
-                    Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), true);
+                    Finish();
                 }
             }
             else

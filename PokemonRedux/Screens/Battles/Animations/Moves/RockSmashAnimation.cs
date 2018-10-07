@@ -1,17 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using PokemonRedux.Content;
 using PokemonRedux.Game.Battles;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Core;
 
 namespace PokemonRedux.Screens.Battles.Animations.Moves
 {
-    class RockSmashAnimation : BattleAnimation
+    class RockSmashAnimation : BattleMoveAnimation
     {
         private class Rock
         {
@@ -27,21 +21,16 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
 
         private const int HIT_FRAMES = 10;
 
-        private readonly BattlePokemon _target;
-
-        private Texture2D _texture;
-
         private int _hitState = HIT_FRAMES;
         private Rock[] _rocks;
 
-        public RockSmashAnimation(BattlePokemon target)
-        {
-            _target = target;
-        }
+        public RockSmashAnimation(BattlePokemon user, BattlePokemon target)
+            : base(user, target)
+        { }
 
         public override void LoadContent()
         {
-            _texture = Controller.Content.LoadDirect<Texture2D>("Textures/Battle/Animations/rocksmash.png");
+            LoadTexture("rocksmash");
 
             var center = GetCenter(_target.Side);
             var smallRockSize = 8 * Border.SCALE;
@@ -62,12 +51,6 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
                 new Rock { IsSmall = true, Delay = 15, Position = smallPos, Velocity = new Vector2(0.9f, -1.3f) },
                 new Rock { IsSmall = false, Delay = 15, Position = bigPos, Velocity = new Vector2(0.9f, -1.1f) },
             };
-        }
-
-        public override void Show()
-        {
-            // hide status of user
-            Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), false);
         }
 
         public override void Draw(SpriteBatch batch)
@@ -124,9 +107,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
 
             if (_rocks.All(r => r.Delay == 0 && r.State == 0))
             {
-                IsFinished = true;
-                // show status again
-                Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), true);
+                Finish();
             }
         }
     }

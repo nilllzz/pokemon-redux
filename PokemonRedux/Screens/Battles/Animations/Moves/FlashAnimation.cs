@@ -1,36 +1,25 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using PokemonRedux.Content;
 using PokemonRedux.Game.Battles;
 using System.Linq;
-using static Core;
 
 namespace PokemonRedux.Screens.Battles.Animations.Moves
 {
-    class FlashAnimation : BattleAnimation
+    class FlashAnimation : BattleMoveAnimation
     {
         private static readonly int[] INVERTED_FRAMES = new[] { 10, 11, 12, 13, 14, 15, 16, 17, 30, 31, 32, 33, 34, 35, 36, 37 };
         private const int TOTAL_FRAMES = 48;
         private const int FRAMES_PER_ROW = 7;
 
-        private readonly BattlePokemon _target;
-        private Texture2D _texture;
         private int _currentFrame = 0;
 
-        public FlashAnimation(BattlePokemon target)
-        {
-            _target = target;
-        }
+        public FlashAnimation(BattlePokemon user, BattlePokemon target)
+            : base(user, target)
+        { }
 
         public override void LoadContent()
         {
-            _texture = Controller.Content.LoadDirect<Texture2D>("Textures/Battle/Animations/flash.png");
-        }
-
-        public override void Show()
-        {
-            // hide status of user
-            Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), false);
+            LoadTexture("flash");
         }
 
         public override void Draw(SpriteBatch batch)
@@ -55,9 +44,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
             _currentFrame++;
             if (_currentFrame > TOTAL_FRAMES)
             {
-                IsFinished = true;
-                // show status again
-                Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), true);
+                Finish();
                 Battle.ActiveBattle.AnimationController.SetScreenColorInvert(false);
             }
             else

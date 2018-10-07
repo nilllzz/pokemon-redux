@@ -73,7 +73,7 @@ namespace PokemonRedux.Game.Battles
                     enemyAction.ActionType == BattleActionType.Move)
                 {
                     var playerMove = BattleMove.Get(playerAction.MoveName);
-                    var enemyMove = BattleMove.Get(enemyAction.MoveName); // BattleMove.Get("SLEEP POWDER"); 
+                    var enemyMove = BattleMove.Get("FURY SWIPES"); //BattleMove.Get(enemyAction.MoveName); 
 
                     playerGoesFirst = PlayerMoveGoesFirst(playerMove, enemyMove);
                     if (playerGoesFirst)
@@ -261,6 +261,7 @@ namespace PokemonRedux.Game.Battles
         {
             var battlePokemon = new BattlePokemon(pokemon, PokemonSide.Player);
             PlayerPokemon.TransferStateTo(battlePokemon, batonPass);
+            EnemyPokemon.EnemyLeftBattle();
 
             PlayerPokemon = battlePokemon;
 
@@ -299,7 +300,7 @@ namespace PokemonRedux.Game.Battles
                 // both quick claws succeed, determine randomly
                 if (playerQuickclaw && enemyQuickclaw)
                 {
-                    return Random.Next(0, 2) == 0;
+                    return Random.NextBool();
                 }
                 else if (playerQuickclaw)
                 {
@@ -340,7 +341,7 @@ namespace PokemonRedux.Game.Battles
                 else
                 {
                     // if speed is the same, determine randomly
-                    return Random.Next(0, 2) == 0;
+                    return Random.NextBool();
                 }
             }
         }
@@ -430,7 +431,7 @@ namespace PokemonRedux.Game.Battles
                     UI.ShowMessageAndKeepOpen(user.GetDisplayName() + "\nis confused!");
                     AnimationController.ShowAnimationAndWait(new ConfusedAnimation(user));
                     // confusion, 50% chance of hitting itself
-                    if (Random.Next(0, 2) == 0)
+                    if (Random.NextBool())
                     {
                         // hits self with 40 power move
                         UI.ShowMessageAndKeepOpen("It hurt itself in\nits confusion!");
@@ -444,7 +445,7 @@ namespace PokemonRedux.Game.Battles
             }
 
             // infatuation, 50% of skipping turn
-            if (user.IsInfatuated && Random.Next(0, 2) == 0)
+            if (user.IsInfatuated && Random.NextBool())
             {
                 UI.ShowMessageAndWait(user.GetDisplayName() + "\nis in love."); // TODO: message
                 moveUsed.MoveFailed(user, target);
@@ -461,7 +462,7 @@ namespace PokemonRedux.Game.Battles
 
             // paralyzed, 50% to skip turn
             if (user.Pokemon.Status == PokemonStatus.PAR &&
-                Random.Next(0, 2) == 0)
+                Random.NextBool())
             {
                 UI.ShowMessageAndWait(user.GetDisplayName() + "^'s\nfully paralyzed.");
                 moveUsed.MoveFailed(user, target);
@@ -589,13 +590,17 @@ namespace PokemonRedux.Game.Battles
             // do damage if move is damaging
             if (moveUsed.GetCategory(user) != MoveCategory.Status)
             {
-                var fainted = false;
                 var typeMultiplier = PokemonTypeHelper.GetMultiplier(moveUsed.GetType(user), target);
                 if (typeMultiplier != 0)
                 {
-                    var hits = moveUsed.GetHitAmount();
-                    for (var i = 0; i < hits; i++)
+                    var fainted = false;
+                    var targetHits = moveUsed.GetHitAmount();
+                    var hits = 0;
+
+                    for (var i = 0; i < targetHits; i++)
                     {
+                        hits++;
+
                         var isCriticalHit = IsCriticalHit(moveUsed, user);
                         var damage = GetDamage(moveUsed, user, target, isCriticalHit);
                         if (damage == 0)
@@ -610,14 +615,16 @@ namespace PokemonRedux.Game.Battles
                             {
                                 moveUsed.ShowAnimation(user, target);
                             }
-                            DealDamage(damage, target, true, i < hits - 1);
+
+                            var hideAnimation = i < targetHits - 1 && damage < target.Pokemon.HP;
+                            DealDamage(damage, target, true, hideAnimation);
 
                             if (isCriticalHit)
                             {
                                 UI.ShowMessageAndWait("A critical hit!");
                             }
 
-                            if (hits == 1)
+                            if (targetHits == 1)
                             {
                                 // effectivenss messages
                                 // show this outside the loop if multi-hit attack
@@ -636,12 +643,12 @@ namespace PokemonRedux.Game.Battles
                         if (r < moveUsed.EffectChance)
                         {
                             moveUsed.ExecuteSecondaryEffect(user, target);
-                            fainted |= CheckFainted(target);
-                            fainted |= CheckFainted(user);
+                            fainted |= target.Pokemon.HP == 0;
+                            fainted |= user.Pokemon.HP == 0;
                         }
                         else
                         {
-                            fainted |= CheckFainted(target);
+                            fainted |= target.Pokemon.HP == 0;
                         }
 
                         // TODO: destiny bond
@@ -651,11 +658,21 @@ namespace PokemonRedux.Game.Battles
                         if (fainted)
                         {
                             // if any of the involved pokemon faint, break up a multi hit attack
+                            if (targetHits > 1)
+                            {
+                                // didn't show this before due to multi hit
+                                ShowTypeEffectivenessMessage(typeMultiplier);
+                            }
+
+                            CheckFainted(target);
+                            CheckFainted(user);
+
                             break;
                         }
                     }
 
-                    if (hits > 1)
+                    // if no pokemon fainted, show the multi hit message now
+                    if (targetHits > 1 && !fainted)
                     {
                         ShowTypeEffectivenessMessage(typeMultiplier);
                         UI.ShowMessageAndWait($"Hit {hits} times!");
@@ -1150,6 +1167,16 @@ namespace PokemonRedux.Game.Battles
                 // clear participation record for this pokemon after exp is yielded
                 _participation[EnemyPokemon.Pokemon].Clear();
 
+                // when a pokemon faints, it leave the battle
+                if (target.Side == PokemonSide.Player)
+                {
+                    EnemyPokemon.EnemyLeftBattle();
+                }
+                else
+                {
+                    PlayerPokemon.EnemyLeftBattle();
+                }
+
                 return true;
             }
             return false;
@@ -1325,35 +1352,73 @@ namespace PokemonRedux.Game.Battles
             var leader = playerIsLeader ? PlayerPokemon : EnemyPokemon;
             var runnerUp = playerIsLeader ? EnemyPokemon : PlayerPokemon;
 
+            void applyEffect(Action<BattlePokemon> effect, BattlePokemon first, BattlePokemon second)
+            {
+                effect(first);
+                CheckFainted(first);
+                effect(second);
+                CheckFainted(second);
+                HandleFainted();
+            }
+
             void applyFutureSight(BattlePokemon target)
             {
                 // TODO: future sight
             }
             // switch apply order
-            applyFutureSight(runnerUp);
-            applyFutureSight(leader);
-            CheckFainted(runnerUp);
-            CheckFainted(leader);
-            HandleFainted();
+            applyEffect(applyFutureSight, runnerUp, leader);
 
             void applySandstorm(BattlePokemon target)
             {
                 // TODO: sandstorm
             }
-            applySandstorm(leader);
-            applySandstorm(runnerUp);
-            CheckFainted(leader);
-            CheckFainted(runnerUp);
-            HandleFainted();
+            applyEffect(applySandstorm, leader, runnerUp);
 
-            // TODO: multi turn moves (Sand Tomb, Fire Spin, etc)
+
+            // TODO: multi turn moves: Fire Spin, Clamp, Whirlpool
+            void applyBind(BattlePokemon target)
+            {
+                Bind.ExecuteEndOfTurn(target);
+            }
+            applyEffect(applyBind, runnerUp, leader);
+            void applyWrap(BattlePokemon target)
+            {
+                Wrap.ExecuteEndOfTurn(target);
+            }
+            applyEffect(applyWrap, runnerUp, leader);
+
             // TODO: perish song
             // TODO: leftovers
-            // TODO: end of reflect, light screen and safeguard
+            // TODO: end of light screen and safeguard
+            EndOfTurnReflect(leader);
+            EndOfTurnReflect(runnerUp);
             // TODO: berries
             // TODO: end of encore
 
+            // reset flinched status
+            PlayerPokemon.Flinched = false;
+            EnemyPokemon.Flinched = false;
+
             UI.ResetMenu();
+        }
+
+        private void EndOfTurnReflect(BattlePokemon target)
+        {
+            if (target.Pokemon.HP > 0 && target.ReflectTurns > 0)
+            {
+                target.ReflectTurns--;
+                if (target.ReflectTurns == 0)
+                {
+                    if (target.Side == PokemonSide.Player)
+                    {
+                        UI.ShowMessageAndWait("Your POKéMON^'s\nREFLECT faded!");
+                    }
+                    else
+                    {
+                        UI.ShowMessageAndWait("Foe^'s\nREFLECT faded!"); // TODO: message
+                    }
+                }
+            }
         }
 
         public bool ChangeStat(BattlePokemon target, PokemonStat stat, PokemonStatChange change)

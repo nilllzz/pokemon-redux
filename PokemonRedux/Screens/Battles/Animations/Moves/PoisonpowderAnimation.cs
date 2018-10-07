@@ -6,7 +6,7 @@ using static Core;
 
 namespace PokemonRedux.Screens.Battles.Animations.Moves
 {
-    class PoisonpowderAnimation : BattleAnimation
+    class PoisonpowderAnimation : BattleMoveAnimation
     {
         private const int TOTAL_STAGES = 2;
         private const int STAGE_DELAY = 4;
@@ -14,27 +14,17 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
         private const int FRAME_WIDTH = 56;
         private const int FRAME_HEIGHT = 32;
 
-        private readonly BattlePokemon _target;
-
-        private Texture2D _texture;
         private float _progress;
         private int _stage;
         private int _stageDelay = STAGE_DELAY;
 
-        public PoisonpowderAnimation(BattlePokemon target)
-        {
-            _target = target;
-        }
+        public PoisonpowderAnimation(BattlePokemon user, BattlePokemon target)
+            : base(user, target)
+        { }
 
         public override void LoadContent()
         {
-            _texture = Controller.Content.LoadDirect<Texture2D>("Textures/Battle/Animations/poisonpowder.png");
-        }
-
-        public override void Show()
-        {
-            // hide status of user
-            Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), false);
+            LoadTexture("poisonpowder");
         }
 
         public override void Draw(SpriteBatch batch)
@@ -78,9 +68,7 @@ namespace PokemonRedux.Screens.Battles.Animations.Moves
             if (_progress >= 1f)
             {
                 _progress = 1f;
-                IsFinished = true;
-                // show status again
-                Battle.ActiveBattle.UI.SetPokemonStatusVisible(BattlePokemon.ReverseSide(_target.Side), true);
+                Finish();
             }
         }
     }

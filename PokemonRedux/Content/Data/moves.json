@@ -145,7 +145,7 @@
     "name": "SLAM",
     "type": "normal",
     "maxPP": 20,
-    "description": "----",
+    "description": "Slams the foe with\na tail, vine, etc.",
     "attk": 80
   },
   {
@@ -159,7 +159,7 @@
     "name": "STOMP",
     "type": "normal",
     "maxPP": 20,
-    "description": "----",
+    "description": "An attack that may\ncause flinching.",
     "attk": 65
   },
   {
@@ -257,14 +257,14 @@
     "name": "THRASH",
     "type": "normal",
     "maxPP": 20,
-    "description": "----",
+    "description": "Works 2-3 turns\nand confuses user.",
     "attk": 90
   },
   {
     "name": "DOUBLE-EDGE",
     "type": "normal",
     "maxPP": 15,
-    "description": "----",
+    "description": "A tackle that also\nhurts the user.",
     "attk": 120
   },
   {
@@ -320,7 +320,7 @@
     "name": "ROAR",
     "type": "normal",
     "maxPP": 20,
-    "description": "----",
+    "description": "Scares wild foes\nto end battle.",
     "attk": -1
   },
   {
@@ -369,7 +369,7 @@
     "name": "FLAMETHROWER",
     "type": "fire",
     "maxPP": 15,
-    "description": "----",
+    "description": "An attack that may\ninflict a burn.",
     "attk": 95
   },
   {
@@ -623,7 +623,7 @@
     "name": "EARTHQUAKE",
     "type": "ground",
     "maxPP": 10,
-    "description": "----",
+    "description": "Tough but useless\nvs. flying foes.",
     "attk": 100
   },
   {
@@ -644,7 +644,7 @@
     "name": "TOXIC",
     "type": "poison",
     "maxPP": 10,
-    "description": "----",
+    "description": "A poison move with\nincreasing damage.",
     "attk": -1
   },
   {
@@ -728,7 +728,7 @@
     "name": "DOUBLE TEAM",
     "type": "normal",
     "maxPP": 15,
-    "description": "----",
+    "description": "Heightens evasive-\nness.",
     "attk": -1
   },
   {
@@ -826,7 +826,7 @@
     "name": "METRONOME",
     "type": "normal",
     "maxPP": 10,
-    "description": "----",
+    "description": "Randomly uses any\nPOKéMON move.",
     "attk": -1
   },
   {
@@ -932,7 +932,7 @@
     "name": "AMNESIA",
     "type": "psychic",
     "maxPP": 20,
-    "description": "----",
+    "description": "Sharply raises the\nuser^'s SPCL.DEF.",
     "attk": -1
   },
   {
@@ -1220,7 +1220,7 @@
     "name": "CURSE",
     "type": "ghost",
     "maxPP": 10,
-    "description": "----",
+    "description": "Works differently\nfor ghost-types.",
     "attk": -1
   },
   {
@@ -1255,7 +1255,7 @@
     "name": "REVERSAL",
     "type": "fighting",
     "maxPP": 15,
-    "description": "----",
+    "description": "Stronger if the\nuser^'s HP is low.",
     "attk": -1
   },
   {
@@ -1304,7 +1304,7 @@
     "name": "SWEET KISS",
     "type": "normal",
     "maxPP": 10,
-    "description": "----",
+    "description": "A move that causes\nconfusion.",
     "attk": -1
   },
   {
@@ -1458,14 +1458,14 @@
     "name": "MILK DRINK",
     "type": "normal",
     "maxPP": 10,
-    "description": "----",
+    "description": "Restores HP by 1/2\nthe max HP.",
     "attk": -1
   },
   {
     "name": "SPARK",
     "type": "electric",
     "maxPP": 20,
-    "description": "----",
+    "description": "An attack that may\ncause paralysis.",
     "attk": 65
   },
   {
@@ -1479,7 +1479,7 @@
     "name": "STEEL WING",
     "type": "steel",
     "maxPP": 25,
-    "description": "----",
+    "description": "Stiff wings strike\nthe foe.",
     "attk": 70
   },
   {
@@ -1570,7 +1570,7 @@
     "name": "MEGAHORN",
     "type": "bug",
     "maxPP": 10,
-    "description": "----",
+    "description": "A powerful charge\nattack.",
     "attk": 120
   },
   {
@@ -1696,7 +1696,7 @@
     "name": "CRUNCH",
     "type": "dark",
     "maxPP": 15,
-    "description": "----",
+    "description": "An attack that may\nlower SPCL.DEF.",
     "attk": 80
   },
   {

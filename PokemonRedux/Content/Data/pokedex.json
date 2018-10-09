@@ -2,47 +2,92 @@
   {
     "id": 1,
     "newId": 226,
-    "name": "BULBASAUR"
+    "name": "BULBASAUR",
+    "species": "SEED",
+    "height": 2.04,
+    "weigth": 15,
+    "text": "The seed on its\nback is filled\nwith nutrients.\n\nThe seed grows\nsteadily larger as\nits body grows.",
+    "areas": []
   },
   {
     "id": 2,
     "newId": 227,
-    "name": "IVYSAUR"
+    "name": "IVYSAUR",
+    "species": "SEED",
+    "height": 3.03,
+    "weigth": 29,
+    "text": "Exposure to sun-\nlight adds to its\nstrength. Sunlight\n\nalso makes the bud\non its back grow\nlarger.",
+    "areas": []
   },
   {
     "id": 3,
     "newId": 228,
-    "name": "VENUSAUR"
+    "name": "VENUSAUR",
+    "species": "SEED",
+    "height": 6.07,
+    "weigth": 221,
+    "text": "By spreading the\nbroad petals of\nits flower and\n\ncatching the sun^'s\nrays, it fills its\nbody with power.",
+    "areas": []
   },
   {
     "id": 4,
     "newId": 229,
-    "name": "CHARMANDER"
+    "name": "CHARMANDER",
+    "species": "LIZARD",
+    "height": 2.00,
+    "weigth": 19,
+    "text": "The flame on its\ntail shows the\nstrength of its\n\nlife force. If it\nis weakm the flame\nalso burns weakly.",
+    "areas": []
   },
   {
     "id": 5,
     "newId": 230,
-    "name": "CHARMELEON"
+    "name": "CHARMELEON",
+    "species": "FLAME",
+    "height": 3.07,
+    "weigth": 42,
+    "text": "It is very hot-\nheaded by nature,\nso it constantly\n\nseeks opponents.\nIt calms down only\nwhen it wins.",
+    "areas": []
   },
   {
     "id": 6,
     "newId": 231,
-    "name": "CHARIZARD"
+    "name": "CHARIZARD",
+    "species": "FLAME",
+    "height": 5.07,
+    "weigth": 200,
+    "text": "If CHARIZARD be-\ncomes furious, the\nflame at the tip\n\nof its tail flares\nup in a whitish-\nblue color.",
+    "areas": []
   },
   {
     "id": 7,
     "newId": 232,
-    "name": "SQUIRTLE"
+    "name": "SQUIRTLE",
+    "species": "TINYTURTLE",
+    "height": 1.08,
+    "weigth": 20,
+    "text": "The shell is soft\nwhen it is born.\nit soon becomes so\n\nresilient, prod-\nding fingers will\nbounce off it.",
+    "areas": []
   },
   {
     "id": 8,
     "newId": 233,
-    "name": "WARTORTLE"
+    "name": "WARTORTLE",
+    "species": "TURTLE",
+    "height": 3.03,
+    "weigth": 50,
+    "text": "It is recognized\nas a symbol of\nlongevity. If its\n\nshell has algae on\nit, that WARTORTLE\nis very old.",
+    "areas": []
   },
   {
     "id": 9,
     "newId": 234,
-    "name": "BLASTOISE"
+    "name": "BLASTOISE",
+    "species": "SHELLFISH",
+    "height": 5.03,
+    "weigth": 189,
+    "text": "It deliberately\nmakes itself heavy\nso it can with-\n\nstand the recoil\nof the water jets\nit fires.",
+    "areas": []
   },
   {
     "id": 10,
@@ -276,12 +321,35 @@
   {
     "id": 23,
     "newId": 50,
-    "name": "EKANS"
+    "name": "EKANS",
+    "species": "SNAKE",
+    "height": 6.07,
+    "weigth": 15,
+    "text": "It can freely de-\ntach its jaw to\nswallow large prey\n\nwhole. It can be-\ncome too heavy to\nmove, however.",
+    "areas": [
+      "ROUTE 3",
+      "ROUTE 4",
+      "ROUTE 32",
+      "ROUTE 33"
+    ]
   },
   {
     "id": 24,
     "newId": 51,
-    "name": "ARBOK"
+    "name": "ARBOK",
+    "species": "SNAKE",
+    "height": 11.06,
+    "weigth": 143,
+    "text": "Transfixing prey\nwith the face-like\npattern on its\n\nbelly, it binds\nand poisons the\nfrightened victim.",
+    "areas": [
+      "ROUTE 3",
+      "ROUTE 4",
+      "ROUTE 26",
+      "ROUTE 27",
+      "ROUTE 28",
+      "ROUTE 42",
+      "MT. SILVER"
+    ]
   },
   {
     "id": 25,
@@ -298,17 +366,42 @@
   {
     "id": 26,
     "newId": 23,
-    "name": "RAICHU"
+    "name": "RAICHU",
+    "species": "MOUSE",
+    "height": 2.07,
+    "weigth": 66,
+    "text": "When its electric-\nity builds, its\nmuscles are stimu-\n\nlated, and it be-\ncomes more aggres-\nsive than usual.",
+    "areas": []
   },
   {
     "id": 27,
     "newId": 48,
-    "name": "SANDSHREW"
+    "name": "SANDSHREW",
+    "species": "MOUSE",
+    "height": 2.00,
+    "weigth": 26,
+    "text": "If it fell from a\ngreat height, this\nPOKéMON could save\n\nitself by rolling\ninto a ball and\nbouncing.",
+    "areas": [
+      "ROUTE 3",
+      "ROUTE 4",
+      "UNION CAVE",
+      "MT. MOON"
+    ]
   },
   {
     "id": 28,
     "newId": 49,
-    "name": "SANDSLASH"
+    "name": "SANDSLASH",
+    "species": "MOUSE",
+    "height": 3.03,
+    "weigth": 65,
+    "text": "In an attempt to\nhide itself, it\nwill run around\n\nat top speed to\nkick up a building\ndust storm.",
+    "areas": [
+      "ROUTE 26",
+      "ROUTE 27",
+      "MT. MOON",
+      "VICTORY ROAD"
+    ]
   },
   {
     "id": 29,

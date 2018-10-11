@@ -3,7 +3,7 @@
     "name": "POUND",
     "type": "normal",
     "maxPP": 35,
-    "description": "----",
+    "description": "Pounds with fore-\nlegs or tail.",
     "attk": 40
   },
   {
@@ -31,28 +31,28 @@
     "name": "MEGA PUNCH",
     "type": "normal",
     "maxPP": 20,
-    "description": "----",
+    "description": "A powerful punch\nthrown very hard.",
     "attk": 80
   },
   {
     "name": "PAY DAY",
     "type": "normal",
     "maxPP": 20,
-    "description": "----",
+    "description": "Throws coins. Gets\nthem back later.",
     "attk": 40
   },
   {
     "name": "FIRE PUNCH",
     "type": "fire",
     "maxPP": 15,
-    "description": "----",
+    "description": "A fiery punch. May\ncause a burn.",
     "attk": 75
   },
   {
     "name": "ICE PUNCH",
     "type": "ice",
     "maxPP": 15,
-    "description": "----",
+    "description": "An icy punch. May\ncause freezing.",
     "attk": 75
   },
   {
@@ -73,14 +73,14 @@
     "name": "VICEGRIP",
     "type": "normal",
     "maxPP": 30,
-    "description": "----",
+    "description": "Grips with power-ful pincers.",
     "attk": 55
   },
   {
     "name": "GUILLOTINE",
     "type": "normal",
     "maxPP": 5,
-    "description": "----",
+    "description": "A one-hit KO,\npincer attack.",
     "attk": -1
   },
   {
@@ -173,21 +173,21 @@
     "name": "MEGA KICK",
     "type": "normal",
     "maxPP": 5,
-    "description": "----",
+    "description": "A powerful kicking\nattack.",
     "attk": 120
   },
   {
     "name": "JUMP KICK",
     "type": "fighting",
     "maxPP": 25,
-    "description": "----",
+    "description": "May miss, damaging\nthe user.",
     "attk": 70
   },
   {
     "name": "ROLLING KICK",
     "type": "fighting",
     "maxPP": 15,
-    "description": "----",
+    "description": "A fast, spinning\nkick.",
     "attk": 60
   },
   {
@@ -208,7 +208,7 @@
     "name": "HORN ATTACK",
     "type": "normal",
     "maxPP": 25,
-    "description": "----",
+    "description": "An attack using a\nhorn to jab.",
     "attk": 65
   },
   {
@@ -222,7 +222,7 @@
     "name": "HORN DRILL",
     "type": "normal",
     "maxPP": 5,
-    "description": "----",
+    "description": "A one-hit KO,\ndrill attack.",
     "attk": -1
   },
   {
@@ -292,7 +292,7 @@
     "name": "PIN MISSILE",
     "type": "bug",
     "maxPP": 20,
-    "description": "----",
+    "description": "Fires pins that\nstrike 2-5 times.",
     "attk": 14
   },
   {
@@ -348,7 +348,7 @@
     "name": "DISABLE",
     "type": "normal",
     "maxPP": 20,
-    "description": "----",
+    "description": "Disables the foe^'s\nmost recent move.",
     "attk": -1
   },
   {
@@ -376,7 +376,7 @@
     "name": "MIST",
     "type": "ice",
     "maxPP": 30,
-    "description": "----",
+    "description": "Prevents stat\nreduction.",
     "attk": -1
   },
   {
@@ -405,42 +405,42 @@
     "name": "ICE BEAM",
     "type": "ice",
     "maxPP": 10,
-    "description": "----",
+    "description": "An attack that may\nfreeze the foe.",
     "attk": 95
   },
   {
     "name": "BLIZZARD",
     "type": "ice",
     "maxPP": 5,
-    "description": "----",
+    "description": "An attack that may\nfreeze the foe.",
     "attk": 120
   },
   {
     "name": "PSYBEAM",
     "type": "psychic",
     "maxPP": 20,
-    "description": "----",
+    "description": "An attack that may\nconfuse the foe.",
     "attk": 65
   },
   {
     "name": "BUBBLEBEAM",
     "type": "water",
     "maxPP": 20,
-    "description": "----",
+    "description": "An attack that may\nlower SPEED.",
     "attk": 65
   },
   {
     "name": "AURORA BEAM",
     "type": "ice",
     "maxPP": 20,
-    "description": "----",
+    "description": "An attack that may\nlower ATTACK.",
     "attk": 65
   },
   {
     "name": "HYPER BEAM",
     "type": "normal",
     "maxPP": 5,
-    "description": "----",
+    "description": "1st turn: Attack\n2nd turn: Rest",
     "attk": 150
   },
   {
@@ -454,14 +454,14 @@
     "name": "DRILL PECK",
     "type": "flying",
     "maxPP": 20,
-    "description": "----",
+    "description": "A strong, spin-\nning-peck attack.",
     "attk": 80
   },
   {
     "name": "SUBMISSION",
     "type": "fighting",
     "maxPP": 25,
-    "description": "----",
+    "description": "An attack that al-\nso hurts the user.",
     "attk": 80
   },
   {
@@ -482,7 +482,7 @@
     "name": "SEISMIC TOSS",
     "type": "fighting",
     "maxPP": 20,
-    "description": "----",
+    "description": "The user^'s level\nequals damage HP.",
     "attk": -1
   },
   {
@@ -497,14 +497,14 @@
     "name": "ABSORB",
     "type": "grass",
     "maxPP": 20,
-    "description": "----",
+    "description": "Steals 1/2 of the\ndamage inflicted.",
     "attk": 20
   },
   {
     "name": "MEGA DRAIN",
     "type": "grass",
     "maxPP": 10,
-    "description": "----",
+    "description": "Steals 1/2 of the\ndamage inflicted.",
     "attk": 40
   },
   {
@@ -518,7 +518,7 @@
     "name": "GROWTH",
     "type": "normal",
     "maxPP": 40,
-    "description": "----",
+    "description": "Raises the SPCL.\nATK rating.",
     "attk": -1
   },
   {
@@ -532,7 +532,7 @@
     "name": "SOLARBEAM",
     "type": "grass",
     "maxPP": 10,
-    "description": "----",
+    "description": "1st turn: Prepare\n2nd turn: Attack",
     "attk": 120
   },
   {
@@ -560,7 +560,7 @@
     "name": "PETAL DANCE",
     "type": "grass",
     "maxPP": 20,
-    "description": "----",
+    "description": "Works 2-3 turns\nand confuses user.",
     "attk": 70
   },
   {
@@ -581,7 +581,7 @@
     "name": "FIRE SPIN",
     "type": "fire",
     "maxPP": 15,
-    "description": "----",
+    "description": "Traps foe in fire\nfor 2-5 turns.",
     "attk": 15
   },
   {
@@ -609,7 +609,7 @@
     "name": "THUNDER",
     "type": "electric",
     "maxPP": 10,
-    "description": "----",
+    "description": "An attack that may\ncause paralysis.",
     "attk": 120
   },
   {
@@ -630,7 +630,7 @@
     "name": "FISSURE",
     "type": "ground",
     "maxPP": 5,
-    "description": "----",
+    "description": "A ground-type\none-hit KO attack.",
     "attk": -1
   },
   {
@@ -658,7 +658,7 @@
     "name": "PSYCHIC",
     "type": "psychic",
     "maxPP": 10,
-    "description": "----",
+    "description": "An attack that may\nlower SPCL.DEF.",
     "attk": 90
   },
   {
@@ -749,7 +749,7 @@
     "name": "MINIMIZE",
     "type": "normal",
     "maxPP": 20,
-    "description": "----",
+    "description": "Heightens evasive-\nness.",
     "attk": -1
   },
   {
@@ -784,21 +784,21 @@
     "name": "BARRIER",
     "type": "psychic",
     "maxPP": 30,
-    "description": "----",
+    "description": "Sharply increases\nuser^'s DEFENSE.",
     "attk": -1
   },
   {
     "name": "LIGHT SCREEN",
     "type": "psychic",
     "maxPP": 30,
-    "description": "----",
+    "description": "Ups SPCL.DEF with\na wall of light.",
     "attk": -1
   },
   {
     "name": "HAZE",
     "type": "ice",
     "maxPP": 30,
-    "description": "----",
+    "description": "Eliminates all\nstat changes.",
     "attk": -1
   },
   {
@@ -833,7 +833,7 @@
     "name": "MIRROR MOVE",
     "type": "flying",
     "maxPP": 20,
-    "description": "----",
+    "description": "Counters with the\nsame move.",
     "attk": -1
   },
   {
@@ -847,7 +847,7 @@
     "name": "EGG BOMB",
     "type": "normal",
     "maxPP": 10,
-    "description": "----",
+    "description": "Eggs are hurled at\nthe foe.",
     "attk": 100
   },
   {
@@ -861,7 +861,7 @@
     "name": "SMOG",
     "type": "poison",
     "maxPP": 20,
-    "description": "----",
+    "description": "An attack that may\npoison the foe.",
     "attk": 20
   },
   {
@@ -875,14 +875,14 @@
     "name": "BONE CLUB",
     "type": "ground",
     "maxPP": 20,
-    "description": "----",
+    "description": "An attack that may\ncause flinching.",
     "attk": 65
   },
   {
     "name": "FIRE BLAST",
     "type": "fire",
     "maxPP": 5,
-    "description": "----",
+    "description": "An attack that\nmay cause a burn.",
     "attk": 120
   },
   {
@@ -918,7 +918,7 @@
     "name": "SPIKE CANNON",
     "type": "normal",
     "maxPP": 15,
-    "description": "----",
+    "description": "Fires spikes to\nhit 2-5 times.",
     "attk": 20
   },
   {
@@ -946,14 +946,14 @@
     "name": "SOFTBOILED",
     "type": "normal",
     "maxPP": 10,
-    "description": "----",
+    "description": "Restores HP by 1/2\nthe user^'s max HP.",
     "attk": -1
   },
   {
     "name": "HI JUMP KICK",
     "type": "fighting",
     "maxPP": 20,
-    "description": "----",
+    "description": "May miss and hurt\nthe user.",
     "attk": 85
   },
   {
@@ -1002,14 +1002,14 @@
     "name": "SKY ATTACK",
     "type": "flying",
     "maxPP": 5,
-    "description": "----",
+    "description": "1st turn: Prepare\n2nd turn: Attack",
     "attk": 140
   },
   {
     "name": "TRANSFORM",
     "type": "normal",
     "maxPP": 10,
-    "description": "----",
+    "description": "The user assumes\nthe foe^'s guise.",
     "attk": -1
   },
   {
@@ -1059,21 +1059,21 @@
     "name": "ACID ARMOR",
     "type": "poison",
     "maxPP": 40,
-    "description": "----",
+    "description": "Sharply raises the\nuser^'s DEFENSE.",
     "attk": -1
   },
   {
     "name": "CRABHAMMER",
     "type": "water",
     "maxPP": 10,
-    "description": "----",
+    "description": "Has a high criti-\ncal hit ratio.",
     "attk": 90
   },
   {
     "name": "EXPLOSION",
     "type": "normal",
     "maxPP": 5,
-    "description": "----",
+    "description": "Very powerful but\nmakes user faint.",
     "attk": 250
   },
   {
@@ -1087,7 +1087,7 @@
     "name": "BONEMERANG",
     "type": "ground",
     "maxPP": 10,
-    "description": "----",
+    "description": "An attack that\nstrikes twice.",
     "attk": 50
   },
   {
@@ -1101,7 +1101,7 @@
     "name": "ROCK SLIDE",
     "type": "rock",
     "maxPP": 10,
-    "description": "----",
+    "description": "An attack that may\ncause flinching.",
     "attk": 75
   },
   {
@@ -1129,7 +1129,7 @@
     "name": "TRI ATTACK",
     "type": "normal",
     "maxPP": 10,
-    "description": "----",
+    "description": "Fires three kinds\nof beams at once.",
     "attk": 80
   },
   {
@@ -1150,7 +1150,7 @@
     "name": "SUBSTITUTE",
     "type": "normal",
     "maxPP": 10,
-    "description": "----",
+    "description": "Makes a decoy with\n1/4 user^'s max HP.",
     "attk": -1
   },
   {
@@ -1164,7 +1164,7 @@
     "name": "SKETCH",
     "type": "normal",
     "maxPP": 1,
-    "description": "----",
+    "description": "Copies the foe^'s\nmove permanently.",
     "attk": -1
   },
   {
@@ -1234,21 +1234,21 @@
     "name": "CONVERSION2",
     "type": "normal",
     "maxPP": 30,
-    "description": "----",
+    "description": "The user^'s type is\nmade resistant.",
     "attk": -1
   },
   {
     "name": "AEROBLAST",
     "type": "flying",
     "maxPP": 5,
-    "description": "----",
+    "description": "Has a high criti-\ncal hit ratio.",
     "attk": 100
   },
   {
     "name": "COTTON SPORE",
     "type": "grass",
     "maxPP": 40,
-    "description": "----",
+    "description": "Sharply reduces\nthe foe^'s SPEED.",
     "attk": -1
   },
   {
@@ -1262,7 +1262,7 @@
     "name": "SPITE",
     "type": "ghost",
     "maxPP": 10,
-    "description": "----",
+    "description": "Cuts the PP of the\nfoe^'s last move.",
     "attk": -1
   },
   {
@@ -1486,7 +1486,7 @@
     "name": "MEAN LOOK",
     "type": "normal",
     "maxPP": 5,
-    "description": "----",
+    "description": "Prevents fleeing\nor switching.",
     "attk": -1
   },
   {
@@ -1521,7 +1521,7 @@
     "name": "PRESENT",
     "type": "normal",
     "maxPP": 15,
-    "description": "----",
+    "description": "A bomb that may\nrestore HP.",
     "attk": -1
   },
   {
@@ -1584,7 +1584,7 @@
     "name": "BATON PASS",
     "type": "normal",
     "maxPP": 40,
-    "description": "----",
+    "description": "Switching while\nkeeping effects.",
     "attk": -1
   },
   {
@@ -1598,7 +1598,7 @@
     "name": "PURSUIT",
     "type": "dark",
     "maxPP": 20,
-    "description": "----",
+    "description": "Heavily strikes\nswitching POKéMON.",
     "attk": 40
   },
   {
@@ -1689,7 +1689,7 @@
     "name": "SUNNY DAY",
     "type": "fire",
     "maxPP": 5,
-    "description": "----",
+    "description": "Boosts fire-type\nmoves for 5 turns.",
     "attk": -1
   },
   {
@@ -1710,7 +1710,7 @@
     "name": "PSYCH UP",
     "type": "normal",
     "maxPP": 10,
-    "description": "----",
+    "description": "Copies the foe^'s\nstat changes.",
     "attk": -1
   },
   {
@@ -1738,7 +1738,7 @@
     "name": "FUTURE SIGHT",
     "type": "psychic",
     "maxPP": 15,
-    "description": "----",
+    "description": "An attack that\nhits on 3rd turn.",
     "attk": 80
   },
   {

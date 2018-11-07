@@ -162,7 +162,24 @@ namespace PokemonRedux.Game.Battles
             target.LightScreenTurns = LightScreenTurns;
             if (batonPass)
             {
-                // TODO: baton pass
+                // stat changes
+                foreach (var keypair in StatModifications)
+                {
+                    target.StatModifications[keypair.Key] = keypair.Value;
+                }
+                // lock on
+                target.LockedOn = LockedOn;
+                // confusion
+                target.ConfusionTurns = ConfusionTurns;
+                // substitute
+                target.SubstituteHP = SubstituteHP;
+                // focus energy
+                target.FocusEnergyTurns = FocusEnergyTurns;
+
+                // TODO: enemy curse
+                // TODO: persish song
+                // TODO: leech seed
+                // TODO: trapped (mean look etc)
             }
         }
     }

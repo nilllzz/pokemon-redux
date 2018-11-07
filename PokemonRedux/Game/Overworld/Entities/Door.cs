@@ -108,8 +108,15 @@ namespace PokemonRedux.Game.Overworld.Entities
 
         public override void Collides(Entity other)
         {
-            if (!_opening && Math.Abs(Position.X - other.Position.X) <= 0.2f)
+            if (!_opening)// && Math.Abs(Position.X - other.Position.X) <= 0.2f)
             {
+                var is90degreeTurned = _data.Rotation.Y % 2 == 1;
+                if ((is90degreeTurned && Math.Abs(Position.Z - other.Position.Z) > 0.2f) ||
+                    (!is90degreeTurned && Math.Abs(Position.X - other.Position.X) > 0.2f))
+                {
+                    return;
+                }
+
                 _other = other;
                 _opening = true;
                 if (_other is PlayerCharacter)
@@ -123,7 +130,7 @@ namespace PokemonRedux.Game.Overworld.Entities
                     IsVisible = true;
                 }
 
-                _entering = _other.Position.Z > Position.Z;
+                _entering = _other.Position.Z > Position.Z || is90degreeTurned;
             }
         }
     }

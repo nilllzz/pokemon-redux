@@ -180,11 +180,13 @@ namespace PokemonRedux.Game.Overworld
 
         private void UpdateMap(GameTime gameTime)
         {
+#if DEBUG
             var kHandler = GetComponent<KeyboardHandler>();
             if (kHandler.KeyPressed(Keys.R))
             {
                 ActiveMap.Reload();
             }
+#endif
 
             UpdateDaytime(gameTime);
 

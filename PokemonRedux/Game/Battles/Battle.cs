@@ -73,7 +73,8 @@ namespace PokemonRedux.Game.Battles
                     enemyAction.ActionType == BattleActionType.Move)
                 {
                     var playerMove = BattleMove.Get(playerAction.MoveName);
-                    var enemyMove = BattleMove.Get("FURY SWIPES"); //BattleMove.Get(enemyAction.MoveName); 
+                    var enemyMove = BattleMove.Get(enemyAction.MoveName);
+                    //var enemyMove = BattleMove.Get("RAZOR LEAF");
 
                     playerGoesFirst = PlayerMoveGoesFirst(playerMove, enemyMove);
                     if (playerGoesFirst)
@@ -257,7 +258,7 @@ namespace PokemonRedux.Game.Battles
             return r <= x;
         }
 
-        private void SendOutPlayerPokemon(Pokemon pokemon, bool batonPass)
+        public void SendOutPlayerPokemon(Pokemon pokemon, bool batonPass)
         {
             var battlePokemon = new BattlePokemon(pokemon, PokemonSide.Player);
             PlayerPokemon.TransferStateTo(battlePokemon, batonPass);
@@ -265,10 +266,14 @@ namespace PokemonRedux.Game.Battles
 
             PlayerPokemon = battlePokemon;
 
-            UI.ShowMessageAndKeepOpen("Go! " + PlayerPokemon.GetDisplayName() + "!", 60);
+            if (!batonPass)
+            {
+                UI.ShowMessageAndKeepOpen("Go! " + PlayerPokemon.GetDisplayName() + "!", 60);
+            }
+            AnimationController.SetPokemonSize(PokemonSide.Player, 0f);
+            AnimationController.SetPokemonVisibility(PokemonSide.Player, true);
             AnimationController.ShowAnimation(new PokemonSizeChangeAnimation(ActiveBattle.PlayerPokemon, 0f, 1f, 0.07f), 6);
             AnimationController.ShowAnimationAndWait(new PokeballOpeningAnimation(ActiveBattle.PlayerPokemon));
-            AnimationController.SetPokemonVisibility(PokemonSide.Player, true);
             if (PlayerPokemon.Pokemon.IsShiny)
             {
                 AnimationController.ShowAnimationAndWait(new ShinyAnimation(PlayerPokemon));

@@ -72,6 +72,7 @@ namespace PokemonRedux.Game.Overworld.Entities
             if (_door.IsOpen)
             {
                 var velocity = SPEED;
+                var doorYaw = _door.Rotation.Y; // store because door might get set to null
                 if (_doorDistanceToWalk <= SPEED)
                 {
                     velocity = _doorDistanceToWalk;
@@ -86,7 +87,10 @@ namespace PokemonRedux.Game.Overworld.Entities
                 if (velocity != 0f)
                 {
                     _walking = true;
-                    Position += new Vector3(0, 0, -velocity);
+                    var movementVector = new Vector3(0, 0, -velocity);
+                    var rotation = Matrix.CreateFromYawPitchRoll(doorYaw, 0f, 0f);
+                    var adjustedVector = Vector3.Transform(movementVector, rotation);
+                    Position += adjustedVector;
                 }
             }
             else

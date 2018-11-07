@@ -20,5 +20,6 @@ namespace PokemonRedux.Screens.Battles
         void SkipPokemonStatusUI();
         void ShowLearnMoveScreen(Pokemon pokemon, PokemonMoveData moveData);
         void EndBattle(bool won);
+        Pokemon SelectPokemon();
     }
 }

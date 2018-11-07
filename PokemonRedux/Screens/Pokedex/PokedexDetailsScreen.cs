@@ -12,8 +12,6 @@ using static System.Environment;
 
 namespace PokemonRedux.Screens.Pokedex
 {
-    // TODO: footprints
-
     class PokedexDetailsScreen : Screen
     {
         private const int SELECTOR_FLICKER_DELAY = 7;
@@ -29,7 +27,7 @@ namespace PokemonRedux.Screens.Pokedex
         private readonly Func<PokedexEntry> _getNextEntry, _getPreviousEntry;
 
         private SpriteBatch _batch;
-        private Texture2D _overlay, _pageIndicators;
+        private Texture2D _overlay, _pageIndicators, _footprints;
         private PokemonFontRenderer _fontRenderer;
 
         private PokedexEntry _entry;
@@ -55,6 +53,7 @@ namespace PokemonRedux.Screens.Pokedex
 
             _overlay = Controller.Content.LoadDirect<Texture2D>("Textures/UI/Pokedex/detailsOverlay.png");
             _pageIndicators = Controller.Content.LoadDirect<Texture2D>("Textures/UI/Pokedex/pageIndicators.png");
+            _footprints = Controller.Content.LoadDirect<Texture2D>("Textures/UI/Pokedex/footprints.png");
 
             _fontRenderer = new PokemonFontRenderer();
             _fontRenderer.LoadContent();
@@ -103,6 +102,15 @@ namespace PokemonRedux.Screens.Pokedex
                 "HT" + _height + NewLine +
                 "WT" + _weight,
                 new Vector2(startX + Border.SCALE * 3 + unit * 8, unit * 3), Border.DefaultWhite, Border.SCALE);
+
+            // footprint
+            // 16 footprints per row
+            var footprintTextureX = ((_entry.Id - 1) % 16) * 16;
+            var footprintTextureY = (int)Math.Floor((_entry.Id - 1) / 16d) * 16;
+            _batch.Draw(_footprints, new Rectangle(
+                (int)(startX + unit * 17 + Border.SCALE * 3),
+                unit, unit * 2, unit * 2),
+                new Rectangle(footprintTextureX, footprintTextureY, 16, 16), Color.White);
 
             if (_entry.IsCaught)
             {

@@ -91,7 +91,6 @@ namespace PokemonRedux.Game
 
             // load pokemon from save data
             PartyPokemon = _data.pokemon.Select(p => Pokemon.Get(p)).ToArray();
-
             // load boxes from save data
             Boxes = _data.boxes.Select(b => new StorageBox(b)).ToArray();
 

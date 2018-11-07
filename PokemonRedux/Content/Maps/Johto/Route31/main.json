@@ -21,6 +21,13 @@
       "tileTexture": true
     },
     {
+      "id": "doormat",
+      "type": "floor",
+      "geometry": "plane",
+      "textureFile": "Johto/Outside/doormat",
+      "tileTexture": true
+    },
+    {
       "id": "grassFloorProp",
       "type": "prop",
       "geometry": "plane",
@@ -44,7 +51,7 @@
     },
     {
       "id": "tallGrass",
-      "type": "prop",
+      "type": "grass",
       "geometry": "billboard",
       "textureFile": "Johto/Outside/tallGrass",
       "size": [ 0.5, 0.5, 0.5 ],
@@ -153,6 +160,12 @@
       ],
       "size": [ 0.5, 0.5, 0.5 ],
       "hasCollision": false
+    },
+    {
+      "id": "door",
+      "type": "door",
+      "geometry": "wall",
+      "textureFile": "Johto/Outside/door"
     }
   ],
   "entities": [
@@ -257,6 +270,12 @@
       "id": "pathFloor",
       "position": [ 5, 1, 6 ],
       "size": [ 9, 2 ]
+    },
+
+    {
+      "id": "doormat",
+      "position": [ 4, 1, 6 ],
+      "size": [ 1, 2 ]
     },
 
 
@@ -640,8 +659,16 @@
     },
     {
       "type": "field",
-      "position": [ 0, 0.666, 8 ],
-      "size": [ 6, 4 ],
+      "position": [ 4, 0.666, 8 ],
+      "size": [ 2, 1 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 0, 0.666, 9 ],
+      "size": [ 6, 3 ],
       "entity": {
         "id": "tree"
       }
@@ -657,7 +684,15 @@
     {
       "type": "field",
       "position": [ 0, 0.666, 4 ],
-      "size": [ 6, 2 ],
+      "size": [ 6, 1 ],
+      "entity": {
+        "id": "tree"
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 4, 0.666, 5 ],
+      "size": [ 2, 1 ],
       "entity": {
         "id": "tree"
       }
@@ -917,6 +952,204 @@
           "elevation": [ 0.9, 0.9, 0, 0 ]
         }
       ]
+    },
+
+
+    // gate
+    {
+      "type": "prop",
+      "position": [ 0, 1, 5 ],
+      "geometry": "walls",
+      "textureFile": "Johto/Route31/gate",
+      "textures": [
+        [ 0, 32, 64, 32 ],
+        [ 0, 0, 0, 0 ],
+        [ 0, 32, 64, 32 ],
+        [ 0, 0, 0, 0 ]
+      ],
+      "size": [ 4, 2, 4 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 0, 2, 5 ],
+      "geometry": "walls",
+      "textureFile": "Johto/Route31/gate",
+      "textures": [
+        [ 0, 0, 0, 0 ],
+        [ 0, 0, 64, 16 ],
+        [ 0, 0, 0, 0 ],
+        [ 0, 0, 64, 16 ]
+      ],
+      "size": [ 4, 1, 4 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 3, 1, 8 ],
+      "geometry": "wall",
+      "textureFile": "Johto/Route31/gate",
+      "textures": [
+        [ 0, 16, 16, 16 ]
+      ],
+      "rotation": [ 0, 1, 0 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 3, 1, 5 ],
+      "geometry": "wall",
+      "textureFile": "Johto/Route31/gate",
+      "textures": [
+        [ 48, 16, 16, 16 ]
+      ],
+      "rotation": [ 0, 1, 0 ]
+    },
+
+    // roof
+    {
+      "type": "prop",
+      "position": [ 0, 3, 5 ],
+      "geometry": "walls",
+      "textureFile": "Johto/Route31/gate",
+      "textures": [
+        [ 64, 0, 16, 4 ]
+      ],
+      "size": [ 4, 0.25, 4 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 0, 3.625, 8.5 ],
+      "geometry": "corner",
+      "textureFile": "Johto/Route31/gate",
+      "textures": [
+        [ 64, 4, 16, 7 ]
+      ],
+      "size": [ 0.5, 0.25, 0.5 ],
+      "rotation": [ 0, 1, 0 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 3.5, 3.625, 8.5 ],
+      "geometry": "corner",
+      "textureFile": "Johto/Route31/gate",
+      "textures": [
+        [ 64, 4, 16, 7 ]
+      ],
+      "size": [ 0.5, 0.25, 0.5 ],
+      "rotation": [ 0, 2, 0 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 0.5, 3.5, 8.5 ],
+      "geometry": "plane",
+      "textureFile": "Johto/Route31/gate",
+      "textures": [
+        [ 64, 4, 16, 7 ]
+      ],
+      "size": [ 3, 0.5, 0.5 ],
+      "elevation": [ 0.25, 0.25, 0, 0 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 2.25, 3.5, 6.75 ],
+      "geometry": "plane",
+      "textureFile": "Johto/Route31/gate",
+      "textures": [
+        [ 64, 4, 16, 7 ]
+      ],
+      "size": [ 3, 0.5, 0.5 ],
+      "elevation": [ 0.25, 0.25, 0, 0 ],
+      "rotation": [ 0, 1, 0 ]
+    },
+    {
+      "type": "prop",
+      "position": [ -1.25, 3.5, 6.75 ],
+      "geometry": "plane",
+      "textureFile": "Johto/Route31/gate",
+      "textures": [
+        [ 64, 4, 16, 7 ]
+      ],
+      "size": [ 3, 0.5, 0.5 ],
+      "elevation": [ 0.25, 0.25, 0, 0 ],
+      "rotation": [ 0, 3, 0 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 0.5, 3.5, 5 ],
+      "geometry": "plane",
+      "textureFile": "Johto/Route46/gate",
+      "textures": [
+        [ 64, 4, 16, 7 ]
+      ],
+      "size": [ 3, 0.5, 0.5 ],
+      "elevation": [ 0, 0, 0.25, 0.25 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 0, 3.625, 5 ],
+      "geometry": "corner",
+      "textureFile": "Johto/Route46/gate",
+      "textures": [
+        [ 64, 4, 16, 7 ]
+      ],
+      "size": [ 0.5, 0.25, 0.5 ],
+      "rotation": [ 0, 0, 0 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 3.5, 3.625, 5 ],
+      "geometry": "corner",
+      "textureFile": "Johto/Route46/gate",
+      "textures": [
+        [ 64, 4, 16, 7 ]
+      ],
+      "size": [ 0.5, 0.25, 0.5 ],
+      "rotation": [ 0, 3, 0 ]
+    },
+    {
+      "type": "prop",
+      "position": [ 0.5, 3.5, 5.5 ],
+      "geometry": "plane",
+      "textureFile": "Johto/Route31/gateRoof",
+      "tileTexture": true,
+      "size": [ 3, 3 ]
+    },
+
+    {
+      "type": "prop",
+      "position": [ 3, 1, 6 ],
+      "rotation": [ 0, 1, 0 ],
+      "geometry": "houseInside",
+      "textureFile": "Johto/Outside/houseInside"
+    },
+    {
+      "type": "prop",
+      "position": [ 3, 1, 7 ],
+      "rotation": [ 0, 1, 0 ],
+      "geometry": "houseInside",
+      "textureFile": "Johto/Outside/houseInside"
+    },
+
+    // doors
+    {
+      "id": "door",
+      "position": [ 3, 1, 6 ],
+      "rotation": [ 0, 1, 0 ],
+      "doorData": {
+        "warpData": {
+          "map": "Maps/Johto/Route31/main.json",
+          "position": [ 13, 1, 7 ]
+        }
+      }
+    },
+    {
+      "id": "door",
+      "position": [ 3, 1, 7 ],
+      "rotation": [ 0, 1, 0 ],
+      "doorData": {
+        "warpData": {
+          "map": "Maps/Johto/Route31/main.json",
+          "position": [ 13, 1, 7 ]
+        }
+      }
     }
 
   ]

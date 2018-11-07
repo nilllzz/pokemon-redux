@@ -1,5 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using PokemonRedux.Game.Data;
 using System;
 
 namespace PokemonRedux.Game.Data.Entities

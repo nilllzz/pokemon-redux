@@ -21,6 +21,7 @@ namespace PokemonRedux.Screens.Pokemons
         private Screen _preScreen;
         private string _instructionText;
         private PartyMode _mode;
+        private bool _forceSelection; // cannot cancel out of the screen, no menu when selecting pokemon, selects directly
 
         // held item selection
         private Item _giveItem;
@@ -54,9 +55,10 @@ namespace PokemonRedux.Screens.Pokemons
             Initialize(preScreen, PartyMode.Summary);
         }
 
-        public PartyScreen(Screen preScreen, Pokemon currentlyBattling)
+        public PartyScreen(Screen preScreen, Pokemon currentlyBattling, bool forceSelection)
         {
             _currentlyBattling = currentlyBattling;
+            _forceSelection = forceSelection;
             Initialize(preScreen, PartyMode.Battle);
         }
 
@@ -357,7 +359,10 @@ namespace PokemonRedux.Screens.Pokemons
                 {
                     if (Index == Controller.ActivePlayer.PartyPokemon.Length)
                     {
-                        Close();
+                        if (!_forceSelection)
+                        {
+                            Close();
+                        }
                     }
                     else
                     {
@@ -372,7 +377,10 @@ namespace PokemonRedux.Screens.Pokemons
                     }
                     else
                     {
-                        Close();
+                        if (!_forceSelection)
+                        {
+                            Close();
+                        }
                     }
                 }
             }
@@ -429,9 +437,16 @@ namespace PokemonRedux.Screens.Pokemons
                     AttachMail();
                     break;
                 case PartyMode.Battle:
-                    _options.BufferRight = 0;
-                    _options.Show(new[] { "SWITCH", "STATS", "CANCEL" });
-                    _options.OptionSelected += BattleOptionSelected;
+                    if (_forceSelection)
+                    {
+                        SwitchIntoPokemon();
+                    }
+                    else
+                    {
+                        _options.BufferRight = 0;
+                        _options.Show(new[] { "SWITCH", "STATS", "CANCEL" });
+                        _options.OptionSelected += BattleOptionSelected;
+                    }
                     break;
             }
         }
@@ -753,20 +768,7 @@ namespace PokemonRedux.Screens.Pokemons
             switch (index)
             {
                 case 0: // SWITCH
-                    var selectedPokemon = Controller.ActivePlayer.PartyPokemon[Index];
-                    if (selectedPokemon == _currentlyBattling)
-                    {
-                        _textbox.Show(selectedPokemon.DisplayName + "\nis already out.");
-                    }
-                    else if (selectedPokemon.CanBattle)
-                    {
-                        SelectedPokemon?.Invoke(Index);
-                        Close();
-                    }
-                    else
-                    {
-                        _textbox.Show("There^'s no will to\nbattle!");
-                    }
+                    SwitchIntoPokemon();
                     break;
                 case 1: // STATS
                     // open summary screen
@@ -776,6 +778,24 @@ namespace PokemonRedux.Screens.Pokemons
                         GetComponent<ScreenManager>().SetScreen(summaryScreen);
                     }
                     break;
+            }
+        }
+
+        private void SwitchIntoPokemon()
+        {
+            var selectedPokemon = Controller.ActivePlayer.PartyPokemon[Index];
+            if (selectedPokemon == _currentlyBattling)
+            {
+                _textbox.Show(selectedPokemon.DisplayName + "\nis already out.");
+            }
+            else if (selectedPokemon.CanBattle)
+            {
+                SelectedPokemon?.Invoke(Index);
+                Close();
+            }
+            else
+            {
+                _textbox.Show("There^'s no will to\nbattle!");
             }
         }
 

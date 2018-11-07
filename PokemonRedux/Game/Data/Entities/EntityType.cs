@@ -7,6 +7,7 @@
         Field,
         Struct,
         Door,
-        Script
+        Script,
+        Grass,
     }
 }

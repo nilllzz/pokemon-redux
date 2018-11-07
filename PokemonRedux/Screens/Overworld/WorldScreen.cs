@@ -85,12 +85,14 @@ namespace PokemonRedux.Screens.Overworld
 
             World.IsPaused = Textbox.Visible || StartMenu.Visible || EncounterStarted;
 
+#if DEBUG
             if (GetComponent<GameDevCommon.Input.KeyboardHandler>().KeyPressed(Microsoft.Xna.Framework.Input.Keys.B))
             {
                 EncounterStarted = true;
                 (_shader as WorldShader).StartEncounter();
                 (_shader as WorldShader).EncounterAnimationFinished += EncounterFlashAnimationFinished;
             }
+#endif
 
             _shader.Update();
             _encounterAnimation?.Update(gameTime);
@@ -145,7 +147,7 @@ namespace PokemonRedux.Screens.Overworld
             EncounterStarted = false;
 
             // load battle screen
-            var battleScreen = new WildBattleScreen(this, Pokemon.Get(16, 2));
+            var battleScreen = new WildBattleScreen(this, Pokemon.Get(87, 35));
             battleScreen.LoadContent();
             GetComponent<ScreenManager>().SetScreen(battleScreen);
         }

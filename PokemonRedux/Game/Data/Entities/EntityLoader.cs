@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using PokemonRedux.Game.Overworld.Entities;
+using System;
 using System.Collections.Generic;
 
 namespace PokemonRedux.Game.Data.Entities
@@ -22,37 +23,39 @@ namespace PokemonRedux.Game.Data.Entities
                     return new[] { new Floor(data) };
                 case EntityType.Door:
                     return new[] { new Door(data) };
+                case EntityType.Grass:
+                    return new[] { new Grass(data) };
                 case EntityType.Script:
                     return new[] { new ScriptTrigger(data) };
                 case EntityType.Field:
                     if (data.entity != null)
                     {
-                        var fieldEnt = data.entity.Clone();
-                        var fieldEntDef = levelData.GetDefinitionForId(fieldEnt.id);
+                        var fieldEntData = data.entity.Clone();
+                        var fieldEntDef = levelData.GetDefinitionForId(fieldEntData.id);
                         if (fieldEntDef != null)
                         {
-                            fieldEnt.ApplyDefinitionData(fieldEntDef);
+                            fieldEntData.ApplyDefinitionData(fieldEntDef);
                         }
 
                         var size = data.Size2;
                         var steps = data.Steps;
                         var initialPosition = data.Position;
-                        fieldEnt.AddToPosition(initialPosition);
+                        fieldEntData.AddToPosition(initialPosition);
 
-                        if (fieldEnt.isOpaque)
+                        if (fieldEntData.isOpaque)
                         {
-                            return new[] { new Prop(fieldEnt, size, steps) };
+                            return new[] { InstantiateFieldEntity(fieldEntData, size, steps) };
                         }
                         else
                         {
                             // if the entity is not opaque, create multiple rows instead to ensure sorting
                             var result = new List<Entity>();
-                            for (int z = 0; z < size.Y; z++)
+                            for (var z = 0; z < size.Y; z++)
                             {
                                 var rowSize = new Vector2(size.X, 1);
-                                var rowEnt = fieldEnt.Clone();
-                                rowEnt.AddToPosition(new Vector3(0, 0, z * steps.Y));
-                                result.Add(new Prop(rowEnt, rowSize, steps));
+                                var rowEntData = fieldEntData.Clone();
+                                rowEntData.AddToPosition(new Vector3(0, 0, z * steps.Y));
+                                result.Add(InstantiateFieldEntity(rowEntData, rowSize, steps));
                             }
 
                             return result.ToArray();
@@ -87,5 +90,16 @@ namespace PokemonRedux.Game.Data.Entities
             return null;
         }
 
+        private static Entity InstantiateFieldEntity(EntityData data, Vector2 fieldSize, Vector2 steps)
+        {
+            switch (data.EntityType)
+            {
+                case EntityType.Prop:
+                    return new Prop(data, fieldSize, steps);
+                case EntityType.Grass:
+                    return new Grass(data, fieldSize, steps);
+            }
+            throw new Exception($"Entity type {data.EntityType} cannot be in a field.");
+        }
     }
 }

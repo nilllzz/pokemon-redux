@@ -53,7 +53,19 @@
     <Content Include="Content\Textures\Battle\Animations\amnesia.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Textures\Battle\Animations\ancientpower.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Battle\Animations\aurorabeam.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Textures\Battle\Animations\barrage.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Battle\Animations\batonpass.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Battle\Animations\bellydrum.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\Battle\Animations\bind.png">
@@ -120,6 +132,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\Battle\Animations\rapidspin.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Battle\Animations\barrier.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Battle\Animations\razorleaf.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\Battle\Animations\reflect.png">
@@ -750,6 +768,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\UI\NewGame\player.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\UI\Pokedex\footprints.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\UI\Title\clouds.png">
@@ -1687,9 +1708,14 @@
     <Compile Include="Game\Battles\Moves\Acid.cs" />
     <Compile Include="Game\Battles\Moves\Agility.cs" />
     <Compile Include="Game\Battles\Moves\Amnesia.cs" />
+    <Compile Include="Game\Battles\Moves\Ancientpower.cs" />
+    <Compile Include="Game\Battles\Moves\AuroraBeam.cs" />
     <Compile Include="Game\Battles\Moves\Barrage.cs" />
+    <Compile Include="Game\Battles\Moves\Barrier.cs" />
+    <Compile Include="Game\Battles\Moves\BatonPass.cs" />
     <Compile Include="Game\Battles\Moves\BattleMove.cs" />
     <Compile Include="Game\Battles\Moves\BattleMoveAttribute.cs" />
+    <Compile Include="Game\Battles\Moves\BellyDrum.cs" />
     <Compile Include="Game\Battles\Moves\Bite.cs" />
     <Compile Include="Game\Battles\Moves\BodySlam.cs" />
     <Compile Include="Game\Battles\Moves\Charm.cs" />
@@ -1698,6 +1724,7 @@
     <Compile Include="Game\Battles\Moves\HornAttack.cs" />
     <Compile Include="Game\Battles\Moves\Lick.cs" />
     <Compile Include="Game\Battles\Moves\Peck.cs" />
+    <Compile Include="Game\Battles\Moves\RazorLeaf.cs" />
     <Compile Include="Game\Battles\Moves\Slam.cs" />
     <Compile Include="Game\Battles\Moves\TailWhip.cs" />
     <Compile Include="Game\Battles\Moves\Wrap.cs" />
@@ -1737,12 +1764,18 @@
     <Compile Include="Game\Battles\MoveHelper.cs" />
     <Compile Include="Game\Data\KeyboardData.cs" />
     <Compile Include="Game\Data\OptionsData.cs" />
+    <Compile Include="Game\Overworld\Entities\Grass.cs" />
     <Compile Include="Game\PokedexHelper.cs" />
     <Compile Include="Game\Options.cs" />
     <Compile Include="Screens\Battles\Animations\AsleepAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\BattleMoveAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\Moves\AgilityAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\Moves\AmnesiaAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\AncientpowerAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\AuroraBeamAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\BarrierAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\BatonPassAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\BellyDrumAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\Moves\BiteAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\ConfusedAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\Moves\AcidAnimation.cs" />
@@ -1754,6 +1787,7 @@
     <Compile Include="Screens\Battles\Animations\Moves\HornAttackAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\Moves\LickAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\Moves\PeckAnimation.cs" />
+    <Compile Include="Screens\Battles\Animations\Moves\RazorLeafAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\Moves\SlamAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\Moves\TailWhipAnimation.cs" />
     <Compile Include="Screens\Battles\Animations\Moves\WrapAnimation.cs" />

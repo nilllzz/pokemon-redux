@@ -274,10 +274,15 @@ namespace PokemonRedux.Screens.Battles
                         case 0: // FIGHT
                             // TODO: struggle
                             _menuState = BattleMenuState.Fight;
+                            // after switching pokemon, the cursor for move selection might be in an invalid position
+                            if (_moveMenuIndex >= Battle.ActiveBattle.PlayerPokemon.Pokemon.Moves.Length)
+                            {
+                                _moveMenuIndex = 0;
+                            }
                             break;
                         case 1: // PKMN
                             {
-                                var partyScreen = new PartyScreen(this, Battle.ActiveBattle.PlayerPokemon.Pokemon);
+                                var partyScreen = new PartyScreen(this, Battle.ActiveBattle.PlayerPokemon.Pokemon, false);
                                 partyScreen.LoadContent();
                                 partyScreen.SelectedPokemon += SelectedPokemonForSwitch;
                                 GetComponent<ScreenManager>().SetScreen(partyScreen);
@@ -640,6 +645,31 @@ namespace PokemonRedux.Screens.Battles
         {
             _playerPokemonStatus.SkipToTarget();
             _enemyPokemonStatus.SkipToTarget();
+        }
+
+        private bool _pokemonSelectedLock = false;
+        private int _selectedPokemonPartyIndex = 0;
+
+        public Pokemon SelectPokemon()
+        {
+            _pokemonSelectedLock = false;
+
+            var partyScreen = new PartyScreen(this, Battle.ActiveBattle.PlayerPokemon.Pokemon, true);
+            partyScreen.LoadContent();
+            partyScreen.SelectedPokemon += OnPokemonSelected;
+            var screenManager = GetComponent<ScreenManager>();
+            screenManager.SetScreen(partyScreen);
+
+            SpinWait.SpinUntil(() => screenManager.ActiveScreen.GetType() != typeof(PartyScreen));
+
+            var pokemon = Controller.ActivePlayer.PartyPokemon[_selectedPokemonPartyIndex];
+            return pokemon;
+        }
+
+        private void OnPokemonSelected(int index)
+        {
+            _selectedPokemonPartyIndex = index;
+            _pokemonSelectedLock = true;
         }
 
         #endregion

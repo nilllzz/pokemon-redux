@@ -595,7 +595,7 @@
     "name": "THUNDERBOLT",
     "type": "electric",
     "maxPP": 15,
-    "description": "----",
+    "description": "An attack that may\ncause paralysis.",
     "attk": 95
   },
   {
@@ -1199,7 +1199,7 @@
     "name": "NIGHTMARE",
     "type": "ghost",
     "maxPP": 15,
-    "description": "----",
+    "description": "A sleeper loses\n1/4 HP every turn.",
     "attk": -1
   },
   {
@@ -1311,14 +1311,14 @@
     "name": "BELLY DRUM",
     "type": "normal",
     "maxPP": 10,
-    "description": "----",
+    "description": "Reduces own HP to\nmaximize ATTACK.",
     "attk": -1
   },
   {
     "name": "SLUDGE BOMB",
     "type": "poison",
     "maxPP": 10,
-    "description": "----",
+    "description": "An attack that may\npoison the foe.",
     "attk": 90
   },
   {
@@ -1381,7 +1381,7 @@
     "name": "DETECT",
     "type": "fighting",
     "maxPP": 5,
-    "description": "----",
+    "description": "Evades attack that\nturn. It may fail.",
     "attk": -1
   },
   {
@@ -1514,7 +1514,7 @@
     "name": "RETURN",
     "type": "normal",
     "maxPP": 20,
-    "description": "----",
+    "description": "An attack that is\nbased on loyalty.",
     "attk": -1
   },
   {
@@ -1528,7 +1528,7 @@
     "name": "FRUSTRATION",
     "type": "normal",
     "maxPP": 20,
-    "description": "----",
+    "description": "An attack based on\nlack of loyalty.",
     "attk": -1
   },
   {
@@ -1724,7 +1724,7 @@
     "name": "ANCIENTPOWER",
     "type": "rock",
     "maxPP": 5,
-    "description": "----",
+    "description": "An attack that may\nraise all stats.",
     "attk": 60
   },
   {

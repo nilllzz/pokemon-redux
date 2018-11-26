@@ -6,6 +6,7 @@
     "Maps/Johto/Cherrygrove/main.json",
     "Maps/Johto/Route31/main.json"
   ],
+  "encounterData": "Johto/Route30.json",
   "definitions": [
     {
       "id": "grassFloor",
@@ -45,7 +46,7 @@
     },
     {
       "id": "tallGrass",
-      "type": "prop",
+      "type": "grass",
       "geometry": "billboard",
       "textureFile": "Johto/Outside/tallGrass",
       "size": [ 0.5, 0.5, 0.5 ],

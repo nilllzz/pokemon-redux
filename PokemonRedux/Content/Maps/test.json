@@ -7,7 +7,17 @@
       "textureFile": "tree.png",
       "size": [ 1, 2 ],
       "isOpaque": false
-    }
+    },
+    {
+      "id": "tallGrass",
+      "type": "grass",
+      "geometry": "billboard",
+      "textureFile": "Johto/Outside/tallGrass",
+      "size": [ 0.5, 0.5, 0.5 ],
+      "isOpaque": false,
+      "hasCollision": false,
+      "billboardTilt": 1.2
+    },
   ],
   "entities": [
     {
@@ -16,6 +26,15 @@
       "entity": {
         "id": "tree",
         "position": [ 0, -0.333, -3 ]
+      }
+    },
+    {
+      "type": "field",
+      "position": [ 2, 0.25, 5 ],
+      "size": [ 4, 1 ],
+      "steps": [ 0.5, 0.5 ],
+      "entity": {
+        "id": "tallGrass"
       }
     },
     {

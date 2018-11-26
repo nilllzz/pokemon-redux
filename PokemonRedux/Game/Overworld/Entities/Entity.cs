@@ -75,7 +75,7 @@ namespace PokemonRedux.Game.Overworld.Entities
 
         public virtual bool DoesCollide(CollisionType collisionType, Vector3 position, Vector3 size, Entity other)
         {
-            if (!_data.hasCollision)
+            if (!_data.hasCollision && collisionType != CollisionType.Grass)
                 return false;
 
             return

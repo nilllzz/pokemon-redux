@@ -1,5 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using PokemonRedux.Game.Data;
 using System.Linq;
 
 namespace PokemonRedux.Game.Data.Entities
@@ -13,6 +12,7 @@ namespace PokemonRedux.Game.Data.Entities
         public EntityData[] entities;
         public float[] worldOffset;
         public string[] loadMaps;
+        public string encounterData;
 #pragma warning restore 0649
 
         public Vector3 WorldOffset => DataHelper.GetVector3(worldOffset, 0f);

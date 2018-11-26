@@ -18,7 +18,7 @@ namespace PokemonRedux.Game.Overworld
             var key = file.ToLower();
             if (!_dataBuffer.TryGetValue(key, out var encounter))
             {
-                var contents = Controller.Content.LoadDirect<string>(file);
+                var contents = Controller.Content.LoadDirect<string>($"Data/Encounters/{file}");
                 var data = JsonConvert.DeserializeObject<EncounterData[]>(contents);
                 encounter = new Encounter(data);
                 _dataBuffer.Add(key, encounter);

@@ -18,6 +18,7 @@ namespace PokemonRedux.Screens.Overworld
         private LocationSign _locationSign;
         private FontRenderer _fontRenderer;
         private EncounterTransitionAnimation _encounterAnimation;
+        private EncounterResult _activeEncounterResult;
 
         public bool EncounterStarted { get; private set; }
         public World World { get; private set; }
@@ -31,6 +32,7 @@ namespace PokemonRedux.Screens.Overworld
             _locationSign = new LocationSign();
             _locationSign.LoadContent();
             World.MapChanged += MapChanged;
+            World.WildPokemonEncountered += OnWildEncounter;
 
             Textbox = new Textbox();
             Textbox.LoadContent();
@@ -88,9 +90,7 @@ namespace PokemonRedux.Screens.Overworld
 #if DEBUG
             if (GetComponent<GameDevCommon.Input.KeyboardHandler>().KeyPressed(Microsoft.Xna.Framework.Input.Keys.B))
             {
-                EncounterStarted = true;
-                (_shader as WorldShader).StartEncounter();
-                (_shader as WorldShader).EncounterAnimationFinished += EncounterFlashAnimationFinished;
+                OnWildEncounter(new EncounterResult { Id = 152, Level = 5 });
             }
 #endif
 
@@ -147,7 +147,7 @@ namespace PokemonRedux.Screens.Overworld
             EncounterStarted = false;
 
             // load battle screen
-            var battleScreen = new WildBattleScreen(this, Pokemon.Get(87, 35));
+            var battleScreen = new WildBattleScreen(this, Pokemon.Get(_activeEncounterResult.Id, _activeEncounterResult.Level));
             battleScreen.LoadContent();
             GetComponent<ScreenManager>().SetScreen(battleScreen);
         }
@@ -171,6 +171,16 @@ namespace PokemonRedux.Screens.Overworld
         public void ShowTextbox(string text, bool skip)
         {
             Textbox.Show(text);
+        }
+
+        private void OnWildEncounter(EncounterResult encounterResult)
+        {
+            _activeEncounterResult = encounterResult;
+
+            EncounterStarted = true;
+
+            (_shader as WorldShader).StartEncounter();
+            (_shader as WorldShader).EncounterAnimationFinished += EncounterFlashAnimationFinished;
         }
     }
 }

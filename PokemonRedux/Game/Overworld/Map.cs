@@ -9,11 +9,14 @@ namespace PokemonRedux.Game.Overworld
 {
     class Map
     {
+        private MapData _data;
+
         public World World { get; }
         public Vector3 Offset { get; private set; }
         public string MapFile { get; }
-        public MapData Data { get; private set; }
-        public string Name => Data.name;
+        public string Name => _data.name;
+        public string[] LoadMaps => _data.loadMaps;
+        public string EncounterData => _data.encounterData;
 
         public Map(World world, string mapFile)
         {
@@ -29,13 +32,13 @@ namespace PokemonRedux.Game.Overworld
         private void LoadMap()
         {
             var mapDef = Controller.Content.LoadDirect<string>(MapFile);
-            Data = JsonConvert.DeserializeObject<MapData>(mapDef);
+            _data = JsonConvert.DeserializeObject<MapData>(mapDef);
 
-            Offset = Data.WorldOffset;
+            Offset = _data.WorldOffset;
 
-            foreach (var entityData in Data.entities)
+            foreach (var entityData in _data.entities)
             {
-                var entities = EntityLoader.InstantiateEntities(Data, entityData);
+                var entities = EntityLoader.InstantiateEntities(_data, entityData);
                 if (entities != null)
                 {
                     foreach (var entity in entities)

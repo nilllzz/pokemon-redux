@@ -14,6 +14,7 @@ namespace PokemonRedux.Game.Overworld.Entities
         private bool _enteringDoor = false;
         private Door _door = null;
         private float _doorDistanceToWalk = 0f;
+        private int _stepsInGrass = 0;
 
         private bool _warping = false;
 
@@ -243,6 +244,18 @@ namespace PokemonRedux.Game.Overworld.Entities
                 if (ctrlDown || targetPosition.Y - 0.25f <= Position.Y)
                 {
                     Position = targetPosition;
+                }
+
+                // wild encounters through grass
+                var isInGrass = Map.World.IsInGrass(Position, new Vector3(0.1f, 1f, 0.1f), this);
+                if (isInGrass)
+                {
+                    _stepsInGrass++;
+                    var encountered = Map.World.TryWildEncounter(_stepsInGrass);
+                    if (encountered)
+                    {
+                        _stepsInGrass = 0;
+                    }
                 }
             }
         }

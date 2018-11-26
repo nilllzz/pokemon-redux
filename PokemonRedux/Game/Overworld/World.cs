@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using PokemonRedux.Content;
+using PokemonRedux.Game.Data;
 using PokemonRedux.Game.Data.Entities;
 using PokemonRedux.Game.Overworld.Entities;
 using PokemonRedux.Scripting;
@@ -16,6 +17,8 @@ namespace PokemonRedux.Game.Overworld
 {
     class World
     {
+        private static Random _random = new Random();
+
         private List<Map> _loadedMaps = new List<Map>();
         private RenderObjectCollection<Entity> _entities = new RenderObjectCollection<Entity>();
         private double _daytimeDelayCheck = 0;
@@ -49,13 +52,14 @@ namespace PokemonRedux.Game.Overworld
                 }
             }
         }
+        public ScriptManager ScriptManager { get; private set; }
 
         public bool PlayerCanMove => !_warping && !IsPaused;
 
         public bool IsPaused { get; set; }
 
         public event Action MapChanged;
-        public ScriptManager ScriptManager { get; private set; }
+        public event Action<EncounterResult> WildPokemonEncountered;
 
         public World()
         {
@@ -98,15 +102,15 @@ namespace PokemonRedux.Game.Overworld
                 }
 
                 // load attached maps
-                if (ActiveMap.Data.loadMaps != null)
+                if (ActiveMap.LoadMaps != null)
                 {
-                    foreach (var map in ActiveMap.Data.loadMaps)
+                    foreach (var map in ActiveMap.LoadMaps)
                     {
                         LoadMap(map);
                     }
                 }
                 // clear all maps that are not needed anymore
-                ClearLoaded(ActiveMap.Data.loadMaps);
+                ClearLoaded(ActiveMap.LoadMaps);
 
                 PlayerEntity.Map = ActiveMap;
 
@@ -319,6 +323,19 @@ namespace PokemonRedux.Game.Overworld
             return ent;
         }
 
+        public bool IsInGrass(Vector3 position, Vector3 size, Entity other)
+        {
+            var grass = _entities.Where(e => e is Grass).ToArray();
+            for (var i = 0; i < grass.Length; i++)
+            {
+                if (grass[i].DoesCollide(CollisionType.Grass, position, size, other))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public void StartScript(string file)
         {
             if (!ScriptManager.IsActive)
@@ -344,6 +361,22 @@ namespace PokemonRedux.Game.Overworld
             {
                 return Daytime.Day;
             }
+        }
+
+        // returns whether a wild encounter has started
+        public bool TryWildEncounter(int steps)
+        {
+            if (_random.Next(0, 250) == 0 && steps > 20)
+            {
+                var encounter = Encounter.Get(ActiveMap.EncounterData);
+                var result = encounter.GetResult(EncounterMethod.Grass, _daytime);
+                if (result.HasValue)
+                {
+                    WildPokemonEncountered?.Invoke(result.Value);
+                }
+                return true;
+            }
+            return false;
         }
     }
 }

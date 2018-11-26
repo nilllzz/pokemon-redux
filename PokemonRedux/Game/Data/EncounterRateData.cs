@@ -1,4 +1,5 @@
 ﻿using PokemonRedux.Game.Overworld;
+using System.Linq;
 
 namespace PokemonRedux.Game.Data
 {
@@ -6,14 +7,14 @@ namespace PokemonRedux.Game.Data
     {
         // disable warning for non-assignment for json properties
 #pragma warning disable 0649
-        public string time;
+        public string[] time;
         public int chance; // in % (0-100)
         public int[] levels;
 #pragma warning restore 0649
 
         private EncounterData _parent;
 
-        public Daytime Time => DataHelper.ParseEnum<Daytime>(time);
+        public Daytime[] Time => time.Select(t => DataHelper.ParseEnum<Daytime>(t)).ToArray();
 
         public void SetParent(EncounterData data)
         {

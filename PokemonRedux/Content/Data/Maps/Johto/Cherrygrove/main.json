@@ -3,8 +3,8 @@
   "name": "Cherrygrove City",
   "worldOffset": [ -40, 0, 0 ],
   "loadMaps": [
-    "Maps/Johto/Route29/main.json",
-    "Maps/Johto/Route30/main.json"
+    "Johto/Route29/main.json",
+    "Johto/Route30/main.json"
   ],
   "definitions": [
     {
@@ -721,7 +721,7 @@
       "position": [ 29, 0, 3 ],
       "doorData": {
         "warpData": {
-          "map": "Maps/Johto/Cherrygrove/main.json",
+          "map": "Johto/Cherrygrove/main.json",
           "position": [ 11, 0, 8 ]
         }
       }
@@ -731,7 +731,7 @@
       "position": [ 23, 0, 3 ],
       "doorData": {
         "warpData": {
-          "map": "Maps/Johto/Cherrygrove/main.json",
+          "map": "Johto/Cherrygrove/main.json",
           "position": [ 11, 0, 8 ]
         }
       }
@@ -741,7 +741,7 @@
       "position": [ 17, 0, 7 ],
       "doorData": {
         "warpData": {
-          "map": "Maps/Johto/Cherrygrove/main.json",
+          "map": "Johto/Cherrygrove/main.json",
           "position": [ 11, 0, 8 ]
         }
       }
@@ -751,7 +751,7 @@
       "position": [ 25, 0, 9 ],
       "doorData": {
         "warpData": {
-          "map": "Maps/Johto/Cherrygrove/main.json",
+          "map": "Johto/Cherrygrove/main.json",
           "position": [ 11, 0, 8 ]
         }
       }
@@ -761,7 +761,7 @@
       "position": [ 31, 0, 11 ],
       "doorData": {
         "warpData": {
-          "map": "Maps/Johto/Cherrygrove/main.json",
+          "map": "Johto/Cherrygrove/main.json",
           "position": [ 11, 0, 8 ]
         }
       }

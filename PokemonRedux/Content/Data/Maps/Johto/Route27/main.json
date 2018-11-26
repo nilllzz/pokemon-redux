@@ -3,7 +3,7 @@
   "name": "Route 27",
   "worldOffset": [ 80, 0, 0 ],
   "loadMaps": [
-    "Maps/Johto/NewBark/main.json"
+    "Johto/NewBark/main.json"
   ],
   "definitions": [
     {

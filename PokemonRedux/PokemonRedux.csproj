@@ -1643,40 +1643,46 @@
     <Content Include="Content\Fonts\main.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Maps\Johto\Cherrygrove\main.json">
+    <Content Include="Content\Data\Maps\Johto\Cherrygrove\main.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Maps\Johto\NewBark\house0.json">
+    <Content Include="Content\Data\Maps\Johto\NewBark\house0.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Maps\Johto\NewBark\house1.json">
+    <Content Include="Content\Data\Maps\Johto\NewBark\house1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Maps\Johto\NewBark\main.json">
+    <Content Include="Content\Data\Maps\Johto\NewBark\main.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Maps\Johto\Route27\main.json">
+    <Content Include="Content\Data\Maps\Johto\Route27\main.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Maps\Johto\Route29\main.json">
+    <Content Include="Content\Data\Maps\Johto\Route29\main.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Maps\Johto\Route30\main.json">
+    <Content Include="Content\Data\Maps\Johto\Route30\main.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Maps\Johto\Route31\main.json">
+    <Content Include="Content\Data\Maps\Johto\Route31\main.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Maps\Johto\Route46\main.json">
+    <Content Include="Content\Data\Maps\Johto\Route46\main.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Maps\map.schema.json" />
-    <Content Include="Content\Maps\test.json">
+    <Content Include="Content\Data\Maps\map.schema.json" />
+    <Content Include="Content\Data\Maps\test.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Data\Encounters\Johto\Route30.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Content\Data\Encounters\Johto\Route29.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Data\Encounters\Johto\Route31.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -2021,28 +2027,28 @@
     <Content Include="Content\Fonts\main_0.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Scripts\Johto\NewBark\house0\bookshelf.js">
+    <Content Include="Content\Data\Scripts\Johto\NewBark\house0\bookshelf.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Scripts\Johto\NewBark\house0\townmap.js">
+    <Content Include="Content\Data\Scripts\Johto\NewBark\house0\townmap.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Scripts\Johto\NewBark\house0\tv.js">
+    <Content Include="Content\Data\Scripts\Johto\NewBark\house0\tv.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Scripts\Johto\NewBark\house0\window.js">
+    <Content Include="Content\Data\Scripts\Johto\NewBark\house0\window.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Scripts\Johto\NewBark\sign0.js">
+    <Content Include="Content\Data\Scripts\Johto\NewBark\sign0.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Scripts\Johto\NewBark\sign1.js">
+    <Content Include="Content\Data\Scripts\Johto\NewBark\sign1.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Scripts\Johto\NewBark\sign2.js">
+    <Content Include="Content\Data\Scripts\Johto\NewBark\sign2.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Scripts\Johto\NewBark\sign3.js">
+    <Content Include="Content\Data\Scripts\Johto\NewBark\sign3.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\Pokemon\Main\10.png">

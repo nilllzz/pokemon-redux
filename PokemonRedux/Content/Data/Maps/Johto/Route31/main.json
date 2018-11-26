@@ -3,8 +3,9 @@
   "name": "Route 31",
   "worldOffset": [ -50, 3, -72 ],
   "loadMaps": [
-    "Maps/Johto/Route30/main.json"
+    "Johto/Route30/main.json"
   ],
+  "encounterData": "Johto/Route31.json",
   "definitions": [
     {
       "id": "grassFloor",
@@ -1135,7 +1136,7 @@
       "rotation": [ 0, 1, 0 ],
       "doorData": {
         "warpData": {
-          "map": "Maps/Johto/Route31/main.json",
+          "map": "Johto/Route31/main.json",
           "position": [ 13, 1, 7 ]
         }
       }
@@ -1146,7 +1147,7 @@
       "rotation": [ 0, 1, 0 ],
       "doorData": {
         "warpData": {
-          "map": "Maps/Johto/Route31/main.json",
+          "map": "Johto/Route31/main.json",
           "position": [ 13, 1, 7 ]
         }
       }

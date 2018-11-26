@@ -272,7 +272,7 @@
           "rotation": [ 0, 2, 0 ],
           "doorData": {
             "warpData": {
-              "map": "Maps/Johto/NewBark/main.json",
+              "map": "Johto/NewBark/main.json",
               "position": [ 11, 0, 14 ]
             },
             "hidden": true

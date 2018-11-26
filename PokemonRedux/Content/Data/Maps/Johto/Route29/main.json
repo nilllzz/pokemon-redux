@@ -3,10 +3,11 @@
   "name": "Route 29",
   "worldOffset": [ 0, 0, 0 ],
   "loadMaps": [
-    "Maps/Johto/Cherrygrove/main.json",
-    "Maps/Johto/Route46/main.json",
-    "Maps/Johto/NewBark/main.json"
+    "Johto/Cherrygrove/main.json",
+    "Johto/Route46/main.json",
+    "Johto/NewBark/main.json"
   ],
+  "encounterData": "Johto/Route29.json",
   "definitions": [
     {
       "id": "grassFloor",
@@ -1131,7 +1132,7 @@
       "position": [ 27, 0.5, 1 ],
       "doorData": {
         "warpData": {
-          "map": "Maps/Johto/Route46/main.json",
+          "map": "Johto/Route46/main.json",
           "position": [ 7, 0, 33 ]
         }
       }

@@ -3,8 +3,8 @@
   "name": "New Bark Town",
   "worldOffset": [ 60, 0, 0 ],
   "loadMaps": [
-    "Maps/Johto/Route27/main.json",
-    "Maps/Johto/Route29/main.json"
+    "Johto/Route27/main.json",
+    "Johto/Route29/main.json"
   ],
   "definitions": [
     {
@@ -539,7 +539,7 @@
       "position": [ 6, 0, 3 ],
       "doorData": {
         "warpData": {
-          "map": "Maps/Johto/Route29/main.json",
+          "map": "Johto/Route29/main.json",
           "position": [ 9, 0, 8 ]
         }
       }
@@ -549,7 +549,7 @@
       "position": [ 13, 0, 5 ],
       "doorData": {
         "warpData": {
-          "map": "Maps/Johto/NewBark/main.json",
+          "map": "Johto/NewBark/main.json",
           "position": [ 9, 0, 8 ]
         }
       }
@@ -559,7 +559,7 @@
       "position": [ 3, 0, 11 ],
       "doorData": {
         "warpData": {
-          "map": "Maps/Johto/NewBark/house0.json",
+          "map": "Johto/NewBark/house0.json",
           "position": [ 2, 0, 6 ]
         }
       }
@@ -569,7 +569,7 @@
       "position": [ 11, 0, 13 ],
       "doorData": {
         "warpData": {
-          "map": "Maps/Johto/NewBark/house1.json",
+          "map": "Johto/NewBark/house1.json",
           "position": [ 2, 0, 6 ]
         }
       }
@@ -583,7 +583,7 @@
       "size": [ 0.9, 0.7875, 0.16875 ],
       "script": {
         "triggerType": "interact",
-        "file": "Scripts/Johto/NewBark/sign0.js"
+        "file": "Johto/NewBark/sign0.js"
       }
     },
     {
@@ -592,7 +592,7 @@
       "size": [ 0.9, 0.7875, 0.16875 ],
       "script": {
         "triggerType": "interact",
-        "file": "Scripts/Johto/NewBark/sign1.js"
+        "file": "Johto/NewBark/sign1.js"
       }
     },
     {
@@ -601,7 +601,7 @@
       "size": [ 0.9, 0.7875, 0.16875 ],
       "script": {
         "triggerType": "interact",
-        "file": "Scripts/Johto/NewBark/sign2.js"
+        "file": "Johto/NewBark/sign2.js"
       }
     },
     {
@@ -610,7 +610,7 @@
       "size": [ 0.9, 0.7875, 0.16875 ],
       "script": {
         "triggerType": "interact",
-        "file": "Scripts/Johto/NewBark/sign3.js"
+        "file": "Johto/NewBark/sign3.js"
       }
     }
 

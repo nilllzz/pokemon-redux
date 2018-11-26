@@ -3,7 +3,7 @@
   "name": "Route 46",
   "worldOffset": [ 20, 0.5, -36 ],
   "loadMaps": [
-    "Maps/Johto/Route29/main.json"
+    "Johto/Route29/main.json"
   ],
   "definitions": [
     {

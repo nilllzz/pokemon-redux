@@ -1,0 +1,51 @@
+[
+  {
+    "id": 16, // pidgey
+    "method": "grass",
+    "levels": [ 2, 4 ],
+    "rates": [
+      {
+        "time": [ "morning", "day" ],
+        "chance": 55
+      }
+    ]
+  },
+  {
+    "id": 19, // rattata
+    "method": "grass",
+    "rates": [
+      {
+        "time": [ "morning", "day" ],
+        "chance": 5,
+        "levels": [ 4 ]
+      },
+      {
+        "time": [ "night" ],
+        "chance": 15,
+        "levels": [ 2, 4 ]
+      }
+    ]
+  },
+  {
+    "id": 161, // sentret
+    "method": "grass",
+    "levels": [ 2, 3 ],
+    "rates": [
+      {
+        "time": [ "morning", "day" ],
+        "chance": 40
+      }
+    ]
+  },
+  {
+    "id": 163, // hoothoot
+    "method": "grass",
+    "levels": [ 2, 3 ],
+    "rates": [
+      {
+        "time": [ "night" ],
+        "chance": 85
+      }
+    ]
+  },
+]

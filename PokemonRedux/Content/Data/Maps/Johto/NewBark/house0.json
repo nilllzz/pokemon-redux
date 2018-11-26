@@ -360,7 +360,7 @@
           "rotation": [ 0, 2, 0 ],
           "doorData": {
             "warpData": {
-              "map": "Maps/Johto/NewBark/main.json",
+              "map": "Johto/NewBark/main.json",
               "position": [ 3, 0, 12 ]
             },
             "hidden": true
@@ -377,7 +377,7 @@
       "size": [ 1, 1, 0.6 ],
       "script": {
         "triggerType": "interact",
-        "file": "Scripts/Johto/NewBark/house0/bookshelf.js"
+        "file": "Johto/NewBark/house0/bookshelf.js"
       }
     },
     {
@@ -386,7 +386,7 @@
       "size": [ 1, 1, 1 ],
       "script": {
         "triggerType": "interact",
-        "file": "Scripts/Johto/NewBark/house0/bookshelf.js"
+        "file": "Johto/NewBark/house0/bookshelf.js"
       }
     },
     {
@@ -395,7 +395,7 @@
       "size": [ 1, 1, 1 ],
       "script": {
         "triggerType": "interact",
-        "file": "Scripts/Johto/NewBark/house0/tv.js"
+        "file": "Johto/NewBark/house0/tv.js"
       }
     },
     {
@@ -404,7 +404,7 @@
       "size": [ 1, 1, 1 ],
       "script": {
         "triggerType": "interact",
-        "file": "Scripts/Johto/NewBark/house0/window.js"
+        "file": "Johto/NewBark/house0/window.js"
       }
     },
     {
@@ -413,7 +413,7 @@
       "size": [ 1, 1, 1 ],
       "script": {
         "triggerType": "interact",
-        "file": "Scripts/Johto/NewBark/house0/townmap.js"
+        "file": "Johto/NewBark/house0/townmap.js"
       }
     }
   ]

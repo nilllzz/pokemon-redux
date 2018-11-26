@@ -1,0 +1,121 @@
+[
+  {
+    "id": 10, // caterpie
+    "method": "grass",
+    "levels": [ 4, 5 ],
+    "rates": [
+      {
+        "time": [ "morning", "day" ],
+        "chance": 35
+      }
+    ]
+  },
+  {
+    "id": 11, // metapod
+    "method": "grass",
+    "rates": [
+      {
+        "time": [ "morning" ],
+		"levels": [ 5 ],
+        "chance": 15
+      },
+      {
+        "time": [ "day" ],
+		"levels": [ 5, 6 ],
+        "chance": 15
+      }
+    ]
+  },
+  {
+    "id": 13, // weedle
+    "method": "grass",
+    "levels": [ 4, 5 ],
+    "rates": [
+      {
+        "time": [ "morning" ],
+        "chance": 30
+      },
+      {
+        "time": [ "day" ],
+        "chance": 35
+      }
+    ]
+  },
+  {
+    "id": 14, // kakuna
+    "method": "grass",
+    "rates": [
+      {
+        "time": [ "morning" ],
+		"levels": [ 5 ],
+        "chance": 10
+      },
+      {
+        "time": [ "day" ],
+		"levels": [ 5, 6 ],
+        "chance": 15
+      }
+    ]
+  },
+  {
+    "id": 16, // pidgey
+    "method": "grass",
+	"levels": [ 3 ],
+    "rates": [
+      {
+        "time": [ "morning", "day" ],
+        "chance": 30
+      }
+    ]
+  },
+  {
+    "id": 19, // ratatta
+    "method": "grass",
+	"levels": [ 4, 5 ],
+    "rates": [
+      {
+        "time": [ "night" ],
+        "chance": 45
+      }
+    ]
+  },
+  {
+    "id": 69, // bellsprout
+    "method": "grass",
+    "levels": [ 3 ],
+    "chance": 20
+  },
+  {
+    "id": 163, // hoothoot
+    "method": "grass",
+	"levels": [ 5 ],
+    "rates": [
+      {
+        "time": [ "night" ],
+        "chance": 10
+      }
+    ]
+  },
+  {
+    "id": 165, // ledyba
+    "method": "grass",
+	"levels": [ 4 ],
+    "rates": [
+      {
+        "time": [ "morning" ],
+        "chance": 30
+      }
+    ]
+  },
+  {
+    "id": 167, // spinarak
+    "method": "grass",
+	"levels": [ 4 ],
+    "rates": [
+      {
+        "time": [ "night" ],
+        "chance": 30
+      }
+    ]
+  },
+]

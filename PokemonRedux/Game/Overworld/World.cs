@@ -340,7 +340,7 @@ namespace PokemonRedux.Game.Overworld
         {
             if (!ScriptManager.IsActive)
             {
-                var source = Controller.Content.LoadDirect<string>(file);
+                var source = Controller.Content.LoadDirect<string>($"Data/Scripts/{file}");
                 ScriptManager.RunScript(source);
             }
         }

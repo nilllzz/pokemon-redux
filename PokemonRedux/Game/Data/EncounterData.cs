@@ -31,7 +31,7 @@ namespace PokemonRedux.Game.Data
             }
 
             // if the daytime is included in the rates, this data applies
-            return rates.Any(r => r.Time == daytime);
+            return rates.Any(r => r.Time.Contains(daytime));
         }
 
         public EncounterRateData GetRate(Daytime daytime)
@@ -48,7 +48,7 @@ namespace PokemonRedux.Game.Data
             }
             else
             {
-                var rate = rates.First(r => r.Time == daytime);
+                var rate = rates.First(r => r.Time.Contains(daytime));
                 // when no levels are set in the rate, overwrite with levels of the encounter data
                 if (rate.levels == null || rate.levels.Length == 0)
                 {

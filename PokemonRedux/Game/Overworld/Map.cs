@@ -31,7 +31,7 @@ namespace PokemonRedux.Game.Overworld
 
         private void LoadMap()
         {
-            var mapDef = Controller.Content.LoadDirect<string>(MapFile);
+            var mapDef = Controller.Content.LoadDirect<string>($"Data/Maps/{MapFile}");
             _data = JsonConvert.DeserializeObject<MapData>(mapDef);
 
             Offset = _data.WorldOffset;

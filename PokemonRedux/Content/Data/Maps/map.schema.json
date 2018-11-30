@@ -9,7 +9,7 @@
         "id": { "type": "string" },
         "type": {
           "type": "string",
-          "enum": [ "floor", "prop", "field", "struct", "door", "script", "grass" ]
+          "enum": [ "floor", "prop", "field", "struct", "door", "script", "grass", "npc" ]
         },
         "textureFile": { "type": "string" },
         "visible": {

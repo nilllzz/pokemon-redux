@@ -60,6 +60,7 @@ namespace PokemonRedux.Game.Overworld
 
         public event Action MapChanged;
         public event Action<EncounterResult> WildPokemonEncountered;
+        public event Action<string> TextDisplayed;
 
         public World()
         {
@@ -343,6 +344,11 @@ namespace PokemonRedux.Game.Overworld
                 var source = Controller.Content.LoadDirect<string>($"Data/Scripts/{file}");
                 ScriptManager.RunScript(source);
             }
+        }
+
+        public void ShowText(string text)
+        {
+            TextDisplayed?.Invoke(text);
         }
 
         public static Daytime DetermineDaytime()

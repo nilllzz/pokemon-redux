@@ -24,6 +24,9 @@ namespace PokemonRedux.Game.Data.Entities
 
         // script trigger
         public ScriptData script;
+
+        // npc
+        public NPCData npc;
 #pragma warning restore 0649
 
         public EntityData Clone()
@@ -40,6 +43,7 @@ namespace PokemonRedux.Game.Data.Entities
             obj.frames = (int[][])frames?.Clone();
             obj.doorData = (DoorData)doorData?.Clone();
             obj.script = (ScriptData)script?.Clone();
+            obj.npc = (NPCData)npc?.Clone();
             return obj;
         }
 

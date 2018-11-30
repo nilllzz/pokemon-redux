@@ -612,7 +612,36 @@
         "triggerType": "interact",
         "file": "Johto/NewBark/sign3.js"
       }
-    }
+    },
 
+	// npcs
+	{
+		"type": "npc",
+        "position": [ 13, 0, 9 ],
+		"geometry": "billboard",
+		"textureFile": "npc01",
+		"npc": {
+			"type": "text",
+			"text": "Yo, <player>!\n\nI hear PROF.ELM\ndiscovered some\nnew POKéMON.",
+			"behavior": {
+				"type": "wander",
+				"x": [],
+				"y": [ -1, 1 ],
+			}
+		}
+	},
+	{
+		"type": "npc",
+        "position": [ 7, 0, 8 ],
+		"geometry": "billboard",
+		"textureFile": "npc02",
+		"npc": {
+			"type": "text",
+			"text": "Call your mom on\nyour POKéGEAR to\n\nlet her know how\nyou^'re doing.",
+			"behavior": {
+				"type": "look",
+			}
+		}
+	}
   ]
 }

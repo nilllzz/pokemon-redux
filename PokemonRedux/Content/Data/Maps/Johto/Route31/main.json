@@ -3,7 +3,8 @@
   "name": "Route 31",
   "worldOffset": [ -50, 3, -72 ],
   "loadMaps": [
-    "Johto/Route30/main.json"
+    "Johto/Route30/main.json",
+	"Johto/Violet/main.json"
   ],
   "encounterData": "Johto/Route31.json",
   "definitions": [

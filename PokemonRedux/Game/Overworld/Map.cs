@@ -66,7 +66,7 @@ namespace PokemonRedux.Game.Overworld
         {
             World.DisposeMap(this);
             ContentLoader.CopyContent();
-            ContentLoader.ClearBuffer(MapFile);
+            ContentLoader.ClearBuffer($"Data/Maps/{MapFile}");
             World.ChangeMap(MapFile);
         }
     }

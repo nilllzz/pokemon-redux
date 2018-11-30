@@ -869,6 +869,36 @@
     <Content Include="Content\Textures\UI\Pokemon\mail.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Textures\World\Characters\npc01.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\World\Characters\npc02.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\World\Johto\Violet\mart-morning.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\World\Johto\Violet\mart-night.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\World\Johto\Violet\mart.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\World\Johto\Violet\poke-morning.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\World\Johto\Violet\poke-night.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\World\Johto\Violet\poke.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\World\Johto\Violet\roof-night.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\World\Johto\Violet\roof.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Credits.txt" />
     <Content Include="Game\Battles\Moves\moves.txt" />
     <None Include="App.config" />
@@ -1700,6 +1730,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Content\ContentLoader.cs" />
+    <None Include="Content\Data\Maps\Johto\Violet\main.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Compile Include="Core.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="GameController.cs" />
@@ -1768,9 +1801,14 @@
     <Compile Include="Game\Battles\Moves\ThunderWave.cs" />
     <Compile Include="Game\Battles\Moves\WingAttack.cs" />
     <Compile Include="Game\Battles\MoveHelper.cs" />
+    <Compile Include="Game\Data\Entities\NPCBehaviorData.cs" />
+    <Compile Include="Game\Data\Entities\NPCBehaviorType.cs" />
+    <Compile Include="Game\Data\Entities\NPCData.cs" />
+    <Compile Include="Game\Data\Entities\NPCType.cs" />
     <Compile Include="Game\Data\KeyboardData.cs" />
     <Compile Include="Game\Data\OptionsData.cs" />
     <Compile Include="Game\Overworld\Entities\Grass.cs" />
+    <Compile Include="Game\Overworld\Entities\NPC.cs" />
     <Compile Include="Game\PokedexHelper.cs" />
     <Compile Include="Game\Options.cs" />
     <Compile Include="Screens\Battles\Animations\AsleepAnimation.cs" />
@@ -1938,6 +1976,7 @@
     <Compile Include="Screens\OptionsBox.cs" />
     <Compile Include="Screens\Options\OptionsScreen.cs" />
     <Compile Include="Screens\Overworld\EncounterTransitionAnimation.cs" />
+    <Compile Include="Screens\Overworld\TestCamera.cs" />
     <Compile Include="Screens\Overworld\WorldShader.cs" />
     <Compile Include="Screens\Pack\PackMode.cs" />
     <Compile Include="Screens\Pack\PackScreen.cs" />

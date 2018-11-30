@@ -9,5 +9,6 @@
         Door,
         Script,
         Grass,
+        Npc,
     }
 }

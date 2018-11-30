@@ -41,10 +41,7 @@ namespace PokemonRedux.Game.Overworld.Entities
             {
                 for (var x = 0; x < SPRITES_X; x++)
                 {
-                    var spriteData = texture.GetData(new Rectangle(x * spriteSize.X, y * spriteSize.Y, spriteSize.X, spriteSize.Y));
-                    var sprite = new Texture2D(Controller.GraphicsDevice, spriteSize.X, spriteSize.Y);
-                    sprite.SetData(spriteData);
-
+                    var sprite = texture.Slice(new Rectangle(x * spriteSize.X, y * spriteSize.Y, spriteSize.X, spriteSize.Y));
                     _sprites[x, y] = sprite;
                 }
             }
@@ -80,8 +77,13 @@ namespace PokemonRedux.Game.Overworld.Entities
                 }
             }
 
-            Texture = _sprites[WALK_CYCLE_FRAMES[_walking ? _walkCycleFrame : 0], (int)Facing];
+            UpdateSprite();
             base.Update();
+        }
+
+        protected void UpdateSprite()
+        {
+            Texture = _sprites[WALK_CYCLE_FRAMES[_walking ? _walkCycleFrame : 0], (int)Facing];
         }
     }
 }

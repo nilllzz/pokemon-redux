@@ -27,6 +27,8 @@ namespace PokemonRedux.Game.Data.Entities
                     return new[] { new Grass(data) };
                 case EntityType.Script:
                     return new[] { new ScriptTrigger(data) };
+                case EntityType.Npc:
+                    return new[] { new NPC(data) };
                 case EntityType.Field:
                     if (data.entity != null)
                     {

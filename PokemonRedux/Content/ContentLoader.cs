@@ -20,9 +20,9 @@ namespace PokemonRedux.Content
 
         public static void CopyContent()
         {
-            var destDir = new DirectoryInfo(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Controller.Content.RootDirectory, "Maps"));
+            var destDir = new DirectoryInfo(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Controller.Content.RootDirectory, "Data\\Maps"));
             var sourceDir = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName;
-            sourceDir = Path.Combine(sourceDir, "Content/Maps");
+            sourceDir = Path.Combine(sourceDir, "Content\\Data\\Maps");
 
             var sourceFiles = Directory.GetFiles(sourceDir, "*.json", SearchOption.AllDirectories);
             foreach (var sourceFile in sourceFiles)

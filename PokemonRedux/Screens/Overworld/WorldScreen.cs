@@ -1,5 +1,6 @@
 ﻿using GameDevCommon.Drawing;
 using GameDevCommon.Drawing.Font;
+using GameDevCommon.Rendering;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using PokemonRedux.Game.Overworld;
@@ -13,7 +14,7 @@ namespace PokemonRedux.Screens.Overworld
     class WorldScreen : Screen, ITextboxScreen
     {
         private WorldShader _shader;
-        private WorldCamera _camera;
+        private PerspectiveCamera _camera;
         private SpriteBatch _batch;
         private LocationSign _locationSign;
         private FontRenderer _fontRenderer;
@@ -33,6 +34,7 @@ namespace PokemonRedux.Screens.Overworld
             _locationSign.LoadContent();
             World.MapChanged += MapChanged;
             World.WildPokemonEncountered += OnWildEncounter;
+            World.TextDisplayed += (text) => ShowTextbox(text, false);
 
             Textbox = new Textbox();
             Textbox.LoadContent();
@@ -48,6 +50,8 @@ namespace PokemonRedux.Screens.Overworld
             ((BasicEffect)_shader.Effect).LightingEnabled = false;
 
             _camera = new WorldCamera(World, World.PlayerEntity);
+            //_camera = new TestCamera();
+            //_camera.Position = World.PlayerEntity.Position + new Vector3(0, 2, 0);
             _batch = new SpriteBatch(Controller.GraphicsDevice);
             _fontRenderer = new FontRenderer("main");
         }
@@ -64,7 +68,10 @@ namespace PokemonRedux.Screens.Overworld
 
         internal override void Update(GameTime gameTime)
         {
-            World.Update(gameTime);
+            if (!Textbox.Visible)
+            {
+                World.Update(gameTime);
+            }
             _camera.Update();
 
             Textbox.Update();
